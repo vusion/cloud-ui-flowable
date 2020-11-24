@@ -1,0 +1,26 @@
+- name: u-flowable-number
+  title: 数字
+  icon: number-input
+  labels: [Basic]
+  description: 单行文本输入框，规定填写者输入内容为数字，带有字段校验
+  attrs:
+    - name: value
+      type: number
+      title: 文本
+      description: 设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。
+    - name: max
+      type: number
+      title: 最大值
+      description: 用户填写的内容不能大于最大值
+    - name: min
+      type: number
+      title: 最小值
+      description: 用户填写的内容不能小于最小值
+    - name: point
+      type: number
+      title: 小数点位数
+      description: 用户填写的数字允许保留小数
+      default: 0
+      min: 0
+  slots: false
+  events: false

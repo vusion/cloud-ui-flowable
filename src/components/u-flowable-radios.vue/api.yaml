@@ -1,0 +1,18 @@
+- name: u-flowable-radios
+  title: 单选组
+  icon: radios
+  labels: [Basic]
+  description: 多项中选择一个时使用
+  attrs:
+    - name: value
+      type: string
+      title: 文本
+      description: 文本内容
+    - name: list
+      title: 选项内容
+      type: Array
+      example: [{key: '', value: ''}]
+      default: null
+      description: 为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。
+  slots: false
+  events: false

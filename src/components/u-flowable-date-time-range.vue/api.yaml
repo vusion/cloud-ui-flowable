@@ -1,0 +1,22 @@
+- name: u-flowable-date-time
+  title: 日期
+  icon: date-picker
+  labels: [Basic]
+  description: 用于展示文字或表达式
+  attrs:
+    - name: value
+      type: string
+      title: 默认内容
+      description: 设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。
+    - name: dateType
+      title: 类型
+      type: string
+      options: 
+        - value: date
+          title: 日期
+        - value: datetime
+          title: 日期时间
+      default: date
+      description: 日期类型
+  slots: false
+  events: false

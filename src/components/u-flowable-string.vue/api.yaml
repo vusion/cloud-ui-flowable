@@ -1,0 +1,12 @@
+- name: u-flowable-string
+  title: 描述文字
+  icon: input
+  labels: [Basic]
+  description: 描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。
+  attrs:
+    - name: value
+      type: string
+      title: 文本
+      description: 文本内容
+  slots: false
+  events: false

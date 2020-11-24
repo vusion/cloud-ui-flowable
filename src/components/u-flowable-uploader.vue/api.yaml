@@ -1,0 +1,12 @@
+- name: u-flowable-uploader
+  title: 附件上传
+  icon: uploader
+  labels: [Basic]
+  description: 上传文件组件，可以自定义上传说明，指导填写者上传文件、图片等，可添加多个附件。
+  attrs:
+    - name: value
+      type: Array
+      title: 文本
+      description: 文本内容
+  slots: false
+  events: false

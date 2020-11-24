@@ -1,0 +1,94 @@
+{
+  "name": "cloud-ui-flowable.vusion",
+  "description": "Vusion Cloud UI Flowable",
+  "version": "0.11.16",
+  "main": "./index.js",
+  "scripts": {
+    "dev": "vue-cli-service doc --port 9001",
+    "dev:designer": "cross-env VUE_APP_DESIGNER=true vue-cli-service doc --port 9001",
+    "build": "vue-cli-service library-build --apply-theme --theme default,dark,seagreen",
+    "build:theme": "vue-cli-service library-build --dest dist-theme",
+    "build:raw": "vue-cli-service library-build --vusion-mode raw --dest dist-raw",
+    "build:designer": "cross-env VUE_APP_DESIGNER=true vue-cli-service library-build --vusion-mode raw --dest dist-designer",
+    "build:docs": "vue-cli-service doc-build",
+    "build:doc-entry": "cross-env VUE_CLI_SERVICE_CONFIG_PATH=$PWD/vue.config.doc-entry.js vue-cli-service build --output-path dist-doc-entry",
+    "screenshot": "node bin/screenshot",
+    "lint": "eslint --fix --ext .js,.vue src && stylelint --fix ./src/**/*.css",
+    "ghpages": "vusion ghpages",
+    "lcap": "npm run build:docs && npm run screenshot && npm run deploy:screenshots && node ./scripts/lcap && npm run deploy:lcap",
+    "deploy": "vusion deploy --framework cloud-ui-flowable.vusion@0.11 -v minor",
+    "deploy:lcap": "npm run build && npm run build:theme && npm run build:raw && vusion deploy dist-raw --framework cloud-ui-flowable",
+    "deploy:screenshots": "node bin/deploy-screenshots",
+    "deploy:doc-entry": "vusion deploy --framework cloud-ui-flowable -v minor dist-doc-entry",
+    "prepublishOnly": "npm run build && npm run build:theme && npm run build:raw && vusion readme && vusion vetur && git add .",
+    "postpublish": "npm run build:docs && npm run deploy"
+  },
+  "repository": "vusion/cloud-ui-flowable",
+  "homepage": "http://vusion.github.io/cloud-ui-flowable",
+  "bugs": {
+    "url": "http://github.com/vusion/cloud-ui-flowable/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "vusion",
+    "cloud",
+    "ui",
+    "cloud-ui-flowable"
+  ],
+  "tags": [
+    "vusion",
+    "cloud",
+    "ui",
+    "cloud-ui-flowable"
+  ],
+  "dependencies": {
+    "@tinymce/tinymce-vue": "^3.2.6",
+    "@vusion/popper.js": "^1.14.1",
+    "@vusion/utils": "^0.4.9",
+    "@vusion/validator": "^0.2.4",
+    "cloud-ui.vusion": "^0.11.17",
+    "countup.js": "^1.9.3",
+    "dompurify": "^2.0.15",
+    "fs-extra": "^9.0.1",
+    "i-material-design.vue": "^5.1.0",
+    "js-yaml": "^3.14.0",
+    "lodash": "^4.17.5",
+    "normalize.css": "^7.0.0",
+    "raw-loader": "^4.0.2",
+    "tinymce": "^5.5.1",
+    "validator": "^13.1.17",
+    "vusion": "^0.12.13",
+    "vusion-api": "^0.6.30",
+    "vusion-async-validator": "^1.8.8"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.3.0",
+    "@vue/cli-service": "^4.3.0",
+    "@vusion/mock": "^0.1.1",
+    "commander": "^2.20.0",
+    "core-js": "^3.6.5",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.3.1",
+    "eslint-config-vusion": "^4.0.0",
+    "husky": "^3.0.4",
+    "minimist": "^1.2.5",
+    "shelljs": "^0.7.8",
+    "sinon": "^4.2.2",
+    "stylelint": "^9.3.0",
+    "stylelint-config-vusion": "^1.1.2",
+    "vue": "^2.6.10",
+    "vue-cli-plugin-vusion": "^0.11.12",
+    "vue-i18n": "^8.15.5",
+    "vue-router": "^3.1.3",
+    "vue-template-compiler": "^2.6.10",
+    "vusion-hooks": "^0.3.0"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.10",
+    "@vusion/utils": "^0.4.9"
+  },
+  "vetur": {
+    "tags": "./vetur/tags.json",
+    "attributes": "./vetur/attributes.json"
+  }
+}

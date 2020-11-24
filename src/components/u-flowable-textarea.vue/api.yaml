@@ -1,0 +1,12 @@
+- name: u-flowable-textarea
+  title: 多行文字
+  icon: textarea
+  labels: [Basic]
+  description: 多行文本输入框，需要填写者在输入框内根据标题填写相应的内容。
+  attrs:
+    - name: value
+      type: string
+      title: 文本
+      description: 文本内容
+  slots: false
+  events: false
