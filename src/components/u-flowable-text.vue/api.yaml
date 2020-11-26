@@ -1,5 +1,6 @@
 - name: u-flowable-text
   title: 描述文字
+  readonlyTitle: 描述文字
   icon: text
   labels: [Basic]
   value: 描述文字

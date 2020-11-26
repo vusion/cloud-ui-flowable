@@ -8,5 +8,8 @@
       type: Array
       title: 文本
       description: 文本内容
+    - name: url
+      description: 上传地址
+      value: ''
   slots: false
   events: false
