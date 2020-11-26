@@ -1,6 +1,5 @@
 - name: u-flowable-image-select
   title: 多选组
-  icon: checkbox
   labels: [Basic]
   description: 多项中选择一个时使用
   attrs:
