@@ -17,7 +17,8 @@ export default function (component) {
                 },
             });
         } else if (this.mode === 'readonly') {
-            if (!this.$props.value) {
+            if (!this.$props.value
+                || (Object.prototype.toString.call(this.$props.value) === '[object Array]') && this.$props.value.length === 0) {
                 return h('div', ['暂无数据']);
             }
             return h('readonly', {

@@ -1,5 +1,5 @@
 - name: u-flowable-image-select
-  title: 多选组
+  title: 图片选择
   labels: [Basic]
   description: 多项中选择一个时使用
   attrs:

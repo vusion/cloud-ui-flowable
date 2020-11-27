@@ -92,7 +92,8 @@
          <component 
             :is="'u-select'"
             v-model="attr.value"
-            :data-source="customizeConfigSelect(getProps(allNodesAPI[tag]).list)"
+            v-bind="attr.customizeConfig.attrsMap"
+            :data-source="getProps(allNodesAPI[tag]).list"
             mode="edit">
         </component>
      </div>
@@ -124,6 +125,7 @@ export default {
             this.$set(getProps(this.allNodesAPI[this.tag]).list, rowIndex, {
                 key: $event,
                 value: $event,
+                text: $event,
             })
         },
         customizeConfigSelect(list){

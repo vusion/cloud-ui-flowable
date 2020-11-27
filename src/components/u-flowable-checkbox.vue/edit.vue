@@ -1,6 +1,6 @@
 <template>
     <u-checkboxes v-model="currentValue" :min="min" :max="max" v-bind="$attrs">
-        <u-checkbox v-for="item in list" :key="item.key" :label="item.key">{{ item.label }}</u-checkbox>
+        <u-checkbox v-for="item in list" :key="item.key" :label="item.key">{{ item.value }}</u-checkbox>
     </u-checkboxes>
 </template>
 
@@ -13,7 +13,7 @@ export default {
         UCheckbox,
     },
     props: {
-        value: String,
+        value: Array,
         list: Array,
         min: { type: Number, default: 0 },
         max: { type: Number, default: Infinity },
@@ -36,7 +36,12 @@ export default {
             if (this.currentValue?.join(',') === value) {
                 return this.currentValue;
             }
-            return (value || '').split(',').filter((i) => i);
+
+            if (Object.prototype.toString.call(value) === '[object Array]') {
+                return value;
+            } else {
+                return (value || '').split(',').filter((i) => i);
+            }
         },
     },
 };

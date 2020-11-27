@@ -9,7 +9,7 @@ const UFlowableCheckbox = wrap({
         readonly,
     },
     props: {
-        value: String,
+        value: Array,
     },
 });
 
