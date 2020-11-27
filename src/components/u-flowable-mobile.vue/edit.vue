@@ -1,5 +1,5 @@
 <template>
-    <u-input v-model="currentValue" v-bind="[$attrs, $props]"></u-input>
+    <u-input v-model="currentValue" v-bind="[$attrs, $props]" rules="mobile"></u-input>
 </template>
 
 <script>
@@ -23,6 +23,7 @@ export default {
             if (currentValue && isMobilePhone(currentValue, 'zh-CN')) {
                 this.$emit('input', currentValue);
             }
+            this.$emit('input', currentValue);
         },
         value(value) {
             this.currentValue = value;

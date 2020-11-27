@@ -51,9 +51,15 @@
       </u-checkbox>
       <span>{{ attr.title || attr.name }}</span>
   </span>
-  <span v-else-if="attr.compType === 'boxList'" :class="$style.label" slot="label">
+  <span v-else-if="attr.compType === 'inputList'" :class="$style.label" slot="label" muted="all">
       <span>{{ attr.title || attr.name }}</span>
-      
+      <u-form-table-view size="mini" :data="getProps(allNodesAPI[tag]).list" :class="$style.formTable" dynamic>
+         <u-form-table-view-column>
+            <template slot="cell" slot-scope="{ item, rowIndex }">
+                <u-input size="huge full" v-model="item.value" @input="updateValue(rowIndex, $event)"></u-input>
+            </template>
+        </u-form-table-view-column>
+     </u-form-table-view>
   </span>
    <span v-else-if="attr.compType === 'rangeBox'" :class="$style.label" slot="label">
       <u-checkbox mode="edit" v-model="attr.value">
@@ -74,12 +80,22 @@
   <span v-else-if="attr.compType === 'customize'" :class="$style.label">
       <div :class="$style.title" >{{ attr.title || attr.name }}</div>
       <u-select :class="$style.customizeSelect" v-model="attr.customizeType" :data-source="list"></u-select>
-      <component 
-        :is="currentComponent.name"
-        v-model="attr.value"
-        v-bind="getProps(allNodesAPI[tag])"
-        mode="edit">
-     </component>
+      <div v-if="!attr.customizeConfig">
+        <component 
+            :is="currentComponent.name"
+            v-model="attr.value"
+            v-bind="getProps(allNodesAPI[tag])"
+            mode="edit">
+        </component>
+    </div>
+     <div v-else-if="attr.customizeConfig.name === 'u-select'">
+         <component 
+            :is="'u-select'"
+            v-model="attr.value"
+            :data-source="customizeConfigSelect(getProps(allNodesAPI[tag]).list)"
+            mode="edit">
+        </component>
+     </div>
   </span>
  </span>
 </div>
@@ -103,6 +119,23 @@ export default {
     },
     methods: {
         getProps,
+        updateValue(rowIndex, $event) {
+            // 输入框不带 key 输入，但是 radio 选中需要 key
+            this.$set(getProps(this.allNodesAPI[this.tag]).list, rowIndex, {
+                key: $event,
+                value: $event,
+            })
+        },
+        customizeConfigSelect(list){
+            return list.map((o) => {
+                // 下拉框需要 text 这个属性
+                return {
+                    key: o.value,
+                    value: o.value,
+                    text: o.value,
+                }
+            })
+        }
     }
 }
 </script>
@@ -118,6 +151,29 @@ export default {
 .title {
     display: block;
     margin-bottom: 5px;
+}
+
+.inputListBox thead{
+    display: none;
+}
+
+.inputListBox table{
+   width: 100%;
+}
+
+.formTable {
+    width: 100%!important;
+}
+.formTable table{
+    width: 100%!important;
+}
+
+.formTable table [dynamic]{
+    width: 25px!important;
+}
+
+.formTable thead {
+    display: none;
 }
 
 .label {

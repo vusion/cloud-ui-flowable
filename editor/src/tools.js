@@ -42,12 +42,14 @@ export function formatvalidateObject(attr) {
 
 export function getProps(api) {
 	// 显示属性的key 和值
-	const props = [];
+	const props = {};
 	api[0].attrs.forEach(attr => {
 		if (attr.group !== 'validate') {
-			props.push({ [attr.name] : attr.value })
+			Object.assign(props, { [attr.name] : attr.value })
 		}
 	})
+
+	console.info('zxy', props);
 	
 	return props;
 }
