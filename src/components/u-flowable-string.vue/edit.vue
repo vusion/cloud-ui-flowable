@@ -1,5 +1,5 @@
 <template>
-    <u-input v-bind="$props" :rules="$attrs.rules"></u-input>
+    <u-input v-bind="[$props, $attrs]"></u-input>
 </template>
 
 <script>

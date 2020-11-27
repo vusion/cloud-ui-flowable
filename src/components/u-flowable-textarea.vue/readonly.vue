@@ -1,5 +1,5 @@
 <template>
-    <u-text :text="value"></u-text>
+     <u-textarea resize="vertical" readonly v-bind="[$props, $attrs]"></u-textarea>
 </template>
 
 <script>

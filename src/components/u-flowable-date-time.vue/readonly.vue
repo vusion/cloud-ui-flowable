@@ -1,5 +1,6 @@
 <template>
-    <u-text :text="value"></u-text>
+    <u-date-picker alignment="left" :class="$style.root" readonly v-bind="[$attrs, $props]" v-if="type === 'date'"></u-date-picker>
+    <u-date-time-picker alignment="left" :class="$style.root" readonly v-bind="[$attrs, $props]" v-else-if="type === 'datetime'"></u-date-time-picker>
 </template>
 
 <script>
@@ -10,6 +11,10 @@ export default {
     },
     props: {
         value: String,
+        type: {
+            type: String,
+            default: 'date',
+        },
     },
 };
 </script>
