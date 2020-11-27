@@ -5,7 +5,7 @@
                 <u-image :src="item.image" fit="fill" :class="$style.image"></u-image>
                 <div :class="$style.desc">
                     <u-checkbox :label="item.key">
-                        {{ item.label }}
+                        {{ item.value }}
                     </u-checkbox>
                 </div>
             </div>

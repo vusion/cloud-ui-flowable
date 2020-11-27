@@ -10,16 +10,13 @@
       title: 标题
       level: component
       description: 标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题
-    - name: value
-      type: string
-      compType: customize
-      customizeType: normal
-      title: 默认内容
-      description: 文本内容，多个选项以英文逗号隔开
     - name: list
       title: 选项内容
+      compType: inputList
+      contentType: image
       type: Array
-      example: [{key: '', label: '', image: ''}]
+      value: [{ key: '未命名1', image: '未命名1', value: '未命名1'}, { key: '未命名2', image: '未命名2', value: '未命名2'}, { key: '未命名3', image: '未命名3', value: '未命名3'}]
+      example: [{key: '', value: ''}]
       default: null
       description: 为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。
   slots: false
