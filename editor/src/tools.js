@@ -1,7 +1,7 @@
 
 
 /**
- * 对验证规则的配置更灵活
+ * 对验证规则的配置灵活支持多种场景
  */
 export function formatvalidateObject(attr) {
 	const validateConfig = { 
@@ -33,7 +33,9 @@ export function formatvalidateObject(attr) {
 	// TODO 完善的范围
 	if (attr.name === 'range') {
 		console.info('range validate', validateConfig);
-		validateConfig.message = `字数限制为 ${attr.min} - ${attr.max}`;
+		if (attr.min && attr.name) {
+			validateConfig.message = `字数限制为 ${attr.min} - ${attr.max}`;
+		}
 	}
 	return validateConfig;
 }
