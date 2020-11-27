@@ -1,9 +1,23 @@
 <template>
   <div id="app" :class="$style.content">
     <div :class="$style.view">
-       属性的配置后效果栏
+     <div :class="$style.colBoxTitle">属性的编辑栏</div>
+          <div v-for="(childItem, key) in componentList" :key="key">
+            <div :class="[$style.box, selectedNode.tag === key && $style.active]" @click="handleClick(key, childItem)">
+              <div :class="$style.title">{{ allNodesAPI[key][0].title}}</div>
+            <component 
+                :is="childItem.name"
+                v-bind="getProps(allNodesAPI[key])"
+                mode="readonly">
+              </component>
+            </div>
+          </div>
+     
+    </div>
+    <div :class="$style.base">
+          <div :class="$style.colBoxTitle">属性的配置后效果栏</div>
        <div v-for="(childItem, key) in componentList" :key="key">
-          <div :class="[$style.box, selectedNode.tag === key && $style.active]" @click="handleClick(key, childItem)">
+          <div :class="[$style.resultbox, selectedNode.tag === key && $style.active]" @click="handleClick(key, childItem)">
             <div :class="$style.title">{{ allNodesAPI[key][0].title}}</div>
            <u-form-item :rules="getRules(allNodesAPI[key])">
             <component 
@@ -14,20 +28,7 @@
             </u-form-item>
            </div>
         </div>
-    </div>
-    <div :class="$style.base">
-        属性的配置栏
-        <div v-for="(childItem, key) in componentList" :key="key">
-          <div :class="[$style.box, selectedNode.tag === key && $style.active]" @click="handleClick(key, childItem)">
-            <div :class="$style.title">{{ allNodesAPI[key][0].title}}</div>
-           <component 
-              :is="childItem.name"
-              v-bind="getProps(allNodesAPI[key])"
-              mode="readonly">
-            </component>
-           </div>
-        </div>
-    </div>
+     </div>
     <div :class="$style.attrBox">
       <s-component-property-panel 
         :allNodesAPI="allNodesAPI"
@@ -114,6 +115,20 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.colBoxTitle {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.resultbox {
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin: 10px;
+}
 .title {
   font-weight: 500;
   font-size: 15px;
@@ -131,6 +146,10 @@ export default {
 
 .base {
   flex: 1;
+  cursor: move;
+  overflow: scroll;
+  height: 500px;
+  border: 1px solid #eee;
 }
 .attrBox {
   width: 300px;
@@ -138,7 +157,9 @@ export default {
 
 .box {
   margin: 10px;
+  padding: 10px;
   border: 1px solid green;
   min-height: 20px;
+  border-radius: 4px;
 }
 </style>
