@@ -1,0 +1,27 @@
+@import 'cloud-ui.vusion/src/styles/theme.css';
+
+:root {
+    --brand-primary: #337EFF;
+    --sidebar-width: 210px;
+    --navbar-height: 60px;
+    --navbar-background: #33353d;
+    --navbar-item-background-selected: #25272e;
+    --navbar-item-line-background: var(--brand-primary);
+    --navbar-item-padding: 0 25px;
+    --navbar-item-font-size: 14px;
+    --navbar-item-space: 0;
+    --navbar-dropdown-padding: 0 24px 0 20px;
+    --navbar-menu-item-background: #22232d;
+    --navbar-select-item-background: #22232d;
+    --navbar-menu-item-background-hover: #2e2f3c;
+    --navbar-select-item-background-hover: #2e2f3c;
+    --navbar-menu-divider-background: #2e2f3c;
+    --navbar-select-divider-background: #2e2f3c;
+    --sidebar-background: #21222C;
+    --sidebar-item-background-selected: #191a21;
+    --sidebar-item-color: #a6a6aa;
+    --sidebar-group-head-color: #a6a6aa;
+    --sidebar-group-head-color-selected: #a6a6aa;
+    --tooltip-background: rgba(49, 53, 62, 0.9);
+    --table-td-color: #333;
+}
