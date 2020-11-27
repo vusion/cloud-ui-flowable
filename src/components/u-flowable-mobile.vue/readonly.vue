@@ -1,6 +1,6 @@
 <template>
     <div>
-       <u-input readonly v-bind="[$attrs, $props]"></u-input>
+        <u-text :text="value"></u-text> <u-copy :value="value"></u-copy>
     </div>
 </template>
 

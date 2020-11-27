@@ -1,26 +1,52 @@
 - name: u-flowable-number
   title: 数字
+  readonlyTitle: 数字
   icon: number-input
   labels: [Basic]
   description: 单行文本输入框，规定填写者输入内容为数字，带有字段校验
   attrs:
+    - name: title
+      type: string
+      compType: input
+      title: 标题
+      level: component
+      value: 单行输入
+      description: 标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题
+    - name: tip
+      title: 提示
+      type: string
+      compType: input
+      placeholder: 请输入提示
     - name: value
-      type: number
-      title: 文本
+      type: string
+      compType: customize
+      customizeType: normal
+      title: 默认内容
+      value: 6
       description: 设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。
-    - name: max
-      type: number
-      title: 最大值
-      description: 用户填写的内容不能大于最大值
-    - name: min
-      type: number
-      title: 最小值
-      description: 用户填写的内容不能小于最小值
+    - name: required
+      type: string
+      compType: checkbox
+      group: validate
+      value: false
+      title: 这是个必填项
+      message: 不能为空
+      description: 选择必填后，填写者不填写将无法提交表单
     - name: point
-      type: number
-      title: 小数点位数
-      description: 用户填写的数字允许保留小数
-      default: 0
-      min: 0
+      type: string
+      compType: pointBox
+      title: 允许小数
+      group: validate
+      value: false
+      decimal: 0
+      description: 选择后，填写者填写时可以输入带有小数点的数字，否则只能输入整数。
+    - name: range
+      type: string
+      compType: rangeBox
+      group: validate
+      value: false
+      title: 限制数值范围
+      min: 0 
+      max: 100
   slots: false
   events: false

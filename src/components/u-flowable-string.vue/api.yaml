@@ -6,29 +6,35 @@
   description: 描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。
   attrs:
     - name: title
-      type: input
+      type: string
+      compType: input
       title: 标题
       level: component
       value: 单行输入
       description: 标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题
     - name: tip
       title: 提示
-      type: input
+      type: string
+      compType: input
       placeholder: 请输入提示
     - name: value
-      type: input
+      type: string
+      compType: customize
+      customizeType: normal
       title: 默认内容
-      model: attrs.title
       value: '单行文本'
       description: 文本内容
     - name: width
-      type: style
+      type: string
+      compType: capsules
       title: 字段占比 %
     - name: scarn
-      type: checkbox
+      type: string
+      compType: checkbox
       title: 扫码录入
     - name: required
-      type: checkbox
+      type: string
+      compType: checkbox
       group: validate
       message: 请输入内容
       title: 这是个必填项
@@ -36,12 +42,14 @@
       description: 选择必填后，填写者不填写将无法提交表单
     - name: duplicate
       title: 不许重复值
-      type: checkbox
+      type: string
+      compType: checkbox
       group: validate
       message: 不能重复
       value: false
     - name: range
-      type: rangeBox
+      type: string
+      compType: rangeBox
       title: 限制字数
       group: validate
       message: 字数范围
