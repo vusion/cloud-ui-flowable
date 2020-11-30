@@ -27,6 +27,7 @@
       customizeConfig:
          name: u-select
       title: 默认内容
+      value: ''
       description: 文本内容
   slots: false
   events: false

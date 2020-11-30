@@ -24,7 +24,7 @@ export default {
         UImage,
     },
     props: {
-        value: String,
+        value: Array,
         list: Array,
         min: { type: Number, default: 0 },
         max: { type: Number, default: Infinity },
@@ -38,19 +38,14 @@ export default {
         currentValue(currentValue) {
             this.$emit('input', currentValue);
         },
-        list() {
+        value() {
             this.currentValue = this.splitValue();
         },
     },
     methods: {
         splitValue() {
-            const result = [];
-            (this.list || []).forEach((item) => {
-                if (item.value) {
-                    result.push(item.text);
-                }
-            });
-            return result;
+            // TODO value 如果是字符串需要转换一次
+            return this.value || [];
         },
     },
 };

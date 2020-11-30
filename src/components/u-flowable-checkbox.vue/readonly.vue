@@ -1,5 +1,5 @@
 <template>
-<u-text :text="selectedList.join(',')"></u-text>
+<u-text :text="value.join(',')"></u-text>
 </template>
 
 <script>
@@ -24,6 +24,7 @@ export default {
     },
     methods: {
         getSelectedList(value) {
+            // TODO
             const map = {};
             this.list.forEach((item) => {
                 map[item.key] = item;
@@ -36,7 +37,7 @@ export default {
                 valueArray = (value || '').split(',');
             }
 
-            return valueArray.map((valueItem) => this.list.find((item) => item.key === valueItem)).map((item) => item.label);
+            return valueArray.map((valueItem) => this.list.find((item) => item.key === valueItem)).map((item) => item.text);
         },
     },
 };

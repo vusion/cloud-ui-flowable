@@ -59,8 +59,6 @@ export default {
             currentEvents: [],
         };
 
-        console.info('result abc', result);
-
         return result;
     },
     computed: {

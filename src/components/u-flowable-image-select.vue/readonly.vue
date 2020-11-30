@@ -1,9 +1,9 @@
 <template>
     <div>
-        <div :class="$style.checkbox" :key="item.key" v-for="item in selectedList">
+        <div :class="$style.checkbox" :key="index" v-for="(item, index) in selectedList">
             <u-image :src="item.image" fit="fill" :class="$style.image"></u-image>
             <div :class="$style.desc">
-                {{ item.label }}
+                {{ item.text }}
             </div>
         </div>
     </div>
@@ -16,7 +16,7 @@ export default {
         UImage,
     },
     props: {
-        value: String,
+        value: Array,
         list: Array,
     },
     data() {
@@ -32,10 +32,24 @@ export default {
     methods: {
         getSelectedList(value) {
             const map = {};
+            // 选项的 text 作为唯一标识
             this.list.forEach((item) => {
-                map[item.key] = item;
+                map[item.text] = item;
             });
-            return (value || '').split(',').map((valueItem) => this.list.find((item) => item.key === valueItem));
+
+            // 根据结果返回选中的值
+            let valueResult = [];
+            if (Object.prototype.toString.call(value) === '[object Array]') {
+                valueResult = value;
+            } else {
+                valueResult = (value || '').split(',').filter((i) => i);
+            }
+
+            return valueResult.map((valueItem) => {
+                const realItem = this.list.find((item) => item.text === valueItem);
+                console.info('realItem', realItem);
+                return realItem;
+            });
         },
     },
 };

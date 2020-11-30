@@ -18,7 +18,7 @@
       compType: input
       placeholder: 请输入提示
     - name: value
-      type: string
+      type: number
       compType: customize
       customizeType: normal
       title: 默认内容

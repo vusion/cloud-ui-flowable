@@ -1,5 +1,5 @@
 <template>
-    <u-input v-bind="[$props, $attrs]"></u-input>
+    <u-input v-model="currentValue" v-bind="[$props, $attrs]"></u-input>
 </template>
 
 <script>

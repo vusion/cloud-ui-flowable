@@ -1,21 +1,21 @@
 <template> 
-<div>
+<div :class="$style.defaultContent">
   <span v-if="attr.level === 'component'" :class="$style.label" slot="label">
-   <span v-if="attr.compType === 'richtext'" :class="$style.label" slot="label">
-      <span :class="$style.title">{{ attr.title || attr.name }}</span>
-      <div  :class="$style.box">
-          <u-flowable-rich-text mode="edit"  v-model="currentComponent[attr.name]">
-          </u-flowable-rich-text>
-      </div>
-  </span>
-  <span v-else-if="attr.compType === 'input'" :class="$style.label" slot="label">
-      <span :class="$style.title">{{ attr.title || attr.name }}</span>
-      <div  :class="$style.box">
-          <u-input v-model="currentComponent[attr.name]">
-          </u-input>
-      </div>
-  </span>
-  </span>
+        <span v-if="attr.compType === 'richtext'" :class="$style.label" slot="label">
+            <span :class="$style.title">{{ attr.title || attr.name }}</span>
+            <div  :class="$style.box">
+                <u-flowable-rich-text mode="edit"  v-model="currentComponent[attr.name]">
+                </u-flowable-rich-text>
+            </div>
+        </span>
+        <span v-else-if="attr.compType === 'input'" :class="$style.label" slot="label">
+            <span :class="$style.title">{{ attr.title || attr.name }}</span>
+            <div  :class="$style.box">
+                <u-input v-model="currentComponent[attr.name]">
+                </u-input>
+            </div>
+        </span>
+ </span>
 <span v-else>
   <span v-if="attr.compType === 'richtext'" :class="$style.label" slot="label">
       <span :class="$style.title" >{{ attr.title || attr.name }}</span>
@@ -39,7 +39,7 @@
   </span>
   <span v-else-if="attr.compType === 'capsules'" :class="$style.label" slot="label">
       <div :class="$style.title" >{{ attr.title || attr.name }}</div>
-      <u-capsules v-model="attr.value">
+      <u-capsules :key="'propety'+attr.compType" v-model="attr.value">
           <u-capsule value="25">25</u-capsule>
           <u-capsule value="50">50</u-capsule>
           <u-capsule value="75">75</u-capsule>
@@ -47,7 +47,7 @@
       </u-capsules>
   </span>
   <span v-else-if="attr.compType === 'checkbox'" :class="$style.label" slot="label">
-      <u-checkbox v-model="attr.value">
+      <u-checkbox v-model="attr.value" :key="'propety'+attr.compType" >
       </u-checkbox>
       <span>{{ attr.title || attr.name }}</span>
   </span>
@@ -64,13 +64,13 @@
    <span v-else-if="attr.compType === 'imageList'" :class="$style.label" slot="label">
       <span>{{ attr.title || attr.name }}</span>
       <u-form-table-view key="imageList" size="mini" 
-      :get-default-item="() => ({ image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg', text: '未命名'})"
+      :get-default-item="getImageListDefaultItem"
       :data="getProps(allNodesAPI[tag]).list" 
       :class="$style.formTable" dynamic>
          <u-form-table-view-column>
             <template slot="cell" slot-scope="{ item, rowIndex }">
                 <div :class="$style.columnBox" :key="'imageList'+rowIndex">
-                  <u-checkbox :class="$style.imageCheckBox" v-model="item.value" @input="updateImageCheck(rowIndex, $event)">
+                  <u-checkbox :class="$style.imageCheckBox" v-model="item.value" @input="updateImageListValue(rowIndex, $event)">
                   </u-checkbox>
                   <u-image :src="item.image" fit="fill" :class="$style.image"></u-image>
                   <u-input size="huge full" :class="$style.imageInputBox" v-model="item.text"></u-input>
@@ -80,7 +80,7 @@
      </u-form-table-view>
   </span>
    <span v-else-if="attr.compType === 'rangeBox'" :class="$style.label" slot="label">
-      <u-checkbox v-model="attr.value">
+      <u-checkbox v-model="attr.value" :key="'propety'+attr.compType" >
       </u-checkbox>
       <span>{{ attr.title || attr.name }}</span>
       <span v-if="attr.value"> 
@@ -88,7 +88,7 @@
       </span>
   </span>
     <span v-else-if="attr.compType === 'pointBox'" :class="$style.label" slot="label">
-      <u-checkbox v-model="attr.value">
+      <u-checkbox v-model="attr.value" :key="'propety'+attr.compType">
       </u-checkbox>
       <span>{{ attr.title || attr.name }}</span>
       <span v-if="attr.value"> 
@@ -97,11 +97,12 @@
   </span>
   <span v-else-if="attr.compType === 'customize'" :class="$style.label">
       <div :class="$style.title" >{{ attr.title || attr.name }}</div>
-      <u-select :class="$style.customizeSelect" v-model="attr.customizeType" :data-source="list"></u-select>
+      <u-select :key="'propety'+attr.compType" :class="$style.customizeSelect" v-model="attr.customizeType" :data-source="list"></u-select>
       <div v-if="!attr.customizeConfig">
         <component 
             :is="currentComponent.name"
             v-model="attr.value"
+            :key="'propety' + currentComponent.name"
             v-bind="getProps(allNodesAPI[tag])"
             mode="edit">
         </component>
@@ -110,6 +111,7 @@
          <component 
             :is="attr.customizeConfig.name || currentComponent.name"
             v-model="attr.value"
+            :key="'propety' + (currentComponent.name)"
             v-bind="attr.customizeConfig.attrsMap"
             :data-source="getProps(allNodesAPI[tag]).list"
             mode="edit">
@@ -143,21 +145,31 @@ export default {
             this.$set(getProps(this.allNodesAPI[this.tag]).list, rowIndex, {
                 key: $event,
                 value: $event,
-                text: $event,
+                text: $event, // 下拉框初始化需要 text
             })
         },
-        updateImageCheck(rowIndex, $event) {
-            console.info(rowIndex);
-            console.info('event', $event);
-            const rowItem = getProps(this.allNodesAPI[this.tag]).list[rowIndex];
-            // 输入框不带 key 输入，但是 radio 选中需要 key
-            this.$set(getProps(this.allNodesAPI[this.tag]).list, rowIndex, Object.assign(rowItem, {
-                value: $event,
-            }))
+        getImageListDefaultItem() {
+            /* 所以用名字作为唯一标记， 没有添加 key，是为了避免避免需要同步更新 key*/
+            const len = getProps(this.allNodesAPI[this.tag]).list.length + 1;
+            return { 
+                image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg', 
+                text: '未命名'+ len
+            }
+        },
+        updateImageListValue() {
+            const result = [];
+            // 选出选中的元素添加到 value 里面
+            (getProps(this.allNodesAPI[this.tag]).list || []).forEach(item => {
+                if (item.value) {
+                    result.push(item.text)
+                }
+            });
+            // 确保更新的是同一个属性对象
+            ((this.allNodesAPI[this.tag][0].attrs || []).find((o) => (o.name === 'value'))).value = result;
         },
         customizeConfigSelect(list){
             return list.map((o) => {
-                // 下拉框需要 text 这个属性
+                // 使用 text 而不是 label 是因为下拉框需要 text 这个属性
                 return {
                     key: o.value,
                     value: o.value,
@@ -237,5 +249,8 @@ export default {
     font-weight: 500;
     margin-top: 5px;
     display: inline-block;
+    /* 控制地址配置输入框的换行 */
+    width:200px;
 }
+
 </style>
