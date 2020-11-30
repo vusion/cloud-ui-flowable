@@ -1,11 +1,11 @@
 <template>
     <u-checkboxes v-model="currentValue" :min="min" :max="max" v-bind="$attrs" :class="$style.checkboxes">
-        <template v-for="item in list">
-            <div :key="item.key" :class="$style.checkbox">
+        <template v-for="(item, index) in list">
+            <div :key="index" :class="$style.checkbox">
                 <u-image :src="item.image" fit="fill" :class="$style.image"></u-image>
                 <div :class="$style.desc">
-                    <u-checkbox :label="item.key">
-                        {{ item.value }}
+                    <u-checkbox :label="item.text" v-model="item.value" :key="index">
+                        {{ item.text }}
                     </u-checkbox>
                 </div>
             </div>
@@ -31,23 +31,26 @@ export default {
     },
     data() {
         return {
-            currentValue: this.splitValue(this.value),
+            currentValue: this.splitValue(),
         };
     },
     watch: {
         currentValue(currentValue) {
             this.$emit('input', currentValue);
         },
-        value(value) {
-            this.currentValue = this.splitValue(value);
+        list() {
+            this.currentValue = this.splitValue();
         },
     },
     methods: {
-        splitValue(value) {
-            if (this.currentValue?.join(',') === value) {
-                return this.currentValue;
-            }
-            return (value || '').split(',').filter((i) => i);
+        splitValue() {
+            const result = [];
+            (this.list || []).forEach((item) => {
+                if (item.value) {
+                    result.push(item.text);
+                }
+            });
+            return result;
         },
     },
 };

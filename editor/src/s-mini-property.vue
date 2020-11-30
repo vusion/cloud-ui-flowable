@@ -11,7 +11,7 @@
   <span v-else-if="attr.compType === 'input'" :class="$style.label" slot="label">
       <span :class="$style.title">{{ attr.title || attr.name }}</span>
       <div  :class="$style.box">
-          <u-input mode="edit"  v-model="currentComponent[attr.name]">
+          <u-input v-model="currentComponent[attr.name]">
           </u-input>
       </div>
   </span>
@@ -27,7 +27,7 @@
   <span v-else-if="attr.compType === 'input'" :class="$style.label" slot="label">
       <span :class="$style.title">{{ attr.title || attr.name }}</span>
       <div  :class="$style.box">
-          <u-input mode="edit" v-model="attr.value">
+          <u-input v-model="attr.value">
           </u-input>
       </div>
   </span>
@@ -39,7 +39,7 @@
   </span>
   <span v-else-if="attr.compType === 'capsules'" :class="$style.label" slot="label">
       <div :class="$style.title" >{{ attr.title || attr.name }}</div>
-      <u-capsules mode="edit" v-model="attr.value">
+      <u-capsules v-model="attr.value">
           <u-capsule value="25">25</u-capsule>
           <u-capsule value="50">50</u-capsule>
           <u-capsule value="75">75</u-capsule>
@@ -47,22 +47,40 @@
       </u-capsules>
   </span>
   <span v-else-if="attr.compType === 'checkbox'" :class="$style.label" slot="label">
-      <u-checkbox mode="edit" v-model="attr.value">
+      <u-checkbox v-model="attr.value">
       </u-checkbox>
       <span>{{ attr.title || attr.name }}</span>
   </span>
-  <span v-else-if="attr.compType === 'inputList'" :class="$style.label" slot="label" muted="all">
+  <span v-else-if="attr.compType === 'inputList'" :class="$style.label" slot="label">
       <span>{{ attr.title || attr.name }}</span>
-      <u-form-table-view size="mini" :data="getProps(allNodesAPI[tag]).list" :class="$style.formTable" dynamic>
+      <u-form-table-view key="inputList" size="mini" :data="getProps(allNodesAPI[tag]).list" :class="$style.formTable" dynamic>
          <u-form-table-view-column>
             <template slot="cell" slot-scope="{ item, rowIndex }">
-                <u-input size="huge full" v-model="item.value" @input="updateValue(rowIndex, $event)"></u-input>
+                <u-input size="huge full" :key="'inputList'+rowIndex" v-model="item.value" @input="updateValue(rowIndex, $event)"></u-input>
+            </template>
+        </u-form-table-view-column>
+     </u-form-table-view>
+  </span>
+   <span v-else-if="attr.compType === 'imageList'" :class="$style.label" slot="label">
+      <span>{{ attr.title || attr.name }}</span>
+      <u-form-table-view key="imageList" size="mini" 
+      :get-default-item="() => ({ image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg', text: '未命名'})"
+      :data="getProps(allNodesAPI[tag]).list" 
+      :class="$style.formTable" dynamic>
+         <u-form-table-view-column>
+            <template slot="cell" slot-scope="{ item, rowIndex }">
+                <div :class="$style.columnBox" :key="'imageList'+rowIndex">
+                  <u-checkbox :class="$style.imageCheckBox" v-model="item.value" @input="updateImageCheck(rowIndex, $event)">
+                  </u-checkbox>
+                  <u-image :src="item.image" fit="fill" :class="$style.image"></u-image>
+                  <u-input size="huge full" :class="$style.imageInputBox" v-model="item.text"></u-input>
+                </div>
             </template>
         </u-form-table-view-column>
      </u-form-table-view>
   </span>
    <span v-else-if="attr.compType === 'rangeBox'" :class="$style.label" slot="label">
-      <u-checkbox mode="edit" v-model="attr.value">
+      <u-checkbox v-model="attr.value">
       </u-checkbox>
       <span>{{ attr.title || attr.name }}</span>
       <span v-if="attr.value"> 
@@ -70,7 +88,7 @@
       </span>
   </span>
     <span v-else-if="attr.compType === 'pointBox'" :class="$style.label" slot="label">
-      <u-checkbox mode="edit" v-model="attr.value">
+      <u-checkbox v-model="attr.value">
       </u-checkbox>
       <span>{{ attr.title || attr.name }}</span>
       <span v-if="attr.value"> 
@@ -88,9 +106,9 @@
             mode="edit">
         </component>
     </div>
-     <div v-else-if="attr.customizeConfig.name === 'u-select'">
+     <div v-else>
          <component 
-            :is="'u-select'"
+            :is="attr.customizeConfig.name || currentComponent.name"
             v-model="attr.value"
             v-bind="attr.customizeConfig.attrsMap"
             :data-source="getProps(allNodesAPI[tag]).list"
@@ -128,6 +146,15 @@ export default {
                 text: $event,
             })
         },
+        updateImageCheck(rowIndex, $event) {
+            console.info(rowIndex);
+            console.info('event', $event);
+            const rowItem = getProps(this.allNodesAPI[this.tag]).list[rowIndex];
+            // 输入框不带 key 输入，但是 radio 选中需要 key
+            this.$set(getProps(this.allNodesAPI[this.tag]).list, rowIndex, Object.assign(rowItem, {
+                value: $event,
+            }))
+        },
         customizeConfigSelect(list){
             return list.map((o) => {
                 // 下拉框需要 text 这个属性
@@ -150,9 +177,36 @@ export default {
     margin-bottom: 10px;
 }
 
+.image {
+    width: 30px;
+    height: 30px;
+    margin-left: 40px;
+    position: ABSOLUTE;
+    z-index: 1;
+}
+
 .title {
     display: block;
     margin-bottom: 5px;
+}
+
+.columnBox {
+    display:flex;
+    align-items: center;
+}
+
+.imageCheckBox {
+    position: absolute;
+    z-index: 1;
+    margin-left: 10px;
+}
+
+.imageInputBox input{
+   padding-left: 80px;
+}
+
+.imageInputBox input:hover{
+   outline: var(--focus-outline);
 }
 
 .inputListBox thead{

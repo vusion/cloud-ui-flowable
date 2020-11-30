@@ -32,7 +32,6 @@ export function formatvalidateObject(attr) {
 	}
 	// TODO 完善的范围
 	if (attr.name === 'range') {
-		console.info('range validate', validateConfig);
 		if (attr.min && attr.name) {
 			validateConfig.message = `字数限制为 ${attr.min} - ${attr.max}`;
 		}
@@ -49,7 +48,5 @@ export function getProps(api) {
 		}
 	})
 
-	console.info('zxy', props);
-	
 	return props;
 }
