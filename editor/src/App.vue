@@ -299,6 +299,7 @@ export default {
   cursor: move;
   height: 800px;
   border: 1px solid #eee;
+  overflow: scroll;
 }
 
 .base {

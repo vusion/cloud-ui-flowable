@@ -1,5 +1,5 @@
 <template>
-    <u-textarea v-model="currentValue" resize="vertical" v-bind="[$props, $attrs]"></u-textarea>
+    <u-textarea v-model="currentValue" resize="vertical" v-bind="$attrs"></u-textarea>
 </template>
 
 <script>
