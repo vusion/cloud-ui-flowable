@@ -10,11 +10,5 @@ components.forEach((component) => {
         map.push(getUsage(targetFile));
     }
 });
-const packageJSON = require('../../package.json');
-const libInfo = `${packageJSON.name}@${packageJSON.version}`;
-Object.values(map).forEach((item) => {
-    let screenShot = JSON.parse(item.screenShot);
-    screenShot = screenShot.map((screen) => `https://static-vusion.163yun.com/packages/${libInfo}/src/components/${item.symbol}.vue/screenshots/${screen}`);
-    item.jsonSchema.screenShot = item.screenShot = screenShot.join(',');
-});
+
 fs.writeFileSync(path.join(__dirname, './usage.json'), JSON.stringify(map, null, 4));
