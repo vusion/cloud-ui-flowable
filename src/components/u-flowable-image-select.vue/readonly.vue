@@ -47,7 +47,6 @@ export default {
 
             return valueResult.map((valueItem) => {
                 const realItem = this.list.find((item) => item.text === valueItem);
-                console.info('realItem', realItem);
                 return realItem;
             });
         },

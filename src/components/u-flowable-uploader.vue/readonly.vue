@@ -1,7 +1,11 @@
 <template>
-    <div>
-        <u-copy :value="value">{{ value }}</u-copy>
-        <u-link :class="$style.action" :href="value" target="_blank" rel="noopener noreferrer" download>下载</u-link>
+   <div>
+        <template v-for="(item, index) in value">
+           <div :key="index">
+              <u-copy :value="item.name">{{ item.name }}</u-copy>
+              <u-link :class="$style.action" :href="item.name" target="_blank" rel="noopener noreferrer" download>下载</u-link>
+            </div>
+        </template>
     </div>
 </template>
 
@@ -14,7 +18,7 @@ export default {
         UCopy,
     },
     props: {
-        value: String,
+        value: Array,
     },
 };
 </script>
