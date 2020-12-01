@@ -1,6 +1,6 @@
 <template>
     <u-radios v-model="currentValue" v-bind="$attrs">
-        <u-radio v-for="item in list" :key="item.key" :label="item.key">{{ item.value }}</u-radio>
+        <u-radio v-for="item in $attrs.list" :key="item.key" :label="item.key">{{ item.value }}</u-radio>
     </u-radios>
 </template>
 

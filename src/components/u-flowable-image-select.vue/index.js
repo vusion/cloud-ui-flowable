@@ -9,7 +9,7 @@ const UFlowableImageSelect = wrap({
         readonly,
     },
     props: {
-        value: String,
+        value: Array,
     },
 });
 

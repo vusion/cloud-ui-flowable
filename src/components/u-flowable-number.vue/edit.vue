@@ -1,14 +1,9 @@
 <template>
-    <u-number-input v-model="currentValue" v-bind="$attrs"
-        :min="min" :max="max" :precision="precision"></u-number-input>
+    <u-number-input v-model="currentValue" v-bind="$attrs" :precision="precision" :step="precision"></u-number-input>
 </template>
 
 <script>
-import UNumberInput from 'cloud-ui.vusion/src/components/u-number-input.vue';
 export default {
-    components: {
-        UNumberInput,
-    },
     props: {
         value: Number,
         min: {
@@ -31,7 +26,9 @@ export default {
     },
     computed: {
         precision() {
-            return !this.point ? 1 : `0.${'1'.padStart(this.ponit, '0')}`;
+            const precision = !this.point ? 1 : `0.${'1'.padStart(this.point, '0')}`;
+            // TODO  convert type of precision string to number
+            return precision;
         },
     },
     watch: {

@@ -64,6 +64,13 @@ bin/find-by-re ./src '<u-input[\s\S]{0,300}close'
 
 开发
 
+预览组件的配置效果
+```
+ cd editor
+ yarn 
+ yarn serve
+````
+
 ### npm run build:docs
 
 构建文档

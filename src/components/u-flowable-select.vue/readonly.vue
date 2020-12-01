@@ -1,5 +1,5 @@
 <template>
-    <u-text :text="label"></u-text>
+    <u-text :text="currentValue"></u-text>
 </template>
 
 <script>
@@ -11,6 +11,11 @@ export default {
     props: {
         value: String,
         list: Array,
+    },
+    data() {
+        return {
+            currentValue: this.value,
+        };
     },
     computed: {
         label() {

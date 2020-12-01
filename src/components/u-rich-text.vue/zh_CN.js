@@ -1,3 +1,6 @@
+/* eslint-disable no-useless-escape */
+import tinymce from 'tinymce/tinymce';
+
 tinymce.addI18n('zh_CN', {
     Redo: '\u91cd\u505a',
     Undo: '\u64a4\u9500',
@@ -381,6 +384,7 @@ tinymce.addI18n('zh_CN', {
     'permanent pen': '\u8bb0\u53f7\u7b14',
     comments: '\u5907\u6ce8',
     'Format Painter': '\u683c\u5f0f\u5237',
+    // eslint-disable-next-line no-useless-escape
     'Insert\/edit iframe': '\u63d2\u5165\/\u7f16\u8f91\u6846\u67b6',
     Capitalization: '\u5927\u5199',
     lowercase: '\u5c0f\u5199',

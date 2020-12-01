@@ -1,5 +1,5 @@
 <template>
-<u-text :text="selectedList.join(',')"></u-text>
+<u-text :text="value.join(',')"></u-text>
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
         UText,
     },
     props: {
-        value: String,
+        value: Array,
         list: Array,
     },
     data() {
@@ -24,11 +24,20 @@ export default {
     },
     methods: {
         getSelectedList(value) {
+            // TODO
             const map = {};
             this.list.forEach((item) => {
                 map[item.key] = item;
             });
-            return (value || '').split(',').map((valueItem) => this.list.find((item) => item.key === valueItem)).map((item) => item.label);
+
+            let valueArray = value;
+            if (Object.prototype.toString.call(value) === '[object Array]') {
+                valueArray = value;
+            } else {
+                valueArray = (value || '').split(',');
+            }
+
+            return valueArray.map((valueItem) => this.list.find((item) => item.key === valueItem)).map((item) => item.text);
         },
     },
 };

@@ -1,6 +1,6 @@
 <template>
     <u-select v-model="currentValue" v-bind="$attrs">
-        <u-select-item v-for="item in list" :key="item.key" :value="item.key">{{ item.label }}</u-select-item>
+        <u-select-item v-for="item in list" :key="item.key" :value="item.key">{{ item.text }}</u-select-item>
     </u-select>
 </template>
 

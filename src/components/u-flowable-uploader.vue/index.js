@@ -9,7 +9,7 @@ const UFlowableUploader = wrap({
         readonly,
     },
     props: {
-        value: String,
+        value: Array,
     },
 });
 

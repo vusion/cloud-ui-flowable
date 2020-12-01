@@ -1,5 +1,5 @@
 <template>
-    <u-text :text="value"></u-text>
+    <u-html :html="value"></u-html>
 </template>
 
 <script>
