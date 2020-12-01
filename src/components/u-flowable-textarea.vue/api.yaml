@@ -20,5 +20,17 @@
       value: 请输入内容
       compType: customize
       customizeType: normal
+    - name: minlength
+      type: string
+      compType: input
+      title: 最小长度
+      message: 字数范围
+      value: 0
+    - name: maxlength
+      type: string
+      compType: input
+      title: 最大长度
+      message: 字数范围
+      value: 
   slots: false
   events: false

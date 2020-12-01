@@ -45,14 +45,17 @@
       group: validate
       message: 不能重复
       value: false
-    - name: range
+    - name: minlength
       type: string
-      compType: rangeBox
-      title: 限制字数
-      group: validate
+      compType: input
+      title: 最小长度
       message: 字数范围
-      value: false
-      min: 
-      max:
+      value: 0
+    - name: maxlength
+      type: string
+      compType: input
+      title: 最大长度
+      message: 字数范围
+      value: 
   slots: false
   events: false

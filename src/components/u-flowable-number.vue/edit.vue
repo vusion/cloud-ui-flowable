@@ -1,5 +1,5 @@
 <template>
-    <u-number-input v-model="currentValue" v-bind="[$attrs, $props]" :precision="precision"></u-number-input>
+    <u-number-input v-model="currentValue" v-bind="$attrs" :precision="precision" :step="precision"></u-number-input>
 </template>
 
 <script>
@@ -16,7 +16,7 @@ export default {
         },
         point: {
             type: Number,
-            decimal: 0,
+            default: 0,
         },
     },
     data() {
@@ -26,7 +26,9 @@ export default {
     },
     computed: {
         precision() {
-            return !this.point ? 1 : `0.${'1'.padStart(this.ponit, '0')}`;
+            const precision = !this.point ? 1 : `0.${'1'.padStart(this.point, '0')}`;
+            // TODO  convert type of precision string to number
+            return precision;
         },
     },
     watch: {

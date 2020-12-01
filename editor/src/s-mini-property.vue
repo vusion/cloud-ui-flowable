@@ -88,12 +88,12 @@
       </span>
   </span>
     <span v-else-if="attr.compType === 'pointBox'" :class="$style.label" slot="label">
-      <u-checkbox v-model="attr.value" :key="'propety'+attr.compType">
+      <u-checkbox v-model="attr.attrSwitch" :key="'propety'+attr.compType" @input="checkPointBox($event)">
       </u-checkbox>
       <span>{{ attr.title || attr.name }}</span>
-      <span v-if="attr.value"> 
-        限制<u-input v-model="attr.decimal" placeholder="不限制"></u-input>位
-      </span>
+      <div v-if="attr.attrSwitch" :class="$style.pointBox"> 
+        限制<u-number-input size="mini" v-model="attr.value" placeholder="不限制"></u-number-input>位
+      </div>
   </span>
   <span v-else-if="attr.compType === 'customize'" :class="$style.label">
       <div :class="$style.title" >{{ attr.title || attr.name }}</div>
@@ -140,6 +140,12 @@ export default {
     },
     methods: {
         getProps,
+        checkPointBox($event) {
+            // reset point to zero, if point is not allowed
+            if (!$event) {
+                this.attr.value = 0;
+            }
+        },
         updateValue(rowIndex, $event) {
             // 输入框不带 key 输入，但是 radio 选中需要 key
             this.$set(getProps(this.allNodesAPI[this.tag]).list, rowIndex, {
@@ -195,6 +201,11 @@ export default {
     margin-left: 40px;
     position: ABSOLUTE;
     z-index: 1;
+}
+
+.pointBox {
+   display: flex;
+   margin: 10px 0;
 }
 
 .title {
