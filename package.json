@@ -8,7 +8,7 @@
     "dev:designer": "cross-env VUE_APP_DESIGNER=true vue-cli-service doc --port 9001",
     "build": "vue-cli-service library-build --apply-theme --theme default,dark,seagreen",
     "build:theme": "vue-cli-service library-build --dest dist-theme",
-    "build:raw": "vue-cli-service library-build --vusion-mode raw --dest dist-raw",
+    "build:raw": "vue-cli-service library-build --dest dist-raw",
     "build:designer": "cross-env VUE_APP_DESIGNER=true vue-cli-service library-build --vusion-mode raw --dest dist-designer",
     "build:docs": "vue-cli-service doc-build",
     "build:doc-entry": "cross-env VUE_CLI_SERVICE_CONFIG_PATH=$PWD/vue.config.doc-entry.js vue-cli-service build --output-path dist-doc-entry",
@@ -16,12 +16,9 @@
     "lint": "eslint --fix --ext .js,.vue src && stylelint --fix ./src/**/*.css",
     "ghpages": "vusion ghpages",
     "lcap": "node ./scripts/lcap",
-    "deploy": "vusion deploy --framework cloud-ui-flowable.vusion@0.11 -v minor",
-    "deploy:lcap": "npm run build && npm run build:theme && npm run build:raw && vusion deploy dist-raw --framework cloud-ui-flowable",
-    "deploy:screenshots": "node bin/deploy-screenshots",
-    "deploy:doc-entry": "vusion deploy --framework cloud-ui-flowable -v minor dist-doc-entry",
+    "prepublish": "yarn run build && yarn run build:theme",
     "prepublishOnly": "npm run build && npm run build:theme && npm run build:raw && vusion readme && vusion vetur && git add .",
-    "postpublish": "npm run build:docs && npm run deploy"
+    "postpublish": "npm run build:docs"
   },
   "repository": "vusion/cloud-ui-flowable",
   "homepage": "http://vusion.github.io/cloud-ui-flowable",
@@ -62,6 +59,7 @@
     "vusion-async-validator": "^1.8.8"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.12.7",
     "@vue/cli-plugin-babel": "^4.3.0",
     "@vue/cli-service": "^4.3.0",
     "@vusion/mock": "^0.1.1",
