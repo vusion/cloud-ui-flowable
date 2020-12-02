@@ -14,6 +14,7 @@ module.exports = {
         config.externals({
             vue: 'Vue',
             'cloud-ui-flowable.vusion': 'CloudUIFlowable',
+            'cloud-ui.vusion': 'CloudUI',
         });
 
         if (config.plugins.has('extract-css')) { // Build mode
