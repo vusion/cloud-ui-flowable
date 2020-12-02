@@ -1,16 +1,27 @@
 const pkg = require('./package.json');
+const path = require('path');
 
 module.exports = {
     type: 'library',
     name: 'cloud-ui-flowable',
     CamelName: 'CloudUIFlowable',
+    alias: {
+        vue$: path.resolve(__dirname, 'node_modules/vue/dist/vue.esm.js'),
+        'vue-i18n$': path.resolve(__dirname, 'node_modules/vue-i18n/dist/vue-i18n.esm.js'),
+        'vue-router$': path.resolve(__dirname, 'node_modules/vue-router/dist/vue-router.esm.js'),
+        '@': path.resolve(__dirname, 'src'),
+        'cloud-ui.vusion$': path.resolve(__dirname, 'node_modules/cloud-ui.vusion/dist-raw/index.js'),
+        'cloud-ui.vusion.css$': path.resolve(__dirname, 'node_modules/cloud-ui.vusion/dist-raw/index.css'),
+        // 'cloud-ui.vusion$': path.resolve(__dirname, 'node_modules/cloud-ui.vusion/index.js'),
+        // 'cloud-ui.vusion.css$': path.resolve(__dirname, 'node_modules/cloud-ui.vusion/src/styles/base.css'),
+    },
     docs: {
         title: 'Cloud UI Flowable 组件库',
         logo: '组件库',
         github: 'https://github.com/vusion/cloud-ui-flowable',
         package: pkg,
         navbar: [
-            { text: '文档', to: '/docs' },
+            { text: '说明', to: '/explain' },
             { text: '基础组件', to: '/components' },
         ],
         components: [
