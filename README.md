@@ -28,24 +28,6 @@ import 'cloud-ui-flowable.vusion/dist/index.css';
 Vue.use(CloudUIFlowable); // 全局安装组件库中的组件、指令等
 ```
 
-## Migration
-
-### migrate-3-4
-
-从 v0.3.x 升级到 v0.4.x
-
-``` shell
-bin/migrate-3-4 ./src
-```
-
-### migrate-4-6
-
-从 v0.4.x 升级到 v0.6.x
-
-``` shell
-bin/migrate-4-6 ./src
-```
-
 ### find-by-re
 
 通过正则表达式查找
@@ -62,7 +44,7 @@ bin/find-by-re ./src '<u-input[\s\S]{0,300}close'
 
 ### npm run dev
 
-开发
+本地开发预览组件 visit 'http://localhost:9001'
 
 预览组件的配置效果
 ```
@@ -70,24 +52,11 @@ bin/find-by-re ./src '<u-input[\s\S]{0,300}close'
  yarn 
  yarn serve
 ````
+visit 'http://localhost:8080'
 
-### npm run build:docs
+### gh-pages
 
-构建文档
-
-需要先`npm run build`和`npm run build:theme`
-
-### npm run build:doc-entry
-
-构建用于物料体系的文档入口。
-
-### npm run deploy
-
-将`public/`下的文档发布到 NOS
-
-### npm run deploy:doc-entry
-
-将`dist-doc-entry/`下的文档入口发布到 NOS
+[Github Pages Doc](https://github.com/vusion/cloud-ui-flowable/blob/master/public/gh-pages.md)
 
 ## Changelog
 
