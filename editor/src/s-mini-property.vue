@@ -37,6 +37,12 @@
         <u-number-input v-model="attr.value" v-bind="$attrs"></u-number-input>
      </div>
   </span>
+   <span v-else-if="attr.compType === 'timeFormat'" :class="$style.label">
+      <div :class="$style.title">{{ attr.title || attr.name }}</div>
+      <div  :class="$style.box">
+        <u-select v-model="attr.value" :data-source="getProps([attr.compConfig]).list"></u-select>
+     </div>
+  </span>
   <span v-else-if="attr.compType === 'capsules'" :class="$style.label" slot="label">
       <div :class="$style.title" >{{ attr.title || attr.name }}</div>
       <u-capsules :key="'propety'+attr.compType" v-model="attr.value">

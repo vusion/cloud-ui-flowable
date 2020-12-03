@@ -2,7 +2,7 @@
     <div>
         <div :class="$style.side">
             <u-sidebar :class="$style.sidebar" size="small">
-                <u-sidebar-group title="Cloud Flowable UI ">
+                <u-sidebar-group title="Cloud UI Flowable">
                     <u-sidebar-item to="/explain/introduction">介绍</u-sidebar-item>
                 </u-sidebar-group>
             </u-sidebar>
