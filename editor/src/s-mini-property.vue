@@ -167,7 +167,10 @@ export default {
             /* 所以用名字作为唯一标记， 没有添加 key，是为了避免避免需要同步更新 key*/
             const len = getProps(this.allNodesAPI[this.tag]).list.length + 1;
             return { 
-                image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg', 
+                // 默认图片地址
+                files: [{
+                    url: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'
+                }], 
                 text: '未命名'+ len
             }
         },
