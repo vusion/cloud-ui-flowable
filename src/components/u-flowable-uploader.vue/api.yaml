@@ -21,6 +21,7 @@
       compType: customize
       customizeType: normal
       placeholder: 请输入内容
+      description: 默认值，记录已经上传的文件列表
     - name: url
       description: 上传地址
       value: /gateway/lowcode/api/v1/app/upload

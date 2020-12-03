@@ -23,14 +23,6 @@
       title: 默认内容
       value: '单行文本'
       description: 文本内容
-    - name: width
-      type: string
-      compType: capsules
-      title: 字段占比 %
-    - name: scarn
-      type: string
-      compType: checkbox
-      title: 扫码录入
     - name: required
       type: string
       compType: checkbox
@@ -39,18 +31,12 @@
       title: 这是个必填项
       value: false
       description: 选择必填后，填写者不填写将无法提交表单
-    - name: duplicate
-      title: 不许重复值
-      type: string
-      compType: checkbox
-      group: validate
-      message: 不能重复
-      value: false
     - name: minlength
       type: string
       compType: input
       title: 最小长度
       message: 字数范围
+      description: 最小长度
       value: 0
     - name: maxlength
       type: string
@@ -58,5 +44,6 @@
       title: 最大长度
       message: 字数范围
       value: 
+      description: 最大长度
   slots: false
   events: false
