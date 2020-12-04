@@ -2,7 +2,7 @@
     <u-checkboxes v-model="currentValue" :min="min" :max="max" v-bind="$attrs" :class="$style.checkboxes">
         <template v-for="(item, index) in list">
             <div :key="index" :class="$style.checkbox">
-                <u-image :src="item.image" fit="fill" :class="$style.image"></u-image>
+                <u-image :src="getCurrentImage(item)" fit="fill" :class="$style.image"></u-image>
                 <div :class="$style.desc">
                     <u-checkbox :label="item.text" v-model="item.value" :key="index">
                         {{ item.text }}
@@ -43,6 +43,12 @@ export default {
         },
     },
     methods: {
+        getCurrentImage(item) {
+            if (item.files[0]) {
+                return item.files[0].url;
+            }
+            return item.image;
+        },
         splitValue() {
             // TODO value 如果是字符串需要转换一次
             return this.value || [];

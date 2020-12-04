@@ -37,6 +37,12 @@
         <u-number-input v-model="attr.value" v-bind="$attrs"></u-number-input>
      </div>
   </span>
+   <span v-else-if="attr.compType === 'timeFormat'" :class="$style.label">
+      <div :class="$style.title">{{ attr.title || attr.name }}</div>
+      <div  :class="$style.box">
+        <u-select v-model="attr.value" :data-source="getProps([attr.compConfig]).list"></u-select>
+     </div>
+  </span>
   <span v-else-if="attr.compType === 'capsules'" :class="$style.label" slot="label">
       <div :class="$style.title" >{{ attr.title || attr.name }}</div>
       <u-capsules :key="'propety'+attr.compType" v-model="attr.value">
@@ -72,7 +78,10 @@
                 <div :class="$style.columnBox" :key="'imageList'+rowIndex">
                   <u-checkbox :class="$style.imageCheckBox" v-model="item.value" @input="updateImageListValue(rowIndex, $event)">
                   </u-checkbox>
-                  <u-image :src="item.image" fit="fill" :class="$style.image"></u-image>
+                  <u-uploader :class="$style.uploadImage" v-model="item.files" list-type="image"
+                        accept="image/png, image/jpg, image/jpeg, image/gif, image/bmp"
+                        url="http://localhost:7000/api/library/upload">
+                  </u-uploader>
                   <u-input size="huge full" :class="$style.imageInputBox" v-model="item.text"></u-input>
                 </div>
             </template>
@@ -158,7 +167,10 @@ export default {
             /* 所以用名字作为唯一标记， 没有添加 key，是为了避免避免需要同步更新 key*/
             const len = getProps(this.allNodesAPI[this.tag]).list.length + 1;
             return { 
-                image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg', 
+                // 默认图片地址
+                files: [{
+                    url: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'
+                }], 
                 text: '未命名'+ len
             }
         },
@@ -195,12 +207,29 @@ export default {
     margin-bottom: 10px;
 }
 
-.image {
+.uploadImage {
     width: 30px;
     height: 30px;
     margin-left: 40px;
-    position: ABSOLUTE;
+    position: absolute;
     z-index: 1;
+}
+
+.uploadImage div[list-type=image] {
+   height: 30px;
+   top: 0;
+   position: absolute;
+   z-index: -1;
+}
+
+.uploadImage div[list-type=image] img{
+   width: 30px;
+}
+
+/* updoad-item 的样式 */
+.uploadImage div[list-type=image]>div{
+   padding: 0;
+   border: none;
 }
 
 .pointBox {

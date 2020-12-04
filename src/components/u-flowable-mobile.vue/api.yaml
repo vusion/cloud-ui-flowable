@@ -14,6 +14,7 @@
     - name: placeholder
       type: string
       value: 手机号
+      description: 占位内容
     - name: value
       type: string
       compType: customize

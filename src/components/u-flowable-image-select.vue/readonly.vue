@@ -1,7 +1,7 @@
 <template>
     <div>
         <div :class="$style.checkbox" :key="index" v-for="(item, index) in selectedList">
-            <u-image :src="item.image" fit="fill" :class="$style.image"></u-image>
+            <u-image :src="getCurrentImage(item)" fit="fill" :class="$style.image"></u-image>
             <div :class="$style.desc">
                 {{ item.text }}
             </div>
@@ -30,6 +30,12 @@ export default {
         },
     },
     methods: {
+        getCurrentImage(item) {
+            if (item.files[0]) {
+                return item.files[0].url;
+            }
+            return item.image;
+        },
         getSelectedList(value) {
             const map = {};
             // 选项的 text 作为唯一标识
