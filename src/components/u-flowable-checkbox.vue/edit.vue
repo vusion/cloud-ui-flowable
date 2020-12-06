@@ -15,6 +15,7 @@ export default {
     props: {
         value: Array,
         list: Array,
+        required: Boolean,
         min: { type: Number, default: 0 },
         max: { type: Number, default: Infinity },
     },
@@ -24,8 +25,19 @@ export default {
         };
     },
     watch: {
-        currentValue(currentValue) {
-            this.$emit('input', currentValue);
+        currentValue: {
+            handler(currentValue) {
+                this.$emit('input', currentValue);
+                if (currentValue?.length) {
+                    this.$emit('error', null);
+                } else {
+                    this.$emit('error', {
+                        type: 'requiredError',
+                        message: '此项必填',
+                    });
+                }
+            },
+            immediate: true,
         },
         value(value) {
             this.currentValue = this.splitValue(value);

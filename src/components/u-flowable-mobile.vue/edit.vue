@@ -11,6 +11,7 @@ export default {
     },
     props: {
         value: String,
+        required: Boolean,
     },
     data() {
         return {
@@ -18,12 +19,32 @@ export default {
         };
     },
     watch: {
-        currentValue(currentValue) {
-            console.log(currentValue, isMobilePhone(currentValue, 'zh-CN'));
-            if (currentValue && isMobilePhone(currentValue, 'zh-CN')) {
-                this.$emit('input', currentValue);
-            }
-            this.$emit('input', currentValue);
+        currentValue: {
+            handler(currentValue) {
+                if (currentValue) {
+                    if (isMobilePhone(currentValue, 'zh-CN')) {
+                        this.$emit('error', null);
+                        this.$emit('input', currentValue);
+                        return;
+                    } else {
+                        this.$emit('error', {
+                            type: 'mobileFormatError',
+                            message: '手机号格式出错',
+                        });
+                    }
+                } else {
+                    if (this.required) {
+                        this.$emit('error', {
+                            type: 'requiredError',
+                            message: '此项必填',
+                        });
+                    } else {
+                        this.$emit('error', null);
+                    }
+                }
+                this.$emit('input', '');
+            },
+            immediate: true,
         },
         value(value) {
             this.currentValue = value;

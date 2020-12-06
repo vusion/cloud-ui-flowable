@@ -41,6 +41,8 @@ module.exports = {
             { group: 'Form', name: 'u-flowable-image-select', alias: '图片选择' },
             { group: 'Form', name: 'u-flowable-rich-text', alias: '富文本' },
             { group: 'Form', name: 'u-flowable-address', alias: '地址' },
+            { group: 'Form', name: 'u-flowable-form-item', alias: '表单项' },
+            { group: 'Form', name: 'u-flowable-form', alias: '表单' },
         ],
         blocks: [],
         directives: [],

@@ -40,5 +40,9 @@
             multiple: true
       title: 默认内容
       description: 文本内容
+    - name: required
+      type: boolean
+      value: 必填项
+      description: 选择必填后，填写者不填写将无法提交表单 
   slots: false
   events: false

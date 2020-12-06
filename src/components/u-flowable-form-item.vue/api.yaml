@@ -1,6 +1,6 @@
-- name: u-flowable-address
-  title: 地址
-  icon: input
+- name: u-flowable-form-item
+  title: 表单项
+  icon: default
   labels: [Basic]
   description: 描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。
   attrs:
@@ -10,18 +10,10 @@
       title: 标题
       level: component
       description: 标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题
-    - name: value
+    - name: tip
       type: string
-      compType: customize
-      customizeType: normal
-      customizeConfig: 
-         attrsMap:
-            direction: vertical
-      title: 默认内容
-      description: 默认值，输入内容
-    - name: required
-      type: boolean
-      value: 必填项
-      description: 选择必填后，填写者不填写将无法提交表单  
+      compType: input
+      title: 提示
+      description: 提示属性用于指定对该模块进行一些附加说明，一般用来指导填写者输入。
   slots: false
   events: false

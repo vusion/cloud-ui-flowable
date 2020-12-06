@@ -11,6 +11,7 @@ export default {
     },
     props: {
         value: String,
+        required: Boolean,
     },
     data() {
         return {
@@ -18,11 +19,32 @@ export default {
         };
     },
     watch: {
-        currentValue(currentValue) {
-            console.log(currentValue, isEmail(currentValue));
-            if (currentValue && isEmail(currentValue)) {
-                this.$emit('input', currentValue);
-            }
+        currentValue: {
+            handler(currentValue) {
+                if (currentValue) {
+                    if (isEmail(currentValue)) {
+                        this.$emit('error', null);
+                        this.$emit('input', currentValue);
+                        return;
+                    } else {
+                        this.$emit('error', {
+                            type: 'emailFormatError',
+                            message: '邮箱格式出错',
+                        });
+                    }
+                } else {
+                    if (this.required) {
+                        this.$emit('error', {
+                            type: 'requiredError',
+                            message: '此项必填',
+                        });
+                    } else {
+                        this.$emit('error', null);
+                    }
+                }
+                this.$emit('input', '');
+            },
+            immediate: true,
         },
         value(value) {
             this.currentValue = value;

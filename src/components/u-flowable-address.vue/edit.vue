@@ -16,6 +16,7 @@ export default {
     },
     props: {
         value: String,
+        required: Boolean,
     },
     data() {
         return {
@@ -24,15 +25,39 @@ export default {
         };
     },
     watch: {
-        currentValue(currentValue) {
-            if (currentValue && this.address) {
-                this.$emit('input', [currentValue || '', this.address || ''].join(' '));
-            }
+        currentValue: {
+            handler(currentValue) {
+                if (currentValue && this.address) {
+                    this.$emit('input', [currentValue || '', this.address || ''].join(' '));
+                    this.$emit('error', null);
+                } else {
+                    this.$emit('input', '');
+                    if (this.required) {
+                        this.$emit('error', {
+                            type: 'requiredError',
+                            message: '此项必填',
+                        });
+                    }
+                }
+            },
+            immediate: true,
         },
-        address(address) {
-            if (address && this.currentValue) {
-                this.$emit('input', [this.currentValue || '', address || ''].join(' '));
-            }
+        address: {
+            handler(address) {
+                if (address && this.currentValue) {
+                    this.$emit('input', [this.currentValue || '', address || ''].join(' '));
+                    this.$emit('error', null);
+                } else {
+                    this.$emit('input', '');
+                    if (this.required) {
+                        this.$emit('error', {
+                            type: 'requiredError',
+                            message: '此项必填',
+                        });
+                    }
+                }
+            },
+            immediate: true,
         },
         value: {
             handler(value) {

@@ -16,6 +16,10 @@
       type: string
       value: 链接
       description: 占位内容
+    - name: required
+      type: boolean
+      value: 必填项
+      description: 选择必填后，填写者不填写将无法提交表单
     - name: value
       type: string
       compType: customize

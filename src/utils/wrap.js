@@ -6,16 +6,21 @@ export default function (component) {
                     ...this.$props,
                     ...this.$attrs,
                 },
-                attrs: this.$attrs,
+                attrs: {
+                    ...this.$props,
+                    ...this.$attrs,
+                },
                 on: {
                     input: ($event) => {
+                        this.$currentValue = $event;
                         this.$emit('input', $event);
                     },
                     error: ($event) => {
+                        this.$error = $event;
                         this.$emit('error', $event);
                     },
                 },
-            });
+            }, this.$slots.default);
         } else if (this.mode === 'readonly') {
             if (!this.$props.value
                 || (Object.prototype.toString.call(this.$props.value) === '[object Array]') && this.$props.value.length === 0) {
@@ -26,13 +31,26 @@ export default function (component) {
                     ...this.$props,
                     ...this.$attrs,
                 },
-                attrs: this.$attrs,
-            });
+                attrs: {
+                    ...this.$props,
+                    ...this.$attrs,
+                },
+            }, this.$slots.default);
         }
     };
-    if (component.pro)
-        component.props = component.props || {};
-    component.props.mode = String;
+    component.props = component.props || {};
+    component.props.mode = {
+        type: String,
+        default: 'edit',
+    };
+    component.props.name = String;
+    component.data = function () {
+        return {
+
+            $error: null,
+            $currentValue: null,
+        };
+    };
 
     return component;
 }
