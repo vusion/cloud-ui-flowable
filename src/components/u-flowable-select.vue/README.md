@@ -16,7 +16,7 @@
 
 ```vue
 <template>
-    <u-flowable-select mode="edit" v-model="model" :list="[{key: '数学', value: '数学', text: '数学'}, { key: '语文', value: '语文', text: '语文'}]"
+    <u-flowable-select mode="edit" v-model="model" :list="[{key: '未命名1', value: '未命名1', text: '未命名1'}, { key: '未命名2', value: '未命名2', text: '未命名2'}]"
 		>
 		</u-flowable-select>
 </template>
@@ -24,7 +24,7 @@
 export default {
     data() {
         return {
-            model: '数学'
+            model: '未命名1'
         }
     },
 }
@@ -38,4 +38,5 @@ export default {
 | title | string |  |  | 标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题 |
 | list | Array |  |  | 为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。 |
 | value | string |  |  | 文本内容 |
+| required | boolean |  |  | 选择必填后，填写者不填写将无法提交表单 |
 

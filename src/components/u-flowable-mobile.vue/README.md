@@ -43,6 +43,7 @@ export default {
 | size | string | `[object Object]`<br/>`[object Object]`<br/>`[object Object]`<br/>`[object Object]` | `'normal'` | 尺寸设置 |
 | display | string | `[object Object]`<br/>`[object Object]` | `'inline'` | 展示方式 |
 | overflow | string | `[object Object]`<br/>`[object Object]`<br/>`[object Object]`<br/>`[object Object]` | `'normal'` | 文本过长的处理方式 |
+| required | boolean |  |  | 选择必填后，填写者不填写将无法提交表单 |
 
 ### Slots
 

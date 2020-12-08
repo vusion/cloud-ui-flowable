@@ -16,7 +16,7 @@
 
 ```vue
 <template>
-    <u-flowable-checkbox mode="edit" v-model="model" :list="[{key: '数学', value: '数学', text: '数学'}, { key: '语文', value: '语文', text: '语文'}]"
+    <u-flowable-checkbox mode="edit" v-model="model" :list="[{key: '未命名1', value: '未命名1', text: '未命名1'}, { key: '未命名2', value: '未命名2', text: '未命名2'}]"
 		>
 		</u-flowable-checkbox>
 </template>
@@ -24,7 +24,7 @@
 export default {
     data() {
         return {
-            model: ['数学']
+            model: ['未命名1']
         }
     },
 }
@@ -40,4 +40,5 @@ export default {
 | max | number |  | `Infinity` | 可以勾选多选框的最大数量 |
 | list | Array |  |  | 为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。 |
 | value | string |  |  | 文本内容 |
+| required | boolean |  |  | 选择必填后，填写者不填写将无法提交表单 |
 

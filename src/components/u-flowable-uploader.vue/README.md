@@ -16,7 +16,7 @@
 
 ```vue
 <template>
-		<u-flowable-uploader mode="edit" v-model="model"  ></u-flowable-uploader>
+		<u-flowable-uploader mode="edit" v-model="model" ></u-flowable-uploader>
 </template>
 <script>
 export default {
@@ -37,4 +37,5 @@ export default {
 | placeholder | string |  |  | 占位内容 |
 | value | Array |  |  | 默认值，记录已经上传的文件列表 |
 | url |  |  |  | 上传地址 |
+| required | boolean |  |  | 选择必填后，填写者不填写将无法提交表单 |
 

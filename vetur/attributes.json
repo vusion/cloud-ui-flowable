@@ -7,6 +7,10 @@
     "type": "string",
     "description": "默认值，输入内容"
   },
+  "u-flowable-address/required": {
+    "type": "boolean",
+    "description": "选择必填后，填写者不填写将无法提交表单"
+  },
   "u-flowable-checkbox/title": {
     "type": "string",
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
@@ -26,6 +30,10 @@
   "u-flowable-checkbox/value": {
     "type": "string",
     "description": "文本内容"
+  },
+  "u-flowable-checkbox/required": {
+    "type": "boolean",
+    "description": "选择必填后，填写者不填写将无法提交表单"
   },
   "u-flowable-date-time-range/title": {
     "type": "string",
@@ -49,6 +57,10 @@
     ],
     "description": "设置时间格式"
   },
+  "u-flowable-date-time-range/required": {
+    "type": "boolean",
+    "description": "选择必填后，填写者不填写将无法提交表单"
+  },
   "u-flowable-date-time/title": {
     "type": "string",
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
@@ -70,6 +82,10 @@
       }
     ],
     "description": "设置时间格式"
+  },
+  "u-flowable-date-time/required": {
+    "type": "boolean",
+    "description": "选择必填后，填写者不填写将无法提交表单"
   },
   "u-flowable-email/title": {
     "type": "string",
@@ -179,6 +195,34 @@
     ],
     "description": "文本过长的处理方式"
   },
+  "u-flowable-email/required": {
+    "type": "boolean",
+    "description": "选择必填后，填写者不填写将无法提交表单"
+  },
+  "u-flowable-form-item/title": {
+    "type": "string",
+    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
+  },
+  "u-flowable-form-item/tip": {
+    "type": "string",
+    "description": "提示属性用于指定对该模块进行一些附加说明，一般用来指导填写者输入。"
+  },
+  "u-flowable-form/title": {
+    "type": "string",
+    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
+  },
+  "u-flowable-form/tip": {
+    "type": "string",
+    "description": "提示属性用于指定对该模块进行一些附加说明，一般用来指导填写者输入。"
+  },
+  "u-flowable-form/files": {
+    "type": "Array",
+    "description": "表单附件，一般用来下载文档。"
+  },
+  "u-flowable-form/buttonText": {
+    "type": "string",
+    "description": "提交按钮的文案。"
+  },
   "u-flowable-image-select/title": {
     "type": "string",
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
@@ -190,6 +234,10 @@
   "u-flowable-image-select/value": {
     "type": "Array",
     "description": "默认值，记录已经选择的选项"
+  },
+  "u-flowable-image-select/required": {
+    "type": "boolean",
+    "description": "选择必填后，填写者不填写将无法提交表单"
   },
   "u-flowable-link/title": {
     "type": "string",
@@ -204,7 +252,7 @@
     "description": "文本内容"
   },
   "u-flowable-link/required": {
-    "type": "string",
+    "type": "boolean",
     "description": "选择必填后，填写者不填写将无法提交表单"
   },
   "u-flowable-mobile/title": {
@@ -315,6 +363,10 @@
     ],
     "description": "文本过长的处理方式"
   },
+  "u-flowable-mobile/required": {
+    "type": "boolean",
+    "description": "选择必填后，填写者不填写将无法提交表单"
+  },
   "u-flowable-number/title": {
     "type": "string",
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
@@ -335,6 +387,10 @@
     "type": "number",
     "description": "最大值"
   },
+  "u-flowable-number/required": {
+    "type": "boolean",
+    "description": "选择必填后，填写者不填写将无法提交表单"
+  },
   "u-flowable-radios/title": {
     "type": "string",
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
@@ -346,6 +402,10 @@
   "u-flowable-radios/value": {
     "type": "string",
     "description": "文本内容"
+  },
+  "u-flowable-radios/required": {
+    "type": "boolean",
+    "description": "选择必填后，填写者不填写将无法提交表单"
   },
   "u-flowable-rich-text/title": {
     "type": "string",
@@ -359,6 +419,10 @@
     "type": "string",
     "description": "文本内容"
   },
+  "u-flowable-rich-text/required": {
+    "type": "boolean",
+    "description": "选择必填后，填写者不填写将无法提交表单"
+  },
   "u-flowable-select/title": {
     "type": "string",
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
@@ -370,6 +434,10 @@
   "u-flowable-select/value": {
     "type": "string",
     "description": "文本内容"
+  },
+  "u-flowable-select/required": {
+    "type": "boolean",
+    "description": "选择必填后，填写者不填写将无法提交表单"
   },
   "u-flowable-string/title": {
     "type": "string",
@@ -383,10 +451,6 @@
     "type": "string",
     "description": "文本内容"
   },
-  "u-flowable-string/required": {
-    "type": "string",
-    "description": "选择必填后，填写者不填写将无法提交表单"
-  },
   "u-flowable-string/minlength": {
     "type": "string",
     "description": "最小长度"
@@ -394,6 +458,10 @@
   "u-flowable-string/maxlength": {
     "type": "string",
     "description": "最大长度"
+  },
+  "u-flowable-string/required": {
+    "type": "boolean",
+    "description": "选择必填后，填写者不填写将无法提交表单"
   },
   "u-flowable-text/value": {
     "type": "string",
@@ -419,6 +487,10 @@
     "type": "string",
     "description": "最大长度"
   },
+  "u-flowable-textarea/required": {
+    "type": "boolean",
+    "description": "选择必填后，填写者不填写将无法提交表单"
+  },
   "u-flowable-uploader/title": {
     "type": "string",
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
@@ -433,5 +505,9 @@
   },
   "u-flowable-uploader/url": {
     "description": "上传地址"
+  },
+  "u-flowable-uploader/required": {
+    "type": "boolean",
+    "description": "选择必填后，填写者不填写将无法提交表单"
   }
 }

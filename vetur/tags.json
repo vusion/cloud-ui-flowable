@@ -2,7 +2,8 @@
   "u-flowable-address": {
     "attributes": [
       "title",
-      "value"
+      "value",
+      "required"
     ],
     "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。"
   },
@@ -12,7 +13,8 @@
       "min",
       "max",
       "list",
-      "value"
+      "value",
+      "required"
     ],
     "description": "多项中选择一个时使用"
   },
@@ -20,7 +22,8 @@
     "attributes": [
       "title",
       "value",
-      "dateType"
+      "dateType",
+      "required"
     ],
     "description": "用于展示文字或表达式"
   },
@@ -28,7 +31,8 @@
     "attributes": [
       "title",
       "value",
-      "dateType"
+      "dateType",
+      "required"
     ],
     "description": "用于展示文字或表达式"
   },
@@ -41,15 +45,33 @@
       "color",
       "size",
       "display",
-      "overflow"
+      "overflow",
+      "required"
     ],
     "description": "用于展示文字或表达式"
+  },
+  "u-flowable-form-item": {
+    "attributes": [
+      "title",
+      "tip"
+    ],
+    "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。"
+  },
+  "u-flowable-form": {
+    "attributes": [
+      "title",
+      "tip",
+      "files",
+      "buttonText"
+    ],
+    "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。"
   },
   "u-flowable-image-select": {
     "attributes": [
       "title",
       "list",
-      "value"
+      "value",
+      "required"
     ],
     "description": "多项中选择一个时使用"
   },
@@ -71,7 +93,8 @@
       "color",
       "size",
       "display",
-      "overflow"
+      "overflow",
+      "required"
     ],
     "description": "用于展示文字或表达式"
   },
@@ -81,7 +104,8 @@
       "value",
       "point",
       "min",
-      "max"
+      "max",
+      "required"
     ],
     "description": "单行文本输入框，规定填写者输入内容为数字，带有字段校验"
   },
@@ -89,7 +113,8 @@
     "attributes": [
       "title",
       "list",
-      "value"
+      "value",
+      "required"
     ],
     "description": "多项中选择一个时使用"
   },
@@ -97,7 +122,8 @@
     "attributes": [
       "title",
       "placeholder",
-      "value"
+      "value",
+      "required"
     ],
     "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。"
   },
@@ -105,7 +131,8 @@
     "attributes": [
       "title",
       "list",
-      "value"
+      "value",
+      "required"
     ],
     "description": "多项中选择一个时使用"
   },
@@ -114,9 +141,9 @@
       "title",
       "placeholder",
       "value",
-      "required",
       "minlength",
-      "maxlength"
+      "maxlength",
+      "required"
     ],
     "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。"
   },
@@ -132,7 +159,8 @@
       "placeholder",
       "value",
       "minlength",
-      "maxlength"
+      "maxlength",
+      "required"
     ],
     "description": "多行文本输入框，需要填写者在输入框内根据标题填写相应的内容。"
   },
@@ -141,7 +169,8 @@
       "title",
       "placeholder",
       "value",
-      "url"
+      "url",
+      "required"
     ],
     "description": "上传文件组件，可以自定义上传说明，指导填写者上传文件、图片等，可添加多个附件。"
   }

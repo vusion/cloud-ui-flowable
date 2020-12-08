@@ -36,4 +36,5 @@ export default {
 | title | string |  |  | 标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题 |
 | value | string |  |  | 设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。 |
 | dateType | string | `[object Object]`<br/>`[object Object]` | `'date'` | 设置时间格式 |
+| required | boolean |  |  | 选择必填后，填写者不填写将无法提交表单 |
 

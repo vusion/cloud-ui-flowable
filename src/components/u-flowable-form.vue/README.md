@@ -17,7 +17,16 @@
 ```vue
 <template>
     <u-flowable-form>
-
+        <u-flowable-form-item mode="edit" title="邮箱" tip="请输入正确邮箱">
+            <u-flowable-email value="test@test.com" 
+                name="e.f"
+            ></u-flowable-email>
+        </u-flowable-form-item>
+        <u-flowable-form-item mode="edit" title="邮箱" tip="请输入正确邮箱">
+            <u-flowable-email value="test@test.com"  
+            name="c.d[1]"
+             ></u-flowable-email>
+        </u-flowable-form-item>
     </u-flowable-form>
 </template>
 <script>
@@ -31,11 +40,14 @@ export default {
 }
 </script>
 ```
+
 ## API
 ### Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
 | title | string |  |  | 标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题 |
-| value | string |  |  | 文本内容 |
+| tip | string |  |  | 提示属性用于指定对该模块进行一些附加说明，一般用来指导填写者输入。 |
+| files | Array |  |  | 表单附件，一般用来下载文档。 |
+| buttonText | string |  | `'提交'` | 提交按钮的文案。 |
 

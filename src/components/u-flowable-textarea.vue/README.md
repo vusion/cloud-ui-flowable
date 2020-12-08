@@ -38,4 +38,5 @@ export default {
 | value | string |  |  | 默认内容 |
 | minlength | string |  |  | 最小长度 |
 | maxlength | string |  |  | 最大长度 |
+| required | boolean |  |  | 选择必填后，填写者不填写将无法提交表单 |
 
