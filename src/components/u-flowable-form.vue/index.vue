@@ -53,7 +53,6 @@ const UFlowableForm = {
                 }
                 return true;
             });
-            console.info('result abc', result);
         },
     },
     render(h, context) {
@@ -83,5 +82,6 @@ export default UFlowableForm;
 </script>
 <style module>
 .root {
+    position: relative;
 }
 </style>

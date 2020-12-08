@@ -1,13 +1,13 @@
 ### 编辑模式
 
 ``` html
-<u-flowable-textarea mode="edit" value="普通文本" size="huge" :clearable="true" style="color:red"></u-flowable-textarea>
+<u-flowable-textarea mode="edit" value="普通文本" size="huge" :clearable="true"></u-flowable-textarea>
 ```
 
 ### 只读模式
 
 ``` html
-<u-flowable-textarea mode="readonly" value="普通文本" style="color:red"></u-flowable-textarea>
+<u-flowable-textarea mode="readonly" value="普通文本"></u-flowable-textarea>
 ```
 
 ### 变量支持-只读模式
@@ -19,5 +19,5 @@
 ### 变量支持-编辑模式
 
 ``` html
-<u-flowable-textarea mode="edit" :value="'支持变量'" size="huge" :clearable="true" style="color:red"></u-flowable-textarea>
+<u-flowable-textarea mode="edit" :value="'支持变量'" size="huge" :clearable="true"></u-flowable-textarea>
 ```
