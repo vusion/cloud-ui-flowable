@@ -2,6 +2,8 @@
 
 # UFlowableCheckbox 多选组
 
+- [示例](#示例)
+    - [基本用法](#基本用法)
 - [API]()
     - [Props/Attrs](#propsattrs)
 
@@ -9,6 +11,25 @@
 
 多项中选择一个时使用
 
+## 示例
+### 基本用法
+
+```vue
+<template>
+    <u-flowable-checkbox mode="edit" v-model="model" :list="[{key: '数学', value: '数学', text: '数学'}, { key: '语文', value: '语文', text: '语文'}]"
+		>
+		</u-flowable-checkbox>
+</template>
+<script>
+export default {
+    data() {
+        return {
+            model: ['数学']
+        }
+    },
+}
+</script>
+```
 ## API
 ### Props/Attrs
 
@@ -18,5 +39,5 @@
 | min | number |  | `0` | 可以勾选多选框的最小数量 |
 | max | number |  | `Infinity` | 可以勾选多选框的最大数量 |
 | list | Array |  |  | 为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。 |
-| value | string |  |  | 文本内容，多个选项以英文逗号隔开 |
+| value | string |  |  | 文本内容 |
 

@@ -14,6 +14,7 @@ public/*
 # 加了lock有时忘记更新，会导致出问题
 package-lock.json
 yarn.lock
+yarn-error.log
 
 .vscode
 editor/node_modules

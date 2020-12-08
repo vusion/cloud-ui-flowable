@@ -2,12 +2,32 @@
 
 # UFlowableText 描述文字
 
+- [示例](#示例)
+    - [基本用法](#基本用法)
 - [API]()
     - [Props/Attrs](#propsattrs)
 
 **Basic**
 
 描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。
+
+## 示例
+### 基本用法
+
+```vue
+<template>
+    <u-flowable-text mode="edit" v-model="model"></u-flowable-text>
+</template>
+<script>
+export default {
+    data() {
+        return {
+            model: 'test'
+        }
+    },
+}
+</script>
+```
 
 ## API
 ### Props/Attrs

@@ -62,7 +62,7 @@ export default {
                 return this.currentValue;
             }
             const [startTime, endTime] = (value || '').split('~').map((i) => i);
-            console.info(startTime, endTime);
+            console.info('tyime', startTime, endTime);
             return {
                 startTime,
                 endTime,

@@ -5,7 +5,7 @@
   },
   "u-flowable-address/value": {
     "type": "string",
-    "description": "文本内容"
+    "description": "默认值，输入内容"
   },
   "u-flowable-checkbox/title": {
     "type": "string",
@@ -25,7 +25,7 @@
   },
   "u-flowable-checkbox/value": {
     "type": "string",
-    "description": "文本内容，多个选项以英文逗号隔开"
+    "description": "文本内容"
   },
   "u-flowable-date-time-range/title": {
     "type": "string",
@@ -47,7 +47,7 @@
         "title": "日期时间"
       }
     ],
-    "description": "日期类型"
+    "description": "设置时间格式"
   },
   "u-flowable-date-time/title": {
     "type": "string",
@@ -57,7 +57,7 @@
     "type": "string",
     "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。"
   },
-  "u-flowable-date-time/compType": {
+  "u-flowable-date-time/dateType": {
     "type": "string",
     "options": [
       {
@@ -69,14 +69,15 @@
         "title": "日期时间"
       }
     ],
-    "description": "日期类型"
+    "description": "设置时间格式"
   },
   "u-flowable-email/title": {
     "type": "string",
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
   },
   "u-flowable-email/placeholder": {
-    "type": "string"
+    "type": "string",
+    "description": "占位内容"
   },
   "u-flowable-email/value": {
     "type": "string",
@@ -188,35 +189,31 @@
   },
   "u-flowable-image-select/value": {
     "type": "Array",
-    "description": "组件的值"
+    "description": "默认值，记录已经选择的选项"
   },
   "u-flowable-link/title": {
     "type": "string",
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
   },
   "u-flowable-link/placeholder": {
-    "type": "string"
+    "type": "string",
+    "description": "占位内容"
   },
   "u-flowable-link/value": {
     "type": "string",
     "description": "文本内容"
   },
-  "u-flowable-link/width": {
-    "type": "string"
-  },
   "u-flowable-link/required": {
     "type": "string",
     "description": "选择必填后，填写者不填写将无法提交表单"
-  },
-  "u-flowable-link/duplicate": {
-    "type": "string"
   },
   "u-flowable-mobile/title": {
     "type": "string",
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
   },
   "u-flowable-mobile/placeholder": {
-    "type": "string"
+    "type": "string",
+    "description": "占位内容"
   },
   "u-flowable-mobile/value": {
     "type": "string",
@@ -322,9 +319,6 @@
     "type": "string",
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
   },
-  "u-flowable-number/tip": {
-    "type": "string"
-  },
   "u-flowable-number/value": {
     "type": "number",
     "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。"
@@ -334,10 +328,12 @@
     "description": "选择后，填写者填写时可以输入带有小数点的数字，否则只能输入整数。"
   },
   "u-flowable-number/min": {
-    "type": "number"
+    "type": "number",
+    "description": "最小值"
   },
   "u-flowable-number/max": {
-    "type": "number"
+    "type": "number",
+    "description": "最大值"
   },
   "u-flowable-radios/title": {
     "type": "string",
@@ -356,7 +352,8 @@
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
   },
   "u-flowable-rich-text/placeholder": {
-    "type": "string"
+    "type": "string",
+    "description": "占位内容"
   },
   "u-flowable-rich-text/value": {
     "type": "string",
@@ -379,30 +376,24 @@
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
   },
   "u-flowable-string/placeholder": {
-    "type": "string"
+    "type": "string",
+    "description": "占位内容"
   },
   "u-flowable-string/value": {
     "type": "string",
     "description": "文本内容"
   },
-  "u-flowable-string/width": {
-    "type": "string"
-  },
-  "u-flowable-string/scarn": {
-    "type": "string"
-  },
   "u-flowable-string/required": {
     "type": "string",
     "description": "选择必填后，填写者不填写将无法提交表单"
   },
-  "u-flowable-string/duplicate": {
-    "type": "string"
-  },
   "u-flowable-string/minlength": {
-    "type": "string"
+    "type": "string",
+    "description": "最小长度"
   },
   "u-flowable-string/maxlength": {
-    "type": "string"
+    "type": "string",
+    "description": "最大长度"
   },
   "u-flowable-text/value": {
     "type": "string",
@@ -413,26 +404,32 @@
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
   },
   "u-flowable-textarea/placeholder": {
-    "type": "string"
+    "type": "string",
+    "description": "占位内容"
   },
   "u-flowable-textarea/value": {
-    "type": "string"
+    "type": "string",
+    "description": "默认内容"
   },
   "u-flowable-textarea/minlength": {
-    "type": "string"
+    "type": "string",
+    "description": "最小长度"
   },
   "u-flowable-textarea/maxlength": {
-    "type": "string"
+    "type": "string",
+    "description": "最大长度"
   },
   "u-flowable-uploader/title": {
     "type": "string",
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
   },
   "u-flowable-uploader/placeholder": {
-    "type": "string"
+    "type": "string",
+    "description": "占位内容"
   },
   "u-flowable-uploader/value": {
-    "type": "Array"
+    "type": "Array",
+    "description": "默认值，记录已经上传的文件列表"
   },
   "u-flowable-uploader/url": {
     "description": "上传地址"

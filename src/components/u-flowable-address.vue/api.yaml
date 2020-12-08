@@ -19,5 +19,13 @@
             direction: vertical
       title: 默认内容
       description: 默认值，输入内容
+    - name: required
+      type: string
+      compType: checkbox
+      group: validate
+      message: 请输入内容
+      title: 这是个必填项
+      value: false
+      description: 选择必填后，填写者不填写将无法提交表单
   slots: false
   events: false

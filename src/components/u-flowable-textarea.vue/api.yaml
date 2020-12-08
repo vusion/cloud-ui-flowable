@@ -36,5 +36,12 @@
       message: 字数范围
       value: 
       description: 最大长度
+    - name: required
+      title: 必填项
+      type: boolean
+      compType: checkbox
+      group: validate
+      value: false
+      description: 选择必填后，填写者不填写将无法提交表单
   slots: false
   events: false

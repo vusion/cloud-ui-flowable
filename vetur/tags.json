@@ -28,7 +28,7 @@
     "attributes": [
       "title",
       "value",
-      "compType"
+      "dateType"
     ],
     "description": "用于展示文字或表达式"
   },
@@ -58,9 +58,7 @@
       "title",
       "placeholder",
       "value",
-      "width",
-      "required",
-      "duplicate"
+      "required"
     ],
     "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。"
   },
@@ -80,7 +78,6 @@
   "u-flowable-number": {
     "attributes": [
       "title",
-      "tip",
       "value",
       "point",
       "min",
@@ -117,10 +114,7 @@
       "title",
       "placeholder",
       "value",
-      "width",
-      "scarn",
       "required",
-      "duplicate",
       "minlength",
       "maxlength"
     ],

@@ -18,6 +18,9 @@ Vue.prototype.$theme = variables;
 import './message';
 
 import * as components from '../src/components';
+
+console.info('hekllo', components);
+
 Object.keys(components).forEach((key) => {
     Vue.component(key, components[key]);
 });

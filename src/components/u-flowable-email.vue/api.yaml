@@ -89,6 +89,13 @@
           title: 始终不换行
       default: normal
       description: 文本过长的处理方式
+    - name: required
+      title: 必填项
+      type: boolean
+      compType: checkbox
+      group: validate
+      value: false
+      description: 选择必填后，填写者不填写将无法提交表单
   slots:
       - name: default
         description: 文字内容

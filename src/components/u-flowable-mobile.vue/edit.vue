@@ -18,12 +18,23 @@ export default {
         };
     },
     watch: {
-        currentValue(currentValue) {
-            console.log(currentValue, isMobilePhone(currentValue, 'zh-CN'));
-            if (currentValue && isMobilePhone(currentValue, 'zh-CN')) {
-                this.$emit('input', currentValue);
-            }
-            this.$emit('input', currentValue);
+        currentValue: {
+            handler(currentValue) {
+                if (currentValue) {
+                    if (isMobilePhone(currentValue, 'zh-CN')) {
+                        this.$emit('error', null);
+                        this.$emit('input', currentValue);
+                    } else {
+                        this.$emit('error', {
+                            type: 'emailFormatError',
+                            message: '手机格式出错',
+                        });
+                    }
+                } else {
+                    this.$emit('input', currentValue);
+                }
+            },
+            immediate: true,
         },
         value(value) {
             this.currentValue = value;

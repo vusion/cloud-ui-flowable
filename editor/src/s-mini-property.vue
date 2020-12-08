@@ -183,7 +183,7 @@ export default {
                 }
             });
             // 确保更新的是同一个属性对象
-            ((this.allNodesAPI[this.tag][0].attrs || []).find((o) => (o.name === 'value'))).value = result;
+            ((this.allNodesAPI[this.tag].attrs || []).find((o) => (o.name === 'value'))).value = result;
         },
         customizeConfigSelect(list){
             return list.map((o) => {

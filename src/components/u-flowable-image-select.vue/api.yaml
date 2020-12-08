@@ -37,5 +37,12 @@
       type: Array
       default: null
       description: 默认值，记录已经选择的选项
+    - name: required
+      title: 必填项
+      type: boolean
+      compType: checkbox
+      group: validate
+      value: false
+      description: 选择必填后，填写者不填写将无法提交表单
   slots: false
   events: false

@@ -14,3 +14,5 @@ export * from './u-flowable-date-time-range.vue';
 export * from './u-flowable-image-select.vue';
 export * from './u-flowable-rich-text.vue';
 export * from './u-flowable-address.vue';
+export * from './u-flowable-form-item.vue/index.vue';
+export * from './u-flowable-form.vue/index.vue';

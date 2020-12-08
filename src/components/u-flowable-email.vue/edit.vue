@@ -18,11 +18,23 @@ export default {
         };
     },
     watch: {
-        currentValue(currentValue) {
-            console.log(currentValue, isEmail(currentValue));
-            if (currentValue && isEmail(currentValue)) {
-                this.$emit('input', currentValue);
-            }
+        currentValue: {
+            handler(currentValue) {
+                if (currentValue) {
+                    if (isEmail(currentValue)) {
+                        this.$emit('error', null);
+                        this.$emit('input', currentValue);
+                    } else {
+                        this.$emit('error', {
+                            type: 'emailFormatError',
+                            message: '邮箱格式出错',
+                        });
+                    }
+                } else {
+                    this.$emit('input', currentValue);
+                }
+            },
+            immediate: true,
         },
         value(value) {
             this.currentValue = value;
