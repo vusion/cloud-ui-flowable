@@ -28,6 +28,7 @@ export default {
                         this.$emit('error', null);
                         this.$emit('input', currentValue);
                     } else {
+                        this.$emit('touched', true);
                         this.$emit('error', {
                             type: 'emailFormatError',
                             message: '邮箱格式出错',

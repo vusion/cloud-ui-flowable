@@ -27,11 +27,18 @@ export default {
     watch: {
         currentValue: {
             handler(currentValue) {
+                // 地址需要同时校验 address 和 currentValue
                 if (currentValue && this.address) {
                     this.$emit('input', [currentValue || '', this.address || ''].join(' '));
                     this.$emit('error', null);
                 } else {
-                    this.$emit('input', currentValue);
+                    this.$emit('input', '');
+                    if (this.required) {
+                        this.$emit('error', {
+                            type: 'requiredError',
+                            message: '此项必填',
+                        });
+                    }
                 }
             },
             immediate: true,
@@ -42,7 +49,13 @@ export default {
                     this.$emit('input', [this.currentValue || '', address || ''].join(' '));
                     this.$emit('error', null);
                 } else {
-                    this.$emit('input', this.currentValue);
+                    this.$emit('input', '');
+                    if (this.required) {
+                        this.$emit('error', {
+                            type: 'requiredError',
+                            message: '此项必填',
+                        });
+                    }
                 }
             },
             immediate: true,

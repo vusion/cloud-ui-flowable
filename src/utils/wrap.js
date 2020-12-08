@@ -16,6 +16,9 @@ export default function (component) {
                     ...this.$attrs,
                 },
                 on: {
+                    touched: ($event) => {
+                        this.$emit('touched', $event);
+                    },
                     input: ($event) => {
                         // 获取组件通用校验
                         if (props.required) {
@@ -30,6 +33,7 @@ export default function (component) {
                                     type: 'requiredError',
                                     message: '此项必填',
                                 });
+                                //  this.$emit('touched', true);
                             } else {
                                 // 验证通过
                                 this.$currentValue = $event;

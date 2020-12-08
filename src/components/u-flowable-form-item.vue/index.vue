@@ -27,9 +27,11 @@ const UFlowableFormItem = {
                     this.value = input;
                 };
                 listeners.dirty = (dirty) => {
+                    console.info('dirty', dirty);
                     this.dirty = dirty;
                 };
                 listeners.touched = (touched) => {
+                    console.info('touched', touched);
                     this.touched = touched;
                 };
             }
