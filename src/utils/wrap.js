@@ -22,22 +22,32 @@ export default function (component) {
                             // 数字格式的时候 0 并不为空
                             if ($event === undefined || $event === null || $event === ''
                                 || (Object.prototype.toString.call($event) === '[object Array]') && $event.length === 0) {
+                                this.$error = {
+                                    type: 'requiredError',
+                                    message: '此项必填',
+                                };
                                 this.$emit('error', {
                                     type: 'requiredError',
                                     message: '此项必填',
                                 });
                             } else {
+                                // 验证通过
+                                this.$currentValue = $event;
+                                this.$error = null;
                                 this.$emit('input', $event);
                                 this.$emit('error', null);
                             }
                         } else {
+                            // 没开启通用验证
                             this.$currentValue = $event;
+                            this.$error = null;
                             this.$emit('input', $event);
                             this.$emit('error', null);
                         }
                     },
                     error: ($event) => {
                         // 获取组件内置校验错误信息
+                        console.info('error $event', $event);
                         this.$error = $event;
                         this.$emit('error', $event);
                     },

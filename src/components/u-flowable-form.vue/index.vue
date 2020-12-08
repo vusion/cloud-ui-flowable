@@ -18,7 +18,7 @@
                 </div>
             </div>
         </div>
-        <div :class="$style.content">
+        <div :class="$style.content" :dirty="dirty">
             <form ref="form">
                 <slot></slot>
             </form>
@@ -55,6 +55,7 @@ const UFlowableForm = {
         return {
             error: null,
             value: null,
+            dirty: false,
         };
     },
     // methods: {
@@ -76,6 +77,7 @@ const UFlowableForm = {
             return vueInstance;
         },
         onSubmit(event) {
+            this.dirty = true;
             console.log(this.$refs.form.querySelectorAll('[name]'));
             const formItems = this.$refs.form.querySelectorAll('[name]');
             const map = {};
@@ -96,6 +98,7 @@ const UFlowableForm = {
                 return true;
             });
             if (valid) {
+                console.info('result', result);
                 this.$emit('submit', result);
             } else {
                 this.$emit('error', error);
@@ -157,5 +160,8 @@ export default UFlowableForm;
     border-radius: 3px;
     margin-bottom: 4px;
     cursor: pointer;
+}
+.content[dirty] [class^=u-flowable-form-item_error]{
+    display:block!important;
 }
 </style>

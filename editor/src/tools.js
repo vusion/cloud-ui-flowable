@@ -45,7 +45,9 @@ export function getProps(api) {
 	const props = {};
 	((api || {}).attrs || []).forEach(attr => {
 		Object.assign(props, { [attr.name] : attr.value })
-	})
 
+	})
+	// 添加 name 参数
+	Object.assign(props, { name : (api || {}).name });
 	return props;
 }

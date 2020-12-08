@@ -23,6 +23,15 @@ const UFlowableFormItem = {
                 listeners.error = (error) => {
                     this.error = error;
                 };
+                listeners.input = (input) => {
+                    this.value = input;
+                };
+                listeners.dirty = (dirty) => {
+                    this.dirty = dirty;
+                };
+                listeners.touched = (touched) => {
+                    this.touched = touched;
+                };
             }
         }
         return h('div', {
@@ -43,6 +52,9 @@ const UFlowableFormItem = {
             ]),
             h('div', {
                 class: this.$style.error,
+                attrs: {
+                    dirty: this.dirty || this.touched,
+                },
             }, [this.error?.message]),
         ]);
     },
@@ -70,5 +82,9 @@ export default UFlowableFormItem;
 .error {
     color: #f5222d;
     margin-top: 5px;
+    display: none;
+}
+.error[dirty] {
+    display: block;
 }
 </style>

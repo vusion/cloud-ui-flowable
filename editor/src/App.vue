@@ -6,6 +6,7 @@
             <div :class="[$style.box, selectedNode.tag === key && $style.active]" @click="handleClick(key, childItem)">
               <div :class="$style.title">{{ (allNodesAPI[key] || {}).title }}</div>
             <component 
+                :key="key + 'edit'"
                 :is="childItem.name"
                 v-bind="getProps(allNodesAPI[key])"
                 mode="readonly">
@@ -21,7 +22,7 @@
         <div :class="[$style.resultbox, selectedNode.tag === key && $style.active]" @click="handleClick(key, childItem)">
               <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-address'">
                 <u-flowable-address
-                    name='address'
+                    :key="key + getProps(allNodesAPI[key]).required"
                     v-model="modelGroup.UFlowableAddress"
                     v-bind="getProps(allNodesAPI[key])"
                     mode="edit">
@@ -29,6 +30,7 @@
               </u-flowable-form-item>
                <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-checkbox'">
                 <component 
+                    :key="key + getProps(allNodesAPI[key]).required"
                     :is="childItem.name"
                     v-model="modelGroup.UFlowableCheckBox"
                     v-bind="getProps(allNodesAPI[key])"
@@ -38,6 +40,7 @@
              <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-date-time-range'">
              <component 
                 :is="childItem.name"
+                :key="key + getProps(allNodesAPI[key]).required"
                 v-model="modelGroup.UFlowableDateTimeRange"
                 v-if="childItem.name === 'u-flowable-date-time-range'"
                 v-bind="getProps(allNodesAPI[key])"
@@ -47,6 +50,7 @@
                <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-date-time'">
                <component 
                 :is="childItem.name"
+                :key="key + getProps(allNodesAPI[key]).required"
                 v-model="modelGroup.UFlowableDateTime"
                 v-if="childItem.name === 'u-flowable-date-time'"
                 v-bind="getProps(allNodesAPI[key])"
@@ -56,6 +60,7 @@
                <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-email'">
                 <component 
                   :is="childItem.name"
+                  :key="key + getProps(allNodesAPI[key]).required"
                   v-model="modelGroup.UFlowableEmail"
                   v-if="childItem.name === 'u-flowable-email'"
                   v-bind="getProps(allNodesAPI[key])"
@@ -65,6 +70,7 @@
                <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-image-select'">
                 <component 
                 :is="childItem.name"
+                :key="key + getProps(allNodesAPI[key]).required"
                 v-model="modelGroup.UFlowableImageSelect"
                 v-if="childItem.name === 'u-flowable-image-select'"
                 v-bind="getProps(allNodesAPI[key])"
@@ -74,6 +80,7 @@
                <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-link'">
                 <component 
                   :is="childItem.name"
+                  :key="key + getProps(allNodesAPI[key]).required"
                   v-model="modelGroup.UFlowableLink"
                   v-if="childItem.name === 'u-flowable-link'"
                   v-bind="getProps(allNodesAPI[key])"
@@ -83,7 +90,7 @@
                <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-mobile'">
                   <component 
                     :is="childItem.name"
-                    v-model="modelGroup.UFlowableMobile"
+                    :key="key + getProps(allNodesAPI[key]).required"
                     v-if="childItem.name === 'u-flowable-mobile'"
                     v-bind="getProps(allNodesAPI[key])"
                     mode="edit">
@@ -92,6 +99,7 @@
                <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-number'">
                 <component 
                   :is="childItem.name"
+                  :key="key + getProps(allNodesAPI[key]).required"
                   v-model="modelGroup.UFlowableNumber"
                   v-if="childItem.name === 'u-flowable-number'"
                   v-bind="getProps(allNodesAPI[key])"
@@ -101,6 +109,7 @@
               <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-radios'">
                 <component 
                   :is="childItem.name"
+                  :key="key + getProps(allNodesAPI[key]).required"
                   v-model="modelGroup.UFlowableRadios"
                   v-if="childItem.name === 'u-flowable-radios'"
                   v-bind="getProps(allNodesAPI[key])"
@@ -110,6 +119,7 @@
               <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-rich-text'">
                 <component 
                   :is="childItem.name"
+                    :key="key + getProps(allNodesAPI[key]).required"
                   v-model="modelGroup.UFlowableRichText"
                   v-if="childItem.name === 'u-flowable-rich-text'"
                   v-bind="getProps(allNodesAPI[key])"
@@ -119,6 +129,7 @@
               <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-select'">
                <component 
                 :is="childItem.name"
+                :key="key + getProps(allNodesAPI[key]).required"
                 v-model="modelGroup.UFlowableSelect"
                 v-if="childItem.name === 'u-flowable-select'"
                 v-bind="getProps(allNodesAPI[key])"
@@ -128,6 +139,7 @@
               <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-string'">
               <component 
                 :is="childItem.name"
+                :key="key + getProps(allNodesAPI[key]).required"
                 v-model="modelGroup.UFlowableString"
                 v-if="childItem.name === 'u-flowable-string'"
                 v-bind="getProps(allNodesAPI[key])"
@@ -137,6 +149,7 @@
               <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-text'">
                <component 
                 :is="childItem.name"
+                :key="key + getProps(allNodesAPI[key]).required"
                 v-model="modelGroup.UFlowableText"
                 v-if="childItem.name === 'u-flowable-text'"
                 v-bind="getProps(allNodesAPI[key])"
@@ -146,6 +159,7 @@
                <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-textarea'">
                <component 
                 :is="childItem.name"
+                :key="key + getProps(allNodesAPI[key]).required"
                 v-model="modelGroup.UFlowableTextarea"
                 v-if="childItem.name === 'u-flowable-textarea'"
                 v-bind="getProps(allNodesAPI[key])"
@@ -155,6 +169,7 @@
                <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-uploader'">
              <component 
                 :is="childItem.name"
+                :key="key + getProps(allNodesAPI[key]).required"
                 v-model="modelGroup.UFlowableUploader"
                 v-if="childItem.name === 'u-flowable-uploader'"
                 v-bind="getProps(allNodesAPI[key])"
@@ -163,7 +178,6 @@
            </u-flowable-form-item>
            </div>
         </div>
-        
         </u-flowable-form>
     </div>
      <div :class="$style.base">
@@ -173,6 +187,7 @@
         <div :class="$style.title">{{ (allNodesAPI[key] || {}).title}}</div>
         <u-flowable-form-item>
           <component 
+            :key="key + 'config'"
             :is="childItem.name"
             v-bind="getProps(allNodesAPI[key])"
             mode="edit">

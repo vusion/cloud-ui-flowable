@@ -90,7 +90,7 @@
       default: normal
       description: 文本过长的处理方式
     - name: required
-      title: 必填项
+      title: 这是个必填项
       type: boolean
       compType: checkbox
       group: validate

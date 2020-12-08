@@ -20,7 +20,7 @@
       title: 文本
       description: 文本内容
     - name: required
-      title: 必填项
+      title: 这是个必填项
       type: boolean
       compType: checkbox
       group: validate

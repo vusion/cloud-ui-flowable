@@ -31,13 +31,7 @@ export default {
                     this.$emit('input', [currentValue || '', this.address || ''].join(' '));
                     this.$emit('error', null);
                 } else {
-                    this.$emit('input', '');
-                    if (this.required) {
-                        this.$emit('error', {
-                            type: 'requiredError',
-                            message: '此项必填',
-                        });
-                    }
+                    this.$emit('input', currentValue);
                 }
             },
             immediate: true,
@@ -48,13 +42,7 @@ export default {
                     this.$emit('input', [this.currentValue || '', address || ''].join(' '));
                     this.$emit('error', null);
                 } else {
-                    this.$emit('input', '');
-                    if (this.required) {
-                        this.$emit('error', {
-                            type: 'requiredError',
-                            message: '此项必填',
-                        });
-                    }
+                    this.$emit('input', this.currentValue);
                 }
             },
             immediate: true,

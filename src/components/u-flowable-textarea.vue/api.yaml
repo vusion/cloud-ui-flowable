@@ -37,7 +37,7 @@
       value: 
       description: 最大长度
     - name: required
-      title: 必填项
+      title: 这是个必填项
       type: boolean
       compType: checkbox
       group: validate
