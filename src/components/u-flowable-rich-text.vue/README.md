@@ -2,6 +2,8 @@
 
 # UFlowableRichText 富文本
 
+- [示例](#示例)
+    - [基本用法](#基本用法)
 - [API]()
     - [Props/Attrs](#propsattrs)
 
@@ -9,12 +11,30 @@
 
 描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。
 
+## 示例
+### 基本用法
+
+```vue
+<template>
+    <u-flowable-rich-text mode="edit" v-model="model"></u-flowable-rich-text>
+</template>
+<script>
+export default {
+    data() {
+        return {
+            model: '富文本'
+        }
+    }
+}
+</script>
+```
+
 ## API
 ### Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
 | title | string |  |  | 标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题 |
-| placeholder | string |  |  | undefined |
+| placeholder | string |  |  | 占位内容 |
 | value | string |  |  | 文本内容 |
 

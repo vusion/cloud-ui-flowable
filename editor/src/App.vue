@@ -4,7 +4,7 @@
      <div :class="$style.colBoxTitle">属性的编辑栏</div>
           <div v-for="(childItem, key) in componentList" :key="key">
             <div :class="[$style.box, selectedNode.tag === key && $style.active]" @click="handleClick(key, childItem)">
-              <div :class="$style.title">{{ allNodesAPI[key][0].title}}</div>
+              <div :class="$style.title">{{ (allNodesAPI[key] || {}).title }}</div>
             <component 
                 :is="childItem.name"
                 v-bind="getProps(allNodesAPI[key])"
@@ -16,28 +16,26 @@
     </div>
     <div :class="$style.panel">
        <div :class="$style.colBoxTitle">属性的配置后效果栏（绑定 v-model，表单的可以得到的输入值）</div>
-      <u-form gap="large">
-        <u-form-item>
-            <u-button color="primary" @click="submit()">立即创建</u-button>
-        </u-form-item>
+      <u-flowable-form gap="large">
         <div v-for="(childItem, key) in componentList" :key="key">
         <div :class="[$style.resultbox, selectedNode.tag === key && $style.active]" @click="handleClick(key, childItem)">
-            <div :class="$style.title">{{ allNodesAPI[key][0].title}}</div>
-           <u-form-item>
-             <component 
-                :is="childItem.name"
-                v-model="modelGroup.UFlowableAddress"
-                v-if="childItem.name === 'u-flowable-address'"
-                v-bind="getProps(allNodesAPI[key])"
-                mode="edit">
-            </component>
-             <component 
-                :is="childItem.name"
-                v-model="modelGroup.UFlowableCheckBox"
-                v-if="childItem.name === 'u-flowable-checkbox'"
-                v-bind="getProps(allNodesAPI[key])"
-                mode="edit">
-            </component>
+              <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-address'">
+                <u-flowable-address
+                    name='address'
+                    v-model="modelGroup.UFlowableAddress"
+                    v-bind="getProps(allNodesAPI[key])"
+                    mode="edit">
+                </u-flowable-address>
+              </u-flowable-form-item>
+               <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-checkbox'">
+                <component 
+                    :is="childItem.name"
+                    v-model="modelGroup.UFlowableCheckBox"
+                    v-bind="getProps(allNodesAPI[key])"
+                    mode="edit">
+                </component>
+             </u-flowable-form-item>
+             <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-date-time-range'">
              <component 
                 :is="childItem.name"
                 v-model="modelGroup.UFlowableDateTimeRange"
@@ -45,6 +43,8 @@
                 v-bind="getProps(allNodesAPI[key])"
                 mode="edit">
               </component>
+                </u-flowable-form-item>
+               <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-date-time'">
                <component 
                 :is="childItem.name"
                 v-model="modelGroup.UFlowableDateTime"
@@ -52,56 +52,71 @@
                 v-bind="getProps(allNodesAPI[key])"
                 mode="edit">
               </component>
-              <component 
-                :is="childItem.name"
-                v-model="modelGroup.UFlowableEmail"
-                v-if="childItem.name === 'u-flowable-email'"
-                v-bind="getProps(allNodesAPI[key])"
-                mode="edit">
-              </component>
-              <component 
+               </u-flowable-form-item>
+               <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-email'">
+                <component 
+                  :is="childItem.name"
+                  v-model="modelGroup.UFlowableEmail"
+                  v-if="childItem.name === 'u-flowable-email'"
+                  v-bind="getProps(allNodesAPI[key])"
+                  mode="edit">
+                </component>
+               </u-flowable-form-item>
+               <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-image-select'">
+                <component 
                 :is="childItem.name"
                 v-model="modelGroup.UFlowableImageSelect"
-                v-else-if="childItem.name === 'u-flowable-image-select'"
+                v-if="childItem.name === 'u-flowable-image-select'"
                 v-bind="getProps(allNodesAPI[key])"
                 mode="edit">
               </component>
-               <component 
-                :is="childItem.name"
-                v-model="modelGroup.UFlowableLink"
-                v-if="childItem.name === 'u-flowable-link'"
-                v-bind="getProps(allNodesAPI[key])"
-                mode="edit">
-              </component>
-              <component 
-                :is="childItem.name"
-                v-model="modelGroup.UFlowableMobile"
-                v-if="childItem.name === 'u-flowable-mobile'"
-                v-bind="getProps(allNodesAPI[key])"
-                mode="edit">
-              </component>
-               <component 
-                :is="childItem.name"
-                v-model="modelGroup.UFlowableNumber"
-                v-if="childItem.name === 'u-flowable-number'"
-                v-bind="getProps(allNodesAPI[key])"
-                mode="edit">
-              </component>
-               <component 
-                :is="childItem.name"
-                v-model="modelGroup.UFlowableRadios"
-                v-if="childItem.name === 'u-flowable-radios'"
-                v-bind="getProps(allNodesAPI[key])"
-                mode="edit">
-              </component>
-
-               <component 
-                :is="childItem.name"
-                v-model="modelGroup.UFlowableRichText"
-                v-else-if="childItem.name === 'u-flowable-rich-text'"
-                v-bind="getProps(allNodesAPI[key])"
-                mode="edit">
-              </component>
+              </u-flowable-form-item>
+               <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-link'">
+                <component 
+                  :is="childItem.name"
+                  v-model="modelGroup.UFlowableLink"
+                  v-if="childItem.name === 'u-flowable-link'"
+                  v-bind="getProps(allNodesAPI[key])"
+                  mode="edit">
+                </component>
+               </u-flowable-form-item>
+               <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-mobile'">
+                  <component 
+                    :is="childItem.name"
+                    v-model="modelGroup.UFlowableMobile"
+                    v-if="childItem.name === 'u-flowable-mobile'"
+                    v-bind="getProps(allNodesAPI[key])"
+                    mode="edit">
+                  </component>
+               </u-flowable-form-item>
+               <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-number'">
+                <component 
+                  :is="childItem.name"
+                  v-model="modelGroup.UFlowableNumber"
+                  v-if="childItem.name === 'u-flowable-number'"
+                  v-bind="getProps(allNodesAPI[key])"
+                  mode="edit">
+                </component>
+              </u-flowable-form-item>
+              <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-radios'">
+                <component 
+                  :is="childItem.name"
+                  v-model="modelGroup.UFlowableRadios"
+                  v-if="childItem.name === 'u-flowable-radios'"
+                  v-bind="getProps(allNodesAPI[key])"
+                  mode="edit">
+                </component>
+              </u-flowable-form-item>
+              <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-rich-text'">
+                <component 
+                  :is="childItem.name"
+                  v-model="modelGroup.UFlowableRichText"
+                  v-if="childItem.name === 'u-flowable-rich-text'"
+                  v-bind="getProps(allNodesAPI[key])"
+                  mode="edit">
+                </component>
+               </u-flowable-form-item>
+              <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-select'">
                <component 
                 :is="childItem.name"
                 v-model="modelGroup.UFlowableSelect"
@@ -109,6 +124,8 @@
                 v-bind="getProps(allNodesAPI[key])"
                 mode="edit">
               </component>
+               </u-flowable-form-item>
+              <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-string'">
               <component 
                 :is="childItem.name"
                 v-model="modelGroup.UFlowableString"
@@ -116,45 +133,51 @@
                 v-bind="getProps(allNodesAPI[key])"
                 mode="edit">
               </component>
+              </u-flowable-form-item>
+              <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-text'">
                <component 
                 :is="childItem.name"
                 v-model="modelGroup.UFlowableText"
-                v-else-if="childItem.name === 'u-flowable-text'"
+                v-if="childItem.name === 'u-flowable-text'"
                 v-bind="getProps(allNodesAPI[key])"
                 mode="edit">
               </component>
+              </u-flowable-form-item>
+               <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-textarea'">
                <component 
                 :is="childItem.name"
                 v-model="modelGroup.UFlowableTextarea"
-                v-else-if="childItem.name === 'u-flowable-textarea'"
+                v-if="childItem.name === 'u-flowable-textarea'"
                 v-bind="getProps(allNodesAPI[key])"
                 mode="edit">
               </component>
+              </u-flowable-form-item>
+               <u-flowable-form-item :title="(allNodesAPI[key] || {}).title" tip="提示信息" v-if="childItem.name === 'u-flowable-uploader'">
              <component 
                 :is="childItem.name"
                 v-model="modelGroup.UFlowableUploader"
-                v-else-if="childItem.name === 'u-flowable-uploader'"
+                v-if="childItem.name === 'u-flowable-uploader'"
                 v-bind="getProps(allNodesAPI[key])"
                 mode="edit">
               </component>
-            </u-form-item>
+           </u-flowable-form-item>
            </div>
         </div>
         
-        </u-form>
+        </u-flowable-form>
     </div>
      <div :class="$style.base">
        <div :class="$style.colBoxTitle">配置（展示组件和组件的配置）</div>
        <div v-for="(childItem, key) in componentList" :key="key">
        <div :class="[$style.resultbox, selectedNode.tag === key && $style.active]" @click="handleClick(key, childItem)">
-        <div :class="$style.title">{{ allNodesAPI[key][0].title}}</div>
-        <u-form-item>
+        <div :class="$style.title">{{ (allNodesAPI[key] || {}).title}}</div>
+        <u-flowable-form-item>
           <component 
             :is="childItem.name"
             v-bind="getProps(allNodesAPI[key])"
             mode="edit">
           </component>
-        </u-form-item>
+        </u-flowable-form-item>
         </div>
      </div>
     </div>
@@ -238,7 +261,7 @@ export default {
     getRules(api) {
       const rules = [];
       // api 的配置映射到组件的可读属性上
-      api[0].attrs.forEach(attr => {
+      api.attrs.forEach(attr => {
         if (attr.group === 'validate') {
           // 验证规则配置与解析
           rules.push(formatvalidateObject(attr))

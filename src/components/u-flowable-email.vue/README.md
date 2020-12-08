@@ -2,6 +2,8 @@
 
 # UFlowableEmail 邮箱
 
+- [示例](#示例)
+    - [基本用法](#基本用法)
 - [API]()
     - [Props/Attrs](#propsattrs)
     - [Slots](#slots)
@@ -11,13 +13,30 @@
 
 用于展示文字或表达式
 
+## 示例
+### 基本用法
+
+```vue
+<template>
+    <u-flowable-email mode="edit" v-model="model"></u-flowable-email>
+</template>
+<script>
+export default {
+    data() {
+        return {
+            model: '1112121212@qq.com'
+        }
+    },
+}
+</script>
+```
 ## API
 ### Props/Attrs
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
 | title | string |  |  | 标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题 |
-| placeholder | string |  |  | undefined |
+| placeholder | string |  |  | 占位内容 |
 | value | string |  |  | 设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。 |
 | text | string |  |  | 文本内容 |
 | color | string | `[object Object]`<br/>`[object Object]`<br/>`[object Object]`<br/>`[object Object]`<br/>`[object Object]`<br/>`[object Object]`<br/>`[object Object]` | `'default'` | 设置颜色 |

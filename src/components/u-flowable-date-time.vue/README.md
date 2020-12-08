@@ -2,6 +2,8 @@
 
 # UFlowableDateTime 日期
 
+- [示例](#示例)
+    - [基本用法](#基本用法)
 - [API]()
     - [Props/Attrs](#propsattrs)
 
@@ -9,6 +11,23 @@
 
 用于展示文字或表达式
 
+## 示例
+### 基本用法
+
+```vue
+<template>
+    <u-flowable-date-time mode="edit" v-model="model"></u-flowable-date-time>
+</template>
+<script>
+export default {
+    data() {
+        return {
+            model: '2020-12-2'
+        }
+    },
+}
+</script>
+```
 ## API
 ### Props/Attrs
 
@@ -16,5 +35,5 @@
 | --------- | ---- | ------- | ------- | ----------- |
 | title | string |  |  | 标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题 |
 | value | string |  |  | 设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。 |
-| compType | string | `[object Object]`<br/>`[object Object]` | `'date'` | 日期类型 |
+| dateType | string | `[object Object]`<br/>`[object Object]` | `'date'` | 设置时间格式 |
 

@@ -2,6 +2,8 @@
 
 # UFlowableRadios 单选组
 
+- [示例](#示例)
+    - [基本用法](#基本用法)
 - [API]()
     - [Props/Attrs](#propsattrs)
 
@@ -9,6 +11,25 @@
 
 多项中选择一个时使用
 
+## 示例
+### 基本用法
+
+```vue
+<template>
+    <u-flowable-radios mode="edit" v-model="model" :list="[{key: '数学', value: '数学'}, {key: '语文', value: '语文'}]"
+		>
+		</u-flowable-radios>
+</template>
+<script>
+export default {
+    data() {
+        return {
+            model: '数学'
+        }
+    },
+}
+</script>
+```
 ## API
 ### Props/Attrs
 

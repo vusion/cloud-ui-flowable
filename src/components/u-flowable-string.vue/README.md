@@ -35,12 +35,9 @@ export default {
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
 | title | string |  |  | 标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题 |
-| placeholder | string |  |  | undefined |
+| placeholder | string |  |  | 占位内容 |
 | value | string |  |  | 文本内容 |
-| width | string |  |  | undefined |
-| scarn | string |  |  | undefined |
 | required | string |  |  | 选择必填后，填写者不填写将无法提交表单 |
-| duplicate | string |  |  | undefined |
-| minlength | string |  |  | undefined |
-| maxlength | string |  |  | undefined |
+| minlength | string |  |  | 最小长度 |
+| maxlength | string |  |  | 最大长度 |
 

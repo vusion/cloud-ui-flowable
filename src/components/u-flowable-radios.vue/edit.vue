@@ -22,8 +22,11 @@ export default {
         };
     },
     watch: {
-        currentValue(currentValue) {
-            this.$emit('input', currentValue);
+        currentValue: {
+            handler(currentValue) {
+                this.$emit('input', currentValue);
+            },
+            immediate: true,
         },
         value(value) {
             this.currentValue = value;

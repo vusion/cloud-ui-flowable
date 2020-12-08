@@ -36,16 +36,15 @@ export function formatvalidateObject(attr) {
 			validateConfig.message = `字数限制为 ${attr.min} - ${attr.max}`;
 		}
 	}
+	
 	return validateConfig;
 }
 
 export function getProps(api) {
 	// 显示属性的key 和值
 	const props = {};
-	api[0].attrs.forEach(attr => {
-		if (attr.group !== 'validate') {
-			Object.assign(props, { [attr.name] : attr.value })
-		}
+	((api || {}).attrs || []).forEach(attr => {
+		Object.assign(props, { [attr.name] : attr.value })
 	})
 
 	return props;

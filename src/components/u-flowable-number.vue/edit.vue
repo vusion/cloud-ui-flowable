@@ -32,10 +32,11 @@ export default {
         },
     },
     watch: {
-        currentValue(currentValue) {
-            if (currentValue) {
+        currentValue: {
+            handler(currentValue) {
                 this.$emit('input', currentValue);
-            }
+            },
+            immediate: true,
         },
         value(value) {
             this.currentValue = this.formatValue(value);

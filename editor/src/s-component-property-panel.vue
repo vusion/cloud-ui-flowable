@@ -50,7 +50,7 @@ export default {
         view: Object,
     },
     data() {
-        const currentComponent =  this.selectedNode && this.allNodesAPI[this.selectedNode.tag][0];
+        const currentComponent =  this.selectedNode && this.allNodesAPI[this.selectedNode.tag];
         console.info('currentComponent', currentComponent)
         const result =  {
             loading: false,
@@ -313,7 +313,7 @@ export default {
         getComponentsAPI() {
             if (this.allNodesAPI[this.selectedNode.tag]) {
                 this.loading = false;
-                this.currentComponent = this.allNodesAPI[this.selectedNode.tag][0];
+                this.currentComponent = this.allNodesAPI[this.selectedNode.tag];
                 this.getCurrentEvents();
             } else if (this.view && this.view.page) {
               //  const selectedNode = this.selectedNode;

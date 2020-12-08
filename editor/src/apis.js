@@ -15,21 +15,23 @@ import UFlowableImageSelect from '../../src/components/u-flowable-image-select.v
 import UFlowableRichText from '../../src/components/u-flowable-rich-text.vue/api.yaml';
 import UFlowableAddress from '../../src/components/u-flowable-address.vue/api.yaml';
 
-export default {
-	UFlowableText,
-	UFlowableString,
-	UFlowableTextarea,
-	UFlowableDateTime,
-	UFlowableEmail,
-	UFlowableMobile,
-	UFlowableNumber,
-	UFlowableLink,
-	UFlowableRadios,
-	UFlowableSelect,
-	UFlowableCheckbox,
-	UFlowableUploader,
-	UFlowableDateTimeRange,
-	UFlowableImageSelect,
-	UFlowableRichText,
-	UFlowableAddress
+const yamls = {
+	UFlowableText: UFlowableText[0],
+	UFlowableString: UFlowableString[0],
+	UFlowableTextarea: UFlowableTextarea[0],
+	UFlowableDateTime: UFlowableDateTime[0],
+	UFlowableEmail: UFlowableEmail[0],
+	UFlowableMobile: UFlowableMobile[0],
+	UFlowableNumber: UFlowableNumber[0],
+	UFlowableLink: UFlowableLink[0],
+	UFlowableRadios: UFlowableRadios[0],
+	UFlowableSelect: UFlowableSelect[0],
+	UFlowableCheckbox: UFlowableCheckbox[0],
+	UFlowableUploader: UFlowableUploader[0],
+	UFlowableDateTimeRange: UFlowableDateTimeRange[0],
+	UFlowableImageSelect: UFlowableImageSelect[0],
+	UFlowableRichText: UFlowableRichText[0],
+	UFlowableAddress: UFlowableAddress[0]
 };
+
+export default yamls;
