@@ -100,7 +100,6 @@ const UFlowableForm = {
             } else {
                 this.$emit('error', error);
             }
-            console.info('result abc', valid, result);
         },
     },
 };
@@ -114,6 +113,7 @@ export default UFlowableForm;
 </script>
 <style module>
 .root {
+    position: relative;
 }
 .head {
     margin-bottom: 12px;

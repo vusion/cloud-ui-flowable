@@ -2,7 +2,7 @@
 
 ```vue
 <template>
-		<u-flowable-uploader mode="edit" v-model="model" :clearable="true" style="color:red"></u-flowable-uploader>
+		<u-flowable-uploader mode="edit" v-model="model" ></u-flowable-uploader>
 </template>
 <script>
 export default {

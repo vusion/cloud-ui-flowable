@@ -2,7 +2,7 @@
 
 ```vue
 <template>
-    <u-flowable-radios mode="edit" v-model="model" :list="[{key: '数学', value: '数学'}, {key: '语文', value: '语文'}]"
+    <u-flowable-radios mode="edit" v-model="model" :list="[{key: '未命名1', value: '未命名1'}, {key: '未命名2', value: '未命名2'}]"
 		>
 		</u-flowable-radios>
 </template>
@@ -10,7 +10,7 @@
 export default {
     data() {
         return {
-            model: '数学'
+            model: '未命名1'
         }
     },
 }

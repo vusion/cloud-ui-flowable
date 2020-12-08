@@ -1,7 +1,7 @@
 ### 编辑模式
 
 ``` html
-<u-flowable-uploader mode="edit" :value="[{ name: '文件1' }]" size="huge" :clearable="true" style="color:red"></u-flowable-uploader>
+<u-flowable-uploader mode="edit" :value="[{ name: '文件1' }]"  ></u-flowable-uploader>
 ```
 
 ### 只读模式

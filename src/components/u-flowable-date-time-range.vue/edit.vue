@@ -1,14 +1,14 @@
 <template>
 <div :class="$style.root">
     <template v-if="dateType === 'date'">
-        <u-date-picker :class="$style.item" placeholder="开始时间" v-bind="$attrs" :date.sync="currentValue.startTime" :max-date="endTime"></u-date-picker>
+        <u-date-picker :class="$style.item" placeholder="开始时间" :date.sync="currentValue.startTime" :max-date="endTime"></u-date-picker>
         <div :class="$style.separator">至</div>
-        <u-date-picker :class="$style.item" placeholder="结束时间" v-bind="$attrs" :date.sync="currentValue.endTime" :min-date="startTime"></u-date-picker>
+        <u-date-picker :class="$style.item" placeholder="结束时间" :date.sync="currentValue.endTime" :min-date="startTime"></u-date-picker>
     </template>
     <template v-else-if="dateType === 'datetime'">
-        <u-date-time-picker :class="$style.item" placeholder="开始时间" v-bind="$attrs" :date.sync="currentValue.startTime" :max-date="endTime"></u-date-time-picker>
+        <u-date-time-picker :class="$style.item" placeholder="开始时间" :date.sync="currentValue.startTime" :max-date="endTime"></u-date-time-picker>
          <div :class="$style.separator">至</div>
-        <u-date-time-picker :class="$style.item" placeholder="结束时间" v-bind="$attrs" :date.sync="currentValue.endTime" :min-date="startTime"></u-date-time-picker>
+        <u-date-time-picker :class="$style.item" placeholder="结束时间" :date.sync="currentValue.endTime" :min-date="startTime"></u-date-time-picker>
     </template>
 </div>
 
@@ -40,13 +40,13 @@ export default {
         currentValue: {
             handler(currentValue) {
                 if (currentValue.startTime && currentValue.endTime) {
-                    this.$emit('input', [this.currentValue.startTime, this.currentValue.endTime].join('~'));
+                    this.$emit('input', [currentValue.startTime, currentValue.endTime].join('~'));
                 }
                 if (currentValue.startTime) {
-                    this.startTime = new Date(currentValue.startTime);
+                    this.startTime = currentValue.startTime;
                 }
                 if (currentValue.endTime) {
-                    this.endTime = new Date(currentValue.endTime);
+                    this.endTime = currentValue.endTime;
                 }
             },
             deep: true,

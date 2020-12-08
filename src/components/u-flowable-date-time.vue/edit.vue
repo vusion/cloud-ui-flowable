@@ -41,7 +41,7 @@ export default {
 
 <style module>
 .root {
-    
+
 }
 .ctrl {
     position: relative;

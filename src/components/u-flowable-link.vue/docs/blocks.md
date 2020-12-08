@@ -1,7 +1,7 @@
 ### 编辑模式
 
 ``` html
-<u-flowable-link mode="edit" value="普通文本" size="huge" :clearable="true" style="color:red"></u-flowable-link>
+<u-flowable-link mode="edit" value="普通文本"   ></u-flowable-link>
 ```
 
 ### 只读模式

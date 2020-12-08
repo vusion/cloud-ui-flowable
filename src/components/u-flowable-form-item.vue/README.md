@@ -19,10 +19,10 @@
 <template>
 <div>
 <u-flowable-form-item mode="edit" title="邮箱" tip="请输入正确邮箱">
-    <u-flowable-email  value="test@test.com" size="huge" @test="test" :clearable="true" style="color:red"></u-flowable-email>
+    <u-flowable-email  value="test@test.com"  @test="test"  ></u-flowable-email>
 </u-flowable-form-item>
 <u-flowable-form-item mode="edit" title="邮箱" tip="请输入正确邮箱">
-    <u-flowable-email value="test@test.com" size="huge" :clearable="true" style="color:red"></u-flowable-email>
+    <u-flowable-email value="test@test.com"   ></u-flowable-email>
 </u-flowable-form-item>
 </div>
 </template>
@@ -40,10 +40,10 @@ export default {
 
 ```html
 <u-flowable-form-item mode="readonly" title="邮箱" tip="请输入正确邮箱">
-    <u-flowable-email value="test@test.com" size="huge" :clearable="true" style="color:red"></u-flowable-email>
+    <u-flowable-email value="test@test.com"   ></u-flowable-email>
 </u-flowable-form-item>
 <u-flowable-form-item mode="readonly" title="邮箱" tip="请输入正确邮箱">
-    <u-flowable-email value="test@test.com" size="huge" :clearable="true" style="color:red"></u-flowable-email>
+    <u-flowable-email value="test@test.com"   ></u-flowable-email>
 </u-flowable-form-item>
 ```
 ## API
