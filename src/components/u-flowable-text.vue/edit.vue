@@ -1,5 +1,7 @@
 <template>
+<div :class="$style.root">
     <u-html :html="value"></u-html>
+</div>
 </template>
 
 <script>
@@ -15,5 +17,7 @@ export default {
 </script>
 
 <style module>
-
+.root {
+    
+}
 </style>

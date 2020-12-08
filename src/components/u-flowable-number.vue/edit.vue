@@ -1,5 +1,7 @@
 <template>
-    <u-number-input v-model="currentValue" v-bind="$attrs" :precision="precision" :step="precision"></u-number-input>
+<div :class="$style.root">
+    <u-number-input v-model="currentValue" v-bind="$attrs" :precision="precision" :step="precision"  size="full"></u-number-input>
+</div>
 </template>
 
 <script>

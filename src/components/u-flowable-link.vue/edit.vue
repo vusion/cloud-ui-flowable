@@ -1,5 +1,7 @@
 <template>
-    <u-input v-model="currentValue" v-bind="$attrs"></u-input>
+<div :class="$style.root">
+    <u-input v-model="currentValue" v-bind="$attrs"  size="full"></u-input>
+</div>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template>
-<div>
-    <u-region-select v-model="currentValue" v-bind="$attrs" converter="join:-"></u-region-select>
-    <u-textarea v-model="address" v-bind="$attrs" placeholder="详细地址" :class="$style.address"></u-textarea>
+<div :class="$style.root">
+    <u-region-select :class="$style.select" v-model="currentValue" v-bind="$attrs" converter="join:-"></u-region-select>
+    <u-textarea v-model="address" :class="$style.address" v-bind="$attrs" placeholder="详细地址" size="medium full"></u-textarea>
 </div>
 
 </template>
@@ -74,8 +74,10 @@ export default {
 
 <style module>
 .root {}
+.select [class^=u-select][tabindex="0"] {
+    width: calc((100% - var(--space-small) * 2) / 3);
+}
 .address {
     margin-top: 10px;
-    width: calc(var(--space-base) * 2 + var(--select-width) * 3);
 }
 </style>
