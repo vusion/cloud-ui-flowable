@@ -30,7 +30,7 @@
       value: ''
       description: 文本内容
     - name: required
-      type: string
+      type: boolean
       compType: checkbox
       group: validate
       message: 请输入内容

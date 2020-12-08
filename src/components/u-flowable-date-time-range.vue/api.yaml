@@ -37,7 +37,7 @@
       value: 'date'
       description: 设置时间格式
     - name: required
-      type: string
+      type: boolean
       compType: checkbox
       group: validate
       message: 请输入内容

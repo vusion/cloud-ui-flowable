@@ -1,4 +1,5 @@
 <template>
+<div :class="$style.root">
     <u-checkboxes v-model="currentValue" :min="min" :max="max" v-bind="$attrs" :class="$style.checkboxes">
         <template v-for="(item, index) in list">
             <div :key="index" :class="$style.checkbox">
@@ -11,6 +12,7 @@
             </div>
         </template>
     </u-checkboxes>
+</div>
 </template>
 
 <script>
@@ -47,10 +49,10 @@ export default {
     },
     methods: {
         getCurrentImage(item) {
-            if (item.files[0]) {
+            if (item.files?.[0]) {
                 return item.files[0].url;
             }
-            return item.image;
+            return item?.image;
         },
         splitValue() {
             // TODO value 如果是字符串需要转换一次
@@ -61,7 +63,9 @@ export default {
 </script>
 
 <style module>
-
+.root {
+    
+}
 .checkbox {
     display: inline-block;
     vertical-align: top;

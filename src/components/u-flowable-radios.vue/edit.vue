@@ -1,7 +1,9 @@
 <template>
+<div :class="$style.root">
     <u-radios v-model="currentValue" v-bind="$attrs">
         <u-radio v-for="item in $attrs.list" :key="item.key" :label="item.key">{{ item.value }}</u-radio>
     </u-radios>
+</div>
 </template>
 
 <script>

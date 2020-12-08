@@ -40,7 +40,7 @@
       title: 最大值
       description: 最大值
     - name: required
-      type: string
+      type: boolean
       compType: checkbox
       group: validate
       message: 请输入内容

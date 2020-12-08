@@ -1,5 +1,7 @@
 <template>
-    <u-input v-model="currentValue" v-bind="$attrs"></u-input>
+<div :class="$style.root">
+    <u-input v-model="currentValue" v-bind="$attrs"  size="full"></u-input>
+</div>
 </template>
 
 <script>
@@ -11,6 +13,7 @@ export default {
     },
     props: {
         value: String,
+        required: Boolean,
     },
     data() {
         return {
@@ -26,7 +29,7 @@ export default {
                         this.$emit('input', currentValue);
                     } else {
                         this.$emit('error', {
-                            type: 'emailFormatError',
+                            type: 'urlFormatError',
                             message: '链接格式出错',
                         });
                     }

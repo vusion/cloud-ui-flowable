@@ -1,7 +1,9 @@
 <template>
-    <u-select v-model="currentValue" v-bind="$attrs">
+<div :class="$style.root">
+    <u-select v-model="currentValue" v-bind="$attrs"  size="full">
         <u-select-item v-for="item in list" :key="item.key" :value="item.key">{{ item.text }}</u-select-item>
     </u-select>
+</div>
 </template>
 
 <script>

@@ -26,7 +26,7 @@
       description: 上传地址
       value: /gateway/lowcode/api/v1/app/upload
     - name: required
-      type: string
+      type: boolean
       compType: checkbox
       group: validate
       message: 请输入内容

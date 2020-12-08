@@ -60,7 +60,6 @@ export default function (component) {
             }, this.$slots.default);
         }
     };
-
     component.props = component.props || {};
     component.props.mode = {
         type: String,

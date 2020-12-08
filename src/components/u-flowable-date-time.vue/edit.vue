@@ -1,6 +1,8 @@
 <template>
-    <u-date-picker alignment="left" :class="$style.root" :date.sync="currentValue" v-bind="$attrs" v-if="dateType === 'date'"></u-date-picker>
-    <u-date-time-picker alignment="left" :class="$style.root" :date.sync="currentValue" v-bind="$attrs" v-else-if="dateType === 'datetime'"></u-date-time-picker>
+<div :class="$style.root">
+    <u-date-picker alignment="left" :class="$style.ctrl" :date.sync="currentValue" v-bind="$attrs" v-if="dateType === 'date'"></u-date-picker>
+    <u-date-time-picker alignment="left" :class="$style.ctrl" :date.sync="currentValue" v-bind="$attrs" v-else-if="dateType === 'datetime'"></u-date-time-picker>
+</div>
 </template>
 
 <script>
@@ -39,11 +41,14 @@ export default {
 
 <style module>
 .root {
+    
+}
+.ctrl {
     position: relative;
     display: block!important;
     width: 100%!important;
 }
-.root input{
+.ctrl input{
     width: 100%!important;
 }
 

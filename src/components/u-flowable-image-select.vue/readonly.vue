@@ -31,7 +31,7 @@ export default {
     },
     methods: {
         getCurrentImage(item) {
-            if (item.files[0]) {
+            if (item.files?.[0]) {
                 return item.files[0].url;
             }
             return item.image;
@@ -54,7 +54,7 @@ export default {
             return valueResult.map((valueItem) => {
                 const realItem = this.list.find((item) => item.text === valueItem);
                 return realItem;
-            });
+            }).filter((i) => i);
         },
     },
 };

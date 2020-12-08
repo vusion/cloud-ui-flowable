@@ -20,7 +20,7 @@
       title: 默认内容
       description: 默认值，输入内容
     - name: required
-      type: string
+      type: boolean
       compType: checkbox
       group: validate
       message: 请输入内容
