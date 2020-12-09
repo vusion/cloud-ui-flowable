@@ -17,7 +17,7 @@
     "ghpages": "vusion ghpages",
     "lcap": "node ./scripts/lcap",
     "prepublish": "yarn run build && yarn run build:theme && vusion readme",
-    "prepublishOnly": "npm run build && npm run build:theme && npm run build:raw && vusion readme && vusion vetur && git add .",
+    "prepublishOnly": "npm run lcap && npm run build && npm run build:theme && npm run build:raw && vusion readme && vusion vetur && git add .",
     "postpublish": "npm run build:docs"
   },
   "repository": "vusion/cloud-ui-flowable",
