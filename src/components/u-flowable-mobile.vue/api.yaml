@@ -1,6 +1,6 @@
 - name: u-flowable-mobile
-  title: 手机号
-  readonlyTitle: 手机号
+  title: 手机
+  readonlyTitle: 手机
   icon: text
   labels: [Display]
   description: 用于展示文字或表达式

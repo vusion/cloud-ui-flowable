@@ -1,7 +1,7 @@
 ### 编辑模式
 
 ``` html
-<u-flowable-textarea  ></u-flowable-textarea>
+<u-flowable-textarea   title="多行文字"></u-flowable-textarea>
 ```
 
 ### 只读模式

@@ -1,7 +1,7 @@
 ### 编辑模式
 
 ``` html
-<u-flowable-number  ></u-flowable-number>
+<u-flowable-number  title="数字"></u-flowable-number>
 ```
 
 ### 只读模式

@@ -1,7 +1,7 @@
 ### 基础示例-编辑
 
 ``` html
-<u-flowable-radios :list="[{key: '未命名1', value: '未命名1'}, {key: '未命名2', value: '未命名2'}]"></u-flowable-radios>
+<u-flowable-radios title="单项选择" :list="[{key: '未命名1', value: '未命名1'}, {key: '未命名2', value: '未命名2'}]"></u-flowable-radios>
 ```
 
 ### 普通文本

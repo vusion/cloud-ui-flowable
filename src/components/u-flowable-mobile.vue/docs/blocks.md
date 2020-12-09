@@ -1,7 +1,7 @@
 ### 编辑模式
 
 ``` html
-<u-flowable-mobile  ></u-flowable-mobile>
+<u-flowable-mobile title="手机" ></u-flowable-mobile>
 ```
 
 ### 只读模式

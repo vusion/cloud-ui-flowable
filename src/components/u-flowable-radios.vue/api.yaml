@@ -1,6 +1,6 @@
 - name: u-flowable-radios
-  title: 单选组
-  readonlyTitle: 单选组
+  title: 单项选择
+  readonlyTitle: 单项选择
   icon: radios
   labels: [Basic]
   description: 多项中选择一个时使用

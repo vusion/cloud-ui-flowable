@@ -1,6 +1,6 @@
 <template>
 <div :class="$style.root">
-    <u-input v-model="currentValue" v-bind="$attrs" size="full"></u-input>
+    <u-input v-model="currentValue" v-bind="$attrs" placeholder="请输入内容" size="full"></u-input>
 </div>
 </template>
 

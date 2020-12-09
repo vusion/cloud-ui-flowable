@@ -1,7 +1,7 @@
 ### 编辑模式
 
 ``` html
-<u-flowable-rich-text ></u-flowable-rich-text>
+<u-flowable-rich-text title="富文本"></u-flowable-rich-text>
 ```
 
 ### 只读模式

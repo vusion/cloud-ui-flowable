@@ -1,6 +1,6 @@
 <template>
 <div :class="$style.root">
-    <u-textarea v-model="currentValue" resize="vertical" v-bind="$attrs" size="medium full"></u-textarea>
+    <u-textarea v-model="currentValue" resize="vertical" v-bind="$attrs" placeholder="请输入内容" size="medium full"></u-textarea>
 </div>
 </template>
 

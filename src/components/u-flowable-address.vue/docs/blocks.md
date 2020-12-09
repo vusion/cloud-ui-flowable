@@ -1,7 +1,7 @@
 ### 基础
 
 ``` html
-<u-flowable-address  ></u-flowable-address>
+<u-flowable-address title="地址"></u-flowable-address>
 ```
 
 ### 编辑模式

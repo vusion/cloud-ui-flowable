@@ -1,7 +1,7 @@
 ### 基础示例-日期
 
 ``` html
-<u-flowable-date-time-range  ></u-flowable-date-time-range>
+<u-flowable-date-time-range title="起止时间" ></u-flowable-date-time-range>
 ```
 
 ### 基础示例-日期时间

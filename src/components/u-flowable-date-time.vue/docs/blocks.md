@@ -1,7 +1,7 @@
 ### 基础示例-日期
 
 ``` html
-<u-flowable-date-time  ></u-flowable-date-time>
+<u-flowable-date-time  title="日期"></u-flowable-date-time>
 ```
 
 ### 基础示例-日期时间

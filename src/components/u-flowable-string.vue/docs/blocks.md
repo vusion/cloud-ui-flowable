@@ -1,7 +1,7 @@
 ### 编辑模式
 
 ``` html
-<u-flowable-string ></u-flowable-string>
+<u-flowable-string title="单行文字"></u-flowable-string>
 ```
 
 ### 只读模式

@@ -1,7 +1,7 @@
 ### 编辑模式
 
 ``` html
-<u-flowable-text value="描述文字"></u-flowable-text>
+<u-flowable-text value="描述文字" title="描述文字"></u-flowable-text>
 ```
 
 ### 只读模式

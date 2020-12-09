@@ -1,7 +1,7 @@
 ### 编辑模式
 
 ``` html
-<u-flowable-email ></u-flowable-email>
+<u-flowable-email title="邮箱"></u-flowable-email>
 ```
 
 ### 只读模式

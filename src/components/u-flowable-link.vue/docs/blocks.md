@@ -1,7 +1,7 @@
 ### 编辑模式
 
 ``` html
-<u-flowable-link ></u-flowable-link>
+<u-flowable-link title="链接"></u-flowable-link>
 ```
 
 ### 只读模式
