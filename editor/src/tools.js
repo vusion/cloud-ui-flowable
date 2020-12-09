@@ -49,5 +49,6 @@ export function getProps(api) {
 	})
 	// 添加 name 参数
 	Object.assign(props, { name : (api || {}).name });
+	Object.assign(props, { required : true});
 	return props;
 }

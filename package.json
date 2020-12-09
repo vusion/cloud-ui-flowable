@@ -1,7 +1,7 @@
 {
   "name": "cloud-ui-flowable.vusion",
   "description": "Vusion Cloud UI Flowable",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "./index.js",
   "scripts": {
     "dev": "vue-cli-service doc --port 9001",
@@ -16,7 +16,7 @@
     "lint": "eslint --fix --ext .js,.vue src && stylelint --fix ./src/**/*.css",
     "ghpages": "vusion ghpages",
     "lcap": "node ./scripts/lcap",
-    "prepublish": "yarn run build && yarn run build:theme",
+    "prepublish": "yarn run build && yarn run build:theme && vusion readme",
     "prepublishOnly": "npm run build && npm run build:theme && npm run build:raw && vusion readme && vusion vetur && git add .",
     "postpublish": "npm run build:docs"
   },
