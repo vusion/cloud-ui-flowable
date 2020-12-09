@@ -1,7 +1,7 @@
 ### 编辑模式
 
 ``` html
-<u-flowable-mobile mode="edit" value="15123456789"   ></u-flowable-mobile>
+<u-flowable-mobile  ></u-flowable-mobile>
 ```
 
 ### 只读模式

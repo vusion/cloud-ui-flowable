@@ -1,7 +1,7 @@
 ### 编辑模式
 
 ``` html
-<u-flowable-rich-text mode="edit" value="<a href='http://www.baidu.com' target='_blank'>百度</a>"   ></u-flowable-rich-text>
+<u-flowable-rich-text ></u-flowable-rich-text>
 ```
 
 ### 只读模式

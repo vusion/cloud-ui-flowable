@@ -1,7 +1,7 @@
 ### 编辑模式
 
 ``` html
-<u-flowable-textarea mode="edit" value="普通文本"  ></u-flowable-textarea>
+<u-flowable-textarea  ></u-flowable-textarea>
 ```
 
 ### 只读模式

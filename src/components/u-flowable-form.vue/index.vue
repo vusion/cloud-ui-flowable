@@ -7,6 +7,7 @@
             <div :class="$style.tip" v-if="tip">
                 {{ tip }}
             </div>
+            <slot name="head"></slot>
             <div :class="$style.files" v-if="files && files.length">
                 <div :class="$style.file" v-for="(file, index) in files" :key="index">
                     <div :class="$style.meta">
@@ -23,7 +24,7 @@
                 <slot></slot>
             </form>
         </div>
-        <div :class="$style.foot">
+        <div :class="$style.foot" v-if="mode === 'edit'">
             <u-button @click="onSubmit()">{{ buttonText }}</u-button>
         </div>
     </div>
@@ -49,6 +50,10 @@ const UFlowableForm = {
         buttonText: {
             type: String,
             default: '提交',
+        },
+        mode: {
+            type: String,
+            default: 'edit',
         },
     },
     data() {

@@ -1,7 +1,7 @@
 ### 编辑模式
 
 ``` html
-<u-flowable-number mode="edit" :value="3"  ></u-flowable-number>
+<u-flowable-number  ></u-flowable-number>
 ```
 
 ### 只读模式

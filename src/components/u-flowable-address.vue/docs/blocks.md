@@ -1,3 +1,9 @@
+### 基础
+
+``` html
+<u-flowable-address  ></u-flowable-address>
+```
+
 ### 编辑模式
 
 ``` html

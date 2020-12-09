@@ -1,20 +1,18 @@
 export default function (component) {
     component.render = function (h) {
+        const props = {
+            ...this.$props,
+            ...this.$attrs,
+        };
+        Object.keys(props).forEach((key) => {
+            if (key.startsWith('vusion-')) {
+                delete props[key];
+            }
+        });
         if (this.mode === 'edit') {
-            const props = {
-                ...this.$props,
-                ...this.$attrs,
-            };
-
             return h('edit', {
-                props: {
-                    ...this.$props,
-                    ...this.$attrs,
-                },
-                attrs: {
-                    ...this.$props,
-                    ...this.$attrs,
-                },
+                props,
+                attrs: props,
                 on: {
                     touched: ($event) => {
                         this.$emit('touched', $event);
@@ -63,14 +61,8 @@ export default function (component) {
                 return h('div', ['暂无数据']);
             }
             return h('readonly', {
-                props: {
-                    ...this.$props,
-                    ...this.$attrs,
-                },
-                attrs: {
-                    ...this.$props,
-                    ...this.$attrs,
-                },
+                props,
+                attrs: props,
             }, this.$slots.default);
         }
     };

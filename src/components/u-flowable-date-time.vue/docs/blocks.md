@@ -1,7 +1,7 @@
 ### 基础示例-日期
 
 ``` html
-<u-flowable-date-time value="2020-09-09" mode="edit" alignment="right"></u-flowable-date-time>
+<u-flowable-date-time  ></u-flowable-date-time>
 ```
 
 ### 基础示例-日期时间
