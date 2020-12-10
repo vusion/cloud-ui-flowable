@@ -1,0 +1,16 @@
+- name: u-flowable-department
+  title: 部门
+  readonlyTitle: 部门
+  icon: department
+  labels: [Advanced]
+  value: 部门
+  description: 可以选择组织架构
+  attrs:
+    - name: value
+      type: string
+      compType: departmentSelect
+      title: 内容
+      value: 选择的部门
+      description: 设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。部门 ID 以逗号隔开
+  slots: false
+  events: false

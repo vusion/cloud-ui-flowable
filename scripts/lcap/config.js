@@ -15,4 +15,6 @@ module.exports = [
     { group: 'Form', show: true, name: 'u-flowable-image-select', alias: '图片选择' },
     { group: 'Form', show: true, name: 'u-flowable-rich-text', alias: '富文本' },
     { group: 'Form', show: true, name: 'u-flowable-address', alias: '地址' },
+    { group: 'Form', show: true, name: 'u-flowable-user', alias: '用户' },
+    { group: 'Form', show: true, name: 'u-flowable-department', alias: '部门' },
 ];

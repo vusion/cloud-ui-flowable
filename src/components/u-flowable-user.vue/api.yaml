@@ -1,0 +1,16 @@
+- name: u-flowable-user
+  title: 成员
+  readonlyTitle: 成员
+  icon: user
+  labels: [Advanced]
+  value: 成员
+  description: 可以选择组织成员
+  attrs:
+    - name: value
+      type: string
+      compType: userSelect
+      title: 内容
+      value: 选择的成员
+      description: 设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。成员 ID 以逗号隔开
+  slots: false
+  events: false
