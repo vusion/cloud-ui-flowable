@@ -2,6 +2,7 @@
   title: 图片选择
   readyonlyTitle: 图片选择
   labels: [Basic]
+  icon: image
   description: 多项中选择一个时使用
   attrs:
     - name: title

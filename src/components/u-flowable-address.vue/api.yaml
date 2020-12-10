@@ -1,6 +1,6 @@
 - name: u-flowable-address
   title: 地址
-  icon: input
+  icon: region-select
   labels: [Basic]
   description: 描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。
   attrs:

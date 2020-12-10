@@ -1,7 +1,7 @@
 - name: u-flowable-checkbox
   title: 多项选择
   readonlyTitle: 多项选择
-  icon: checkbox
+  icon: checkboxes
   labels: [Basic]
   description: 多项中选择一个时使用
   attrs:

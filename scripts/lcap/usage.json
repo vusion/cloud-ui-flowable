@@ -1,7 +1,61 @@
 [
     {
-        "symbol": "u-flowable-address",
-        "name": "地址",
+        "symbol": "u-flowable-text",
+        "name": "描述文字",
+        "icon": "text",
+        "depDescription": {},
+        "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
+        "labels": [
+            "Basic"
+        ],
+        "screenShot": "[]",
+        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-text value=\\\"描述文字\\\" title=\\\"描述文字\\\"></u-flowable-text>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-text mode=\\\"readonly\\\" value=\\\"普通文本\\\"></u-flowable-text>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-text mode=\\\"readonly\\\" :value=\\\"'支持变量'\\\"></u-flowable-text>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-text mode=\\\"edit\\\" :value=\\\"'支持变量'\\\"></u-flowable-text>\\n</template>\\n\"}]",
+        "jsonSchema": {
+            "name": "u-flowable-text",
+            "title": "描述文字",
+            "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
+            "category": "Basic",
+            "screenShot": "[]",
+            "blocks": [
+                {
+                    "title": "编辑模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-text value=\"描述文字\" title=\"描述文字\"></u-flowable-text>\n</template>\n"
+                },
+                {
+                    "title": "只读模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-text mode=\"readonly\" value=\"普通文本\"></u-flowable-text>\n</template>\n"
+                },
+                {
+                    "title": "变量支持-只读模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-text mode=\"readonly\" :value=\"'支持变量'\"></u-flowable-text>\n</template>\n"
+                },
+                {
+                    "title": "变量支持-编辑模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-text mode=\"edit\" :value=\"'支持变量'\"></u-flowable-text>\n</template>\n"
+                }
+            ],
+            "attrs": [
+                {
+                    "name": "value",
+                    "type": "string",
+                    "compType": "richtext",
+                    "title": "内容",
+                    "value": "描述文字内容",
+                    "description": "请输入描述文字"
+                }
+            ],
+            "slots": false,
+            "events": false,
+            "children": []
+        }
+    },
+    {
+        "symbol": "u-flowable-string",
+        "name": "单行文字",
         "icon": "input",
         "depDescription": {},
         "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
@@ -9,38 +63,33 @@
             "Basic"
         ],
         "screenShot": "[]",
-        "blocks": "[{\"title\":\"基础\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-address title=\\\"地址\\\"></u-flowable-address>\\n</template>\\n\"},{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-address mode=\\\"edit\\\" value=\\\"上海-上海市-黄浦区 测试地址 测试地址\\\" ></u-flowable-address>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-address mode=\\\"readonly\\\" value=\\\"上海-上海市-黄浦区 测试地址 测试地址\\\"></u-flowable-address>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-address mode=\\\"readonly\\\" :value=\\\"'上海-上海市-黄浦区 测试地址 测试地址'\\\"></u-flowable-address>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-address mode=\\\"edit\\\" :value=\\\"'上海-上海市-黄浦区 测试地址 测试地址'\\\"></u-flowable-address>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-string title=\\\"单行文字\\\"></u-flowable-string>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-string mode=\\\"readonly\\\" value=\\\"普通文本\\\"></u-flowable-string>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-string mode=\\\"readonly\\\" :value=\\\"'支持变量'\\\"></u-flowable-string>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-string mode=\\\"edit\\\" :value=\\\"'支持变量'\\\"></u-flowable-string>\\n</template>\\n\"}]",
         "jsonSchema": {
-            "name": "u-flowable-address",
-            "title": "地址",
+            "name": "u-flowable-string",
+            "title": "单行文字",
             "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
             "category": "Basic",
             "screenShot": "[]",
             "blocks": [
                 {
-                    "title": "基础",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-address title=\"地址\"></u-flowable-address>\n</template>\n"
-                },
-                {
                     "title": "编辑模式",
                     "description": "",
-                    "code": "<template>\n<u-flowable-address mode=\"edit\" value=\"上海-上海市-黄浦区 测试地址 测试地址\" ></u-flowable-address>\n</template>\n"
+                    "code": "<template>\n<u-flowable-string title=\"单行文字\"></u-flowable-string>\n</template>\n"
                 },
                 {
                     "title": "只读模式",
                     "description": "",
-                    "code": "<template>\n<u-flowable-address mode=\"readonly\" value=\"上海-上海市-黄浦区 测试地址 测试地址\"></u-flowable-address>\n</template>\n"
+                    "code": "<template>\n<u-flowable-string mode=\"readonly\" value=\"普通文本\"></u-flowable-string>\n</template>\n"
                 },
                 {
                     "title": "变量支持-只读模式",
                     "description": "",
-                    "code": "<template>\n<u-flowable-address mode=\"readonly\" :value=\"'上海-上海市-黄浦区 测试地址 测试地址'\"></u-flowable-address>\n</template>\n"
+                    "code": "<template>\n<u-flowable-string mode=\"readonly\" :value=\"'支持变量'\"></u-flowable-string>\n</template>\n"
                 },
                 {
                     "title": "变量支持-编辑模式",
                     "description": "",
-                    "code": "<template>\n<u-flowable-address mode=\"edit\" :value=\"'上海-上海市-黄浦区 测试地址 测试地址'\"></u-flowable-address>\n</template>\n"
+                    "code": "<template>\n<u-flowable-string mode=\"edit\" :value=\"'支持变量'\"></u-flowable-string>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -50,141 +99,43 @@
                     "compType": "input",
                     "title": "标题",
                     "level": "component",
+                    "value": "单行输入",
                     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
+                },
+                {
+                    "name": "placeholder",
+                    "type": "string",
+                    "value": "单行输入",
+                    "description": "占位内容"
                 },
                 {
                     "name": "value",
                     "type": "string",
                     "compType": "customize",
                     "customizeType": "normal",
-                    "customizeConfig": {
-                        "attrsMap": {
-                            "direction": "vertical"
-                        }
-                    },
                     "title": "默认内容",
-                    "description": "默认值，输入内容"
-                },
-                {
-                    "name": "required",
-                    "type": "boolean",
-                    "compType": "checkbox",
-                    "group": "validate",
-                    "message": "请输入内容",
-                    "title": "这是个必填项",
-                    "value": false,
-                    "description": "选择必填后，填写者不填写将无法提交表单"
-                }
-            ],
-            "slots": false,
-            "events": false,
-            "children": []
-        }
-    },
-    {
-        "symbol": "u-flowable-checkbox",
-        "name": "多项选择",
-        "icon": "checkbox",
-        "depDescription": {},
-        "description": "多项中选择一个时使用",
-        "labels": [
-            "Basic"
-        ],
-        "screenShot": "[]",
-        "blocks": "[{\"title\":\"基础示例-编辑\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-checkbox title=\\\"多项选择\\\" :list=\\\"[{key: '未命名1', value: '未命名1', text: '未命名1'}, {key: '未命名2', value: '未命名2', text: '未命名2'}]\\\"></u-flowable-checkbox>\\n</template>\\n\"},{\"title\":\"基础示例-多选\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-checkbox :value=\\\"['未命名1']\\\" mode=\\\"edit\\\" :min=\\\"1\\\" :max=\\\"2\\\" :list=\\\"[{key: '未命名1', value: '未命名1', text: '未命名1'}, {key: '未命名2', value: '未命名2', text: '未命名2'}]\\\"></u-flowable-checkbox>\\n</template>\\n\"},{\"title\":\"普通文本\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-checkbox mode=\\\"readonly\\\" :list=\\\"[{key: '未命名1', value: '未命名1', text: '未命名1'}, {key: '未命名2', value: '未命名2', text: '未命名2'}]\\\" :value=\\\"['未命名1', '未命名2']\\\"></u-flowable-checkbox>\\n</template>\\n\"}]",
-        "jsonSchema": {
-            "name": "u-flowable-checkbox",
-            "title": "多项选择",
-            "description": "多项中选择一个时使用",
-            "category": "Basic",
-            "screenShot": "[]",
-            "blocks": [
-                {
-                    "title": "基础示例-编辑",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-checkbox title=\"多项选择\" :list=\"[{key: '未命名1', value: '未命名1', text: '未命名1'}, {key: '未命名2', value: '未命名2', text: '未命名2'}]\"></u-flowable-checkbox>\n</template>\n"
-                },
-                {
-                    "title": "基础示例-多选",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-checkbox :value=\"['未命名1']\" mode=\"edit\" :min=\"1\" :max=\"2\" :list=\"[{key: '未命名1', value: '未命名1', text: '未命名1'}, {key: '未命名2', value: '未命名2', text: '未命名2'}]\"></u-flowable-checkbox>\n</template>\n"
-                },
-                {
-                    "title": "普通文本",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-checkbox mode=\"readonly\" :list=\"[{key: '未命名1', value: '未命名1', text: '未命名1'}, {key: '未命名2', value: '未命名2', text: '未命名2'}]\" :value=\"['未命名1', '未命名2']\"></u-flowable-checkbox>\n</template>\n"
-                }
-            ],
-            "attrs": [
-                {
-                    "name": "title",
-                    "type": "string",
-                    "compType": "input",
-                    "title": "标题",
-                    "level": "component",
-                    "value": "多项选择",
-                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
-                },
-                {
-                    "name": "min",
-                    "title": "选中最小数",
-                    "type": "number",
-                    "default": 0,
-                    "description": "可以勾选多选框的最小数量"
-                },
-                {
-                    "name": "max",
-                    "title": "选中最大数",
-                    "type": "number",
-                    "default": null,
-                    "description": "可以勾选多选框的最大数量"
-                },
-                {
-                    "name": "list",
-                    "title": "选项内容",
-                    "compType": "inputList",
-                    "type": "Array",
-                    "value": [
-                        {
-                            "key": "未命名1",
-                            "text": "未命名1",
-                            "value": "未命名1"
-                        },
-                        {
-                            "key": "未命名2",
-                            "text": "未命名2",
-                            "value": "未命名2"
-                        },
-                        {
-                            "key": "未命名3",
-                            "text": "未命名3",
-                            "value": "未命名3"
-                        }
-                    ],
-                    "example": [
-                        {
-                            "key": "",
-                            "value": ""
-                        }
-                    ],
-                    "default": null,
-                    "description": "为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。"
-                },
-                {
-                    "name": "value",
-                    "type": "string",
-                    "compType": "customize",
-                    "customizeType": "normal",
-                    "customizeConfig": {
-                        "name": "u-select",
-                        "attrsMap": {
-                            "multiple": true
-                        }
-                    },
-                    "title": "默认内容",
+                    "value": "单行文本",
                     "description": "文本内容"
                 },
                 {
+                    "name": "minlength",
+                    "type": "string",
+                    "compType": "input",
+                    "title": "最小长度",
+                    "message": "字数范围",
+                    "description": "最小长度",
+                    "value": 0
+                },
+                {
+                    "name": "maxlength",
+                    "type": "string",
+                    "compType": "input",
+                    "title": "最大长度",
+                    "message": "字数范围",
+                    "value": null,
+                    "description": "最大长度"
+                },
+                {
                     "name": "required",
                     "type": "boolean",
                     "compType": "checkbox",
@@ -201,42 +152,42 @@
         }
     },
     {
-        "symbol": "u-flowable-date-time-range",
-        "name": "起止时间",
-        "icon": "date-picker",
+        "symbol": "u-flowable-textarea",
+        "name": "多行文字",
+        "icon": "textarea",
         "depDescription": {},
-        "description": "用于展示文字或表达式",
+        "description": "多行文本输入框，需要填写者在输入框内根据标题填写相应的内容。",
         "labels": [
             "Basic"
         ],
         "screenShot": "[]",
-        "blocks": "[{\"title\":\"基础示例-日期\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-date-time-range title=\\\"起止时间\\\" ></u-flowable-date-time-range>\\n</template>\\n\"},{\"title\":\"基础示例-日期时间\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-date-time-range value=\\\"2020-09-09 10:00:00\\\" mode=\\\"edit\\\" dateType=\\\"datetime\\\"  alignment=\\\"right\\\"></u-flowable-date-time-range>\\n</template>\\n\"},{\"title\":\"基础示例-日期-显示\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-date-time-range value=\\\"2020-09-09\\\" mode=\\\"readonly\\\" alignment=\\\"right\\\"></u-flowable-date-time-range>\\n</template>\\n\"},{\"title\":\"基础示例-日期时间-显示\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-date-time-range value=\\\"2020-09-09 10:00:00\\\" mode=\\\"readonly\\\" dateType=\\\"datetime\\\"  alignment=\\\"right\\\"></u-flowable-date-time-range>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-textarea   title=\\\"多行文字\\\"></u-flowable-textarea>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-textarea mode=\\\"readonly\\\" value=\\\"普通文本\\\"></u-flowable-textarea>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-textarea mode=\\\"readonly\\\" :value=\\\"'支持变量'\\\" ></u-flowable-textarea>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-textarea mode=\\\"edit\\\" :value=\\\"'支持变量'\\\"  ></u-flowable-textarea>\\n</template>\\n\"}]",
         "jsonSchema": {
-            "name": "u-flowable-date-time-range",
-            "title": "起止时间",
-            "description": "用于展示文字或表达式",
+            "name": "u-flowable-textarea",
+            "title": "多行文字",
+            "description": "多行文本输入框，需要填写者在输入框内根据标题填写相应的内容。",
             "category": "Basic",
             "screenShot": "[]",
             "blocks": [
                 {
-                    "title": "基础示例-日期",
+                    "title": "编辑模式",
                     "description": "",
-                    "code": "<template>\n<u-flowable-date-time-range title=\"起止时间\" ></u-flowable-date-time-range>\n</template>\n"
+                    "code": "<template>\n<u-flowable-textarea   title=\"多行文字\"></u-flowable-textarea>\n</template>\n"
                 },
                 {
-                    "title": "基础示例-日期时间",
+                    "title": "只读模式",
                     "description": "",
-                    "code": "<template>\n<u-flowable-date-time-range value=\"2020-09-09 10:00:00\" mode=\"edit\" dateType=\"datetime\"  alignment=\"right\"></u-flowable-date-time-range>\n</template>\n"
+                    "code": "<template>\n<u-flowable-textarea mode=\"readonly\" value=\"普通文本\"></u-flowable-textarea>\n</template>\n"
                 },
                 {
-                    "title": "基础示例-日期-显示",
+                    "title": "变量支持-只读模式",
                     "description": "",
-                    "code": "<template>\n<u-flowable-date-time-range value=\"2020-09-09\" mode=\"readonly\" alignment=\"right\"></u-flowable-date-time-range>\n</template>\n"
+                    "code": "<template>\n<u-flowable-textarea mode=\"readonly\" :value=\"'支持变量'\" ></u-flowable-textarea>\n</template>\n"
                 },
                 {
-                    "title": "基础示例-日期时间-显示",
+                    "title": "变量支持-编辑模式",
                     "description": "",
-                    "code": "<template>\n<u-flowable-date-time-range value=\"2020-09-09 10:00:00\" mode=\"readonly\" dateType=\"datetime\"  alignment=\"right\"></u-flowable-date-time-range>\n</template>\n"
+                    "code": "<template>\n<u-flowable-textarea mode=\"edit\" :value=\"'支持变量'\"  ></u-flowable-textarea>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -249,58 +200,44 @@
                     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
                 },
                 {
-                    "name": "value",
+                    "name": "placeholder",
                     "type": "string",
-                    "compType": "customize",
-                    "customizeType": "normal",
-                    "title": "默认内容",
-                    "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。数据格式如：2020-09-09~2020-10-10"
+                    "value": "多行文字",
+                    "description": "占位内容"
                 },
                 {
-                    "name": "dateType",
-                    "options": [
-                        {
-                            "value": "date",
-                            "title": "日期"
-                        },
-                        {
-                            "value": "datetime",
-                            "title": "日期时间"
-                        }
-                    ],
-                    "default": "date",
+                    "name": "value",
                     "type": "string",
-                    "title": "日期格式",
-                    "compType": "timeFormat",
-                    "compConfig": {
-                        "attrs": [
-                            {
-                                "name": "list",
-                                "value": [
-                                    {
-                                        "key": "date",
-                                        "text": "年-月-日",
-                                        "value": "date"
-                                    },
-                                    {
-                                        "key": "datetime",
-                                        "text": "年-月-日 时:分:秒",
-                                        "value": "datetime"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    "value": "date",
-                    "description": "设置时间格式"
+                    "title": "默认内容",
+                    "value": "请输入内容",
+                    "compType": "customize",
+                    "customizeType": "normal",
+                    "description": "默认内容"
+                },
+                {
+                    "name": "minlength",
+                    "type": "string",
+                    "compType": "input",
+                    "title": "最小长度",
+                    "message": "字数范围",
+                    "value": 0,
+                    "description": "最小长度"
+                },
+                {
+                    "name": "maxlength",
+                    "type": "string",
+                    "compType": "input",
+                    "title": "最大长度",
+                    "message": "字数范围",
+                    "value": null,
+                    "description": "最大长度"
                 },
                 {
                     "name": "required",
+                    "title": "这是个必填项",
                     "type": "boolean",
                     "compType": "checkbox",
                     "group": "validate",
-                    "message": "请输入内容",
-                    "title": "这是个必填项",
                     "value": false,
                     "description": "选择必填后，填写者不填写将无法提交表单"
                 }
@@ -631,193 +568,6 @@
         }
     },
     {
-        "symbol": "u-flowable-image-select",
-        "name": "图片选择",
-        "depDescription": {},
-        "description": "多项中选择一个时使用",
-        "labels": [
-            "Basic"
-        ],
-        "screenShot": "[]",
-        "blocks": "[{\"title\":\"基础示例-编辑\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-image-select title=\\\"图片选择\\\" :list=\\\"[{text: '选项1', key: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  key: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  key: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  key: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  key: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\\\"></u-flowable-image-select>\\n</template>\\n\"},{\"title\":\"基础示例-可选项数\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-image-select :min=\\\"2\\\" :max=\\\"3\\\"  mode=\\\"edit\\\" :list=\\\"[{text: '选项1', key: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  key: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  key: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  key: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  key: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\\\"></u-flowable-image-select>\\n</template>\\n\"},{\"title\":\"基础示例-只读\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-image-select mode=\\\"readonly\\\" :list=\\\"[{text: '选项1', key: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  key: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  key: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  key: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  key: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\\\" :value=\\\"['id2','id1']\\\"></u-flowable-image-select>\\n</template>\\n\"}]",
-        "jsonSchema": {
-            "name": "u-flowable-image-select",
-            "title": "图片选择",
-            "description": "多项中选择一个时使用",
-            "category": "Basic",
-            "screenShot": "[]",
-            "blocks": [
-                {
-                    "title": "基础示例-编辑",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-image-select title=\"图片选择\" :list=\"[{text: '选项1', key: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  key: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  key: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  key: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  key: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\"></u-flowable-image-select>\n</template>\n"
-                },
-                {
-                    "title": "基础示例-可选项数",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-image-select :min=\"2\" :max=\"3\"  mode=\"edit\" :list=\"[{text: '选项1', key: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  key: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  key: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  key: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  key: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\"></u-flowable-image-select>\n</template>\n"
-                },
-                {
-                    "title": "基础示例-只读",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-image-select mode=\"readonly\" :list=\"[{text: '选项1', key: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  key: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  key: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  key: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  key: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\" :value=\"['id2','id1']\"></u-flowable-image-select>\n</template>\n"
-                }
-            ],
-            "attrs": [
-                {
-                    "name": "title",
-                    "type": "string",
-                    "compType": "input",
-                    "title": "标题",
-                    "level": "component",
-                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
-                },
-                {
-                    "name": "list",
-                    "title": "选项内容",
-                    "compType": "imageList",
-                    "type": "Array",
-                    "value": [
-                        {
-                            "value": false,
-                            "files": [
-                                {
-                                    "url": "https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg"
-                                }
-                            ],
-                            "text": "未命名1"
-                        },
-                        {
-                            "value": false,
-                            "files": [
-                                {
-                                    "url": "https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg"
-                                }
-                            ],
-                            "text": "未命名2"
-                        },
-                        {
-                            "value": false,
-                            "files": [
-                                {
-                                    "url": "https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg"
-                                }
-                            ],
-                            "text": "未命名3"
-                        }
-                    ],
-                    "example": [
-                        {
-                            "key": "",
-                            "value": ""
-                        }
-                    ],
-                    "default": null,
-                    "description": "为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。"
-                },
-                {
-                    "name": "value",
-                    "value": [],
-                    "type": "Array",
-                    "default": null,
-                    "description": "默认值，记录已经选择的选项"
-                },
-                {
-                    "name": "required",
-                    "title": "这是个必填项",
-                    "type": "boolean",
-                    "compType": "checkbox",
-                    "group": "validate",
-                    "value": false,
-                    "description": "选择必填后，填写者不填写将无法提交表单"
-                }
-            ],
-            "slots": false,
-            "events": false,
-            "children": []
-        }
-    },
-    {
-        "symbol": "u-flowable-link",
-        "name": "链接",
-        "icon": "link",
-        "depDescription": {},
-        "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
-        "labels": [
-            "Basic"
-        ],
-        "screenShot": "[]",
-        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-link title=\\\"链接\\\"></u-flowable-link>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-link mode=\\\"readonly\\\" value=\\\"普通文本\\\"></u-flowable-link>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-link mode=\\\"readonly\\\" :value=\\\"'支持变量'\\\"></u-flowable-link>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-link mode=\\\"edit\\\" :value=\\\"'支持变量'\\\"></u-flowable-link>\\n</template>\\n\"}]",
-        "jsonSchema": {
-            "name": "u-flowable-link",
-            "title": "链接",
-            "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
-            "category": "Basic",
-            "screenShot": "[]",
-            "blocks": [
-                {
-                    "title": "编辑模式",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-link title=\"链接\"></u-flowable-link>\n</template>\n"
-                },
-                {
-                    "title": "只读模式",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-link mode=\"readonly\" value=\"普通文本\"></u-flowable-link>\n</template>\n"
-                },
-                {
-                    "title": "变量支持-只读模式",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-link mode=\"readonly\" :value=\"'支持变量'\"></u-flowable-link>\n</template>\n"
-                },
-                {
-                    "title": "变量支持-编辑模式",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-link mode=\"edit\" :value=\"'支持变量'\"></u-flowable-link>\n</template>\n"
-                }
-            ],
-            "attrs": [
-                {
-                    "name": "title",
-                    "type": "string",
-                    "compType": "input",
-                    "title": "标题",
-                    "level": "component",
-                    "value": "单行输入",
-                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
-                },
-                {
-                    "name": "placeholder",
-                    "type": "string",
-                    "value": "链接",
-                    "description": "占位内容"
-                },
-                {
-                    "name": "value",
-                    "type": "string",
-                    "compType": "customize",
-                    "customizeType": "normal",
-                    "title": "默认内容",
-                    "value": "http://www.baicai",
-                    "description": "文本内容"
-                },
-                {
-                    "name": "required",
-                    "type": "boolean",
-                    "compType": "checkbox",
-                    "group": "validate",
-                    "message": "请输入内容",
-                    "title": "这是个必填项",
-                    "value": false,
-                    "description": "选择必填后，填写者不填写将无法提交表单"
-                }
-            ],
-            "slots": false,
-            "events": false,
-            "children": []
-        }
-    },
-    {
         "symbol": "u-flowable-mobile",
         "name": "手机",
         "icon": "text",
@@ -1026,7 +776,7 @@
     {
         "symbol": "u-flowable-number",
         "name": "数字",
-        "icon": "number-input",
+        "icon": "input",
         "depDescription": {},
         "description": "单行文本输入框，规定填写者输入内容为数字，带有字段校验",
         "labels": [
@@ -1106,6 +856,86 @@
                     "compType": "number",
                     "title": "最大值",
                     "description": "最大值"
+                },
+                {
+                    "name": "required",
+                    "type": "boolean",
+                    "compType": "checkbox",
+                    "group": "validate",
+                    "message": "请输入内容",
+                    "title": "这是个必填项",
+                    "value": false,
+                    "description": "选择必填后，填写者不填写将无法提交表单"
+                }
+            ],
+            "slots": false,
+            "events": false,
+            "children": []
+        }
+    },
+    {
+        "symbol": "u-flowable-link",
+        "name": "链接",
+        "icon": "link",
+        "depDescription": {},
+        "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
+        "labels": [
+            "Basic"
+        ],
+        "screenShot": "[]",
+        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-link title=\\\"链接\\\"></u-flowable-link>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-link mode=\\\"readonly\\\" value=\\\"普通文本\\\"></u-flowable-link>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-link mode=\\\"readonly\\\" :value=\\\"'支持变量'\\\"></u-flowable-link>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-link mode=\\\"edit\\\" :value=\\\"'支持变量'\\\"></u-flowable-link>\\n</template>\\n\"}]",
+        "jsonSchema": {
+            "name": "u-flowable-link",
+            "title": "链接",
+            "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
+            "category": "Basic",
+            "screenShot": "[]",
+            "blocks": [
+                {
+                    "title": "编辑模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-link title=\"链接\"></u-flowable-link>\n</template>\n"
+                },
+                {
+                    "title": "只读模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-link mode=\"readonly\" value=\"普通文本\"></u-flowable-link>\n</template>\n"
+                },
+                {
+                    "title": "变量支持-只读模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-link mode=\"readonly\" :value=\"'支持变量'\"></u-flowable-link>\n</template>\n"
+                },
+                {
+                    "title": "变量支持-编辑模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-link mode=\"edit\" :value=\"'支持变量'\"></u-flowable-link>\n</template>\n"
+                }
+            ],
+            "attrs": [
+                {
+                    "name": "title",
+                    "type": "string",
+                    "compType": "input",
+                    "title": "标题",
+                    "level": "component",
+                    "value": "单行输入",
+                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
+                },
+                {
+                    "name": "placeholder",
+                    "type": "string",
+                    "value": "链接",
+                    "description": "占位内容"
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "compType": "customize",
+                    "customizeType": "normal",
+                    "title": "默认内容",
+                    "value": "http://www.baicai",
+                    "description": "文本内容"
                 },
                 {
                     "name": "required",
@@ -1214,84 +1044,9 @@
         }
     },
     {
-        "symbol": "u-flowable-rich-text",
-        "name": "富文本",
-        "icon": "rich-text",
-        "depDescription": {},
-        "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
-        "labels": [
-            "Basic"
-        ],
-        "screenShot": "[]",
-        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-rich-text title=\\\"富文本\\\"></u-flowable-rich-text>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-rich-text mode=\\\"readonly\\\" value=\\\"<a href='http://www.baidu.com' target='_blank'>百度</a>\\\"></u-flowable-rich-text>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-rich-text mode=\\\"readonly\\\" :value=\\\"'<a href=\\\\'http://www.baidu.com\\\\' target=\\\\'_blank\\\\'>百度</a>'\\\"></u-flowable-rich-text>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-rich-text mode=\\\"edit\\\" :value=\\\"'<a href=\\\\'http://www.baidu.com\\\\' target=\\\\'_blank\\\\'>百度</a>'\\\"></u-flowable-rich-text>\\n</template>\\n\"}]",
-        "jsonSchema": {
-            "name": "u-flowable-rich-text",
-            "title": "富文本",
-            "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
-            "category": "Basic",
-            "screenShot": "[]",
-            "blocks": [
-                {
-                    "title": "编辑模式",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-rich-text title=\"富文本\"></u-flowable-rich-text>\n</template>\n"
-                },
-                {
-                    "title": "只读模式",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-rich-text mode=\"readonly\" value=\"<a href='http://www.baidu.com' target='_blank'>百度</a>\"></u-flowable-rich-text>\n</template>\n"
-                },
-                {
-                    "title": "变量支持-只读模式",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-rich-text mode=\"readonly\" :value=\"'<a href=\\'http://www.baidu.com\\' target=\\'_blank\\'>百度</a>'\"></u-flowable-rich-text>\n</template>\n"
-                },
-                {
-                    "title": "变量支持-编辑模式",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-rich-text mode=\"edit\" :value=\"'<a href=\\'http://www.baidu.com\\' target=\\'_blank\\'>百度</a>'\"></u-flowable-rich-text>\n</template>\n"
-                }
-            ],
-            "attrs": [
-                {
-                    "name": "title",
-                    "type": "string",
-                    "compType": "input",
-                    "title": "标题",
-                    "level": "component",
-                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
-                },
-                {
-                    "name": "placeholder",
-                    "type": "string",
-                    "value": "请输入内容",
-                    "description": "占位内容"
-                },
-                {
-                    "name": "value",
-                    "type": "string",
-                    "title": "文本",
-                    "description": "文本内容"
-                },
-                {
-                    "name": "required",
-                    "title": "这是个必填项",
-                    "type": "boolean",
-                    "compType": "checkbox",
-                    "group": "validate",
-                    "value": false,
-                    "description": "选择必填后，填写者不填写将无法提交表单"
-                }
-            ],
-            "slots": false,
-            "events": false,
-            "children": []
-        }
-    },
-    {
         "symbol": "u-flowable-select",
         "name": "下拉选择",
-        "icon": "radios",
+        "icon": "select",
         "depDescription": {},
         "description": "多项中选择一个时使用",
         "labels": [
@@ -1377,42 +1132,37 @@
         }
     },
     {
-        "symbol": "u-flowable-string",
-        "name": "单行文字",
-        "icon": "input",
+        "symbol": "u-flowable-checkbox",
+        "name": "多项选择",
+        "icon": "checkboxes",
         "depDescription": {},
-        "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
+        "description": "多项中选择一个时使用",
         "labels": [
             "Basic"
         ],
         "screenShot": "[]",
-        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-string title=\\\"单行文字\\\"></u-flowable-string>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-string mode=\\\"readonly\\\" value=\\\"普通文本\\\"></u-flowable-string>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-string mode=\\\"readonly\\\" :value=\\\"'支持变量'\\\"></u-flowable-string>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-string mode=\\\"edit\\\" :value=\\\"'支持变量'\\\"></u-flowable-string>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础示例-编辑\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-checkbox title=\\\"多项选择\\\" :list=\\\"[{key: '未命名1', value: '未命名1', text: '未命名1'}, {key: '未命名2', value: '未命名2', text: '未命名2'}]\\\"></u-flowable-checkbox>\\n</template>\\n\"},{\"title\":\"基础示例-多选\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-checkbox :value=\\\"['未命名1']\\\" mode=\\\"edit\\\" :min=\\\"1\\\" :max=\\\"2\\\" :list=\\\"[{key: '未命名1', value: '未命名1', text: '未命名1'}, {key: '未命名2', value: '未命名2', text: '未命名2'}]\\\"></u-flowable-checkbox>\\n</template>\\n\"},{\"title\":\"普通文本\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-checkbox mode=\\\"readonly\\\" :list=\\\"[{key: '未命名1', value: '未命名1', text: '未命名1'}, {key: '未命名2', value: '未命名2', text: '未命名2'}]\\\" :value=\\\"['未命名1', '未命名2']\\\"></u-flowable-checkbox>\\n</template>\\n\"}]",
         "jsonSchema": {
-            "name": "u-flowable-string",
-            "title": "单行文字",
-            "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
+            "name": "u-flowable-checkbox",
+            "title": "多项选择",
+            "description": "多项中选择一个时使用",
             "category": "Basic",
             "screenShot": "[]",
             "blocks": [
                 {
-                    "title": "编辑模式",
+                    "title": "基础示例-编辑",
                     "description": "",
-                    "code": "<template>\n<u-flowable-string title=\"单行文字\"></u-flowable-string>\n</template>\n"
+                    "code": "<template>\n<u-flowable-checkbox title=\"多项选择\" :list=\"[{key: '未命名1', value: '未命名1', text: '未命名1'}, {key: '未命名2', value: '未命名2', text: '未命名2'}]\"></u-flowable-checkbox>\n</template>\n"
                 },
                 {
-                    "title": "只读模式",
+                    "title": "基础示例-多选",
                     "description": "",
-                    "code": "<template>\n<u-flowable-string mode=\"readonly\" value=\"普通文本\"></u-flowable-string>\n</template>\n"
+                    "code": "<template>\n<u-flowable-checkbox :value=\"['未命名1']\" mode=\"edit\" :min=\"1\" :max=\"2\" :list=\"[{key: '未命名1', value: '未命名1', text: '未命名1'}, {key: '未命名2', value: '未命名2', text: '未命名2'}]\"></u-flowable-checkbox>\n</template>\n"
                 },
                 {
-                    "title": "变量支持-只读模式",
+                    "title": "普通文本",
                     "description": "",
-                    "code": "<template>\n<u-flowable-string mode=\"readonly\" :value=\"'支持变量'\"></u-flowable-string>\n</template>\n"
-                },
-                {
-                    "title": "变量支持-编辑模式",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-string mode=\"edit\" :value=\"'支持变量'\"></u-flowable-string>\n</template>\n"
+                    "code": "<template>\n<u-flowable-checkbox mode=\"readonly\" :list=\"[{key: '未命名1', value: '未命名1', text: '未命名1'}, {key: '未命名2', value: '未命名2', text: '未命名2'}]\" :value=\"['未命名1', '未命名2']\"></u-flowable-checkbox>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -1422,41 +1172,67 @@
                     "compType": "input",
                     "title": "标题",
                     "level": "component",
-                    "value": "单行输入",
+                    "value": "多项选择",
                     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
                 },
                 {
-                    "name": "placeholder",
-                    "type": "string",
-                    "value": "单行输入",
-                    "description": "占位内容"
+                    "name": "min",
+                    "title": "选中最小数",
+                    "type": "number",
+                    "default": 0,
+                    "description": "可以勾选多选框的最小数量"
+                },
+                {
+                    "name": "max",
+                    "title": "选中最大数",
+                    "type": "number",
+                    "default": null,
+                    "description": "可以勾选多选框的最大数量"
+                },
+                {
+                    "name": "list",
+                    "title": "选项内容",
+                    "compType": "inputList",
+                    "type": "Array",
+                    "value": [
+                        {
+                            "key": "未命名1",
+                            "text": "未命名1",
+                            "value": "未命名1"
+                        },
+                        {
+                            "key": "未命名2",
+                            "text": "未命名2",
+                            "value": "未命名2"
+                        },
+                        {
+                            "key": "未命名3",
+                            "text": "未命名3",
+                            "value": "未命名3"
+                        }
+                    ],
+                    "example": [
+                        {
+                            "key": "",
+                            "value": ""
+                        }
+                    ],
+                    "default": null,
+                    "description": "为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。"
                 },
                 {
                     "name": "value",
                     "type": "string",
                     "compType": "customize",
                     "customizeType": "normal",
+                    "customizeConfig": {
+                        "name": "u-select",
+                        "attrsMap": {
+                            "multiple": true
+                        }
+                    },
                     "title": "默认内容",
-                    "value": "单行文本",
                     "description": "文本内容"
-                },
-                {
-                    "name": "minlength",
-                    "type": "string",
-                    "compType": "input",
-                    "title": "最小长度",
-                    "message": "字数范围",
-                    "description": "最小长度",
-                    "value": 0
-                },
-                {
-                    "name": "maxlength",
-                    "type": "string",
-                    "compType": "input",
-                    "title": "最大长度",
-                    "message": "字数范围",
-                    "value": null,
-                    "description": "最大长度"
                 },
                 {
                     "name": "required",
@@ -1465,156 +1241,6 @@
                     "group": "validate",
                     "message": "请输入内容",
                     "title": "这是个必填项",
-                    "value": false,
-                    "description": "选择必填后，填写者不填写将无法提交表单"
-                }
-            ],
-            "slots": false,
-            "events": false,
-            "children": []
-        }
-    },
-    {
-        "symbol": "u-flowable-text",
-        "name": "描述文字",
-        "icon": "text",
-        "depDescription": {},
-        "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
-        "labels": [
-            "Basic"
-        ],
-        "screenShot": "[]",
-        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-text value=\\\"描述文字\\\" title=\\\"描述文字\\\"></u-flowable-text>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-text mode=\\\"readonly\\\" value=\\\"普通文本\\\"></u-flowable-text>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-text mode=\\\"readonly\\\" :value=\\\"'支持变量'\\\"></u-flowable-text>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-text mode=\\\"edit\\\" :value=\\\"'支持变量'\\\"></u-flowable-text>\\n</template>\\n\"}]",
-        "jsonSchema": {
-            "name": "u-flowable-text",
-            "title": "描述文字",
-            "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
-            "category": "Basic",
-            "screenShot": "[]",
-            "blocks": [
-                {
-                    "title": "编辑模式",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-text value=\"描述文字\" title=\"描述文字\"></u-flowable-text>\n</template>\n"
-                },
-                {
-                    "title": "只读模式",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-text mode=\"readonly\" value=\"普通文本\"></u-flowable-text>\n</template>\n"
-                },
-                {
-                    "title": "变量支持-只读模式",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-text mode=\"readonly\" :value=\"'支持变量'\"></u-flowable-text>\n</template>\n"
-                },
-                {
-                    "title": "变量支持-编辑模式",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-text mode=\"edit\" :value=\"'支持变量'\"></u-flowable-text>\n</template>\n"
-                }
-            ],
-            "attrs": [
-                {
-                    "name": "value",
-                    "type": "string",
-                    "compType": "richtext",
-                    "title": "内容",
-                    "value": "描述文字内容",
-                    "description": "请输入描述文字"
-                }
-            ],
-            "slots": false,
-            "events": false,
-            "children": []
-        }
-    },
-    {
-        "symbol": "u-flowable-textarea",
-        "name": "多行文字",
-        "icon": "textarea",
-        "depDescription": {},
-        "description": "多行文本输入框，需要填写者在输入框内根据标题填写相应的内容。",
-        "labels": [
-            "Basic"
-        ],
-        "screenShot": "[]",
-        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-textarea   title=\\\"多行文字\\\"></u-flowable-textarea>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-textarea mode=\\\"readonly\\\" value=\\\"普通文本\\\"></u-flowable-textarea>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-textarea mode=\\\"readonly\\\" :value=\\\"'支持变量'\\\" ></u-flowable-textarea>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-textarea mode=\\\"edit\\\" :value=\\\"'支持变量'\\\"  ></u-flowable-textarea>\\n</template>\\n\"}]",
-        "jsonSchema": {
-            "name": "u-flowable-textarea",
-            "title": "多行文字",
-            "description": "多行文本输入框，需要填写者在输入框内根据标题填写相应的内容。",
-            "category": "Basic",
-            "screenShot": "[]",
-            "blocks": [
-                {
-                    "title": "编辑模式",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-textarea   title=\"多行文字\"></u-flowable-textarea>\n</template>\n"
-                },
-                {
-                    "title": "只读模式",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-textarea mode=\"readonly\" value=\"普通文本\"></u-flowable-textarea>\n</template>\n"
-                },
-                {
-                    "title": "变量支持-只读模式",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-textarea mode=\"readonly\" :value=\"'支持变量'\" ></u-flowable-textarea>\n</template>\n"
-                },
-                {
-                    "title": "变量支持-编辑模式",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-textarea mode=\"edit\" :value=\"'支持变量'\"  ></u-flowable-textarea>\n</template>\n"
-                }
-            ],
-            "attrs": [
-                {
-                    "name": "title",
-                    "type": "string",
-                    "compType": "input",
-                    "title": "标题",
-                    "level": "component",
-                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
-                },
-                {
-                    "name": "placeholder",
-                    "type": "string",
-                    "value": "多行文字",
-                    "description": "占位内容"
-                },
-                {
-                    "name": "value",
-                    "type": "string",
-                    "title": "默认内容",
-                    "value": "请输入内容",
-                    "compType": "customize",
-                    "customizeType": "normal",
-                    "description": "默认内容"
-                },
-                {
-                    "name": "minlength",
-                    "type": "string",
-                    "compType": "input",
-                    "title": "最小长度",
-                    "message": "字数范围",
-                    "value": 0,
-                    "description": "最小长度"
-                },
-                {
-                    "name": "maxlength",
-                    "type": "string",
-                    "compType": "input",
-                    "title": "最大长度",
-                    "message": "字数范围",
-                    "value": null,
-                    "description": "最大长度"
-                },
-                {
-                    "name": "required",
-                    "title": "这是个必填项",
-                    "type": "boolean",
-                    "compType": "checkbox",
-                    "group": "validate",
                     "value": false,
                     "description": "选择必填后，填写者不填写将无法提交表单"
                 }
@@ -1691,6 +1317,381 @@
                     "name": "url",
                     "description": "上传地址",
                     "value": "/gateway/lowcode/api/v1/app/upload"
+                },
+                {
+                    "name": "required",
+                    "type": "boolean",
+                    "compType": "checkbox",
+                    "group": "validate",
+                    "message": "请输入内容",
+                    "title": "这是个必填项",
+                    "value": false,
+                    "description": "选择必填后，填写者不填写将无法提交表单"
+                }
+            ],
+            "slots": false,
+            "events": false,
+            "children": []
+        }
+    },
+    {
+        "symbol": "u-flowable-date-time-range",
+        "name": "起止时间",
+        "icon": "date-picker",
+        "depDescription": {},
+        "description": "用于展示文字或表达式",
+        "labels": [
+            "Basic"
+        ],
+        "screenShot": "[]",
+        "blocks": "[{\"title\":\"基础示例-日期\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-date-time-range title=\\\"起止时间\\\" ></u-flowable-date-time-range>\\n</template>\\n\"},{\"title\":\"基础示例-日期时间\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-date-time-range value=\\\"2020-09-09 10:00:00\\\" mode=\\\"edit\\\" dateType=\\\"datetime\\\"  alignment=\\\"right\\\"></u-flowable-date-time-range>\\n</template>\\n\"},{\"title\":\"基础示例-日期-显示\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-date-time-range value=\\\"2020-09-09\\\" mode=\\\"readonly\\\" alignment=\\\"right\\\"></u-flowable-date-time-range>\\n</template>\\n\"},{\"title\":\"基础示例-日期时间-显示\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-date-time-range value=\\\"2020-09-09 10:00:00\\\" mode=\\\"readonly\\\" dateType=\\\"datetime\\\"  alignment=\\\"right\\\"></u-flowable-date-time-range>\\n</template>\\n\"}]",
+        "jsonSchema": {
+            "name": "u-flowable-date-time-range",
+            "title": "起止时间",
+            "description": "用于展示文字或表达式",
+            "category": "Basic",
+            "screenShot": "[]",
+            "blocks": [
+                {
+                    "title": "基础示例-日期",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-date-time-range title=\"起止时间\" ></u-flowable-date-time-range>\n</template>\n"
+                },
+                {
+                    "title": "基础示例-日期时间",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-date-time-range value=\"2020-09-09 10:00:00\" mode=\"edit\" dateType=\"datetime\"  alignment=\"right\"></u-flowable-date-time-range>\n</template>\n"
+                },
+                {
+                    "title": "基础示例-日期-显示",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-date-time-range value=\"2020-09-09\" mode=\"readonly\" alignment=\"right\"></u-flowable-date-time-range>\n</template>\n"
+                },
+                {
+                    "title": "基础示例-日期时间-显示",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-date-time-range value=\"2020-09-09 10:00:00\" mode=\"readonly\" dateType=\"datetime\"  alignment=\"right\"></u-flowable-date-time-range>\n</template>\n"
+                }
+            ],
+            "attrs": [
+                {
+                    "name": "title",
+                    "type": "string",
+                    "compType": "input",
+                    "title": "标题",
+                    "level": "component",
+                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "compType": "customize",
+                    "customizeType": "normal",
+                    "title": "默认内容",
+                    "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。数据格式如：2020-09-09~2020-10-10"
+                },
+                {
+                    "name": "dateType",
+                    "options": [
+                        {
+                            "value": "date",
+                            "title": "日期"
+                        },
+                        {
+                            "value": "datetime",
+                            "title": "日期时间"
+                        }
+                    ],
+                    "default": "date",
+                    "type": "string",
+                    "title": "日期格式",
+                    "compType": "timeFormat",
+                    "compConfig": {
+                        "attrs": [
+                            {
+                                "name": "list",
+                                "value": [
+                                    {
+                                        "key": "date",
+                                        "text": "年-月-日",
+                                        "value": "date"
+                                    },
+                                    {
+                                        "key": "datetime",
+                                        "text": "年-月-日 时:分:秒",
+                                        "value": "datetime"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "value": "date",
+                    "description": "设置时间格式"
+                },
+                {
+                    "name": "required",
+                    "type": "boolean",
+                    "compType": "checkbox",
+                    "group": "validate",
+                    "message": "请输入内容",
+                    "title": "这是个必填项",
+                    "value": false,
+                    "description": "选择必填后，填写者不填写将无法提交表单"
+                }
+            ],
+            "slots": false,
+            "events": false,
+            "children": []
+        }
+    },
+    {
+        "symbol": "u-flowable-image-select",
+        "name": "图片选择",
+        "icon": "image",
+        "depDescription": {},
+        "description": "多项中选择一个时使用",
+        "labels": [
+            "Basic"
+        ],
+        "screenShot": "[]",
+        "blocks": "[{\"title\":\"基础示例-编辑\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-image-select title=\\\"图片选择\\\" :list=\\\"[{text: '选项1', key: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  key: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  key: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  key: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  key: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\\\"></u-flowable-image-select>\\n</template>\\n\"},{\"title\":\"基础示例-可选项数\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-image-select :min=\\\"2\\\" :max=\\\"3\\\"  mode=\\\"edit\\\" :list=\\\"[{text: '选项1', key: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  key: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  key: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  key: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  key: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\\\"></u-flowable-image-select>\\n</template>\\n\"},{\"title\":\"基础示例-只读\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-image-select mode=\\\"readonly\\\" :list=\\\"[{text: '选项1', key: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  key: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  key: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  key: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  key: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\\\" :value=\\\"['id2','id1']\\\"></u-flowable-image-select>\\n</template>\\n\"}]",
+        "jsonSchema": {
+            "name": "u-flowable-image-select",
+            "title": "图片选择",
+            "description": "多项中选择一个时使用",
+            "category": "Basic",
+            "screenShot": "[]",
+            "blocks": [
+                {
+                    "title": "基础示例-编辑",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-image-select title=\"图片选择\" :list=\"[{text: '选项1', key: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  key: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  key: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  key: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  key: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\"></u-flowable-image-select>\n</template>\n"
+                },
+                {
+                    "title": "基础示例-可选项数",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-image-select :min=\"2\" :max=\"3\"  mode=\"edit\" :list=\"[{text: '选项1', key: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  key: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  key: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  key: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  key: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\"></u-flowable-image-select>\n</template>\n"
+                },
+                {
+                    "title": "基础示例-只读",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-image-select mode=\"readonly\" :list=\"[{text: '选项1', key: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  key: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  key: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  key: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  key: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\" :value=\"['id2','id1']\"></u-flowable-image-select>\n</template>\n"
+                }
+            ],
+            "attrs": [
+                {
+                    "name": "title",
+                    "type": "string",
+                    "compType": "input",
+                    "title": "标题",
+                    "level": "component",
+                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
+                },
+                {
+                    "name": "list",
+                    "title": "选项内容",
+                    "compType": "imageList",
+                    "type": "Array",
+                    "value": [
+                        {
+                            "value": false,
+                            "files": [
+                                {
+                                    "url": "https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg"
+                                }
+                            ],
+                            "text": "未命名1"
+                        },
+                        {
+                            "value": false,
+                            "files": [
+                                {
+                                    "url": "https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg"
+                                }
+                            ],
+                            "text": "未命名2"
+                        },
+                        {
+                            "value": false,
+                            "files": [
+                                {
+                                    "url": "https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg"
+                                }
+                            ],
+                            "text": "未命名3"
+                        }
+                    ],
+                    "example": [
+                        {
+                            "key": "",
+                            "value": ""
+                        }
+                    ],
+                    "default": null,
+                    "description": "为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。"
+                },
+                {
+                    "name": "value",
+                    "value": [],
+                    "type": "Array",
+                    "default": null,
+                    "description": "默认值，记录已经选择的选项"
+                },
+                {
+                    "name": "required",
+                    "title": "这是个必填项",
+                    "type": "boolean",
+                    "compType": "checkbox",
+                    "group": "validate",
+                    "value": false,
+                    "description": "选择必填后，填写者不填写将无法提交表单"
+                }
+            ],
+            "slots": false,
+            "events": false,
+            "children": []
+        }
+    },
+    {
+        "symbol": "u-flowable-rich-text",
+        "name": "富文本",
+        "icon": "richtext",
+        "depDescription": {},
+        "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
+        "labels": [
+            "Basic"
+        ],
+        "screenShot": "[]",
+        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-rich-text title=\\\"富文本\\\"></u-flowable-rich-text>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-rich-text mode=\\\"readonly\\\" value=\\\"<a href='http://www.baidu.com' target='_blank'>百度</a>\\\"></u-flowable-rich-text>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-rich-text mode=\\\"readonly\\\" :value=\\\"'<a href=\\\\'http://www.baidu.com\\\\' target=\\\\'_blank\\\\'>百度</a>'\\\"></u-flowable-rich-text>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-rich-text mode=\\\"edit\\\" :value=\\\"'<a href=\\\\'http://www.baidu.com\\\\' target=\\\\'_blank\\\\'>百度</a>'\\\"></u-flowable-rich-text>\\n</template>\\n\"}]",
+        "jsonSchema": {
+            "name": "u-flowable-rich-text",
+            "title": "富文本",
+            "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
+            "category": "Basic",
+            "screenShot": "[]",
+            "blocks": [
+                {
+                    "title": "编辑模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-rich-text title=\"富文本\"></u-flowable-rich-text>\n</template>\n"
+                },
+                {
+                    "title": "只读模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-rich-text mode=\"readonly\" value=\"<a href='http://www.baidu.com' target='_blank'>百度</a>\"></u-flowable-rich-text>\n</template>\n"
+                },
+                {
+                    "title": "变量支持-只读模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-rich-text mode=\"readonly\" :value=\"'<a href=\\'http://www.baidu.com\\' target=\\'_blank\\'>百度</a>'\"></u-flowable-rich-text>\n</template>\n"
+                },
+                {
+                    "title": "变量支持-编辑模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-rich-text mode=\"edit\" :value=\"'<a href=\\'http://www.baidu.com\\' target=\\'_blank\\'>百度</a>'\"></u-flowable-rich-text>\n</template>\n"
+                }
+            ],
+            "attrs": [
+                {
+                    "name": "title",
+                    "type": "string",
+                    "compType": "input",
+                    "title": "标题",
+                    "level": "component",
+                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
+                },
+                {
+                    "name": "placeholder",
+                    "type": "string",
+                    "value": "请输入内容",
+                    "description": "占位内容"
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "title": "文本",
+                    "description": "文本内容"
+                },
+                {
+                    "name": "required",
+                    "title": "这是个必填项",
+                    "type": "boolean",
+                    "compType": "checkbox",
+                    "group": "validate",
+                    "value": false,
+                    "description": "选择必填后，填写者不填写将无法提交表单"
+                }
+            ],
+            "slots": false,
+            "events": false,
+            "children": []
+        }
+    },
+    {
+        "symbol": "u-flowable-address",
+        "name": "地址",
+        "icon": "region-select",
+        "depDescription": {},
+        "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
+        "labels": [
+            "Basic"
+        ],
+        "screenShot": "[]",
+        "blocks": "[{\"title\":\"基础\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-address title=\\\"地址\\\"></u-flowable-address>\\n</template>\\n\"},{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-address mode=\\\"edit\\\" value=\\\"上海-上海市-黄浦区 测试地址 测试地址\\\" ></u-flowable-address>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-address mode=\\\"readonly\\\" value=\\\"上海-上海市-黄浦区 测试地址 测试地址\\\"></u-flowable-address>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-address mode=\\\"readonly\\\" :value=\\\"'上海-上海市-黄浦区 测试地址 测试地址'\\\"></u-flowable-address>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-address mode=\\\"edit\\\" :value=\\\"'上海-上海市-黄浦区 测试地址 测试地址'\\\"></u-flowable-address>\\n</template>\\n\"}]",
+        "jsonSchema": {
+            "name": "u-flowable-address",
+            "title": "地址",
+            "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
+            "category": "Basic",
+            "screenShot": "[]",
+            "blocks": [
+                {
+                    "title": "基础",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-address title=\"地址\"></u-flowable-address>\n</template>\n"
+                },
+                {
+                    "title": "编辑模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-address mode=\"edit\" value=\"上海-上海市-黄浦区 测试地址 测试地址\" ></u-flowable-address>\n</template>\n"
+                },
+                {
+                    "title": "只读模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-address mode=\"readonly\" value=\"上海-上海市-黄浦区 测试地址 测试地址\"></u-flowable-address>\n</template>\n"
+                },
+                {
+                    "title": "变量支持-只读模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-address mode=\"readonly\" :value=\"'上海-上海市-黄浦区 测试地址 测试地址'\"></u-flowable-address>\n</template>\n"
+                },
+                {
+                    "title": "变量支持-编辑模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-address mode=\"edit\" :value=\"'上海-上海市-黄浦区 测试地址 测试地址'\"></u-flowable-address>\n</template>\n"
+                }
+            ],
+            "attrs": [
+                {
+                    "name": "title",
+                    "type": "string",
+                    "compType": "input",
+                    "title": "标题",
+                    "level": "component",
+                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "compType": "customize",
+                    "customizeType": "normal",
+                    "customizeConfig": {
+                        "attrsMap": {
+                            "direction": "vertical"
+                        }
+                    },
+                    "title": "默认内容",
+                    "description": "默认值，输入内容"
                 },
                 {
                     "name": "required",

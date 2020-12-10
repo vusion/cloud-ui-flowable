@@ -24,8 +24,10 @@
                 <slot></slot>
             </form>
         </div>
-        <div :class="$style.foot" v-if="mode === 'edit'">
-            <u-button @click="onSubmit()">{{ buttonText }}</u-button>
+
+        <div :class="$style.foot">
+            <u-button @click="onSubmit()" v-if="mode === 'edit'">{{ buttonText }}</u-button>
+            <slot name="foot"></slot>
         </div>
     </div>
 </template>
@@ -63,11 +65,6 @@ const UFlowableForm = {
             dirty: false,
         };
     },
-    // methods: {
-    //     onError(event) {
-    //         console.log(event);
-    //     },
-    // },
     methods: {
         getNearVueInstance(el) {
             let vueInstance = el;
@@ -75,7 +72,6 @@ const UFlowableForm = {
                 vueInstance = vueInstance.parentElement;
             }
             vueInstance = vueInstance.__vue__ ? vueInstance.__vue__ : null;
-            console.log(vueInstance);
             while (!vueInstance?.$vnode?.componentOptions?.tag.startsWith('u-flowable')) {
                 vueInstance = vueInstance.$parent;
             }
@@ -83,7 +79,6 @@ const UFlowableForm = {
         },
         onSubmit(event) {
             this.dirty = true;
-            console.log(this.$refs.form.querySelectorAll('[name]'));
             const formItems = this.$refs.form.querySelectorAll('[name]');
             const map = {};
             const result = {};
