@@ -364,7 +364,7 @@
         "depDescription": {},
         "description": "用于展示文字或表达式",
         "labels": [
-            "Display"
+            "Basic"
         ],
         "screenShot": "[]",
         "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-email title=\\\"邮箱\\\"></u-flowable-email>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-email mode=\\\"readonly\\\" value=\\\"test@test.com\\\"></u-flowable-email>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-email mode=\\\"readonly\\\" :value=\\\"'test@test.com'\\\"></u-flowable-email>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-email mode=\\\"edit\\\" :value=\\\"'test@test.com'\\\"></u-flowable-email>\\n</template>\\n\"},{\"title\":\"无数据\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-email mode=\\\"readonly\\\" ></u-flowable-email>\\n</template>\\n\"}]",
@@ -372,7 +372,7 @@
             "name": "u-flowable-email",
             "title": "邮箱",
             "description": "用于展示文字或表达式",
-            "category": "Display",
+            "category": "Basic",
             "screenShot": "[]",
             "blocks": [
                 {
@@ -574,7 +574,7 @@
         "depDescription": {},
         "description": "用于展示文字或表达式",
         "labels": [
-            "Display"
+            "Basic"
         ],
         "screenShot": "[]",
         "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-mobile title=\\\"手机\\\" ></u-flowable-mobile>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-mobile mode=\\\"readonly\\\" value=\\\"15123456789\\\"></u-flowable-mobile>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-mobile mode=\\\"readonly\\\" :value=\\\"'15123456789'\\\"></u-flowable-mobile>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-mobile mode=\\\"edit\\\" :value=\\\"'15123456789'\\\"></u-flowable-mobile>\\n</template>\\n\"},{\"title\":\"无数据\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-mobile mode=\\\"readonly\\\" ></u-flowable-mobile>\\n</template>\\n\"}]",
@@ -582,7 +582,7 @@
             "name": "u-flowable-mobile",
             "title": "手机",
             "description": "用于展示文字或表达式",
-            "category": "Display",
+            "category": "Basic",
             "screenShot": "[]",
             "blocks": [
                 {
@@ -1702,6 +1702,84 @@
                     "title": "这是个必填项",
                     "value": false,
                     "description": "选择必填后，填写者不填写将无法提交表单"
+                }
+            ],
+            "slots": false,
+            "events": false,
+            "children": []
+        }
+    },
+    {
+        "symbol": "u-flowable-user",
+        "name": "成员",
+        "icon": "user",
+        "depDescription": {},
+        "description": "可以选择组织成员",
+        "labels": [
+            "Advanced"
+        ],
+        "screenShot": "[]",
+        "blocks": "[{\"title\":\"基础案例\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-user :load=\\\"loadUser\\\" title=\\\"成员\\\"></u-flowable-user>\\n</template>\\n\"}]",
+        "jsonSchema": {
+            "name": "u-flowable-user",
+            "title": "成员",
+            "description": "可以选择组织成员",
+            "category": "Advanced",
+            "screenShot": "[]",
+            "blocks": [
+                {
+                    "title": "基础案例",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-user :load=\"loadUser\" title=\"成员\"></u-flowable-user>\n</template>\n"
+                }
+            ],
+            "attrs": [
+                {
+                    "name": "value",
+                    "type": "string",
+                    "compType": "userSelect",
+                    "title": "内容",
+                    "value": "选择的成员",
+                    "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。成员 ID 以逗号隔开"
+                }
+            ],
+            "slots": false,
+            "events": false,
+            "children": []
+        }
+    },
+    {
+        "symbol": "u-flowable-department",
+        "name": "部门",
+        "icon": "department",
+        "depDescription": {},
+        "description": "可以选择组织架构",
+        "labels": [
+            "Advanced"
+        ],
+        "screenShot": "[]",
+        "blocks": "[{\"title\":\"基础案例\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-department :load=\\\"loadDepartment\\\" title=\\\"部门\\\"></u-flowable-department>\\n</template>\\n\"}]",
+        "jsonSchema": {
+            "name": "u-flowable-department",
+            "title": "部门",
+            "description": "可以选择组织架构",
+            "category": "Advanced",
+            "screenShot": "[]",
+            "blocks": [
+                {
+                    "title": "基础案例",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-department :load=\"loadDepartment\" title=\"部门\"></u-flowable-department>\n</template>\n"
+                }
+            ],
+            "attrs": [
+                {
+                    "name": "value",
+                    "type": "string",
+                    "compType": "departmentSelect",
+                    "title": "内容",
+                    "value": "选择的部门",
+                    "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。部门 ID 以逗号隔开"
                 }
             ],
             "slots": false,

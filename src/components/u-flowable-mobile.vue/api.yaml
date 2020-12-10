@@ -2,7 +2,7 @@
   title: 手机
   readonlyTitle: 手机
   icon: text
-  labels: [Display]
+  labels: [Basic]
   description: 用于展示文字或表达式
   attrs:
     - name: title

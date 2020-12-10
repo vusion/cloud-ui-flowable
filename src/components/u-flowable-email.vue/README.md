@@ -9,7 +9,7 @@
     - [Slots](#slots)
     - [Events](#events)
 
-**Display**
+**Basic**
 
 用于展示文字或表达式
 
