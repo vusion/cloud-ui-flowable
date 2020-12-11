@@ -22,9 +22,11 @@ const UFlowableFormItem = {
                 // 显示组件的错误
                 listeners.error = (error) => {
                     this.error = error;
+                    this.$emit('error', error);
                 };
                 listeners.input = (input) => {
                     this.value = input;
+                    this.$emit('input', input);
                 };
                 listeners.dirty = (dirty) => {
                     console.info('dirty', dirty);
@@ -56,6 +58,7 @@ const UFlowableFormItem = {
                 class: this.$style.error,
                 attrs: {
                     dirty: this.dirty || this.touched,
+                    empty: !this.error?.message,
                 },
             }, [this.error?.message]),
         ]);
@@ -85,6 +88,9 @@ export default UFlowableFormItem;
     color: #f5222d;
     margin-top: 5px;
     display: none;
+}
+.error[empty] {
+    margin-top: 0;
 }
 .error[dirty] {
     display: block;

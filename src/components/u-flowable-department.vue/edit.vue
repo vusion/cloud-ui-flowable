@@ -1,6 +1,6 @@
 <template>
 <div :class="$style.root">
-    <u-select size="full" multiple filterable clearable :value="currentValue" :data-source="list"></u-select>
+    <u-select size="full" multiple filterable clearable :value="currentValue" @select="onSelect($event)" :data-source="list"></u-select>
 </div>
 </template>
 
@@ -28,7 +28,7 @@ export default {
             immediate: true,
         },
         value(value) {
-            if ((value || []).join(',') === (this.currentValue || []).join(',')) {
+            if ((value || '') === (this.currentValue || []).join(',')) {
                 return;
             }
             this.currentValue = this.format(value);
@@ -38,6 +38,9 @@ export default {
         this.loadList();
     },
     methods: {
+        onSelect({ value }) {
+            this.currentValue = value;
+        },
         format(value) {
             return (value || '').split(',');
         },
