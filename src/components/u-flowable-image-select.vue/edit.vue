@@ -55,8 +55,11 @@ export default {
             return item?.image;
         },
         splitValue() {
-            // TODO value 如果是字符串需要转换一次
-            return this.value || [];
+            if (Object.prototype.toString.call(this.value) === '[object Array]') {
+                return this.value || [];
+            } else {
+                return (this.value || '').split(',').filter((i) => i);
+            }
         },
     },
 };
