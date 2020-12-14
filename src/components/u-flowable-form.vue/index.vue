@@ -25,9 +25,9 @@
             </form>
         </div>
 
-        <div :class="$style.foot" v-if="mode === 'edit' || $slots.foot">
-            <u-button @click="onSubmit()" v-if="mode === 'edit'">{{ buttonText }}</u-button>
-            <slot name="foot"></slot>
+        <div :class="$style.foot" v-if="mode === 'edit' || $slots.foot || $scopedSlots.foot">
+            <slot name="foot" :submit="onSubmit.bind(this)"></slot>
+            <u-button @click="onSubmit()" color="primary" v-if="mode === 'edit'">{{ buttonText }}</u-button>
         </div>
     </div>
 </template>

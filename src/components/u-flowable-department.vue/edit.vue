@@ -1,6 +1,6 @@
 <template>
 <div :class="$style.root">
-    <u-select size="full" multiple filterable clearable :value="currentValue" @select="onSelect($event)" :data-source="list"></u-select>
+    <u-select size="full" multiple filterable :value="currentValue" @select="onSelect($event)" :data-source="list"></u-select>
 </div>
 </template>
 
