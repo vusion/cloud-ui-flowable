@@ -1,5 +1,5 @@
 <template>
-<u-text :text="value.join(',')"></u-text>
+  <u-text :text="value.join(',')"></u-text>
 </template>
 
 <script>

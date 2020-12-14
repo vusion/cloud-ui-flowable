@@ -39,10 +39,6 @@ export default {
     },
     methods: {
         splitValue(value) {
-            if (this.currentValue?.join(',') === value) {
-                return this.currentValue;
-            }
-
             if (Object.prototype.toString.call(value) === '[object Array]') {
                 return value;
             } else {
