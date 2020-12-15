@@ -38,6 +38,30 @@
       type: Array
       default: null
       description: 默认值，记录已经选择的选项
+    - name: min
+      title: 选中最小项数
+      type: number
+      compType: number
+      compConfig:
+        attrs: 
+          - name: :precision
+            value: 1
+          - name: :min
+            value: 0
+      default: 0
+      description: 可以勾选图片选择的最小数量
+    - name: max
+      title: 选中最大项数
+      compType: number
+      compConfig:
+        attrs: 
+          - name: :precision
+            value: 1
+          - name: :min
+            value: 0
+      type: number
+      default: .inf
+      description: 可以勾选图片选择的最大数量
     - name: required
       title: 这是个必填项
       type: boolean

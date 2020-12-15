@@ -1177,14 +1177,40 @@
                 },
                 {
                     "name": "min",
-                    "title": "选中最小数",
+                    "title": "选中最小项数",
                     "type": "number",
+                    "compType": "number",
+                    "compConfig": {
+                        "attrs": [
+                            {
+                                "name": ":precision",
+                                "value": 1
+                            },
+                            {
+                                "name": ":min",
+                                "value": 1
+                            }
+                        ]
+                    },
                     "default": 0,
                     "description": "可以勾选多选框的最小数量"
                 },
                 {
                     "name": "max",
-                    "title": "选中最大数",
+                    "title": "选中最大项数",
+                    "compType": "number",
+                    "compConfig": {
+                        "attrs": [
+                            {
+                                "name": ":precision",
+                                "value": 1
+                            },
+                            {
+                                "name": ":min",
+                                "value": 1
+                            }
+                        ]
+                    },
                     "type": "number",
                     "default": null,
                     "description": "可以勾选多选框的最大数量"
