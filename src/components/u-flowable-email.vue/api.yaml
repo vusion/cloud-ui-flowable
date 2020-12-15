@@ -1,7 +1,7 @@
 - name: u-flowable-email
   title: 邮箱
   readonlyTitle: 邮箱
-  icon: text
+  icon: email
   labels: [Basic]
   description: 用于展示文字或表达式
   attrs:

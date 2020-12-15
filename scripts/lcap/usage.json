@@ -360,7 +360,7 @@
     {
         "symbol": "u-flowable-email",
         "name": "邮箱",
-        "icon": "text",
+        "icon": "email",
         "depDescription": {},
         "description": "用于展示文字或表达式",
         "labels": [
@@ -570,7 +570,7 @@
     {
         "symbol": "u-flowable-mobile",
         "name": "手机",
-        "icon": "text",
+        "icon": "mobile",
         "depDescription": {},
         "description": "用于展示文字或表达式",
         "labels": [
@@ -776,7 +776,7 @@
     {
         "symbol": "u-flowable-number",
         "name": "数字",
-        "icon": "input",
+        "icon": "number",
         "depDescription": {},
         "description": "单行文本输入框，规定填写者输入内容为数字，带有字段校验",
         "labels": [
@@ -1337,7 +1337,7 @@
     {
         "symbol": "u-flowable-date-time-range",
         "name": "起止时间",
-        "icon": "date-picker",
+        "icon": "date-time-range",
         "depDescription": {},
         "description": "用于展示文字或表达式",
         "labels": [

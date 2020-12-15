@@ -1,7 +1,7 @@
 - name: u-flowable-number
   title: 数字
   readonlyTitle: 数字
-  icon: input
+  icon: number
   labels: [Basic]
   description: 单行文本输入框，规定填写者输入内容为数字，带有字段校验
   attrs:

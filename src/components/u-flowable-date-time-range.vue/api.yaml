@@ -1,7 +1,7 @@
 - name: u-flowable-date-time-range
   title: 起止时间
   readonlyTitle: 起止时间
-  icon: date-picker
+  icon: date-time-range
   labels: [Basic]
   description: 用于展示文字或表达式
   attrs:
