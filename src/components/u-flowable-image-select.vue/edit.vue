@@ -1,11 +1,11 @@
 <template>
 <div :class="$style.root">
-    <u-checkboxes v-model="currentValue" :min="min" :max="max"  :class="$style.checkboxes">
+    <u-checkboxes v-model="currentValue" :min="min" :max="max" :class="$style.checkboxes">
         <template v-for="(item, index) in list">
             <div :key="index" :class="$style.checkbox">
                 <u-image :src="getCurrentImage(item)" fit="fill" :class="$style.image"></u-image>
                 <div :class="$style.desc">
-                    <u-checkbox :label="item.text" v-model="item.value" :key="index">
+                    <u-checkbox :label="item.text" v-model="item.value" @input="updateValue" :key="index">
                         {{ item.text }}
                     </u-checkbox>
                 </div>
@@ -33,7 +33,7 @@ export default {
     },
     data() {
         return {
-            currentValue: this.splitValue(),
+            currentValue: this.splitValue(this.value),
         };
     },
     watch: {
@@ -43,20 +43,32 @@ export default {
             },
             immediate: true,
         },
-        value() {
-            this.currentValue = this.splitValue();
+        value(value) {
+            this.currentValue = this.splitValue(value);
         },
     },
     methods: {
+        updateValue() {
+            const result = [];
+            (this.list || []).forEach((item) => {
+                if (item.value === true) {
+                    result.push(item.text);
+                }
+            });
+            this.currentValue = result;
+        },
         getCurrentImage(item) {
             if (item.files?.[0]) {
                 return item.files[0].url;
             }
             return item?.image;
         },
-        splitValue() {
-            // TODO value 如果是字符串需要转换一次
-            return this.value || [];
+        splitValue(value) {
+            if (Object.prototype.toString.call(value) === '[object Array]') {
+                return value || [];
+            } else {
+                return (value || '').split(',').filter((i) => i);
+            }
         },
     },
 };
