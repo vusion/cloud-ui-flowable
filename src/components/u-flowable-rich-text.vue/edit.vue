@@ -1,6 +1,6 @@
 <template>
     <div :class="$style.root">
-        <u-rich-text v-model="currentValue" v-bind="$attrs"></u-rich-text>
+        <u-rich-text v-model="currentValue" ></u-rich-text>
     </div>
 </template>
 

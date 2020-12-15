@@ -1,7 +1,7 @@
 <template>
 <div :class="$style.root">
-    <u-region-select :class="$style.select" v-model="currentValue" v-bind="$attrs" converter="join:-"></u-region-select>
-    <u-textarea v-model="address" :class="$style.address" v-bind="$attrs" placeholder="详细地址" size="medium full"></u-textarea>
+    <u-region-select :class="$style.select" v-model="currentValue" converter="join:-"></u-region-select>
+    <u-textarea v-model="address" :class="$style.address" placeholder="详细地址" size="medium full"></u-textarea>
 </div>
 
 </template>

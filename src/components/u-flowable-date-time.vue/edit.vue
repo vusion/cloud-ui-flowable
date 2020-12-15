@@ -1,7 +1,7 @@
 <template>
 <div :class="$style.root">
-    <u-date-picker alignment="left" :class="$style.ctrl" :date.sync="currentValue" v-bind="$attrs" v-if="dateType === 'date'"></u-date-picker>
-    <u-date-time-picker alignment="left" :class="$style.ctrl" :date.sync="currentValue" v-bind="$attrs" v-else-if="dateType === 'datetime'"></u-date-time-picker>
+    <u-date-picker alignment="left" :class="$style.ctrl" :date.sync="currentValue" v-if="dateType === 'date'"></u-date-picker>
+    <u-date-time-picker alignment="left" :class="$style.ctrl" :date.sync="currentValue" v-else-if="dateType === 'datetime'"></u-date-time-picker>
 </div>
 </template>
 

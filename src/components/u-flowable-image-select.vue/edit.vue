@@ -1,6 +1,6 @@
 <template>
 <div :class="$style.root">
-    <u-checkboxes v-model="currentValue" :min="min" :max="max" v-bind="$attrs" :class="$style.checkboxes">
+    <u-checkboxes v-model="currentValue" :min="min" :max="max"  :class="$style.checkboxes">
         <template v-for="(item, index) in list">
             <div :key="index" :class="$style.checkbox">
                 <u-image :src="getCurrentImage(item)" fit="fill" :class="$style.image"></u-image>

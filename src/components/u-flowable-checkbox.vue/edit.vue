@@ -1,6 +1,6 @@
 <template>
 <div :class="$style.root">
-    <u-checkboxes v-model="currentValue" :min="min" :max="max" v-bind="$attrs">
+    <u-checkboxes v-model="currentValue" :min="min" :max="max">
         <u-checkbox v-for="item in list" :key="item.key" :label="item.key">{{ item.value }}</u-checkbox>
     </u-checkboxes>
 </div>
