@@ -239,6 +239,14 @@
     "type": "Array",
     "description": "默认值，记录已经选择的选项"
   },
+  "u-flowable-image-select/min": {
+    "type": "number",
+    "description": "可以勾选图片选择的最小数量"
+  },
+  "u-flowable-image-select/max": {
+    "type": "number",
+    "description": "可以勾选图片选择的最大数量"
+  },
   "u-flowable-image-select/required": {
     "type": "boolean",
     "description": "选择必填后，填写者不填写将无法提交表单"

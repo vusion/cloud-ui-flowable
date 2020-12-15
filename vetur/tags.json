@@ -77,6 +77,8 @@
       "title",
       "list",
       "value",
+      "min",
+      "max",
       "required"
     ],
     "description": "多项中选择一个时使用"
