@@ -70,7 +70,6 @@
     "attributes": [
       "title",
       "list",
-      "value",
       "min",
       "max",
       "required"

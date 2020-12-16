@@ -135,10 +135,6 @@
     "type": "Array",
     "description": "为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。"
   },
-  "u-flowable-image-select/value": {
-    "type": "Array",
-    "description": "默认值，记录已经选择的选项"
-  },
   "u-flowable-image-select/min": {
     "type": "number",
     "description": "可以勾选图片选择的最小数量"
