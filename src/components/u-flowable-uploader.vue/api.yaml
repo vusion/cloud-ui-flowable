@@ -25,6 +25,10 @@
     - name: url
       description: 上传地址
       value: /gateway/lowcode/api/v1/app/upload
+    - name: multiple
+      title: 是否上传多个
+      compType: checkbox
+      value: true
     - name: required
       type: boolean
       compType: checkbox

@@ -1,6 +1,6 @@
 <template>
 <div :class="$style.root">
-   <u-uploader v-model="currentValue" v-bind="$attrs">
+   <u-uploader v-model="currentValue" v-bind="$attrs" @success="onSuccess($event)" @error="onError($event)">
       <u-button>Upload</u-button>
    </u-uploader>
 </div>
@@ -17,6 +17,7 @@ export default {
         maxSize: Number,
         count: Number,
         fileType: String,
+        multiple: { default: true, type: Boolean },
     },
     data() {
         return {
@@ -35,6 +36,12 @@ export default {
         },
     },
     methods: {
+        onSuccess($event) {
+            this.$emit('success', $event);
+        },
+        onError($event) {
+            this.$emit('error', $event);
+        },
         formatValue(value) {
             return value || [];
         },
