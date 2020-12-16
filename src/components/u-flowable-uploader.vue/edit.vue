@@ -3,9 +3,9 @@
    <u-uploader
         v-model="currentValue"
         v-bind="$attrs"
-        @success="handlerEvent($event)"
-        @error="handlerEvent($event)"
-        @remove="handlerEvent($event)">
+        @success="onSuccess($event)"
+        @error="onError($event)"
+        @remove="onRemove($event)">
       <u-button>上传</u-button>
    </u-uploader>
 </div>
@@ -43,7 +43,7 @@ export default {
         },
     },
     methods: {
-        handlerEvent($event) {
+        onSuccess($event) {
             const item = $event.item;
             if (this.currentValue?.length > 0) {
                 const indexValue = this.currentValue.findIndex((v) => (v.name === item?.name));
@@ -56,6 +56,12 @@ export default {
                 this.currentValue = [item];
             }
             this.$emit('input', this.currentValue);
+        },
+        onError($event) {
+            this.$emit('input', $event);
+        },
+        onRemove($event) {
+            this.$emit('input', $event);
         },
         formatValue(value) {
             if (this.currentValue && JSON.stringify(value) === JSON.stringify(this.currentValue)) {
