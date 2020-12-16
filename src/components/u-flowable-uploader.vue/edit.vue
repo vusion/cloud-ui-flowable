@@ -1,6 +1,6 @@
 <template>
 <div :class="$style.root">
-   <u-uploader v-model="currentValue" >
+   <u-uploader v-model="currentValue" v-bind="$attrs">
       <u-button>Upload</u-button>
    </u-uploader>
 </div>
