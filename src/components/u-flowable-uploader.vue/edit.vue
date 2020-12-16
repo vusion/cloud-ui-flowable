@@ -42,7 +42,20 @@ export default {
     },
     methods: {
         onSuccess($event) {
-            this.$emit('success', $event);
+            const item = $event.item;
+            if (this.currentValue?.length > 0) {
+                const currentItem = Object.assign(item, { url: $event?.item?.response?.result });
+                const indexValue = this.currentValue.findIndex((v) => (v.name === item?.name));
+                // 去重
+                if (indexValue > -1) {
+                    this.currentValue.splice(indexValue);
+                }
+                this.currentValue.push(currentItem);
+            } else {
+                const currentItem = Object.assign(item, { url: $event?.item?.response?.result });
+                this.currentValue = [currentItem];
+            }
+            this.$emit('success', this.currentValue);
         },
         onError($event) {
             this.$emit('error', $event);

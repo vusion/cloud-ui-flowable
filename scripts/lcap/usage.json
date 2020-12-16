@@ -1027,7 +1027,7 @@
             "Basic"
         ],
         "screenShot": "[]",
-        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader title=\\\"附件上传\\\" ></u-flowable-uploader>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader mode=\\\"readonly\\\" :value=\\\"[{ name: '文件1' }]\\\" ></u-flowable-uploader>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader mode=\\\"readonly\\\" :value=\\\"[{ name: '文件1' }]\\\"></u-flowable-uploader>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader mode=\\\"edit\\\" :value=\\\"[{ name: '文件1' }]\\\" ></u-flowable-uploader>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader title=\\\"附件上传\\\" url=\\\"/api/v1/bucket/upload\\\"></u-flowable-uploader>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader mode=\\\"readonly\\\" :value=\\\"[{ name: '文件1' }]\\\" ></u-flowable-uploader>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader mode=\\\"readonly\\\" :value=\\\"[{ name: '文件1' }]\\\"></u-flowable-uploader>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader mode=\\\"edit\\\" :value=\\\"[{ name: '文件1' }]\\\" ></u-flowable-uploader>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "u-flowable-uploader",
             "title": "附件上传",
@@ -1038,7 +1038,7 @@
                 {
                     "title": "编辑模式",
                     "description": "",
-                    "code": "<template>\n<u-flowable-uploader title=\"附件上传\" ></u-flowable-uploader>\n</template>\n"
+                    "code": "<template>\n<u-flowable-uploader title=\"附件上传\" url=\"/api/v1/bucket/upload\"></u-flowable-uploader>\n</template>\n"
                 },
                 {
                     "title": "只读模式",
