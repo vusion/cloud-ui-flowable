@@ -1,7 +1,11 @@
 <template>
 <div :class="$style.root">
-   <u-uploader v-model="currentValue" v-bind="$attrs" @success="onSuccess($event)" @error="onError($event)">
-      <u-button>Upload</u-button>
+   <u-uploader v-model="currentValue" v-bind="$attrs"
+        @success="onSuccess($event)"
+        @error="onError($event)"
+        @remove="onRemove($event)"
+    >
+      <u-button>上传</u-button>
    </u-uploader>
 </div>
 </template>
@@ -18,6 +22,7 @@ export default {
         count: Number,
         fileType: String,
         multiple: { default: true, type: Boolean },
+        url: { default: '/api/v1/bucket/upload', type: String }
     },
     data() {
         return {
@@ -41,6 +46,9 @@ export default {
         },
         onError($event) {
             this.$emit('error', $event);
+        },
+        onRemove($event) {
+            this.$emit('remove', $event);
         },
         formatValue(value) {
             return value || [];
