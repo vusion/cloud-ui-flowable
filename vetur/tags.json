@@ -45,13 +45,7 @@
   "u-flowable-email": {
     "attributes": [
       "title",
-      "placeholder",
       "value",
-      "text",
-      "color",
-      "size",
-      "display",
-      "overflow",
       "required"
     ],
     "description": "用于展示文字或表达式"
@@ -86,7 +80,6 @@
   "u-flowable-link": {
     "attributes": [
       "title",
-      "placeholder",
       "value",
       "required"
     ],
@@ -95,13 +88,7 @@
   "u-flowable-mobile": {
     "attributes": [
       "title",
-      "placeholder",
       "value",
-      "text",
-      "color",
-      "size",
-      "display",
-      "overflow",
       "required"
     ],
     "description": "用于展示文字或表达式"
@@ -129,7 +116,6 @@
   "u-flowable-rich-text": {
     "attributes": [
       "title",
-      "placeholder",
       "value",
       "required"
     ],
@@ -147,7 +133,6 @@
   "u-flowable-string": {
     "attributes": [
       "title",
-      "placeholder",
       "value",
       "minlength",
       "maxlength",
@@ -164,7 +149,6 @@
   "u-flowable-textarea": {
     "attributes": [
       "title",
-      "placeholder",
       "value",
       "minlength",
       "maxlength",
@@ -175,9 +159,9 @@
   "u-flowable-uploader": {
     "attributes": [
       "title",
-      "placeholder",
       "value",
       "url",
+      "multiple",
       "required"
     ],
     "description": "上传文件组件，可以自定义上传说明，指导填写者上传文件、图片等，可添加多个附件。"

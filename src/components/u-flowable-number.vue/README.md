@@ -38,5 +38,5 @@ export default {
 | point | number |  | `0` | 选择后，填写者填写时可以输入带有小数点的数字，否则只能输入整数。 |
 | min | number |  |  | 最小值 |
 | max | number |  |  | 最大值 |
-| required | boolean |  |  | 选择必填后，填写者不填写将无法提交表单 |
+| required | boolean |  | `false` | 选择必填后，填写者不填写将无法提交表单 |
 
