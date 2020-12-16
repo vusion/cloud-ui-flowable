@@ -1,10 +1,11 @@
 <template>
 <div :class="$style.root">
-   <u-uploader v-model="currentValue" v-bind="$attrs"
-        @success="onSuccess($event)"
-        @error="onError($event)"
-        @remove="onRemove($event)"
-    >
+   <u-uploader
+        v-model="currentValue"
+        v-bind="$attrs"
+        @success="handlerEvent($event)"
+        @error="handlerEvent($event)"
+        @remove="handlerEvent($event)">
       <u-button>上传</u-button>
    </u-uploader>
 </div>
@@ -22,7 +23,8 @@ export default {
         count: Number,
         fileType: String,
         multiple: { default: true, type: Boolean },
-        url: { default: '/api/v1/bucket/upload', type: String }
+        urlField: { default: 'result', type: String },
+        url: { default: '/api/v1/bucket/upload', type: String },
     },
     data() {
         return {
@@ -41,29 +43,25 @@ export default {
         },
     },
     methods: {
-        onSuccess($event) {
+        handlerEvent($event) {
             const item = $event.item;
             if (this.currentValue?.length > 0) {
-                const currentItem = Object.assign(item, { url: $event?.item?.response?.result });
                 const indexValue = this.currentValue.findIndex((v) => (v.name === item?.name));
                 // 去重
                 if (indexValue > -1) {
                     this.currentValue.splice(indexValue);
                 }
-                this.currentValue.push(currentItem);
+                this.currentValue.push(item);
             } else {
-                const currentItem = Object.assign(item, { url: $event?.item?.response?.result });
-                this.currentValue = [currentItem];
+                this.currentValue = [item];
             }
-            this.$emit('success', this.currentValue);
-        },
-        onError($event) {
-            this.$emit('error', $event);
-        },
-        onRemove($event) {
-            this.$emit('remove', $event);
+            this.$emit('input', this.currentValue);
         },
         formatValue(value) {
+            if (this.currentValue && JSON.stringify(value) === JSON.stringify(this.currentValue)) {
+                return this.currentValue;
+            }
+
             return value || [];
         },
     },

@@ -17,12 +17,6 @@ export default function (component) {
                     touched: ($event) => {
                         this.$emit('touched', $event);
                     },
-                    success: ($event) => {
-                        this.$emit('success', $event);
-                    },
-                    remove: ($event) => {
-                        this.$emit('remove', $event);
-                    },
                     input: ($event) => {
                         // 获取组件通用校验
                         if (props.required) {
