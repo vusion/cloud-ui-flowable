@@ -17,14 +17,12 @@
       compType: customize
       customizeType: normal
       title: 默认内容
-      value: 6
       description: 设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。
     - name: point
       type: number
       compType: pointBox
       title: 允许小数
       attrSwitch: false
-      value: 0
       default: 0
       min: 0
       description: 选择后，填写者填写时可以输入带有小数点的数字，否则只能输入整数。
@@ -45,7 +43,7 @@
       group: validate
       message: 请输入内容
       title: 这是个必填项
-      value: false
+      default: false
       description: 选择必填后，填写者不填写将无法提交表单
   slots: false
   events: false

@@ -11,10 +11,6 @@
       title: 标题
       level: component
       description: 标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题
-    - name: placeholder
-      type: string
-      value: 请输入内容
-      description: 占位内容
     - name: value
       type: Array
       title: 默认内容
