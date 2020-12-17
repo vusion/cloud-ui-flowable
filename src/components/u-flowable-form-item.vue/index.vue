@@ -100,4 +100,12 @@ export default UFlowableFormItem;
     display: block;
 }
 
+.title[required]:after {
+    content: '*';
+    color: #F24957;
+    display: inline-block;
+    align-items: center;
+    margin-left: 5px;
+}
+
 </style>
