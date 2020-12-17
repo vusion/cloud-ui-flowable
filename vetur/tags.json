@@ -158,8 +158,6 @@
   "u-flowable-uploader": {
     "attributes": [
       "title",
-      "value",
-      "url",
       "multiple",
       "required"
     ],

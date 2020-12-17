@@ -5,6 +5,7 @@ const UFlowableFormItem = {
         title: String,
         tip: String,
         mode: String,
+        required: Boolean,
     },
     data() {
         return {
@@ -43,6 +44,9 @@ const UFlowableFormItem = {
         }, [
             h('div', {
                 class: this.$style.title,
+                attrs: {
+                    required: this.required,
+                },
             }, [this.$props.title]),
             h('div', {
                 class: this.$style.tip,
@@ -94,5 +98,8 @@ export default UFlowableFormItem;
 }
 .error[dirty] {
     display: block;
+}
+.title[required] {
+    background: red;
 }
 </style>
