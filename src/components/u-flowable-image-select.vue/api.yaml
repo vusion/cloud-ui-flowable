@@ -33,11 +33,6 @@
       example: [{key: '', value: ''}]
       default: null
       description: 为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。
-    - name: value
-      value: []
-      type: Array
-      default: null
-      description: 默认值，记录已经选择的选项
     - name: min
       title: 选中最小项数
       type: number

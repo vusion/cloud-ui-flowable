@@ -5,6 +5,7 @@ const UFlowableFormItem = {
         title: String,
         tip: String,
         mode: String,
+        required: Boolean,
     },
     data() {
         return {
@@ -43,24 +44,36 @@ const UFlowableFormItem = {
         }, [
             h('div', {
                 class: this.$style.title,
+                attrs: {
+                    required: this.required,
+                },
             }, [this.$props.title]),
             h('div', {
-                class: this.$style.tip,
-            }, [this.$props.tip]),
-            h('div', {
-                class: this.$style.content,
+                class: this.$style.box,
             }, [
-                {
-                    ...slot,
-                },
+                this.$props.tip && h('div', {
+                    class: this.$style.tip,
+                }, [this.$props.tip]),
+                h('div', {
+                    class: this.$style.content,
+                }, [
+                    {
+                        ...slot,
+                    },
+                ]),
+                h('div', {
+                    class: this.$style.error,
+                    attrs: {
+                        dirty: this.dirty || this.touched,
+                        empty: !this.error?.message,
+                    },
+                }, [
+                    h('div', {
+                        class: this.$style.icon,
+                    }, []),
+                    this.error?.message,
+                ]),
             ]),
-            h('div', {
-                class: this.$style.error,
-                attrs: {
-                    dirty: this.dirty || this.touched,
-                    empty: !this.error?.message,
-                },
-            }, [this.error?.message]),
         ]);
     },
 };
@@ -74,25 +87,64 @@ export default UFlowableFormItem;
 </script>
 <style module>
 .root {
+    display: flex;
     padding: 12px;
 }
+
+.box {
+   flex: 1;
+}
+
 .title {
-    padding: 0 0 8px;
+    margin-right: 10px;
+    width: 120px;
     font-weight: 500;
+    width: 120px;
 }
 .tip {
-    margin-bottom: 8px;
     color: #b4b4bc;
+    margin-bottom: 10px;
 }
+
 .error {
-    color: #f5222d;
+    color: #F24957;
+    font-size: 12px;
     margin-top: 5px;
     display: none;
 }
+
+.icon {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.icon:before {
+   display: inline-block;
+   icon-font: url('cloud-ui.vusion/src/components/i-icon.vue/assets/close-solid.svg');
+}
+
 .error[empty] {
     margin-top: 0;
+    display: none;
 }
+
+.root[dirty] .error,
 .error[dirty] {
     display: block;
 }
+
+.root[dirty] .error[empty],
+.error[empty] {
+    margin-top: 0;
+    display: none;
+}
+
+.title[required]:after {
+    content: '*';
+    color: #F24957;
+    display: inline-block;
+    align-items: center;
+    margin-left: 5px;
+}
+
 </style>

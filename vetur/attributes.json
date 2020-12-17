@@ -95,109 +95,9 @@
     "type": "string",
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
   },
-  "u-flowable-email/placeholder": {
-    "type": "string",
-    "description": "占位内容"
-  },
   "u-flowable-email/value": {
     "type": "string",
     "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。"
-  },
-  "u-flowable-email/text": {
-    "type": "string",
-    "description": "文本内容"
-  },
-  "u-flowable-email/color": {
-    "type": "string",
-    "options": [
-      {
-        "value": "default",
-        "title": "默认"
-      },
-      {
-        "value": "primary",
-        "title": "主要色"
-      },
-      {
-        "value": "secondary",
-        "title": "辅助色"
-      },
-      {
-        "value": "success",
-        "title": "成功色"
-      },
-      {
-        "value": "warning",
-        "title": "警告色"
-      },
-      {
-        "value": "error",
-        "title": "错误色"
-      },
-      {
-        "value": "disabled",
-        "title": "禁用色"
-      }
-    ],
-    "description": "设置颜色"
-  },
-  "u-flowable-email/size": {
-    "type": "string",
-    "options": [
-      {
-        "value": "small",
-        "title": "小"
-      },
-      {
-        "value": "normal",
-        "title": "正常"
-      },
-      {
-        "value": "large",
-        "title": "大"
-      },
-      {
-        "value": "huge",
-        "title": "巨大"
-      }
-    ],
-    "description": "尺寸设置"
-  },
-  "u-flowable-email/display": {
-    "type": "string",
-    "options": [
-      {
-        "value": "inline",
-        "title": "行内"
-      },
-      {
-        "value": "block",
-        "title": "块级"
-      }
-    ],
-    "description": "展示方式"
-  },
-  "u-flowable-email/overflow": {
-    "type": "string",
-    "options": [
-      {
-        "value": "normal",
-        "title": "默认不处理"
-      },
-      {
-        "value": "ellipsis",
-        "title": "多余的文本省略"
-      },
-      {
-        "value": "break",
-        "title": "强制换行且英文自动添加换行符"
-      },
-      {
-        "value": "nowrap",
-        "title": "始终不换行"
-      }
-    ],
-    "description": "文本过长的处理方式"
   },
   "u-flowable-email/required": {
     "type": "boolean",
@@ -235,10 +135,6 @@
     "type": "Array",
     "description": "为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。"
   },
-  "u-flowable-image-select/value": {
-    "type": "Array",
-    "description": "默认值，记录已经选择的选项"
-  },
   "u-flowable-image-select/min": {
     "type": "number",
     "description": "可以勾选图片选择的最小数量"
@@ -255,10 +151,6 @@
     "type": "string",
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
   },
-  "u-flowable-link/placeholder": {
-    "type": "string",
-    "description": "占位内容"
-  },
   "u-flowable-link/value": {
     "type": "string",
     "description": "文本内容"
@@ -271,109 +163,9 @@
     "type": "string",
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
   },
-  "u-flowable-mobile/placeholder": {
-    "type": "string",
-    "description": "占位内容"
-  },
   "u-flowable-mobile/value": {
     "type": "string",
     "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。"
-  },
-  "u-flowable-mobile/text": {
-    "type": "string",
-    "description": "文本内容"
-  },
-  "u-flowable-mobile/color": {
-    "type": "string",
-    "options": [
-      {
-        "value": "default",
-        "title": "默认"
-      },
-      {
-        "value": "primary",
-        "title": "主要色"
-      },
-      {
-        "value": "secondary",
-        "title": "辅助色"
-      },
-      {
-        "value": "success",
-        "title": "成功色"
-      },
-      {
-        "value": "warning",
-        "title": "警告色"
-      },
-      {
-        "value": "error",
-        "title": "错误色"
-      },
-      {
-        "value": "disabled",
-        "title": "禁用色"
-      }
-    ],
-    "description": "设置颜色"
-  },
-  "u-flowable-mobile/size": {
-    "type": "string",
-    "options": [
-      {
-        "value": "small",
-        "title": "小"
-      },
-      {
-        "value": "normal",
-        "title": "正常"
-      },
-      {
-        "value": "large",
-        "title": "大"
-      },
-      {
-        "value": "huge",
-        "title": "巨大"
-      }
-    ],
-    "description": "尺寸设置"
-  },
-  "u-flowable-mobile/display": {
-    "type": "string",
-    "options": [
-      {
-        "value": "inline",
-        "title": "行内"
-      },
-      {
-        "value": "block",
-        "title": "块级"
-      }
-    ],
-    "description": "展示方式"
-  },
-  "u-flowable-mobile/overflow": {
-    "type": "string",
-    "options": [
-      {
-        "value": "normal",
-        "title": "默认不处理"
-      },
-      {
-        "value": "ellipsis",
-        "title": "多余的文本省略"
-      },
-      {
-        "value": "break",
-        "title": "强制换行且英文自动添加换行符"
-      },
-      {
-        "value": "nowrap",
-        "title": "始终不换行"
-      }
-    ],
-    "description": "文本过长的处理方式"
   },
   "u-flowable-mobile/required": {
     "type": "boolean",
@@ -423,10 +215,6 @@
     "type": "string",
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
   },
-  "u-flowable-rich-text/placeholder": {
-    "type": "string",
-    "description": "占位内容"
-  },
   "u-flowable-rich-text/value": {
     "type": "string",
     "description": "文本内容"
@@ -455,10 +243,6 @@
     "type": "string",
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
   },
-  "u-flowable-string/placeholder": {
-    "type": "string",
-    "description": "占位内容"
-  },
   "u-flowable-string/value": {
     "type": "string",
     "description": "文本内容"
@@ -483,10 +267,6 @@
     "type": "string",
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
   },
-  "u-flowable-textarea/placeholder": {
-    "type": "string",
-    "description": "占位内容"
-  },
   "u-flowable-textarea/value": {
     "type": "string",
     "description": "默认内容"
@@ -507,17 +287,7 @@
     "type": "string",
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
   },
-  "u-flowable-uploader/placeholder": {
-    "type": "string",
-    "description": "占位内容"
-  },
-  "u-flowable-uploader/value": {
-    "type": "Array",
-    "description": "默认值，记录已经上传的文件列表"
-  },
-  "u-flowable-uploader/url": {
-    "description": "上传地址"
-  },
+  "u-flowable-uploader/multiple": {},
   "u-flowable-uploader/required": {
     "type": "boolean",
     "description": "选择必填后，填写者不填写将无法提交表单"

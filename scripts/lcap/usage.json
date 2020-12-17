@@ -103,12 +103,6 @@
                     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
                 },
                 {
-                    "name": "placeholder",
-                    "type": "string",
-                    "value": "单行输入",
-                    "description": "占位内容"
-                },
-                {
                     "name": "value",
                     "type": "string",
                     "compType": "customize",
@@ -198,12 +192,6 @@
                     "title": "标题",
                     "level": "component",
                     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
-                },
-                {
-                    "name": "placeholder",
-                    "type": "string",
-                    "value": "多行文字",
-                    "description": "占位内容"
                 },
                 {
                     "name": "value",
@@ -411,134 +399,12 @@
                     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
                 },
                 {
-                    "name": "placeholder",
-                    "type": "string",
-                    "value": "邮箱",
-                    "description": "占位内容"
-                },
-                {
                     "name": "value",
                     "type": "string",
                     "compType": "customize",
                     "customizeType": "normal",
                     "title": "默认内容",
-                    "value": "112344342@qq.com",
                     "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。"
-                },
-                {
-                    "name": "text",
-                    "type": "string",
-                    "compType": "string",
-                    "title": "文本",
-                    "description": "文本内容"
-                },
-                {
-                    "name": "color",
-                    "title": "颜色",
-                    "type": "string",
-                    "compType": "string",
-                    "options": [
-                        {
-                            "value": "default",
-                            "title": "默认"
-                        },
-                        {
-                            "value": "primary",
-                            "title": "主要色"
-                        },
-                        {
-                            "value": "secondary",
-                            "title": "辅助色"
-                        },
-                        {
-                            "value": "success",
-                            "title": "成功色"
-                        },
-                        {
-                            "value": "warning",
-                            "title": "警告色"
-                        },
-                        {
-                            "value": "error",
-                            "title": "错误色"
-                        },
-                        {
-                            "value": "disabled",
-                            "title": "禁用色"
-                        }
-                    ],
-                    "default": "default",
-                    "description": "设置颜色"
-                },
-                {
-                    "name": "size",
-                    "title": "尺寸",
-                    "type": "string",
-                    "compType": "string",
-                    "options": [
-                        {
-                            "value": "small",
-                            "title": "小"
-                        },
-                        {
-                            "value": "normal",
-                            "title": "正常"
-                        },
-                        {
-                            "value": "large",
-                            "title": "大"
-                        },
-                        {
-                            "value": "huge",
-                            "title": "巨大"
-                        }
-                    ],
-                    "default": "normal",
-                    "description": "尺寸设置"
-                },
-                {
-                    "name": "display",
-                    "type": "string",
-                    "title": "展示方式",
-                    "compType": "string",
-                    "options": [
-                        {
-                            "value": "inline",
-                            "title": "行内"
-                        },
-                        {
-                            "value": "block",
-                            "title": "块级"
-                        }
-                    ],
-                    "default": "inline",
-                    "description": "展示方式"
-                },
-                {
-                    "name": "overflow",
-                    "title": "隐藏处理",
-                    "type": "string",
-                    "compType": "string",
-                    "options": [
-                        {
-                            "value": "normal",
-                            "title": "默认不处理"
-                        },
-                        {
-                            "value": "ellipsis",
-                            "title": "多余的文本省略"
-                        },
-                        {
-                            "value": "break",
-                            "title": "强制换行且英文自动添加换行符"
-                        },
-                        {
-                            "value": "nowrap",
-                            "title": "始终不换行"
-                        }
-                    ],
-                    "default": "normal",
-                    "description": "文本过长的处理方式"
                 },
                 {
                     "name": "required",
@@ -621,129 +487,12 @@
                     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
                 },
                 {
-                    "name": "placeholder",
-                    "type": "string",
-                    "value": "手机号",
-                    "description": "占位内容"
-                },
-                {
                     "name": "value",
                     "type": "string",
                     "compType": "customize",
                     "customizeType": "normal",
                     "title": "默认内容",
-                    "value": "17321213421",
                     "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。"
-                },
-                {
-                    "name": "text",
-                    "type": "string",
-                    "title": "文本",
-                    "description": "文本内容"
-                },
-                {
-                    "name": "color",
-                    "title": "颜色",
-                    "type": "string",
-                    "options": [
-                        {
-                            "value": "default",
-                            "title": "默认"
-                        },
-                        {
-                            "value": "primary",
-                            "title": "主要色"
-                        },
-                        {
-                            "value": "secondary",
-                            "title": "辅助色"
-                        },
-                        {
-                            "value": "success",
-                            "title": "成功色"
-                        },
-                        {
-                            "value": "warning",
-                            "title": "警告色"
-                        },
-                        {
-                            "value": "error",
-                            "title": "错误色"
-                        },
-                        {
-                            "value": "disabled",
-                            "title": "禁用色"
-                        }
-                    ],
-                    "default": "default",
-                    "description": "设置颜色"
-                },
-                {
-                    "name": "size",
-                    "title": "尺寸",
-                    "type": "string",
-                    "options": [
-                        {
-                            "value": "small",
-                            "title": "小"
-                        },
-                        {
-                            "value": "normal",
-                            "title": "正常"
-                        },
-                        {
-                            "value": "large",
-                            "title": "大"
-                        },
-                        {
-                            "value": "huge",
-                            "title": "巨大"
-                        }
-                    ],
-                    "default": "normal",
-                    "description": "尺寸设置"
-                },
-                {
-                    "name": "display",
-                    "title": "展示方式",
-                    "type": "string",
-                    "options": [
-                        {
-                            "value": "inline",
-                            "title": "行内"
-                        },
-                        {
-                            "value": "block",
-                            "title": "块级"
-                        }
-                    ],
-                    "default": "inline",
-                    "description": "展示方式"
-                },
-                {
-                    "name": "overflow",
-                    "title": "隐藏处理",
-                    "type": "string",
-                    "options": [
-                        {
-                            "value": "normal",
-                            "title": "默认不处理"
-                        },
-                        {
-                            "value": "ellipsis",
-                            "title": "多余的文本省略"
-                        },
-                        {
-                            "value": "break",
-                            "title": "强制换行且英文自动添加换行符"
-                        },
-                        {
-                            "value": "nowrap",
-                            "title": "始终不换行"
-                        }
-                    ],
-                    "default": "normal",
-                    "description": "文本过长的处理方式"
                 },
                 {
                     "name": "required",
@@ -828,7 +577,6 @@
                     "compType": "customize",
                     "customizeType": "normal",
                     "title": "默认内容",
-                    "value": 6,
                     "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。"
                 },
                 {
@@ -837,7 +585,6 @@
                     "compType": "pointBox",
                     "title": "允许小数",
                     "attrSwitch": false,
-                    "value": 0,
                     "default": 0,
                     "min": 0,
                     "description": "选择后，填写者填写时可以输入带有小数点的数字，否则只能输入整数。"
@@ -864,7 +611,7 @@
                     "group": "validate",
                     "message": "请输入内容",
                     "title": "这是个必填项",
-                    "value": false,
+                    "default": false,
                     "description": "选择必填后，填写者不填写将无法提交表单"
                 }
             ],
@@ -921,12 +668,6 @@
                     "level": "component",
                     "value": "单行输入",
                     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
-                },
-                {
-                    "name": "placeholder",
-                    "type": "string",
-                    "value": "链接",
-                    "description": "占位内容"
                 },
                 {
                     "name": "value",
@@ -1286,7 +1027,7 @@
             "Basic"
         ],
         "screenShot": "[]",
-        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader title=\\\"附件上传\\\" ></u-flowable-uploader>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader mode=\\\"readonly\\\" :value=\\\"[{ name: '文件1' }]\\\" ></u-flowable-uploader>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader mode=\\\"readonly\\\" :value=\\\"[{ name: '文件1' }]\\\"></u-flowable-uploader>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader mode=\\\"edit\\\" :value=\\\"[{ name: '文件1' }]\\\" ></u-flowable-uploader>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader title=\\\"附件上传\\\" url=\\\"/api/v1/bucket/upload\\\" urlField=\\\"result\\\"></u-flowable-uploader>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader mode=\\\"readonly\\\" :value=\\\"[{ name: '文件1' }]\\\" ></u-flowable-uploader>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader mode=\\\"readonly\\\" :value=\\\"[{ name: '文件1' }]\\\"></u-flowable-uploader>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader mode=\\\"edit\\\" :value=\\\"[{ name: '文件1' }]\\\" ></u-flowable-uploader>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "u-flowable-uploader",
             "title": "附件上传",
@@ -1297,7 +1038,7 @@
                 {
                     "title": "编辑模式",
                     "description": "",
-                    "code": "<template>\n<u-flowable-uploader title=\"附件上传\" ></u-flowable-uploader>\n</template>\n"
+                    "code": "<template>\n<u-flowable-uploader title=\"附件上传\" url=\"/api/v1/bucket/upload\" urlField=\"result\"></u-flowable-uploader>\n</template>\n"
                 },
                 {
                     "title": "只读模式",
@@ -1325,24 +1066,10 @@
                     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
                 },
                 {
-                    "name": "placeholder",
-                    "type": "string",
-                    "value": "请输入内容",
-                    "description": "占位内容"
-                },
-                {
-                    "name": "value",
-                    "type": "Array",
-                    "title": "默认内容",
-                    "compType": "customize",
-                    "customizeType": "normal",
-                    "placeholder": "请输入内容",
-                    "description": "默认值，记录已经上传的文件列表"
-                },
-                {
-                    "name": "url",
-                    "description": "上传地址",
-                    "value": "/gateway/lowcode/api/v1/app/upload"
+                    "name": "multiple",
+                    "title": "是否上传多个",
+                    "compType": "checkbox",
+                    "value": true
                 },
                 {
                     "name": "required",
@@ -1480,7 +1207,7 @@
             "Basic"
         ],
         "screenShot": "[]",
-        "blocks": "[{\"title\":\"基础示例-编辑\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-image-select title=\\\"图片选择\\\" :list=\\\"[{text: '选项1', key: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  key: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  key: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  key: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  key: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\\\"></u-flowable-image-select>\\n</template>\\n\"},{\"title\":\"基础示例-可选项数\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-image-select :min=\\\"2\\\" :max=\\\"3\\\"  mode=\\\"edit\\\" :list=\\\"[{text: '选项1', key: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  key: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  key: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  key: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  key: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\\\"></u-flowable-image-select>\\n</template>\\n\"},{\"title\":\"基础示例-只读\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-image-select mode=\\\"readonly\\\" :list=\\\"[{text: '选项1', key: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  key: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  key: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  key: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  key: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\\\" :value=\\\"['id2','id1']\\\"></u-flowable-image-select>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础示例-编辑\",\"description\":\"\",\"code\":\"<template>\\n\\t<u-flowable-image-select title=\\\"图片选择\\\" \\n\\t\\t\\t:list=\\\"[{\\n\\t\\t\\ttext: '选项1', \\n\\t\\t\\tkey: '选项1', \\n\\t\\t\\tfiles: [\\n        {\\n          url: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\\n        }\\n      ],\\n\\t\\t\\timage: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, \\n\\t\\t\\t{\\n\\t\\t\\ttext: '选项2',  \\n\\t\\t\\tkey: \\t'id2', \\n\\t\\t\\tfiles: [\\n        {\\n          url: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\\n        }\\n\\t\\t\\t], \\n\\t\\t\\t\\timage: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'\\n\\t\\t\\t}, \\n\\t\\t\\t{\\n\\t\\t\\ttext: '选项2',  \\n\\t\\t\\tkey: '选项2', \\n\\t\\t\\tfiles: [\\n        {\\n          url: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\\n        }\\n\\t\\t\\t],\\n\\t\\t\\timage: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, \\n\\t\\t\\t{\\n\\t\\t\\ttext: '选项3',  \\n\\t\\t\\tkey: '选项3', \\n\\t\\t\\tfiles: [\\n        {\\n          url: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\\n        }\\n\\t\\t\\t],\\n\\t\\t\\timage: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, \\n\\t\\t\\t{\\n\\t\\t\\t\\ttext: '选项4',  \\n\\t\\t\\t\\tkey: '选项4', \\n\\t\\t\\t\\tfiles: [\\n\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\turl: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\\n\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t],\\n\\t\\t\\t\\timage: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'\\n\\t\\t\\t}]\\\">\\n\\t</u-flowable-image-select>\\n</template>\\n\"},{\"title\":\"基础示例-可选项数\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-image-select :min=\\\"2\\\" :max=\\\"3\\\"  mode=\\\"edit\\\" :list=\\\"[{text: '选项1', key: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  key: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  key: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  key: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  key: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\\\"></u-flowable-image-select>\\n</template>\\n\"},{\"title\":\"基础示例-只读\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-image-select mode=\\\"readonly\\\" :list=\\\"[{text: '选项1', key: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  key: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  key: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  key: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  key: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\\\" :value=\\\"['id2','id1']\\\"></u-flowable-image-select>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "u-flowable-image-select",
             "title": "图片选择",
@@ -1491,7 +1218,7 @@
                 {
                     "title": "基础示例-编辑",
                     "description": "",
-                    "code": "<template>\n<u-flowable-image-select title=\"图片选择\" :list=\"[{text: '选项1', key: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  key: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  key: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  key: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  key: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\"></u-flowable-image-select>\n</template>\n"
+                    "code": "<template>\n\t<u-flowable-image-select title=\"图片选择\" \n\t\t\t:list=\"[{\n\t\t\ttext: '选项1', \n\t\t\tkey: '选项1', \n\t\t\tfiles: [\n        {\n          url: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\n        }\n      ],\n\t\t\timage: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, \n\t\t\t{\n\t\t\ttext: '选项2',  \n\t\t\tkey: \t'id2', \n\t\t\tfiles: [\n        {\n          url: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\n        }\n\t\t\t], \n\t\t\t\timage: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'\n\t\t\t}, \n\t\t\t{\n\t\t\ttext: '选项2',  \n\t\t\tkey: '选项2', \n\t\t\tfiles: [\n        {\n          url: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\n        }\n\t\t\t],\n\t\t\timage: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, \n\t\t\t{\n\t\t\ttext: '选项3',  \n\t\t\tkey: '选项3', \n\t\t\tfiles: [\n        {\n          url: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\n        }\n\t\t\t],\n\t\t\timage: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, \n\t\t\t{\n\t\t\t\ttext: '选项4',  \n\t\t\t\tkey: '选项4', \n\t\t\t\tfiles: [\n\t\t\t\t\t{\n\t\t\t\t\t\turl: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\timage: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'\n\t\t\t}]\">\n\t</u-flowable-image-select>\n</template>\n"
                 },
                 {
                     "title": "基础示例-可选项数",
@@ -1555,13 +1282,6 @@
                     ],
                     "default": null,
                     "description": "为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。"
-                },
-                {
-                    "name": "value",
-                    "value": [],
-                    "type": "Array",
-                    "default": null,
-                    "description": "默认值，记录已经选择的选项"
                 },
                 {
                     "name": "min",
@@ -1665,12 +1385,6 @@
                     "title": "标题",
                     "level": "component",
                     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
-                },
-                {
-                    "name": "placeholder",
-                    "type": "string",
-                    "value": "请输入内容",
-                    "description": "占位内容"
                 },
                 {
                     "name": "value",
