@@ -1366,6 +1366,7 @@
                     "name": "value",
                     "type": "string",
                     "title": "文本",
+                    "compType": "richtext",
                     "description": "文本内容"
                 },
                 {
