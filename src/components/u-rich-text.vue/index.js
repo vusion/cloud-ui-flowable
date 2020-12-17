@@ -31,6 +31,44 @@ import contentStyle from '!!raw-loader!tinymce/skins/ui/oxide/content.css';
 import contentStyle2 from '!!raw-loader!tinymce/skins/content/default/content.css';
 import Editor from '@tinymce/tinymce-vue';
 import './zh_CN';
+
+function image_upload_handler(blobInfo, success, failure, progress) {
+    const xhr = new XMLHttpRequest();
+    xhr.withCredentials = false;
+    xhr.open('POST', '/api/v1/bucket/upload');
+
+    xhr.upload.onprogress = function (e) {
+        progress(e.loaded / e.total * 100);
+    };
+
+    xhr.onload = function () {
+        if (xhr.status === 403) {
+            failure('HTTP Error: ' + xhr.status, { remove: true });
+            return;
+        }
+        if (xhr.status < 200 || xhr.status >= 300) {
+            failure('HTTP Error: ' + xhr.status);
+            return;
+        }
+        const json = JSON.parse(xhr.responseText);
+
+        if (!json || typeof json.result !== 'string') {
+            failure('Invalid JSON: ' + xhr.responseText);
+            return;
+        }
+        success(json.result);
+    };
+
+    xhr.onerror = function () {
+        failure('Image upload failed due to a XHR Transport error. Code: ' + xhr.status);
+    };
+
+    const formData = new FormData();
+    formData.append('file', blobInfo.blob(), blobInfo.filename());
+
+    xhr.send(formData);
+}
+
 export default {
     extends: Editor,
     props: {
@@ -55,7 +93,8 @@ export default {
                     // eslint-disable-next-line camelcase
                     imagetools_toolbar: 'rotateleft rotateright | flipv fliph | imageoptions',
                     // eslint-disable-next-line camelcase
-                    images_upload_url: 'postAcceptor.php',
+                    images_upload_url: '/api/v1/bucket/upload',
+                    images_upload_handler,
                     // eslint-disable-next-line camelcase
                     images_upload_base_path: '/some/basepath',
                     // eslint-disable-next-line camelcase
