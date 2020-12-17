@@ -99,7 +99,5 @@ export default UFlowableFormItem;
 .error[dirty] {
     display: block;
 }
-.title[required] {
-    background: red;
-}
+
 </style>
