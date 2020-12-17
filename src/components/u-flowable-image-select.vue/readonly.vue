@@ -52,7 +52,7 @@ export default {
             }
 
             return valueResult.map((valueItem) => {
-                const realItem = this.list.find((item) => item.text === valueItem);
+                const realItem = this.list.find((item) => item.value === valueItem);
                 return realItem;
             }).filter((i) => i);
         },

@@ -27,7 +27,7 @@ export default {
             // TODO
             const map = {};
             this.list.forEach((item) => {
-                map[item.key] = item;
+                map[item.value] = item;
             });
 
             let valueArray = value;
@@ -36,8 +36,7 @@ export default {
             } else {
                 valueArray = (value || '').split(',');
             }
-
-            return valueArray.map((valueItem) => this.list.find((item) => item.key === valueItem)).map((item) => item.text);
+            return valueArray.map((valueItem) => this.list.find((item) => item.value === valueItem)).map((item) => item.text);
         },
     },
 };

@@ -16,14 +16,11 @@
       title: 选项内容
       type: Array
       compType: inputList
-      value: [{ key: '未命名1', text: '未命名1', value: '未命名1'}, { key: '未命名2', text: '未命名2', value: '未命名2'}, { key: '未命名3', text: '未命名3', value: '未命名3'}]
+      value: [{text: '未命名1', value: '未命名1'}, { text: '未命名2', value: '未命名2'}, { text: '未命名3', value: '未命名3'}]
       description: 为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。
     - name: value
       type: string
-      compType: customize
-      customizeType: normal
-      customizeConfig:
-         name: u-select
+      compType: u-select
       title: 默认内容
       description: 文本内容
     - name: required

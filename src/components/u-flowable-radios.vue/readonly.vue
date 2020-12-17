@@ -14,7 +14,7 @@ export default {
     },
     computed: {
         label() {
-            return this.list.find((item) => item.key === this.value)?.label || '';
+            return this.list.find((item) => item.value === this.value)?.text || '';
         },
     },
 };

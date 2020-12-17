@@ -5,7 +5,7 @@
             <div :key="index" :class="$style.checkbox">
                 <u-image :src="getCurrentImage(item)" fit="fill" :class="$style.image"></u-image>
                 <div :class="$style.desc">
-                    <u-checkbox :label="item.text" v-model="item.value" :key="index">
+                    <u-checkbox :label="item.value" :key="index">
                         {{ item.text }}
                     </u-checkbox>
                 </div>

@@ -1,6 +1,6 @@
 <template>
 <div :class="$style.root">
-    <u-label color="primary" v-for="item in selectedList" :key="item.value" :class="$style.label">{{ item.text }}</u-label>
+    <u-label color="primary" v-for="(item, index) in selectedList" :key="index" :class="$style.label">{{ item.text }}</u-label>
 </div>
 </template>
 

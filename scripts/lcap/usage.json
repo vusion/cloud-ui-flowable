@@ -106,7 +106,6 @@
                     "name": "value",
                     "type": "string",
                     "compType": "customize",
-                    "customizeType": "normal",
                     "title": "默认内容",
                     "value": "单行文本",
                     "description": "文本内容"
@@ -199,7 +198,6 @@
                     "title": "默认内容",
                     "value": "请输入内容",
                     "compType": "customize",
-                    "customizeType": "normal",
                     "description": "默认内容"
                 },
                 {
@@ -287,7 +285,6 @@
                     "name": "value",
                     "type": "string",
                     "compType": "customize",
-                    "customizeType": "normal",
                     "title": "默认内容",
                     "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。"
                 },
@@ -313,12 +310,10 @@
                                 "name": "list",
                                 "value": [
                                     {
-                                        "key": "date",
                                         "text": "年-月-日",
                                         "value": "date"
                                     },
                                     {
-                                        "key": "datetime",
                                         "text": "年-月-日 时:分:秒",
                                         "value": "datetime"
                                     }
@@ -402,7 +397,6 @@
                     "name": "value",
                     "type": "string",
                     "compType": "customize",
-                    "customizeType": "normal",
                     "title": "默认内容",
                     "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。"
                 },
@@ -490,7 +484,6 @@
                     "name": "value",
                     "type": "string",
                     "compType": "customize",
-                    "customizeType": "normal",
                     "title": "默认内容",
                     "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。"
                 },
@@ -575,7 +568,6 @@
                     "name": "value",
                     "type": "number",
                     "compType": "customize",
-                    "customizeType": "normal",
                     "title": "默认内容",
                     "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。"
                 },
@@ -583,11 +575,11 @@
                     "name": "point",
                     "type": "number",
                     "compType": "pointBox",
-                    "title": "允许小数",
+                    "title": "保留小数位",
                     "attrSwitch": false,
                     "default": 0,
                     "min": 0,
-                    "description": "选择后，填写者填写时可以输入带有小数点的数字，否则只能输入整数。"
+                    "description": "选择后，填写者填写时可以输入带有小数点的数字，当超出位数时，将按照四舍五入进行保留"
                 },
                 {
                     "name": "min",
@@ -673,7 +665,6 @@
                     "name": "value",
                     "type": "string",
                     "compType": "customize",
-                    "customizeType": "normal",
                     "title": "默认内容",
                     "value": "http://www.baicai",
                     "description": "文本内容"
@@ -704,7 +695,7 @@
             "Basic"
         ],
         "screenShot": "[]",
-        "blocks": "[{\"title\":\"基础示例-编辑\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-radios title=\\\"单项选择\\\" :list=\\\"[{key: '未命名1', value: '未命名1'}, {key: '未命名2', value: '未命名2'}]\\\"></u-flowable-radios>\\n</template>\\n\"},{\"title\":\"普通文本\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-radios mode=\\\"readonly\\\" :list=\\\"[{key: '未命名1', value: '未命名1'}, { key: '未命名1', value: '未命名2'}]\\\" :value=\\\"'未命名1'\\\"></u-flowable-radios>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础示例-编辑\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-radios title=\\\"单项选择\\\" :list=\\\"[{text: '未命名1', value: '未命名1'}, {text: '未命名2', value: '未命名2'}]\\\"></u-flowable-radios>\\n</template>\\n\"},{\"title\":\"普通文本\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-radios mode=\\\"readonly\\\" :list=\\\"[{text: '未命名1', value: '未命名1'}, { text: '未命名1', value: '未命名2'}]\\\" :value=\\\"'未命名1'\\\"></u-flowable-radios>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "u-flowable-radios",
             "title": "单项选择",
@@ -715,12 +706,12 @@
                 {
                     "title": "基础示例-编辑",
                     "description": "",
-                    "code": "<template>\n<u-flowable-radios title=\"单项选择\" :list=\"[{key: '未命名1', value: '未命名1'}, {key: '未命名2', value: '未命名2'}]\"></u-flowable-radios>\n</template>\n"
+                    "code": "<template>\n<u-flowable-radios title=\"单项选择\" :list=\"[{text: '未命名1', value: '未命名1'}, {text: '未命名2', value: '未命名2'}]\"></u-flowable-radios>\n</template>\n"
                 },
                 {
                     "title": "普通文本",
                     "description": "",
-                    "code": "<template>\n<u-flowable-radios mode=\"readonly\" :list=\"[{key: '未命名1', value: '未命名1'}, { key: '未命名1', value: '未命名2'}]\" :value=\"'未命名1'\"></u-flowable-radios>\n</template>\n"
+                    "code": "<template>\n<u-flowable-radios mode=\"readonly\" :list=\"[{text: '未命名1', value: '未命名1'}, { text: '未命名1', value: '未命名2'}]\" :value=\"'未命名1'\"></u-flowable-radios>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -740,17 +731,14 @@
                     "compType": "inputList",
                     "value": [
                         {
-                            "key": "未命名1",
                             "text": "未命名1",
                             "value": "未命名1"
                         },
                         {
-                            "key": "未命名2",
                             "text": "未命名2",
                             "value": "未命名2"
                         },
                         {
-                            "key": "未命名3",
                             "text": "未命名3",
                             "value": "未命名3"
                         }
@@ -760,11 +748,7 @@
                 {
                     "name": "value",
                     "type": "string",
-                    "compType": "customize",
-                    "customizeType": "normal",
-                    "customizeConfig": {
-                        "name": "u-select"
-                    },
+                    "compType": "u-select",
                     "title": "默认内容",
                     "description": "文本内容"
                 },
@@ -794,7 +778,7 @@
             "Basic"
         ],
         "screenShot": "[]",
-        "blocks": "[{\"title\":\"基础示例-编辑\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-select title=\\\"下拉选择\\\" :list=\\\"[{key: '未命名1', value: '未命名1', text: '未命名1'}, {key: '未命名2', value: '未命名2', text: '未命名2'}]\\\"></u-flowable-select>\\n</template>\\n\"},{\"title\":\"普通文本\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-select mode=\\\"readonly\\\" :list=\\\"[{key: '未命名1', value: '未命名1', text: '未命名1'}, { key: '未命名2', value: '未命名2', text: '未命名2'}]\\\" :value=\\\"'未命名1'\\\"></u-flowable-select>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础示例-编辑\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-select title=\\\"下拉选择\\\" :list=\\\"[{text: '未命名1', value: '未命名1'}, {text: '未命名2', value: '未命名2' }]\\\"></u-flowable-select>\\n</template>\\n\"},{\"title\":\"普通文本\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-select mode=\\\"readonly\\\" :list=\\\"[{text: '未命名1', value: '未命名1'}, { text: '未命名2', value: '未命名2'}]\\\" :value=\\\"'未命名1'\\\"></u-flowable-select>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "u-flowable-select",
             "title": "下拉选择",
@@ -805,12 +789,12 @@
                 {
                     "title": "基础示例-编辑",
                     "description": "",
-                    "code": "<template>\n<u-flowable-select title=\"下拉选择\" :list=\"[{key: '未命名1', value: '未命名1', text: '未命名1'}, {key: '未命名2', value: '未命名2', text: '未命名2'}]\"></u-flowable-select>\n</template>\n"
+                    "code": "<template>\n<u-flowable-select title=\"下拉选择\" :list=\"[{text: '未命名1', value: '未命名1'}, {text: '未命名2', value: '未命名2' }]\"></u-flowable-select>\n</template>\n"
                 },
                 {
                     "title": "普通文本",
                     "description": "",
-                    "code": "<template>\n<u-flowable-select mode=\"readonly\" :list=\"[{key: '未命名1', value: '未命名1', text: '未命名1'}, { key: '未命名2', value: '未命名2', text: '未命名2'}]\" :value=\"'未命名1'\"></u-flowable-select>\n</template>\n"
+                    "code": "<template>\n<u-flowable-select mode=\"readonly\" :list=\"[{text: '未命名1', value: '未命名1'}, { text: '未命名2', value: '未命名2'}]\" :value=\"'未命名1'\"></u-flowable-select>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -830,14 +814,13 @@
                     "compType": "inputList",
                     "value": [
                         {
-                            "key": "未配置1",
                             "text": "未配置1",
                             "value": "未配置1"
                         }
                     ],
                     "example": [
                         {
-                            "key": "",
+                            "text": "",
                             "value": ""
                         }
                     ],
@@ -847,11 +830,7 @@
                 {
                     "name": "value",
                     "type": "string",
-                    "compType": "customize",
-                    "customizeType": "normal",
-                    "customizeConfig": {
-                        "name": "u-select"
-                    },
+                    "compType": "u-select",
                     "title": "默认内容",
                     "value": "",
                     "description": "文本内容"
@@ -882,7 +861,7 @@
             "Basic"
         ],
         "screenShot": "[]",
-        "blocks": "[{\"title\":\"基础示例-编辑\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-checkbox title=\\\"多项选择\\\" :list=\\\"[{key: '未命名1', value: '未命名1', text: '未命名1'}, {key: '未命名2', value: '未命名2', text: '未命名2'}]\\\"></u-flowable-checkbox>\\n</template>\\n\"},{\"title\":\"基础示例-多选\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-checkbox :value=\\\"['未命名1']\\\" mode=\\\"edit\\\" :min=\\\"1\\\" :max=\\\"2\\\" :list=\\\"[{key: '未命名1', value: '未命名1', text: '未命名1'}, {key: '未命名2', value: '未命名2', text: '未命名2'}]\\\"></u-flowable-checkbox>\\n</template>\\n\"},{\"title\":\"普通文本\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-checkbox mode=\\\"readonly\\\" :list=\\\"[{key: '未命名1', value: '未命名1', text: '未命名1'}, {key: '未命名2', value: '未命名2', text: '未命名2'}]\\\" :value=\\\"['未命名1', '未命名2']\\\"></u-flowable-checkbox>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础示例-编辑\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-checkbox title=\\\"多项选择\\\" :list=\\\"[{value: '未命名1', text: '未命名1'}, {value: '未命名2', text: '未命名2'}]\\\"></u-flowable-checkbox>\\n</template>\\n\"},{\"title\":\"基础示例-多选\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-checkbox :value=\\\"['未命名1']\\\" mode=\\\"edit\\\" :min=\\\"1\\\" :max=\\\"2\\\" :list=\\\"[{value: '未命名1', text: '未命名1'}, { value: '未命名2', text: '未命名2'}]\\\"></u-flowable-checkbox>\\n</template>\\n\"},{\"title\":\"普通文本\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-checkbox mode=\\\"readonly\\\" :list=\\\"[{value: '未命名1', text: '未命名1'}, {  value: '未命名2', text: '未命名2'}]\\\" :value=\\\"['未命名1', '未命名2']\\\"></u-flowable-checkbox>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "u-flowable-checkbox",
             "title": "多项选择",
@@ -893,17 +872,17 @@
                 {
                     "title": "基础示例-编辑",
                     "description": "",
-                    "code": "<template>\n<u-flowable-checkbox title=\"多项选择\" :list=\"[{key: '未命名1', value: '未命名1', text: '未命名1'}, {key: '未命名2', value: '未命名2', text: '未命名2'}]\"></u-flowable-checkbox>\n</template>\n"
+                    "code": "<template>\n<u-flowable-checkbox title=\"多项选择\" :list=\"[{value: '未命名1', text: '未命名1'}, {value: '未命名2', text: '未命名2'}]\"></u-flowable-checkbox>\n</template>\n"
                 },
                 {
                     "title": "基础示例-多选",
                     "description": "",
-                    "code": "<template>\n<u-flowable-checkbox :value=\"['未命名1']\" mode=\"edit\" :min=\"1\" :max=\"2\" :list=\"[{key: '未命名1', value: '未命名1', text: '未命名1'}, {key: '未命名2', value: '未命名2', text: '未命名2'}]\"></u-flowable-checkbox>\n</template>\n"
+                    "code": "<template>\n<u-flowable-checkbox :value=\"['未命名1']\" mode=\"edit\" :min=\"1\" :max=\"2\" :list=\"[{value: '未命名1', text: '未命名1'}, { value: '未命名2', text: '未命名2'}]\"></u-flowable-checkbox>\n</template>\n"
                 },
                 {
                     "title": "普通文本",
                     "description": "",
-                    "code": "<template>\n<u-flowable-checkbox mode=\"readonly\" :list=\"[{key: '未命名1', value: '未命名1', text: '未命名1'}, {key: '未命名2', value: '未命名2', text: '未命名2'}]\" :value=\"['未命名1', '未命名2']\"></u-flowable-checkbox>\n</template>\n"
+                    "code": "<template>\n<u-flowable-checkbox mode=\"readonly\" :list=\"[{value: '未命名1', text: '未命名1'}, {  value: '未命名2', text: '未命名2'}]\" :value=\"['未命名1', '未命名2']\"></u-flowable-checkbox>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -963,24 +942,21 @@
                     "type": "Array",
                     "value": [
                         {
-                            "key": "未命名1",
                             "text": "未命名1",
                             "value": "未命名1"
                         },
                         {
-                            "key": "未命名2",
                             "text": "未命名2",
                             "value": "未命名2"
                         },
                         {
-                            "key": "未命名3",
                             "text": "未命名3",
                             "value": "未命名3"
                         }
                     ],
                     "example": [
                         {
-                            "key": "",
+                            "text": "",
                             "value": ""
                         }
                     ],
@@ -989,11 +965,9 @@
                 },
                 {
                     "name": "value",
-                    "type": "string",
-                    "compType": "customize",
-                    "customizeType": "normal",
+                    "type": "array",
+                    "compType": "u-select",
                     "customizeConfig": {
-                        "name": "u-select",
                         "attrsMap": {
                             "multiple": true
                         }
@@ -1139,7 +1113,6 @@
                     "name": "value",
                     "type": "string",
                     "compType": "customize",
-                    "customizeType": "normal",
                     "title": "默认内容",
                     "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。数据格式如：2020-09-09~2020-10-10"
                 },
@@ -1165,12 +1138,10 @@
                                 "name": "list",
                                 "value": [
                                     {
-                                        "key": "date",
                                         "text": "年-月-日",
                                         "value": "date"
                                     },
                                     {
-                                        "key": "datetime",
                                         "text": "年-月-日 时:分:秒",
                                         "value": "datetime"
                                     }
@@ -1207,7 +1178,7 @@
             "Basic"
         ],
         "screenShot": "[]",
-        "blocks": "[{\"title\":\"基础示例-编辑\",\"description\":\"\",\"code\":\"<template>\\n\\t<u-flowable-image-select title=\\\"图片选择\\\" \\n\\t\\t\\t:list=\\\"[{\\n\\t\\t\\ttext: '选项1', \\n\\t\\t\\tkey: '选项1', \\n\\t\\t\\tfiles: [\\n        {\\n          url: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\\n        }\\n      ],\\n\\t\\t\\timage: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, \\n\\t\\t\\t{\\n\\t\\t\\ttext: '选项2',  \\n\\t\\t\\tkey: \\t'id2', \\n\\t\\t\\tfiles: [\\n        {\\n          url: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\\n        }\\n\\t\\t\\t], \\n\\t\\t\\t\\timage: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'\\n\\t\\t\\t}, \\n\\t\\t\\t{\\n\\t\\t\\ttext: '选项2',  \\n\\t\\t\\tkey: '选项2', \\n\\t\\t\\tfiles: [\\n        {\\n          url: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\\n        }\\n\\t\\t\\t],\\n\\t\\t\\timage: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, \\n\\t\\t\\t{\\n\\t\\t\\ttext: '选项3',  \\n\\t\\t\\tkey: '选项3', \\n\\t\\t\\tfiles: [\\n        {\\n          url: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\\n        }\\n\\t\\t\\t],\\n\\t\\t\\timage: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, \\n\\t\\t\\t{\\n\\t\\t\\t\\ttext: '选项4',  \\n\\t\\t\\t\\tkey: '选项4', \\n\\t\\t\\t\\tfiles: [\\n\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\turl: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\\n\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t],\\n\\t\\t\\t\\timage: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'\\n\\t\\t\\t}]\\\">\\n\\t</u-flowable-image-select>\\n</template>\\n\"},{\"title\":\"基础示例-可选项数\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-image-select :min=\\\"2\\\" :max=\\\"3\\\"  mode=\\\"edit\\\" :list=\\\"[{text: '选项1', key: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  key: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  key: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  key: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  key: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\\\"></u-flowable-image-select>\\n</template>\\n\"},{\"title\":\"基础示例-只读\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-image-select mode=\\\"readonly\\\" :list=\\\"[{text: '选项1', key: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  key: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  key: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  key: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  key: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\\\" :value=\\\"['id2','id1']\\\"></u-flowable-image-select>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础示例-编辑\",\"description\":\"\",\"code\":\"<template>\\n\\t<u-flowable-image-select title=\\\"图片选择\\\" \\n\\t\\t\\t:list=\\\"[{\\n\\t\\t\\ttext: '选项1', \\n\\t\\t\\tvalue: '选项1', \\n\\t\\t\\tfiles: [\\n\\t\\t\\t\\t{\\n\\t\\t\\t\\turl: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\\n\\t\\t\\t\\t}\\n\\t\\t\\t]}, \\n\\t\\t\\t{\\n\\t\\t\\t\\ttext: '选项2',  \\n\\t\\t\\t\\tvalue: '选项2', \\n\\t\\t\\t\\tfiles: [\\n\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\turl: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\\n\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t]\\n\\t\\t\\t}]\\\">\\n\\t</u-flowable-image-select>\\n</template>\\n\"},{\"title\":\"基础示例-可选项数\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-image-select :min=\\\"2\\\" :max=\\\"3\\\"  mode=\\\"edit\\\" :list=\\\"[{text: '选项1', value: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  value: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  value: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  value: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  value: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\\\"></u-flowable-image-select>\\n</template>\\n\"},{\"title\":\"基础示例-只读\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-image-select mode=\\\"readonly\\\" :list=\\\"[{text: '选项1', value: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  value: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  value: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  value: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  value: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\\\" :value=\\\"['id2','id1']\\\"></u-flowable-image-select>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "u-flowable-image-select",
             "title": "图片选择",
@@ -1218,17 +1189,17 @@
                 {
                     "title": "基础示例-编辑",
                     "description": "",
-                    "code": "<template>\n\t<u-flowable-image-select title=\"图片选择\" \n\t\t\t:list=\"[{\n\t\t\ttext: '选项1', \n\t\t\tkey: '选项1', \n\t\t\tfiles: [\n        {\n          url: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\n        }\n      ],\n\t\t\timage: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, \n\t\t\t{\n\t\t\ttext: '选项2',  \n\t\t\tkey: \t'id2', \n\t\t\tfiles: [\n        {\n          url: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\n        }\n\t\t\t], \n\t\t\t\timage: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'\n\t\t\t}, \n\t\t\t{\n\t\t\ttext: '选项2',  \n\t\t\tkey: '选项2', \n\t\t\tfiles: [\n        {\n          url: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\n        }\n\t\t\t],\n\t\t\timage: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, \n\t\t\t{\n\t\t\ttext: '选项3',  \n\t\t\tkey: '选项3', \n\t\t\tfiles: [\n        {\n          url: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\n        }\n\t\t\t],\n\t\t\timage: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, \n\t\t\t{\n\t\t\t\ttext: '选项4',  \n\t\t\t\tkey: '选项4', \n\t\t\t\tfiles: [\n\t\t\t\t\t{\n\t\t\t\t\t\turl: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\timage: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'\n\t\t\t}]\">\n\t</u-flowable-image-select>\n</template>\n"
+                    "code": "<template>\n\t<u-flowable-image-select title=\"图片选择\" \n\t\t\t:list=\"[{\n\t\t\ttext: '选项1', \n\t\t\tvalue: '选项1', \n\t\t\tfiles: [\n\t\t\t\t{\n\t\t\t\turl: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\n\t\t\t\t}\n\t\t\t]}, \n\t\t\t{\n\t\t\t\ttext: '选项2',  \n\t\t\t\tvalue: '选项2', \n\t\t\t\tfiles: [\n\t\t\t\t\t{\n\t\t\t\t\t\turl: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}]\">\n\t</u-flowable-image-select>\n</template>\n"
                 },
                 {
                     "title": "基础示例-可选项数",
                     "description": "",
-                    "code": "<template>\n<u-flowable-image-select :min=\"2\" :max=\"3\"  mode=\"edit\" :list=\"[{text: '选项1', key: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  key: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  key: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  key: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  key: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\"></u-flowable-image-select>\n</template>\n"
+                    "code": "<template>\n<u-flowable-image-select :min=\"2\" :max=\"3\"  mode=\"edit\" :list=\"[{text: '选项1', value: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  value: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  value: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  value: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  value: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\"></u-flowable-image-select>\n</template>\n"
                 },
                 {
                     "title": "基础示例-只读",
                     "description": "",
-                    "code": "<template>\n<u-flowable-image-select mode=\"readonly\" :list=\"[{text: '选项1', key: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  key: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  key: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  key: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  key: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\" :value=\"['id2','id1']\"></u-flowable-image-select>\n</template>\n"
+                    "code": "<template>\n<u-flowable-image-select mode=\"readonly\" :list=\"[{text: '选项1', value: '选项1', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'}, {text: '选项2',  value: 'id2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项2',  value: '选项2', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项3',  value: '选项3', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}, {text: '选项4',  value: '选项4', image: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/2.jpg'}]\" :value=\"['id2','id1']\"></u-flowable-image-select>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -1276,8 +1247,13 @@
                     ],
                     "example": [
                         {
-                            "key": "",
-                            "value": ""
+                            "text": "",
+                            "value": "",
+                            "files": [
+                                {
+                                    "url": ""
+                                }
+                            ]
                         }
                     ],
                     "default": null,
@@ -1463,8 +1439,7 @@
                 {
                     "name": "value",
                     "type": "string",
-                    "compType": "customize",
-                    "customizeType": "normal",
+                    "compType": "u-flowable-address",
                     "customizeConfig": {
                         "attrsMap": {
                             "direction": "vertical"

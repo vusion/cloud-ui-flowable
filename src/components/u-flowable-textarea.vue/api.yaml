@@ -16,7 +16,6 @@
       title: 默认内容
       value: 请输入内容
       compType: customize
-      customizeType: normal
       description: 默认内容
     - name: minlength
       type: string

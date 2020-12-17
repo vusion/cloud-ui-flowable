@@ -15,7 +15,6 @@
     - name: value
       type: string
       compType: customize
-      customizeType: normal
       title: 默认内容
       value: http://www.baicai
       description: 文本内容

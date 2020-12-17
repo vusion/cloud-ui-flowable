@@ -14,7 +14,6 @@
     - name: value
       type: string
       compType: customize
-      customizeType: normal
       title: 默认内容
       description: 设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。
     - name: dateType
@@ -31,8 +30,8 @@
           attrs: 
              - name: list
                value: [
-                { key: 'date' , text: '年-月-日', value: 'date' },
-                { key: 'datetime' , text: '年-月-日 时:分:秒', value: 'datetime' },
+                {  text: '年-月-日', value: 'date' },
+                {  text: '年-月-日 时:分:秒', value: 'datetime' },
                ]
       value: 'date'
       description: 设置时间格式
