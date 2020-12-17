@@ -71,6 +71,12 @@ export default {
 </script>
 
 <style module>
-.root {}
+/* 避免遮挡其他元素 */
+.root input[type=file]{
+    display: block;
+    left: 0;
+    height: 40px;
+    font-size: 0;
+}
 
 </style>
