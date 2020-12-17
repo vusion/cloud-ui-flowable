@@ -1,7 +1,7 @@
 <template>
 <div :class="$style.root">
    <u-uploader
-        v-model="currentValue"
+        :value="currentValue"
         v-bind="$attrs"
         @success="onSuccess($event)"
         @error="onError($event)"
@@ -46,11 +46,6 @@ export default {
         onSuccess($event) {
             const item = $event.item;
             if (this.currentValue?.length > 0) {
-                const indexValue = this.currentValue.findIndex((v) => (v.name === item?.name));
-                // 去重
-                if (indexValue > -1) {
-                    this.currentValue.splice(indexValue);
-                }
                 this.currentValue.push(item);
             } else {
                 this.currentValue = [item];
@@ -58,6 +53,7 @@ export default {
             this.$emit('input', this.currentValue);
         },
         onError($event) {
+            console.info('$event', $event);
             this.$emit('input', $event);
         },
         onRemove($event) {

@@ -78,18 +78,24 @@ const UFlowableForm = {
             return vueInstance;
         },
         onSubmit(event) {
-            this.dirty = true;
+            this.$emit('dirty', true);
             const formItems = this.$refs.form.querySelectorAll('[name]');
             const map = {};
             const result = {};
             let error = null;
+            // 表单提交触发所有元素被操作
+            [...formItems].every((item) => {
+                item.setAttribute('dirty', true);
+                return true;
+            });
+
             const valid = [...formItems].every((item) => {
                 const name = item.getAttribute('name');
                 if (!map[name]) {
                     map[name] = true;
                     const formItem = this.getNearVueInstance(item);
-                    if (formItem.$error) {
-                        error = formItem.$error;
+                    if (formItem.error) {
+                        error = formItem.error;
                         item.scrollIntoView(false);
                         return false;
                     }
@@ -97,6 +103,7 @@ const UFlowableForm = {
                 }
                 return true;
             });
+
             if (valid) {
                 console.info('result', result);
                 this.$emit('submit', result);
@@ -161,7 +168,5 @@ export default UFlowableForm;
     margin-bottom: 4px;
     cursor: pointer;
 }
-.content[dirty] [class^=u-flowable-form-item_error]{
-    display:block!important;
-}
+
 </style>
