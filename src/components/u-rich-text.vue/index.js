@@ -32,7 +32,7 @@ import contentStyle2 from '!!raw-loader!tinymce/skins/content/default/content.cs
 import Editor from '@tinymce/tinymce-vue';
 import './zh_CN';
 
-function image_upload_handler(blobInfo, success, failure, progress) {
+function images_upload_handler(blobInfo, success, failure, progress) {
     const xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
     xhr.open('POST', '/api/v1/bucket/upload');
