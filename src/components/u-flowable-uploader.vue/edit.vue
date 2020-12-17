@@ -2,10 +2,15 @@
 <div :class="$style.root">
    <u-uploader
         :value="currentValue"
-        v-bind="$attrs"
+        :maxSize="maxSize"
+        :count="count"
+        :fileType="fileType"
+        :multiple="multiple"
+        :urlField="urlField"
+        :url="url"
         @success="onSuccess($event)"
         @error="onError($event)"
-        @remove="onRemove($event)">
+    >
       <u-button>上传</u-button>
    </u-uploader>
 </div>
@@ -44,20 +49,15 @@ export default {
     },
     methods: {
         onSuccess($event) {
-            const item = $event.item;
-            if (this.currentValue?.length > 0) {
-                this.currentValue.push(item);
-            } else {
-                this.currentValue = [item];
-            }
             this.$emit('input', this.currentValue);
         },
         onError($event) {
-            console.info('$event', $event);
-            this.$emit('input', $event);
-        },
-        onRemove($event) {
-            this.$emit('input', $event);
+            // error 去掉失败的结果
+            const result = this.currentValue.filter((item) => (item.status === 'success'));
+            if (this.currentValue && JSON.stringify(result) === JSON.stringify(this.currentValue)) {
+                this.currentValue = result;
+            }
+            this.$emit('input', result);
         },
         formatValue(value) {
             if (this.currentValue && JSON.stringify(value) === JSON.stringify(this.currentValue)) {
