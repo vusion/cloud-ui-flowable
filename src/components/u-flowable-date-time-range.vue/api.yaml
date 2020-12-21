@@ -33,7 +33,6 @@
                 { text: '年-月-日', value: 'date' },
                 { text: '年-月-日 时:分:秒', value: 'datetime' },
                ]
-      value: 'date'
       description: 设置时间格式
     - name: required
       type: boolean
@@ -41,7 +40,7 @@
       group: validate
       message: 请输入内容
       title: 这是个必填项
-      value: false
+      default: false
       description: 选择必填后，填写者不填写将无法提交表单
   slots: false
   events: false

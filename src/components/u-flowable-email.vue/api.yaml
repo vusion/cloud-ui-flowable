@@ -21,7 +21,7 @@
       type: boolean
       compType: checkbox
       group: validate
-      value: false
+      default: false
       description: 选择必填后，填写者不填写将无法提交表单
   slots:
       - name: default

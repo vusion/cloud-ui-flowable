@@ -3,17 +3,12 @@
   readonlyTitle: 描述文字
   icon: text
   labels: [Basic]
-  value: 描述文字
   description: 描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。
   attrs:
     - name: value
       type: string
       compType: richtext
       title: 内容
-      value: 描述文字内容
       description: 请输入描述文字
-  styles: 
-    - name: width
-      value: 100%
   slots: false
   events: false

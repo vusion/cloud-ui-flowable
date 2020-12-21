@@ -16,7 +16,7 @@
       title: 提示
       description: 提示属性用于指定对该模块进行一些附加说明，一般用来指导填写者输入。
     - name: files
-      type: Array
+      type: array
       compType: files
       title: 附件
       description: "表单附件，一般用来下载文档。数据格式：[{name: '', url: ''}]"

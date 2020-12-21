@@ -14,24 +14,9 @@
     - name: list
       title: 选项内容
       compType: imageList
-      type: Array
-      value: [{ value: false, files: [
-        {
-          url: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'
-        }
-      ], text: '未命名1' }, 
-        { value: false, files: [
-        {
-          url: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'
-        }
-      ], text: '未命名2' },
-        { value: false, files: [
-        {
-          url: 'https://raw.githubusercontent.com/vusion/cloud-ui/master/src/assets/images/1.jpg'
-        }
-      ], text: '未命名3' }]
+      type: array
+      default: []
       example: [{text: '', value: '', files: [{url: ''}]}]
-      default: null
       description: "为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。数据格式: [{text: '', value: '', files: [{url: '', name: ''}]}]"
     - name: min
       title: 选中最小项数
@@ -55,14 +40,13 @@
           - name: :min
             value: 0
       type: number
-      default: .inf
       description: 可以勾选图片选择的最大数量
     - name: required
       title: 这是个必填项
       type: boolean
       compType: checkbox
       group: validate
-      value: false
+      default: false
       description: 选择必填后，填写者不填写将无法提交表单
   slots: false
   events: false
