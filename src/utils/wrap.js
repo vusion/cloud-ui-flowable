@@ -100,11 +100,12 @@ export default function (component) {
                 let root = this.collect;
                 // 临时解决方案
                 nameList.forEach((name, index) => {
-                    this.$set(root, name, root[name] || {});
-                    root = root[name];
                     if (index === nameList.length - 1) {
                         this.$set(root, name, value);
+                    } else {
+                        this.$set(root, name, root[name] || {});
                     }
+                    root = root[name];
                 });
             }
         },

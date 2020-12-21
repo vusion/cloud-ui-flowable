@@ -46,7 +46,11 @@ export default {
     },
     methods: {
         formatValue(value) {
-            return typeof value === 'number' ? value : Number(value);
+            let valueNumber = Number(value);
+            if (isNaN(valueNumber)) {
+                valueNumber = value;
+            }
+            return typeof value === 'number' ? value : valueNumber;
         },
     },
 };
