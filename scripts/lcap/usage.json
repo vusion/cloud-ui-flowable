@@ -695,7 +695,7 @@
             "Basic"
         ],
         "screenShot": "[]",
-        "blocks": "[{\"title\":\"基础示例-编辑\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-radios title=\\\"单项选择\\\" :list=\\\"[{text: '未命名1', value: '未命名1'}, {text: '未命名2', value: '未命名2'}]\\\"></u-flowable-radios>\\n</template>\\n\"},{\"title\":\"普通文本\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-radios mode=\\\"readonly\\\" :list=\\\"[{text: '未命名1', value: '未命名1'}, { text: '未命名1', value: '未命名2'}]\\\" :value=\\\"'未命名1'\\\"></u-flowable-radios>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础示例-编辑\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-radios title=\\\"单项选择\\\" :list=\\\"[{text: '未命名1', value: '未命名1'}, {text: '未命名2', value: '未命名2'}]\\\"></u-flowable-radios>\\n</template>\\n\"},{\"title\":\"普通文本\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-radios mode=\\\"readonly\\\" :list=\\\"[{text: '未命名1', value: '未命名1'}, { text: '未命名1', value: '未命名2'}]\\\" value=\\\"未命名2\\\"></u-flowable-radios>\\n</template>\\n\"},{\"title\":\"普通文本-编辑\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-radios  :list=\\\"[{text: '未命名1', value: '未命名1'}, { text: '未命名2', value: '未命名2'}]\\\" value=\\\"未命名2\\\"></u-flowable-radios>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "u-flowable-radios",
             "title": "单项选择",
@@ -711,7 +711,12 @@
                 {
                     "title": "普通文本",
                     "description": "",
-                    "code": "<template>\n<u-flowable-radios mode=\"readonly\" :list=\"[{text: '未命名1', value: '未命名1'}, { text: '未命名1', value: '未命名2'}]\" :value=\"'未命名1'\"></u-flowable-radios>\n</template>\n"
+                    "code": "<template>\n<u-flowable-radios mode=\"readonly\" :list=\"[{text: '未命名1', value: '未命名1'}, { text: '未命名1', value: '未命名2'}]\" value=\"未命名2\"></u-flowable-radios>\n</template>\n"
+                },
+                {
+                    "title": "普通文本-编辑",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-radios  :list=\"[{text: '未命名1', value: '未命名1'}, { text: '未命名2', value: '未命名2'}]\" value=\"未命名2\"></u-flowable-radios>\n</template>\n"
                 }
             ],
             "attrs": [

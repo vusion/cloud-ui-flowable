@@ -24,7 +24,7 @@
     "description": "可以勾选多选框的最大数量"
   },
   "u-flowable-checkbox/list": {
-    "type": "Array",
+    "type": "array",
     "description": "为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。数据格式：[{text: '', value: ''}]"
   },
   "u-flowable-checkbox/value": {
@@ -120,7 +120,7 @@
     "description": "提示属性用于指定对该模块进行一些附加说明，一般用来指导填写者输入。"
   },
   "u-flowable-form/files": {
-    "type": "Array",
+    "type": "array",
     "description": "表单附件，一般用来下载文档。数据格式：[{name: '', url: ''}]"
   },
   "u-flowable-form/buttonText": {
@@ -132,7 +132,7 @@
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
   },
   "u-flowable-image-select/list": {
-    "type": "Array",
+    "type": "array",
     "description": "为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。数据格式: [{text: '', value: '', files: [{url: '', name: ''}]}]"
   },
   "u-flowable-image-select/min": {
@@ -200,7 +200,7 @@
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
   },
   "u-flowable-radios/list": {
-    "type": "Array",
+    "type": "array",
     "description": "为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。数据格式：[{text: '', value: ''}]"
   },
   "u-flowable-radios/value": {
@@ -228,7 +228,7 @@
     "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
   },
   "u-flowable-select/list": {
-    "type": "Array",
+    "type": "array",
     "description": "为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。数据格式：[{ text: '', value: '' }]"
   },
   "u-flowable-select/value": {
