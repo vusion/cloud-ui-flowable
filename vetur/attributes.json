@@ -25,10 +25,10 @@
   },
   "u-flowable-checkbox/list": {
     "type": "Array",
-    "description": "为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。"
+    "description": "为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。数据格式：[{text: '', value: ''}]"
   },
   "u-flowable-checkbox/value": {
-    "type": "string",
+    "type": "array",
     "description": "文本内容"
   },
   "u-flowable-checkbox/required": {
@@ -41,7 +41,7 @@
   },
   "u-flowable-date-time-range/value": {
     "type": "string",
-    "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。数据格式如：2020-09-09~2020-10-10"
+    "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。数据格式如：2020-09-09 10:00:00~2020-09-10 10:00:00"
   },
   "u-flowable-date-time-range/dateType": {
     "type": "string",
@@ -67,7 +67,7 @@
   },
   "u-flowable-date-time/value": {
     "type": "string",
-    "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。"
+    "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。数据格式如：2020-09-09 10:00:00"
   },
   "u-flowable-date-time/dateType": {
     "type": "string",
@@ -89,7 +89,7 @@
   },
   "u-flowable-department/value": {
     "type": "string",
-    "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。部门 ID 以逗号隔开"
+    "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。多个部门 ID 以逗号隔开"
   },
   "u-flowable-email/title": {
     "type": "string",
@@ -121,7 +121,7 @@
   },
   "u-flowable-form/files": {
     "type": "Array",
-    "description": "表单附件，一般用来下载文档。"
+    "description": "表单附件，一般用来下载文档。数据格式：[{name: '', url: ''}]"
   },
   "u-flowable-form/buttonText": {
     "type": "string",
@@ -133,7 +133,7 @@
   },
   "u-flowable-image-select/list": {
     "type": "Array",
-    "description": "为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。"
+    "description": "为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。数据格式: [{text: '', value: '', files: [{url: '', name: ''}]}]"
   },
   "u-flowable-image-select/min": {
     "type": "number",
@@ -181,7 +181,7 @@
   },
   "u-flowable-number/point": {
     "type": "number",
-    "description": "选择后，填写者填写时可以输入带有小数点的数字，否则只能输入整数。"
+    "description": "选择后，填写者填写时可以输入带有小数点的数字，当超出位数时，将按照四舍五入进行保留"
   },
   "u-flowable-number/min": {
     "type": "number",
@@ -201,7 +201,7 @@
   },
   "u-flowable-radios/list": {
     "type": "Array",
-    "description": "为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。"
+    "description": "为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。数据格式：[{text: '', value: ''}]"
   },
   "u-flowable-radios/value": {
     "type": "string",
@@ -229,7 +229,7 @@
   },
   "u-flowable-select/list": {
     "type": "Array",
-    "description": "为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。"
+    "description": "为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。数据格式：[{ text: '', value: '' }]"
   },
   "u-flowable-select/value": {
     "type": "string",
@@ -294,6 +294,6 @@
   },
   "u-flowable-user/value": {
     "type": "string",
-    "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。成员 ID 以逗号隔开"
+    "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。多个成员 ID 以逗号隔开"
   }
 }
