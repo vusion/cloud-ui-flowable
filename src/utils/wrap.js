@@ -24,25 +24,25 @@ export default function (component) {
                             // 数字格式的时候 0 并不为空
                             if ($event === undefined || $event === null || $event === ''
                                 || (Object.prototype.toString.call($event) === '[object Array]') && $event.length === 0) {
-                                this.$error = {
+                                const error = this.$error = {
                                     type: 'requiredError',
                                     message: '此项必填',
                                 };
-                                this.$emit('error', {
-                                    type: 'requiredError',
-                                    message: '此项必填',
-                                });
+                                this.$emit('error', error);
+                                this.setCorrectValue(undefined);
                                 //  this.$emit('touched', true);
                             } else {
                                 // 验证通过
                                 this.$currentValue = $event;
                                 this.$error = null;
+                                this.setCorrectValue($event);
                                 this.$emit('input', $event);
                                 this.$emit('error', null);
                             }
                         } else {
                             // 没开启通用验证
                             this.$currentValue = $event;
+                            this.setCorrectValue($event);
                             this.$error = null;
                             this.$emit('input', $event);
                             this.$emit('error', null);
@@ -51,6 +51,9 @@ export default function (component) {
                     error: ($event) => {
                         // 获取组件内置校验错误信息
                         console.info('error $event', $event);
+                        if ($event) {
+                            this.setCorrectValue(undefined);
+                        }
                         this.$error = $event;
                         this.$emit('error', $event);
                     },
@@ -72,6 +75,9 @@ export default function (component) {
         type: String,
         default: 'edit',
     };
+    component.props.collect = {
+        type: Object,
+    };
     component.props.name = String;
     component.data = function () {
         return {
@@ -79,6 +85,30 @@ export default function (component) {
             $currentValue: null,
         };
     };
+    component.methods = component.methods || {};
+    const beforeDestroy = component.beforeDestroy;
+    component.beforeDestroy = function (...args) {
+        this.setCorrectValue(undefined);
+        if (beforeDestroy) {
+            beforeDestroy.bind(this).call(...args);
+        }
+    };
+    Object.assign(component.methods, {
+        setCorrectValue(value) {
+            if (this.collect && this.name) {
+                const nameList = this.name.split('.');
+                let root = this.collect;
+                // 临时解决方案
+                nameList.forEach((name, index) => {
+                    this.$set(root, name, root[name] || {});
+                    root = root[name];
+                    if (index === nameList.length - 1) {
+                        this.$set(root, name, value);
+                    }
+                });
+            }
+        },
+    });
 
     return component;
 }
