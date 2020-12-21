@@ -68,11 +68,18 @@ const UFlowableForm = {
     methods: {
         getNearVueInstance(el) {
             let vueInstance = el;
+            const hasOwnProperty = Object.prototype.hasOwnProperty;
             while (vueInstance && !vueInstance.__vue__ && this.$el.contains(el)) {
+                if (vueInstance.hasAttribute('no-collect-name')) {
+                    return null;
+                }
                 vueInstance = vueInstance.parentElement;
             }
             vueInstance = vueInstance.__vue__ ? vueInstance.__vue__ : null;
             while (!vueInstance?.$vnode?.componentOptions?.tag.startsWith('u-flowable')) {
+                if (hasOwnProperty.call(vueInstance.$attrs, 'no-collect-name')) {
+                    return null;
+                }
                 vueInstance = vueInstance.$parent;
             }
             return vueInstance;
@@ -94,12 +101,14 @@ const UFlowableForm = {
                 if (!map[name]) {
                     map[name] = true;
                     const formItem = this.getNearVueInstance(item);
-                    if (formItem.error) {
-                        error = formItem.error;
-                        item.scrollIntoView(false);
-                        return false;
+                    if (formItem) {
+                        if (formItem.error) {
+                            error = formItem.error;
+                            item.scrollIntoView(false);
+                            return false;
+                        }
+                        setPath(result, name, formItem.$currentValue);
                     }
-                    setPath(result, name, formItem.$currentValue);
                 }
                 return true;
             });

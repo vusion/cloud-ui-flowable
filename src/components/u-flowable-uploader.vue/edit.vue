@@ -1,6 +1,7 @@
 <template>
 <div :class="$style.root">
    <u-uploader
+        no-collect-name
         :value="currentValue"
         :max-size="maxSize"
         :count="count"
