@@ -34,5 +34,5 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| value | string |  |  | 请输入描述文字 |
+| value | string |  |  | 请输入描述文。点击视图-全屏，可全屏编辑展示 |
 
