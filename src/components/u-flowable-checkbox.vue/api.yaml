@@ -43,7 +43,7 @@
       value: [{ text: '未命名1', value: '未命名1'}, { text: '未命名2', value: '未命名2'}, { text: '未命名3', value: '未命名3'}]
       example: [{text: '', value: ''}]
       default: null
-      description: 为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。
+      description: "为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。数据格式：[{text: '', value: ''}]"
     - name: value
       type: array
       compType: u-select

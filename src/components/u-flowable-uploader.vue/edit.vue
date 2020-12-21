@@ -2,11 +2,11 @@
 <div :class="$style.root">
    <u-uploader
         :value="currentValue"
-        :maxSize="maxSize"
+        :max-size="maxSize"
         :count="count"
-        :fileType="fileType"
+        :file-type="fileType"
         :multiple="multiple"
-        :urlField="urlField"
+        :url-field="urlField"
         :url="url"
         @success="onSuccess($event)"
         @error="onError($event)"
