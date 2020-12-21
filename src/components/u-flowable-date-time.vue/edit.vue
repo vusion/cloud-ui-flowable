@@ -1,7 +1,10 @@
 <template>
 <div :class="$style.root">
-    <u-date-picker alignment="left" :class="$style.ctrl" :date.sync="currentValue" v-if="dateType === 'date'"></u-date-picker>
-    <u-date-time-picker alignment="left" :class="$style.ctrl" :date.sync="currentValue" v-else-if="dateType === 'datetime'"></u-date-time-picker>
+    <u-date-picker :alignment="alignment" :class="$style.ctrl" :date.sync="currentValue"
+        v-if="dateType === 'date'"></u-date-picker>
+    <u-date-time-picker :alignment="alignment" :class="$style.ctrl"
+        :date.sync="currentValue"
+        v-else-if="dateType === 'datetime'"></u-date-time-picker>
 </div>
 </template>
 
@@ -18,6 +21,10 @@ export default {
         dateType: {
             type: String,
             default: 'date',
+        },
+        alignment: {
+            default: 'left',
+            type: String,
         },
     },
     data() {
