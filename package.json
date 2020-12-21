@@ -1,7 +1,7 @@
 {
   "name": "cloud-ui-flowable.vusion",
   "description": "Vusion Cloud UI Flowable",
-  "version": "0.1.23",
+  "version": "0.1.24",
   "main": "./index.js",
   "scripts": {
     "dev": "vue-cli-service doc --port 9001",
