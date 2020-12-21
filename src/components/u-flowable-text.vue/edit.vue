@@ -20,4 +20,8 @@ export default {
 .root {
    position: relative;
 }
+.root img {
+    max-width: 100%!important;
+    height: auto!important;
+}
 </style>

@@ -1,5 +1,7 @@
 <template>
+<div :class="$style.root">
     <u-html :html="value"></u-html>
+</div>
 </template>
 
 <script>
@@ -16,5 +18,8 @@ export default {
 
 <style module>
 .root {}
-
+.root img {
+    max-width: 100%!important;
+    height: auto!important;
+}
 </style>
