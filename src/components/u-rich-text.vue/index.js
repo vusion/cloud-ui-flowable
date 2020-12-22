@@ -32,11 +32,26 @@ import contentStyle2 from '!!raw-loader!tinymce/skins/content/default/content.cs
 import Editor from '@tinymce/tinymce-vue';
 import './zh_CN';
 
+import localStorage from './localStorage';
+
+export function getToken() {
+    let authInfo = localStorage.get('authInfo');
+    let token = '';
+    if (authInfo) {
+        authInfo = JSON.parse(authInfo);
+        if (authInfo.authorization) {
+            token = authInfo.authorization;
+        }
+    }
+    return token;
+}
+
 function images_upload_handler(blobInfo, success, failure, progress) {
     const xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
-    xhr.open('POST', '/api/v1/bucket/upload');
 
+    xhr.open('POST', '/api/v1/bucket/upload');
+    xhr.setRequestHeader('accessToken', getToken());
     xhr.upload.onprogress = function (e) {
         progress(e.loaded / e.total * 100);
     };
