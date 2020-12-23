@@ -2,7 +2,7 @@
 
 ```vue
 <template>
-    <u-flowable-number mode="edit" v-model="model"></u-flowable-number>
+    <u-flowable-number mode="edit" v-model="model" @input="onInput($event)"></u-flowable-number>
 </template>
 <script>
 export default {
@@ -10,6 +10,11 @@ export default {
         return {
             model: 0
         }
+    },
+    methods: {
+        onInput($event) {
+            console.log($event,111);
+        },
     },
 }
 </script>

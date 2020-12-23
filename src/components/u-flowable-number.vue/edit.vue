@@ -1,6 +1,6 @@
 <template>
 <div :class="$style.root">
-    <u-number-input v-model="currentValue" :precision="precision" :step="precision" size="full"></u-number-input>
+    <u-number-input ref="input" :value="currentValue" @blur="onBlur($event)" :precision="precision" :step="precision" size="full"></u-number-input>
 </div>
 </template>
 
@@ -51,6 +51,9 @@ export default {
                 valueNumber = value;
             }
             return typeof value === 'number' ? value : valueNumber;
+        },
+        onBlur($event) {
+            this.currentValue = this.$refs.input.currentValue;
         },
     },
 };
