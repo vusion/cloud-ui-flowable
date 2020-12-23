@@ -1,6 +1,6 @@
 <template>
 <div :class="$style.root">
-    <u-textarea v-model="currentValue" resize="vertical" placeholder="请输入内容" size="medium full"></u-textarea>
+    <u-textarea :value="currentValue" @blur="onBlur($event)" resize="vertical" placeholder="请输入内容" size="medium full"></u-textarea>
 </div>
 </template>
 
@@ -27,6 +27,11 @@ export default {
         },
         value(value) {
             this.currentValue = value;
+        },
+    },
+    methods: {
+        onBlur($event) {
+            this.currentValue = $event.target.value;
         },
     },
 };
