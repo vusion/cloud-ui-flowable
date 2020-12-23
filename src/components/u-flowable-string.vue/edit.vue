@@ -1,6 +1,6 @@
 <template>
 <div :class="$style.root">
-    <u-input v-model="currentValue" placeholder="请输入内容" size="full"></u-input>
+    <u-input :value="currentValue" @blur="onBlur($event)" placeholder="请输入内容" size="full"></u-input>
 </div>
 </template>
 
@@ -27,6 +27,11 @@ export default {
         },
         value(value) {
             this.currentValue = value;
+        },
+    },
+    methods: {
+        onBlur($event) {
+            this.currentValue = $event.target.value;
         },
     },
 };

@@ -1,7 +1,7 @@
 <template>
 <div :class="$style.root">
     <u-region-select :class="$style.select" v-model="currentValue" converter="join:-"></u-region-select>
-    <u-textarea v-model="address" :class="$style.address" placeholder="详细地址" size="medium full"></u-textarea>
+    <u-textarea :value="address" @blur="onBlur($event)" :class="$style.address" placeholder="详细地址" size="medium full"></u-textarea>
 </div>
 
 </template>
@@ -68,6 +68,11 @@ export default {
                 this.address = address.join(' ');
             },
             immediate: true,
+        },
+    },
+    methods: {
+        onBlur($event) {
+            this.address = $event.target.value;
         },
     },
 };
