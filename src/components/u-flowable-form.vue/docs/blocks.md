@@ -13,9 +13,16 @@
 			 
 			></u-flowable-email>
 	</u-flowable-form-item>
+	<u-flowable-form-item mode="edit" title="单行文字" tip="请输入文字">
+			<u-flowable-string value="当行文字测试" maxlength="10" minlength="2">
+			</u-flowable-string>
+	</u-flowable-form-item>
+	<u-flowable-form-item mode="edit" title="多行文字" tip="请输入文字">
+			<u-flowable-textarea value="多行文字测试" maxlength="20" minlength="2">
+			</u-flowable-textarea>
+	</u-flowable-form-item>
 </u-flowable-form>
 ```
-
 ### 预览模式
 
 ``` html

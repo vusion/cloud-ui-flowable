@@ -1,6 +1,13 @@
 <template>
 <div :class="$style.root">
-    <u-input :value="currentValue" @blur="onBlur($event)" placeholder="请输入内容" size="full"></u-input>
+    <u-input
+        :value="currentValue"
+        :minlength="minlength"
+        :maxlength="maxlength"
+        @blur="onBlur($event)"
+        placeholder="请输入内容"
+        size="full">
+    </u-input>
 </div>
 </template>
 
@@ -12,6 +19,8 @@ export default {
     },
     props: {
         value: String,
+        maxlength: String,
+        minlength: String,
     },
     data() {
         return {
@@ -21,7 +30,23 @@ export default {
     watch: {
         currentValue: {
             handler(currentValue) {
-                this.$emit('input', currentValue);
+                const minlength = Number(this.minlength);
+                if (Number(this.minlength) > 0) {
+                    if (currentValue.length < minlength) {
+                        // 能显示出错误
+                        this.$emit('touched', true);
+                        this.$emit('error', {
+                            type: 'FormatError',
+                            message: `长度至少为 ${minlength} 个字符`,
+                        });
+                    } else {
+                        this.$emit('error', null);
+                        this.$emit('input', currentValue);
+                    }
+                } else {
+                    this.$emit('error', null);
+                    this.$emit('input', currentValue);
+                }
             },
             immediate: true,
         },
