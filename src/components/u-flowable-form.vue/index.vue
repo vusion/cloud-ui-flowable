@@ -102,8 +102,8 @@ const UFlowableForm = {
                     map[name] = true;
                     const formItem = this.getNearVueInstance(item);
                     if (formItem) {
-                        if (formItem.error) {
-                            error = formItem.error;
+                        if (formItem.$error) {
+                            error = formItem.$error;
                             item.scrollIntoView(false);
                             return false;
                         }
