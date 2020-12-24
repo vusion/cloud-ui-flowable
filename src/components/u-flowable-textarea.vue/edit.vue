@@ -33,18 +33,12 @@ export default {
         currentValue: {
             handler(currentValue) {
                 const minlength = Number(this.minlength);
-                if (Number(this.minlength) > 0) {
-                    if (currentValue.length < minlength) {
-                        // 能显示出错误
-                        this.$emit('touched', true);
-                        this.$emit('error', {
-                            type: 'FormatError',
-                            message: `长度至少为 ${minlength} 个字符`,
-                        });
-                    } else {
-                        this.$emit('error', null);
-                        this.$emit('input', currentValue);
-                    }
+                if (minlength > 0 && (currentValue.length < minlength)) {
+                    this.$emit('touched', true);
+                    this.$emit('error', {
+                        type: 'FormatError',
+                        message: `长度至少为 ${minlength} 个字符`,
+                    });
                 } else {
                     this.$emit('error', null);
                     this.$emit('input', currentValue);
