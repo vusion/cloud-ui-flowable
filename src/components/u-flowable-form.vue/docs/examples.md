@@ -21,6 +21,14 @@
                 <u-flowable-textarea name="f" value="多行文字测试" maxlength="20" minlength="2">
                 </u-flowable-textarea>
         </u-flowable-form-item>
+         <u-flowable-form-item mode="edit" title="无最小长度的多行文字" tip="请输入文字">
+                <u-flowable-textarea name="f" value="多行文字测试" maxlength="20">
+                </u-flowable-textarea>
+        </u-flowable-form-item>
+        <u-flowable-form-item mode="edit" title="无长度限制的多行文字" tip="请输入文字">
+                <u-flowable-textarea name="f" value="多行文字测试">
+                </u-flowable-textarea>
+        </u-flowable-form-item>
     </u-flowable-form>
 </template>
 <script>
