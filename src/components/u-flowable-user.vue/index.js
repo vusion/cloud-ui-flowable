@@ -9,7 +9,7 @@ const UFlowableUser = wrap({
         readonly,
     },
     props: {
-        value: String,
+        value: Array,
     },
 });
 
