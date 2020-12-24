@@ -11,7 +11,7 @@ export default {
         USelect,
     },
     props: {
-        value: String,
+        value: Array,
         load: Function,
     },
     data() {
@@ -23,14 +23,11 @@ export default {
     watch: {
         currentValue: {
             handler(currentValue) {
-                this.$emit('input', (currentValue || []).join(','));
+                this.$emit('input', currentValue);
             },
             immediate: true,
         },
         value(value) {
-            if ((value || '') === (this.currentValue || []).join(',')) {
-                return;
-            }
             this.currentValue = this.format(value);
         },
     },
@@ -42,7 +39,10 @@ export default {
             this.currentValue = value;
         },
         format(value) {
-            return (value || '').split(',');
+            if (this.currentValue && JSON.stringify(value) === JSON.stringify(this.currentValue)) {
+                return;
+            }
+            return value || [];
         },
         loadList() {
             this.list = null;
