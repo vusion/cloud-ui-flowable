@@ -40,7 +40,7 @@ export default {
         },
         format(value) {
             if (this.currentValue && JSON.stringify(value) === JSON.stringify(this.currentValue)) {
-                return;
+                return this.currentValue;
             }
             return value || [];
         },
