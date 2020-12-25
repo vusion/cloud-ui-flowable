@@ -6,6 +6,7 @@
     - [基本用法](#基本用法)
 - [API]()
     - [Props/Attrs](#propsattrs)
+    - [Events](#events)
 
 **Basic**
 
@@ -26,6 +27,22 @@
             <u-flowable-email value="test@test.com"  
             name="c.d[1]"
              ></u-flowable-email>
+        </u-flowable-form-item>
+        <u-flowable-form-item mode="edit" title="单行文字" tip="请输入文字">
+			<u-flowable-string name="e" value="当行文字测试" maxlength="10" minlength="2">
+			</u-flowable-string>
+        </u-flowable-form-item>
+        <u-flowable-form-item mode="edit" title="多行文字" tip="请输入文字">
+                <u-flowable-textarea name="f" value="多行文字测试" maxlength="20" minlength="2">
+                </u-flowable-textarea>
+        </u-flowable-form-item>
+         <u-flowable-form-item mode="edit" title="无最小长度的多行文字" tip="请输入文字">
+                <u-flowable-textarea name="f" value="多行文字测试" maxlength="20">
+                </u-flowable-textarea>
+        </u-flowable-form-item>
+        <u-flowable-form-item mode="edit" title="无长度限制的多行文字" tip="请输入文字">
+                <u-flowable-textarea name="f" value="多行文字测试">
+                </u-flowable-textarea>
         </u-flowable-form-item>
     </u-flowable-form>
 </template>
@@ -50,4 +67,10 @@ export default {
 | tip | string |  |  | 提示属性用于指定对该模块进行一些附加说明，一般用来指导填写者输入。 |
 | files | array |  |  | 表单附件，一般用来下载文档。数据格式：[{name: '', url: ''}] |
 | buttonText | string |  | `'提交'` | 提交按钮的文案。 |
+
+### Events
+
+#### @mounted
+
+表单初始化完成时触发
 
