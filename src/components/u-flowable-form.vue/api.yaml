@@ -28,4 +28,7 @@
       description: 提交按钮的文案。
       default: 提交
   slots: false
-  events: false
+  events: 
+    - name: mounted
+      title: 初始化
+      description: 表单初始化完成时触发

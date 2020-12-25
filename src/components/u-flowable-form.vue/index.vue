@@ -58,6 +58,9 @@ const UFlowableForm = {
             default: 'edit',
         },
     },
+    mounted() {
+        this.$emit('mounted');
+    },
     data() {
         return {
             error: null,

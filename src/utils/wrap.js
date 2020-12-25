@@ -1,4 +1,7 @@
 export default function (component) {
+    component.mounted = function () {
+        this.$emit('mounted');
+    };
     component.render = function (h) {
         const props = {
             ...this.$props,
