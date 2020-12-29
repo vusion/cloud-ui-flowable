@@ -26,25 +26,25 @@ const UFlowableFormItem = {
                 listeners.error = (error) => {
                     this.error = error;
                     this.$emit('error', error);
-                    _error && _error.bind(this, error);
+                    _error && _error.bind(this, error)();
                 };
                 const _input = listeners.input;
                 listeners.input = (input) => {
                     this.value = input;
                     this.$emit('input', input);
-                    _input && _input.bind(this, input);
+                    _input && _input.bind(this, input)();
                 };
                 const _dirty = listeners.dirty;
                 listeners.dirty = (dirty) => {
                     console.info('dirty', dirty);
                     this.dirty = dirty;
-                    _dirty && _dirty.bind(this, dirty);
+                    _dirty && _dirty.bind(this, dirty)();
                 };
                 const _touched = listeners.touched;
                 listeners.touched = (touched) => {
                     console.info('touched', touched);
                     this.touched = touched;
-                    _touched && _touched.bind(this, touched);
+                    _touched && _touched.bind(this, touched)();
                 };
             }
         }
