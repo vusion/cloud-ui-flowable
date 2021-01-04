@@ -50,6 +50,7 @@ export default {
     },
     methods: {
         onBlur($event) {
+            this.$emit('touched', true);
             this.currentValue = $event.target.value;
         },
     },
