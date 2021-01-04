@@ -33,7 +33,6 @@ export default function (component) {
                                 };
                                 this.$emit('error', error);
                                 this.setCorrectValue(undefined);
-                                this.$emit('touched', true);
                             } else {
                                 // 验证通过
                                 this.$currentValue = $event;
