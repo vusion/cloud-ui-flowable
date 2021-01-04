@@ -75,6 +75,8 @@ const UFlowableFormItem = {
                     attrs: {
                         dirty: this.dirty || this.touched,
                         empty: !this.error?.message,
+                        field: this.name,
+                        type: 'error',
                     },
                 }, [
                     h('div', {

@@ -72,6 +72,7 @@ export default {
     },
     methods: {
         onBlur($event) {
+            this.$emit('touched', true);
             this.address = $event.target.value;
         },
     },

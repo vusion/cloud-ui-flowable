@@ -94,7 +94,8 @@ const UFlowableForm = {
             const result = {};
             let error = null;
             // 表单提交触发所有元素被操作
-            [...formItems].every((item) => {
+            const errorItem = this.$refs.form.querySelectorAll('[type=error]');
+            [...errorItem].every((item) => {
                 item.setAttribute('dirty', true);
                 return true;
             });

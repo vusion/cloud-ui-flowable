@@ -53,6 +53,7 @@ export default {
             return typeof value === 'number' ? value : valueNumber;
         },
         onBlur($event) {
+            this.$emit('touched', true);
             this.currentValue = this.$refs.input.currentValue;
         },
     },
