@@ -26,6 +26,7 @@ module.exports = {
         ],
         components: [
             { group: 'Form', name: 'u-flowable-text', alias: '描述文字' },
+            { group: 'Form', name: 'u-flowable-table', alias: '表格' },
             { group: 'Form', name: 'u-flowable-string', alias: '单行文字' },
             { group: 'Form', name: 'u-flowable-textarea', alias: '多行文字' },
             { group: 'Form', name: 'u-flowable-date-time', alias: '日期' },

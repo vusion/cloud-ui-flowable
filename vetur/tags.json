@@ -139,6 +139,13 @@
     ],
     "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。"
   },
+  "u-flowable-table": {
+    "attributes": [
+      "value",
+      "children"
+    ],
+    "description": "表格组件，支持内部添加元素"
+  },
   "u-flowable-text": {
     "attributes": [
       "value"

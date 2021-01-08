@@ -27,6 +27,12 @@ export default {
         };
     },
     watch: {
+        list: {
+            handler(list) {
+                // 列表变化的时候，初始化的值清空
+                this.currentValue = [];
+            },
+        },
         currentValue: {
             handler(currentValue) {
                 this.$emit('input', currentValue);

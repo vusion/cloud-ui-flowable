@@ -1,6 +1,7 @@
 module.exports = [
     { group: 'Form', show: true, name: 'u-flowable-text', alias: '描述文字' },
     { group: 'Form', show: true, name: 'u-flowable-string', alias: '单行输入' },
+    { group: 'Form', show: true, name: 'u-flowable-table', alias: '表格' },
     { group: 'Form', show: true, name: 'u-flowable-textarea', alias: '多行输入' },
     { group: 'Form', show: true, name: 'u-flowable-date-time', alias: '时间' },
     { group: 'Form', show: true, name: 'u-flowable-email', alias: '邮箱' },

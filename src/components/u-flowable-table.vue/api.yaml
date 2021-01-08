@@ -1,0 +1,21 @@
+- name: u-flowable-table
+  title: 表格
+  readonlyTitle: 表格
+  icon: table
+  labels: [Basic]
+  description: 表格组件，支持内部添加元素
+  attrs:
+    - name: value
+      type: array
+      compType: columnList
+      title: 内容
+      description: 请输入描述文。点击视图-全屏，可全屏编辑展示
+    - name: children
+      type: array
+      compType: columnList
+      title: 选项内容
+      default: []
+      example: []
+      description: 配置表格组件的每栏元素
+  slots: false
+  events: false

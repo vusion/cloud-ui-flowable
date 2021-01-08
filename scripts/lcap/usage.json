@@ -141,6 +141,68 @@
         }
     },
     {
+        "symbol": "u-flowable-table",
+        "name": "表格",
+        "icon": "table",
+        "depDescription": {},
+        "description": "表格组件，支持内部添加元素",
+        "labels": [
+            "Basic"
+        ],
+        "screenShot": "[]",
+        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table \\n\\t\\ttitle=\\\"表格\\\"\\n\\t\\t:value=\\\"[{ username: '' }]\\\"\\n\\t\\t:children=\\\"[{ title: '用户名', tag: 'u-flowable-string', attrsMap: { name: 'username' }}]\\\"\\n>\\n\\n</u-flowable-table>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table mode=\\\"readonly\\\" value=\\\"表格\\\"></u-flowable-table>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table mode=\\\"readonly\\\" :value=\\\"'支持变量'\\\"></u-flowable-table>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table mode=\\\"edit\\\" :value=\\\"'支持变量'\\\"></u-flowable-table>\\n</template>\\n\"}]",
+        "jsonSchema": {
+            "name": "u-flowable-table",
+            "title": "表格",
+            "description": "表格组件，支持内部添加元素",
+            "category": "Basic",
+            "screenShot": "[]",
+            "blocks": [
+                {
+                    "title": "编辑模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-table \n\t\ttitle=\"表格\"\n\t\t:value=\"[{ username: '' }]\"\n\t\t:children=\"[{ title: '用户名', tag: 'u-flowable-string', attrsMap: { name: 'username' }}]\"\n>\n\n</u-flowable-table>\n</template>\n"
+                },
+                {
+                    "title": "只读模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-table mode=\"readonly\" value=\"表格\"></u-flowable-table>\n</template>\n"
+                },
+                {
+                    "title": "变量支持-只读模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-table mode=\"readonly\" :value=\"'支持变量'\"></u-flowable-table>\n</template>\n"
+                },
+                {
+                    "title": "变量支持-编辑模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-table mode=\"edit\" :value=\"'支持变量'\"></u-flowable-table>\n</template>\n"
+                }
+            ],
+            "attrs": [
+                {
+                    "name": "value",
+                    "type": "array",
+                    "compType": "columnList",
+                    "title": "内容",
+                    "description": "请输入描述文。点击视图-全屏，可全屏编辑展示"
+                },
+                {
+                    "name": "children",
+                    "type": "array",
+                    "compType": "columnList",
+                    "title": "选项内容",
+                    "default": [],
+                    "example": [],
+                    "description": "配置表格组件的每栏元素"
+                }
+            ],
+            "slots": false,
+            "events": false,
+            "children": []
+        }
+    },
+    {
         "symbol": "u-flowable-textarea",
         "name": "多行文字",
         "icon": "textarea",
