@@ -150,7 +150,7 @@
             "Basic"
         ],
         "screenShot": "[]",
-        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table \\n\\t\\ttitle=\\\"表格\\\"\\n\\t\\t:value=\\\"[{ username: '' }]\\\"\\n\\t\\t:children=\\\"[{ title: '用户名', tag: 'u-flowable-string', attrsMap: { name: 'username' }}]\\\"\\n>\\n\\n</u-flowable-table>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table mode=\\\"readonly\\\" value=\\\"表格\\\"></u-flowable-table>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table mode=\\\"readonly\\\" :value=\\\"'支持变量'\\\"></u-flowable-table>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table mode=\\\"edit\\\" :value=\\\"'支持变量'\\\"></u-flowable-table>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table \\n\\t\\ttitle=\\\"表格\\\"\\n\\t\\t:children=\\\"[{ tag: 'u-flowable-string', attrsMap: { name: 'username', title: '用户名' }}]\\\"\\n>\\n\\n</u-flowable-table>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table mode=\\\"readonly\\\" value=\\\"表格\\\"></u-flowable-table>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table mode=\\\"readonly\\\" :value=\\\"'支持变量'\\\"></u-flowable-table>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table mode=\\\"edit\\\" :value=\\\"'支持变量'\\\"></u-flowable-table>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "u-flowable-table",
             "title": "表格",
@@ -161,7 +161,7 @@
                 {
                     "title": "编辑模式",
                     "description": "",
-                    "code": "<template>\n<u-flowable-table \n\t\ttitle=\"表格\"\n\t\t:value=\"[{ username: '' }]\"\n\t\t:children=\"[{ title: '用户名', tag: 'u-flowable-string', attrsMap: { name: 'username' }}]\"\n>\n\n</u-flowable-table>\n</template>\n"
+                    "code": "<template>\n<u-flowable-table \n\t\ttitle=\"表格\"\n\t\t:children=\"[{ tag: 'u-flowable-string', attrsMap: { name: 'username', title: '用户名' }}]\"\n>\n\n</u-flowable-table>\n</template>\n"
                 },
                 {
                     "title": "只读模式",

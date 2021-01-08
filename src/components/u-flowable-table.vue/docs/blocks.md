@@ -3,7 +3,6 @@
 ``` html
 <u-flowable-table 
 		title="表格"
-		:value="[{ username: '' }]"
 		:children="[{ tag: 'u-flowable-string', attrsMap: { name: 'username', title: '用户名' }}]"
 >
 

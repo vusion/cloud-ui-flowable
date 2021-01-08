@@ -9,6 +9,11 @@
                 <th width="20%">出生日期</th>
             </tr>
         </thead>
+        <tbody>
+            <tr>
+              <td></td>
+            </tr>
+        </tbody>
     </u-table>
 </div>
 </template>

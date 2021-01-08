@@ -68,4 +68,15 @@ export default {
    position: relative;
 }
 
+.root [class^=u-form-table-view_last-column] {
+    width: 5px;
+    padding: 0;
+}
+
+.root [class^=u-form-table_remove-button] {
+    height: 20px;
+    line-height: 20px;
+    font-size: 24px;
+}
+
 </style>
