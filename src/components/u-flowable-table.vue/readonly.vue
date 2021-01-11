@@ -3,15 +3,22 @@
     <u-table>
         <thead>
             <tr>
-                <th width="20%">序号</th>
-                <th width="20%">姓名</th>
-                <th>地址</th>
-                <th width="20%">出生日期</th>
+                <th
+                v-for="(columnItem, index) in children"
+                :key="columnItem.attrsMap.name"
+                width="20%">
+                    {{ columnItem.attrsMap.title }}
+                </th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-              <td></td>
+            <tr v-for="(row, rowIndex) in value" :key="rowIndex">
+              <th
+                v-for="(rowColumnItem, rowItemColumnIndex) in children"
+                :key="rowItemColumnIndex"
+            >
+                {{ row[rowColumnItem.attrsMap.name] }}
+            </th>
             </tr>
         </tbody>
     </u-table>
