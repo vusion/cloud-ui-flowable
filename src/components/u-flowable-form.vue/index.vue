@@ -5,7 +5,7 @@
                 {{ title }}
             </div>
             <div :class="$style.tip" v-if="tip">
-                {{ tip }}
+               <u-html :html="tip"></u-html>
             </div>
             <slot name="head"></slot>
             <div :class="$style.files" v-if="files && files.length">
@@ -34,12 +34,14 @@
 <script>
 import UButton from 'cloud-ui.vusion/src/components/u-button.vue/index.vue';
 import ULink from 'cloud-ui.vusion/src/components/u-link.vue/index.vue';
+import UHtml from 'cloud-ui.vusion/src/components/u-html.vue';
 import setPath from 'lodash/set';
 
 const UFlowableForm = {
     components: {
         UButton,
         ULink,
+        UHtml,
     },
     name: 'u-flowable-form',
     props: {
@@ -150,7 +152,8 @@ export default UFlowableForm;
     font-weight: 500;
 }
 .tip {
-    padding: 10px 20px;
+    padding: 0 20px;
+    overflow: hidden;
 }
 .content {
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
