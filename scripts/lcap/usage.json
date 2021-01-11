@@ -57,7 +57,7 @@
         "name": "单行文字",
         "icon": "input",
         "depDescription": {},
-        "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
+        "description": "单行文本输入框，需要填写者在输入框内根据标题填写相应的内容。",
         "labels": [
             "Basic"
         ],
@@ -66,7 +66,7 @@
         "jsonSchema": {
             "name": "u-flowable-string",
             "title": "单行文字",
-            "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
+            "description": "单行文本输入框，需要填写者在输入框内根据标题填写相应的内容。",
             "category": "Basic",
             "screenShot": "[]",
             "blocks": [
@@ -92,14 +92,6 @@
                 }
             ],
             "attrs": [
-                {
-                    "name": "title",
-                    "type": "string",
-                    "compType": "input",
-                    "title": "标题",
-                    "level": "component",
-                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
-                },
                 {
                     "name": "value",
                     "type": "string",
@@ -181,14 +173,6 @@
             ],
             "attrs": [
                 {
-                    "name": "title",
-                    "type": "string",
-                    "compType": "input",
-                    "title": "标题",
-                    "level": "component",
-                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
-                },
-                {
                     "name": "value",
                     "type": "string",
                     "title": "默认内容",
@@ -232,7 +216,7 @@
         "name": "日期",
         "icon": "date-picker",
         "depDescription": {},
-        "description": "用于展示文字或表达式",
+        "description": "时间选择组件，需要填写者选择具体日期时间。",
         "labels": [
             "Basic"
         ],
@@ -241,7 +225,7 @@
         "jsonSchema": {
             "name": "u-flowable-date-time",
             "title": "日期",
-            "description": "用于展示文字或表达式",
+            "description": "时间选择组件，需要填写者选择具体日期时间。",
             "category": "Basic",
             "screenShot": "[]",
             "blocks": [
@@ -338,7 +322,7 @@
         "name": "邮箱",
         "icon": "email",
         "depDescription": {},
-        "description": "用于展示文字或表达式",
+        "description": "单行文本输入框，规定填写者输入内容为邮箱，带有字段校验",
         "labels": [
             "Basic"
         ],
@@ -347,7 +331,7 @@
         "jsonSchema": {
             "name": "u-flowable-email",
             "title": "邮箱",
-            "description": "用于展示文字或表达式",
+            "description": "单行文本输入框，规定填写者输入内容为邮箱，带有字段校验",
             "category": "Basic",
             "screenShot": "[]",
             "blocks": [
@@ -425,7 +409,7 @@
         "name": "手机",
         "icon": "mobile",
         "depDescription": {},
-        "description": "用于展示文字或表达式",
+        "description": "单行文本输入框，规定填写者输入内容为手机，带有字段校验",
         "labels": [
             "Basic"
         ],
@@ -434,7 +418,7 @@
         "jsonSchema": {
             "name": "u-flowable-mobile",
             "title": "手机",
-            "description": "用于展示文字或表达式",
+            "description": "单行文本输入框，规定填写者输入内容为手机，带有字段校验",
             "category": "Basic",
             "screenShot": "[]",
             "blocks": [
@@ -466,14 +450,6 @@
             ],
             "attrs": [
                 {
-                    "name": "title",
-                    "type": "string",
-                    "compType": "input",
-                    "title": "标题",
-                    "level": "component",
-                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
-                },
-                {
                     "name": "value",
                     "type": "string",
                     "compType": "input",
@@ -491,20 +467,8 @@
                     "description": "选择必填后，填写者不填写将无法提交表单"
                 }
             ],
-            "slots": [
-                {
-                    "name": "default",
-                    "description": "文字内容",
-                    "title": "内容"
-                }
-            ],
-            "events": [
-                {
-                    "name": "$listeners",
-                    "description": "监听所有`<span>`元素的事件。",
-                    "params": []
-                }
-            ],
+            "slots": false,
+            "events": false,
             "children": []
         }
     },
@@ -548,14 +512,6 @@
                 }
             ],
             "attrs": [
-                {
-                    "name": "title",
-                    "type": "string",
-                    "compType": "input",
-                    "title": "标题",
-                    "level": "component",
-                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
-                },
                 {
                     "name": "value",
                     "type": "number",
@@ -619,7 +575,7 @@
         "name": "链接",
         "icon": "link",
         "depDescription": {},
-        "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
+        "description": "单行文本输入框，规定填写者输入内容为链接，带有字段校验",
         "labels": [
             "Basic"
         ],
@@ -628,7 +584,7 @@
         "jsonSchema": {
             "name": "u-flowable-link",
             "title": "链接",
-            "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
+            "description": "单行文本输入框，规定填写者输入内容为链接，带有字段校验",
             "category": "Basic",
             "screenShot": "[]",
             "blocks": [
@@ -654,14 +610,6 @@
                 }
             ],
             "attrs": [
-                {
-                    "name": "title",
-                    "type": "string",
-                    "compType": "input",
-                    "title": "标题",
-                    "level": "component",
-                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
-                },
                 {
                     "name": "value",
                     "type": "string",
@@ -690,7 +638,7 @@
         "name": "单项选择",
         "icon": "radios",
         "depDescription": {},
-        "description": "多项中选择一个时使用",
+        "description": "选择组件，可以自定义编辑和增删选项，填写者需要进行单项选择",
         "labels": [
             "Basic"
         ],
@@ -699,7 +647,7 @@
         "jsonSchema": {
             "name": "u-flowable-radios",
             "title": "单项选择",
-            "description": "多项中选择一个时使用",
+            "description": "选择组件，可以自定义编辑和增删选项，填写者需要进行单项选择",
             "category": "Basic",
             "screenShot": "[]",
             "blocks": [
@@ -720,14 +668,6 @@
                 }
             ],
             "attrs": [
-                {
-                    "name": "title",
-                    "type": "string",
-                    "compType": "input",
-                    "title": "标题",
-                    "level": "component",
-                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
-                },
                 {
                     "name": "list",
                     "title": "选项内容",
@@ -777,7 +717,7 @@
         "name": "下拉选择",
         "icon": "select",
         "depDescription": {},
-        "description": "多项中选择一个时使用",
+        "description": "选择组件，可以自定义编辑和增删选项，填写者通过下拉框进行单项选择",
         "labels": [
             "Basic"
         ],
@@ -786,7 +726,7 @@
         "jsonSchema": {
             "name": "u-flowable-select",
             "title": "下拉选择",
-            "description": "多项中选择一个时使用",
+            "description": "选择组件，可以自定义编辑和增删选项，填写者通过下拉框进行单项选择",
             "category": "Basic",
             "screenShot": "[]",
             "blocks": [
@@ -802,14 +742,6 @@
                 }
             ],
             "attrs": [
-                {
-                    "name": "title",
-                    "type": "string",
-                    "compType": "input",
-                    "title": "标题",
-                    "level": "component",
-                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
-                },
                 {
                     "name": "list",
                     "title": "选项内容",
@@ -861,7 +793,7 @@
         "name": "多项选择",
         "icon": "checkboxes",
         "depDescription": {},
-        "description": "多项中选择一个时使用",
+        "description": "选择组件，可以自定义编辑和增删选项，还可以设置填写者选择的数量规则（最多选几个、最少选几个）",
         "labels": [
             "Basic"
         ],
@@ -870,7 +802,7 @@
         "jsonSchema": {
             "name": "u-flowable-checkbox",
             "title": "多项选择",
-            "description": "多项中选择一个时使用",
+            "description": "选择组件，可以自定义编辑和增删选项，还可以设置填写者选择的数量规则（最多选几个、最少选几个）",
             "category": "Basic",
             "screenShot": "[]",
             "blocks": [
@@ -891,14 +823,6 @@
                 }
             ],
             "attrs": [
-                {
-                    "name": "title",
-                    "type": "string",
-                    "compType": "input",
-                    "title": "标题",
-                    "level": "component",
-                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
-                },
                 {
                     "name": "min",
                     "title": "选中最小项数",
@@ -1034,14 +958,6 @@
             ],
             "attrs": [
                 {
-                    "name": "title",
-                    "type": "string",
-                    "compType": "input",
-                    "title": "标题",
-                    "level": "component",
-                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
-                },
-                {
                     "name": "multiple",
                     "title": "是否上传多个",
                     "compType": "checkbox",
@@ -1068,7 +984,7 @@
         "name": "起止时间",
         "icon": "date-time-range",
         "depDescription": {},
-        "description": "用于展示文字或表达式",
+        "description": "时间选择组件，需要填写者选择起止日期与时刻。",
         "labels": [
             "Basic"
         ],
@@ -1077,7 +993,7 @@
         "jsonSchema": {
             "name": "u-flowable-date-time-range",
             "title": "起止时间",
-            "description": "用于展示文字或表达式",
+            "description": "时间选择组件，需要填写者选择起止日期与时刻。",
             "category": "Basic",
             "screenShot": "[]",
             "blocks": [
@@ -1103,14 +1019,6 @@
                 }
             ],
             "attrs": [
-                {
-                    "name": "title",
-                    "type": "string",
-                    "compType": "input",
-                    "title": "标题",
-                    "level": "component",
-                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
-                },
                 {
                     "name": "value",
                     "type": "string",
@@ -1174,7 +1082,7 @@
         "name": "图片选择",
         "icon": "image",
         "depDescription": {},
-        "description": "多项中选择一个时使用",
+        "description": "选择组件，可为选项添加图片",
         "labels": [
             "Basic"
         ],
@@ -1183,7 +1091,7 @@
         "jsonSchema": {
             "name": "u-flowable-image-select",
             "title": "图片选择",
-            "description": "多项中选择一个时使用",
+            "description": "选择组件，可为选项添加图片",
             "category": "Basic",
             "screenShot": "[]",
             "blocks": [
@@ -1204,14 +1112,6 @@
                 }
             ],
             "attrs": [
-                {
-                    "name": "title",
-                    "type": "string",
-                    "compType": "input",
-                    "title": "标题",
-                    "level": "component",
-                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
-                },
                 {
                     "name": "list",
                     "title": "选项内容",
@@ -1290,7 +1190,7 @@
         "name": "富文本",
         "icon": "richtext",
         "depDescription": {},
-        "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
+        "description": "升级版的文本输入框，拥有格式设置，比如字体和段落设置、页面设置等，使得文本输入更加个性化。",
         "labels": [
             "Basic"
         ],
@@ -1299,7 +1199,7 @@
         "jsonSchema": {
             "name": "u-flowable-rich-text",
             "title": "富文本",
-            "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
+            "description": "升级版的文本输入框，拥有格式设置，比如字体和段落设置、页面设置等，使得文本输入更加个性化。",
             "category": "Basic",
             "screenShot": "[]",
             "blocks": [
@@ -1325,14 +1225,6 @@
                 }
             ],
             "attrs": [
-                {
-                    "name": "title",
-                    "type": "string",
-                    "compType": "input",
-                    "title": "标题",
-                    "level": "component",
-                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
-                },
                 {
                     "name": "value",
                     "type": "string",
@@ -1360,7 +1252,7 @@
         "name": "地址",
         "icon": "region-select",
         "depDescription": {},
-        "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
+        "description": "单行文本输入框，规定填写者输入内容为地址，带有字段校验",
         "labels": [
             "Basic"
         ],
@@ -1369,7 +1261,7 @@
         "jsonSchema": {
             "name": "u-flowable-address",
             "title": "地址",
-            "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。",
+            "description": "单行文本输入框，规定填写者输入内容为地址，带有字段校验",
             "category": "Basic",
             "screenShot": "[]",
             "blocks": [
@@ -1400,14 +1292,6 @@
                 }
             ],
             "attrs": [
-                {
-                    "name": "title",
-                    "type": "string",
-                    "compType": "input",
-                    "title": "标题",
-                    "level": "component",
-                    "description": "标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题"
-                },
                 {
                     "name": "value",
                     "type": "string",
@@ -1441,7 +1325,7 @@
         "name": "成员",
         "icon": "user",
         "depDescription": {},
-        "description": "可以选择组织成员",
+        "description": "提供成员的选择。结合“动态负责人”，可用于“指派任务”等场景。",
         "labels": [
             "Advanced"
         ],
@@ -1450,7 +1334,7 @@
         "jsonSchema": {
             "name": "u-flowable-user",
             "title": "成员",
-            "description": "可以选择组织成员",
+            "description": "提供成员的选择。结合“动态负责人”，可用于“指派任务”等场景。",
             "category": "Advanced",
             "screenShot": "[]",
             "blocks": [
@@ -1468,6 +1352,16 @@
                     "title": "内容",
                     "value": "选择的成员",
                     "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。多个成员 ID 以逗号隔开"
+                },
+                {
+                    "name": "required",
+                    "type": "boolean",
+                    "compType": "checkbox",
+                    "group": "validate",
+                    "message": "请输入内容",
+                    "title": "这是个必填项",
+                    "default": false,
+                    "description": "选择必填后，填写者不填写将无法提交表单"
                 }
             ],
             "slots": false,
@@ -1480,7 +1374,7 @@
         "name": "部门",
         "icon": "department",
         "depDescription": {},
-        "description": "可以选择组织架构",
+        "description": "提供组织架构-部门的选择",
         "labels": [
             "Advanced"
         ],
@@ -1489,7 +1383,7 @@
         "jsonSchema": {
             "name": "u-flowable-department",
             "title": "部门",
-            "description": "可以选择组织架构",
+            "description": "提供组织架构-部门的选择",
             "category": "Advanced",
             "screenShot": "[]",
             "blocks": [
@@ -1507,6 +1401,16 @@
                     "title": "内容",
                     "value": "选择的部门",
                     "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。多个部门 ID 以逗号隔开"
+                },
+                {
+                    "name": "required",
+                    "type": "boolean",
+                    "compType": "checkbox",
+                    "group": "validate",
+                    "message": "请输入内容",
+                    "title": "这是个必填项",
+                    "default": false,
+                    "description": "选择必填后，填写者不填写将无法提交表单"
                 }
             ],
             "slots": false,

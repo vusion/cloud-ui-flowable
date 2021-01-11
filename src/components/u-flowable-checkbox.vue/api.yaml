@@ -3,14 +3,8 @@
   readonlyTitle: 多项选择
   icon: checkboxes
   labels: [Basic]
-  description: 多项中选择一个时使用
+  description: 选择组件，可以自定义编辑和增删选项，还可以设置填写者选择的数量规则（最多选几个、最少选几个）
   attrs:
-    - name: title
-      type: string
-      compType: input
-      title: 标题
-      level: component
-      description: 标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题
     - name: min
       title: 选中最小项数
       type: number

@@ -4,7 +4,7 @@
   icon: department
   labels: [Advanced]
   value: 部门
-  description: 可以选择组织架构
+  description: 提供组织架构-部门的选择
   attrs:
     - name: value
       type: string
@@ -12,5 +12,13 @@
       title: 内容
       value: 选择的部门
       description: 设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。多个部门 ID 以逗号隔开
+    - name: required
+      type: boolean
+      compType: checkbox
+      group: validate
+      message: 请输入内容
+      title: 这是个必填项
+      default: false
+      description: 选择必填后，填写者不填写将无法提交表单
   slots: false
   events: false

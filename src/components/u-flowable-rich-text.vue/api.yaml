@@ -3,14 +3,8 @@
   readonlyTitle: 富文本
   icon: richtext
   labels: [Basic]
-  description: 描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。
+  description: 升级版的文本输入框，拥有格式设置，比如字体和段落设置、页面设置等，使得文本输入更加个性化。
   attrs:
-    - name: title
-      type: string
-      compType: input
-      title: 标题
-      level: component
-      description: 标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题
     - name: value
       type: string
       title: 文本

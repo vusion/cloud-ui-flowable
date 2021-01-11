@@ -3,7 +3,7 @@
   readonlyTitle: 邮箱
   icon: email
   labels: [Basic]
-  description: 用于展示文字或表达式
+  description: 单行文本输入框，规定填写者输入内容为邮箱，带有字段校验
   attrs:
     - name: title
       type: string

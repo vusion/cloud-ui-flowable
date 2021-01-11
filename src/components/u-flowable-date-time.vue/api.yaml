@@ -3,7 +3,7 @@
   readonlyTitle: 日期
   icon: date-picker
   labels: [Basic]
-  description: 用于展示文字或表达式
+  description: 时间选择组件，需要填写者选择具体日期时间。
   attrs:
     - name: title
       type: string
