@@ -9,7 +9,7 @@
 
 **Basic**
 
-多项中选择一个时使用
+选择组件，可以自定义编辑和增删选项，填写者需要进行单项选择
 
 ## 示例
 ### 基本用法
@@ -35,7 +35,6 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| title | string |  |  | 标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题 |
 | list | array |  | `[\[object Object\], \[object Object\], \[object Object\]]` | 为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。数据格式：[{text: '', value: ''}] |
 | value | string |  |  | 文本内容 |
 | required | boolean |  | `false` | 选择必填后，填写者不填写将无法提交表单 |

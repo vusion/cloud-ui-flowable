@@ -9,7 +9,7 @@
 
 **Basic**
 
-描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。
+单行文本输入框，需要填写者在输入框内根据标题填写相应的内容。
 
 ## 示例
 ### 基本用法
@@ -34,7 +34,6 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| title | string |  |  | 标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题 |
 | value | string |  |  | 文本内容 |
 | minlength | string |  | `0` | 最小长度 |
 | maxlength | string |  |  | 最大长度 |

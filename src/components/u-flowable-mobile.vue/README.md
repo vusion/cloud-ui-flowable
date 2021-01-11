@@ -6,12 +6,10 @@
     - [基本用法](#基本用法)
 - [API]()
     - [Props/Attrs](#propsattrs)
-    - [Slots](#slots)
-    - [Events](#events)
 
 **Basic**
 
-用于展示文字或表达式
+单行文本输入框，规定填写者输入内容为手机，带有字段校验
 
 ## 示例
 ### 基本用法
@@ -35,22 +33,6 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
-| title | string |  |  | 标题用于告诉填写者应该在该字段中输入什么样的内容，通常是一个词语或词组，也可以是一个问题 |
 | value | string |  |  | 设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。 |
 | required | boolean |  | `false` | 选择必填后，填写者不填写将无法提交表单 |
-
-### Slots
-
-#### (default)
-
-文字内容
-
-### Events
-
-#### @$listeners
-
-监听所有`<span>`元素的事件。
-
-| Param | Type | Description |
-| ----- | ---- | ----------- |
 

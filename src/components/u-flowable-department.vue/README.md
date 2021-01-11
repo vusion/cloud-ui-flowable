@@ -9,7 +9,7 @@
 
 **Advanced**
 
-可以选择组织架构
+提供组织架构-部门的选择
 
 ## 示例
 ### 基本用法
@@ -69,4 +69,5 @@ export default {
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
 | value | string |  |  | 设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。多个部门 ID 以逗号隔开 |
+| required | boolean |  | `false` | 选择必填后，填写者不填写将无法提交表单 |
 

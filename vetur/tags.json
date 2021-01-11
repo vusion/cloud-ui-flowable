@@ -1,31 +1,28 @@
 {
   "u-flowable-address": {
     "attributes": [
-      "title",
       "value",
       "required"
     ],
-    "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。"
+    "description": "单行文本输入框，规定填写者输入内容为地址，带有字段校验"
   },
   "u-flowable-checkbox": {
     "attributes": [
-      "title",
       "min",
       "max",
       "list",
       "value",
       "required"
     ],
-    "description": "多项中选择一个时使用"
+    "description": "选择组件，可以自定义编辑和增删选项，还可以设置填写者选择的数量规则（最多选几个、最少选几个）"
   },
   "u-flowable-date-time-range": {
     "attributes": [
-      "title",
       "value",
       "dateType",
       "required"
     ],
-    "description": "用于展示文字或表达式"
+    "description": "时间选择组件，需要填写者选择起止日期与时刻。"
   },
   "u-flowable-date-time": {
     "attributes": [
@@ -34,13 +31,14 @@
       "dateType",
       "required"
     ],
-    "description": "用于展示文字或表达式"
+    "description": "时间选择组件，需要填写者选择具体日期时间。"
   },
   "u-flowable-department": {
     "attributes": [
-      "value"
+      "value",
+      "required"
     ],
-    "description": "可以选择组织架构"
+    "description": "提供组织架构-部门的选择"
   },
   "u-flowable-email": {
     "attributes": [
@@ -48,7 +46,7 @@
       "value",
       "required"
     ],
-    "description": "用于展示文字或表达式"
+    "description": "单行文本输入框，规定填写者输入内容为邮箱，带有字段校验"
   },
   "u-flowable-form-item": {
     "attributes": [
@@ -64,37 +62,33 @@
       "files",
       "buttonText"
     ],
-    "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。"
+    "description": "表单组件，可以自定义标题、描述、提交按钮文案以及附件上传"
   },
   "u-flowable-image-select": {
     "attributes": [
-      "title",
       "list",
       "min",
       "max",
       "required"
     ],
-    "description": "多项中选择一个时使用"
+    "description": "选择组件，可为选项添加图片"
   },
   "u-flowable-link": {
     "attributes": [
-      "title",
       "value",
       "required"
     ],
-    "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。"
+    "description": "单行文本输入框，规定填写者输入内容为链接，带有字段校验"
   },
   "u-flowable-mobile": {
     "attributes": [
-      "title",
       "value",
       "required"
     ],
-    "description": "用于展示文字或表达式"
+    "description": "单行文本输入框，规定填写者输入内容为手机，带有字段校验"
   },
   "u-flowable-number": {
     "attributes": [
-      "title",
       "value",
       "point",
       "min",
@@ -105,39 +99,35 @@
   },
   "u-flowable-radios": {
     "attributes": [
-      "title",
       "list",
       "value",
       "required"
     ],
-    "description": "多项中选择一个时使用"
+    "description": "选择组件，可以自定义编辑和增删选项，填写者需要进行单项选择"
   },
   "u-flowable-rich-text": {
     "attributes": [
-      "title",
       "value",
       "required"
     ],
-    "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。"
+    "description": "升级版的文本输入框，拥有格式设置，比如字体和段落设置、页面设置等，使得文本输入更加个性化。"
   },
   "u-flowable-select": {
     "attributes": [
-      "title",
       "list",
       "value",
       "required"
     ],
-    "description": "多项中选择一个时使用"
+    "description": "选择组件，可以自定义编辑和增删选项，填写者通过下拉框进行单项选择"
   },
   "u-flowable-string": {
     "attributes": [
-      "title",
       "value",
       "minlength",
       "maxlength",
       "required"
     ],
-    "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。"
+    "description": "单行文本输入框，需要填写者在输入框内根据标题填写相应的内容。"
   },
   "u-flowable-text": {
     "attributes": [
@@ -147,7 +137,6 @@
   },
   "u-flowable-textarea": {
     "attributes": [
-      "title",
       "value",
       "minlength",
       "maxlength",
@@ -157,7 +146,6 @@
   },
   "u-flowable-uploader": {
     "attributes": [
-      "title",
       "multiple",
       "required"
     ],
@@ -165,8 +153,9 @@
   },
   "u-flowable-user": {
     "attributes": [
-      "value"
+      "value",
+      "required"
     ],
-    "description": "可以选择组织成员"
+    "description": "提供成员的选择。结合“动态负责人”，可用于“指派任务”等场景。"
   }
 }
