@@ -102,10 +102,11 @@ const UFlowableForm = {
 
             const valid = [...formItems].every((item) => {
                 const name = item.getAttribute('name');
+                const filterName = item.getAttribute(':vusion-filter-name');
                 if (!map[name]) {
                     map[name] = true;
                     const formItem = this.getNearVueInstance(item);
-                    if (formItem) {
+                    if (formItem && !filterName) {
                         if (formItem.$error) {
                             error = formItem.$error;
                             item.scrollIntoView(false);
