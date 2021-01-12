@@ -15,7 +15,6 @@
 ``` html
 <u-flowable-table
 	 mode="readonly" 
-	 :children="[{ tag: 'u-flowable-string', attrsMap: { name: 'username', title: '用户名' }}]"
-	 :value="[{ username: 1 }]">
+	 :children="[{ tag: 'u-flowable-string', attrsMap: { name: 'username', title: '用户名' }}]">
 </u-flowable-table>
 ```

@@ -1,12 +1,25 @@
 <template>
 <div :class="$style.root">
-   <u-form-table-view :data="currentValue" dynamic>
-      <u-form-table-view-column :key="columnItem.name" v-for="(columnItem , index) in children" :title="columnItem.attrsMap.title" width="20%">
+   <u-form-table-view
+    :data="currentValue" dynamic
+    :min-count="minCount"
+    :get-default-item="getDefaultItem"
+   >
+      <u-form-table-view-column
+        :key="columnItem.name" v-for="(columnItem , index) in children"
+        :title="columnItem.attrsMap.title" width="20%">
         <div slot="cell" slot-scope="{ item, index }">
             <component
+                v-if="columnItem.tag !== 'u-flowable-text'"
                 :is="columnItem.tag"
                 v-model="item[columnItem.attrsMap.name]"
                 v-bind="columnItem.attrsMap"
+            >
+            </component>
+            <component
+               v-if="columnItem.tag === 'u-flowable-text'"
+               :is="'u-flowable-text'"
+               v-bind="columnItem.attrsMap"
             >
             </component>
         </div>
@@ -27,10 +40,12 @@ export default {
     props: {
         value: Array,
         dataSource: Array,
+        minCount: { type: Number, default: 0 },
         /*
          * 配置值，用来设置表单嵌入元素的类型属性和值填充的 key
         */
         children: Array,
+        currentChildren: Array,
     },
     data() {
         return {
@@ -49,15 +64,22 @@ export default {
         },
     },
     methods: {
+        getDefaultItem() {
+            // 设置组件的初始化默认值
+            const defaultValue = {};
+            this.children.forEach((child) => {
+                defaultValue[child.attrsMap.name] = child.attrsMap.value;
+            });
+            return defaultValue;
+        },
         formatValue(value) {
-            /* 这里是组件对外的值输出值, 是根据属性的获取值填充的
-             *  [{ }]
-             */
             if (this.currentValue && JSON.stringify(value) === JSON.stringify(this.currentValue)) {
                 return this.currentValue;
             }
 
-            return value || [];
+            // 如何设置了初始化的值，那么需要用初始化的值填充
+            const resultValue = value || [];
+            return resultValue;
         },
     },
 };

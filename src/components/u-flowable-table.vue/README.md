@@ -18,8 +18,9 @@
 <template>
     <u-flowable-table mode="edit" 
         v-model="model"
-        :children="[{ title: '用户名', tag: 'u-flowable-string', attrsMap: {  
-            name: 'username'
+        :children="[{ tag: 'u-flowable-string', attrsMap: {  
+            name: 'username',
+            title: '用户名', 
         } }]"
     >
    </u-flowable-table>
