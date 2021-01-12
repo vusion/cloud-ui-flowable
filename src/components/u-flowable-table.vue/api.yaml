@@ -2,14 +2,14 @@
   title: 表格
   readonlyTitle: 表格
   icon: table
-  labels: [Basic]
-  description: 表格组件，支持内部添加元素
+  labels: [Advanced]
+  description: 创建自定义列字段，支持其他字段的嵌入，填写者可通过添加行添加多条数据。
   attrs:
     - name: value
       type: array
       compType: columnList
       title: 内容
-      description: 请输入描述文。点击视图-全屏，可全屏编辑展示
+      description: 整表默认内容和子字段默认内容同时存在时，优先显示整表的默认内容
     - name: children
       type: array
       compType: columnList
