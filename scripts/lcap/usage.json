@@ -141,48 +141,6 @@
         }
     },
     {
-        "symbol": "u-flowable-table",
-        "name": "表格",
-        "icon": "table",
-        "depDescription": {},
-        "description": "表格组件，支持内部添加元素",
-        "labels": [
-            "Basic"
-        ],
-        "screenShot": "[]",
-        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table \\n\\t\\tmode=\\\"edit\\\"\\n\\t\\ttitle=\\\"表格\\\"\\n\\t\\t:children=\\\"[{ tag: 'u-flowable-string', attrsMap: { name: 'username', title: '用户名' }}]\\\"\\n>\\n\\n</u-flowable-table>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table\\n\\t mode=\\\"readonly\\\" \\n\\t :children=\\\"[{ tag: 'u-flowable-string', attrsMap: { name: 'username', title: '用户名' }}]\\\">\\n</u-flowable-table>\\n</template>\\n\"}]",
-        "jsonSchema": {
-            "name": "u-flowable-table",
-            "title": "表格",
-            "description": "表格组件，支持内部添加元素",
-            "category": "Basic",
-            "screenShot": "[]",
-            "blocks": [
-                {
-                    "title": "编辑模式",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-table \n\t\tmode=\"edit\"\n\t\ttitle=\"表格\"\n\t\t:children=\"[{ tag: 'u-flowable-string', attrsMap: { name: 'username', title: '用户名' }}]\"\n>\n\n</u-flowable-table>\n</template>\n"
-                },
-                {
-                    "title": "变量支持-只读模式",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-table\n\t mode=\"readonly\" \n\t :children=\"[{ tag: 'u-flowable-string', attrsMap: { name: 'username', title: '用户名' }}]\">\n</u-flowable-table>\n</template>\n"
-                }
-            ],
-            "attrs": [
-                {
-                    "name": "minCount",
-                    "type": "string",
-                    "description": "设置表格组件的最小个数",
-                    "default": 0
-                }
-            ],
-            "slots": false,
-            "events": false,
-            "children": []
-        }
-    },
-    {
         "symbol": "u-flowable-textarea",
         "name": "多行文字",
         "icon": "textarea",
@@ -1549,6 +1507,58 @@
                     "title": "内容",
                     "value": "选择的部门",
                     "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。多个部门 ID 以逗号隔开"
+                }
+            ],
+            "slots": false,
+            "events": false,
+            "children": []
+        }
+    },
+    {
+        "symbol": "u-flowable-table",
+        "name": "表格",
+        "icon": "table",
+        "depDescription": {},
+        "description": "创建自定义列字段，支持其他字段的嵌入，填写者可通过添加行添加多条数据。",
+        "labels": [
+            "Advanced"
+        ],
+        "screenShot": "[]",
+        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table \\n\\t\\tmode=\\\"edit\\\"\\n\\t\\ttitle=\\\"表格\\\"\\n\\t\\t:children=\\\"[{ tag: 'u-flowable-string', attrsMap: { name: 'username', title: '用户名' }}]\\\"\\n>\\n\\n</u-flowable-table>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table\\n\\t mode=\\\"readonly\\\" \\n\\t :children=\\\"[{ tag: 'u-flowable-string', attrsMap: { name: 'username', title: '用户名' }}]\\\"\\n\\t :value=\\\"[{ username: 1 }]\\\">\\n</u-flowable-table>\\n</template>\\n\"}]",
+        "jsonSchema": {
+            "name": "u-flowable-table",
+            "title": "表格",
+            "description": "创建自定义列字段，支持其他字段的嵌入，填写者可通过添加行添加多条数据。",
+            "category": "Advanced",
+            "screenShot": "[]",
+            "blocks": [
+                {
+                    "title": "编辑模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-table \n\t\tmode=\"edit\"\n\t\ttitle=\"表格\"\n\t\t:children=\"[{ tag: 'u-flowable-string', attrsMap: { name: 'username', title: '用户名' }}]\"\n>\n\n</u-flowable-table>\n</template>\n"
+                },
+                {
+                    "title": "变量支持-只读模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-table\n\t mode=\"readonly\" \n\t :children=\"[{ tag: 'u-flowable-string', attrsMap: { name: 'username', title: '用户名' }}]\"\n\t :value=\"[{ username: 1 }]\">\n</u-flowable-table>\n</template>\n"
+                }
+            ],
+            "attrs": [
+                {
+                    "name": "value",
+                    "type": "array",
+                    "compType": "columnList",
+                    "title": "内容",
+                    "description": "整表默认内容和子字段默认内容同时存在时，优先显示整表的默认内容"
+                },
+                {
+                    "name": "children",
+                    "type": "array",
+                    "compType": "columnList",
+                    "title": "选项内容",
+                    "default": [],
+                    "example": [],
+                    "description": "配置表格组件的每栏元素"
                 }
             ],
             "slots": false,

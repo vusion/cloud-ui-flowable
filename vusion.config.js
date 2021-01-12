@@ -26,7 +26,6 @@ module.exports = {
         ],
         components: [
             { group: 'Form', name: 'u-flowable-text', alias: '描述文字' },
-            { group: 'Form', name: 'u-flowable-table', alias: '表格' },
             { group: 'Form', name: 'u-flowable-string', alias: '单行文字' },
             { group: 'Form', name: 'u-flowable-textarea', alias: '多行文字' },
             { group: 'Form', name: 'u-flowable-date-time', alias: '日期' },
@@ -46,6 +45,7 @@ module.exports = {
             { group: 'Form', name: 'u-flowable-form', alias: '表单' },
             { group: 'Form', name: 'u-flowable-user', alias: '成员' },
             { group: 'Form', name: 'u-flowable-department', alias: '部门' },
+            { group: 'Form', name: 'u-flowable-table', alias: '表格' },
         ],
         blocks: [],
         directives: [],
