@@ -7,7 +7,16 @@
   attrs:
     - name: minCount
       type: string
-      description: 设置表格组件的最小个数
+      description: 设置表格组件的最小行数
       default: 0
+    - name: maxCount
+      type: number
+      default: Infinity
+      description: 设置表格组件的最小行数
+    - name: value
+      type: string
+      compType: input
+      default: []
+      description: 默认值
   slots: false
   events: false

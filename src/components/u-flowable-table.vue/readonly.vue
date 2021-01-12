@@ -6,7 +6,7 @@
                 <th
                 v-for="(columnItem, index) in children"
                 :key="columnItem.attrsMap.name"
-                width="20%">
+                 width="20%">
                     {{ columnItem.attrsMap.title }}
                 </th>
             </tr>
@@ -17,7 +17,12 @@
                 v-for="(rowColumnItem, rowItemColumnIndex) in children"
                 :key="rowItemColumnIndex"
             >
-                {{ row[rowColumnItem.attrsMap.name] }}
+              <component
+                :is="rowColumnItem.tag"
+                :value="row[rowColumnItem.attrsMap.name]"
+                v-bind="rowColumnItem.attrsMap"
+              >
+              </component>
             </th>
             </tr>
         </tbody>
