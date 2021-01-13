@@ -7,6 +7,7 @@
     - [只读](#只读)
 - [API]()
     - [Props/Attrs](#propsattrs)
+    - [Slots](#slots)
 
 **Advanced**
 
@@ -116,4 +117,10 @@ export default {
 | dynamic | boolean |  | `true` | 是否支持动态添加 |
 | minCount | string |  | `0` | 设置表格组件的最小行数 |
 | maxCount | number |  | `'Infinity'` | 设置表格组件的最大行数 |
+
+### Slots
+
+#### (default)
+
+插入其他组件。
 
