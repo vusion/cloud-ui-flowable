@@ -44,7 +44,7 @@ export default {
             }
 
             if (Object.prototype.toString.call(value) === '[object Array]') {
-                return value;
+                return JSON.parse(JSON.stringify(value));
             } else {
                 return (value || '').split(',').filter((i) => i);
             }

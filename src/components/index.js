@@ -18,3 +18,4 @@ export * from './u-flowable-form-item.vue/index.vue';
 export * from './u-flowable-form.vue/index.vue';
 export * from './u-flowable-user.vue';
 export * from './u-flowable-department.vue';
+export * from './u-flowable-table.vue';

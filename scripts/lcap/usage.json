@@ -1417,5 +1417,57 @@
             "events": false,
             "children": []
         }
+    },
+    {
+        "symbol": "u-flowable-table",
+        "name": "表格",
+        "icon": "table",
+        "depDescription": {},
+        "description": "创建自定义列字段，支持其他字段的嵌入，填写者可通过添加行添加多条数据。",
+        "labels": [
+            "Advanced"
+        ],
+        "screenShot": "[]",
+        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table \\n\\t\\tmode=\\\"edit\\\"\\n\\t\\ttitle=\\\"表格\\\"\\n\\t\\t:children=\\\"[{ tag: 'u-flowable-string', attrsMap: { name: 'username', title: '用户名' }}]\\\"\\n>\\n\\n</u-flowable-table>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table\\n\\t mode=\\\"readonly\\\" \\n\\t :children=\\\"[{ tag: 'u-flowable-string', attrsMap: { name: 'username', title: '用户名' }}]\\\"\\n\\t :value=\\\"[{ username: 1 }]\\\">\\n</u-flowable-table>\\n</template>\\n\"}]",
+        "jsonSchema": {
+            "name": "u-flowable-table",
+            "title": "表格",
+            "description": "创建自定义列字段，支持其他字段的嵌入，填写者可通过添加行添加多条数据。",
+            "category": "Advanced",
+            "screenShot": "[]",
+            "blocks": [
+                {
+                    "title": "编辑模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-table \n\t\tmode=\"edit\"\n\t\ttitle=\"表格\"\n\t\t:children=\"[{ tag: 'u-flowable-string', attrsMap: { name: 'username', title: '用户名' }}]\"\n>\n\n</u-flowable-table>\n</template>\n"
+                },
+                {
+                    "title": "变量支持-只读模式",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-table\n\t mode=\"readonly\" \n\t :children=\"[{ tag: 'u-flowable-string', attrsMap: { name: 'username', title: '用户名' }}]\"\n\t :value=\"[{ username: 1 }]\">\n</u-flowable-table>\n</template>\n"
+                }
+            ],
+            "attrs": [
+                {
+                    "name": "value",
+                    "type": "array",
+                    "compType": "columnList",
+                    "title": "内容",
+                    "description": "整表默认内容和子字段默认内容同时存在时，优先显示整表的默认内容"
+                },
+                {
+                    "name": "children",
+                    "type": "array",
+                    "compType": "columnList",
+                    "title": "选项内容",
+                    "default": [],
+                    "example": [],
+                    "description": "配置表格组件的每栏元素"
+                }
+            ],
+            "slots": false,
+            "events": false,
+            "children": []
+        }
     }
 ]

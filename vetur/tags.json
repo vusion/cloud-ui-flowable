@@ -129,6 +129,13 @@
     ],
     "description": "单行文本输入框，需要填写者在输入框内根据标题填写相应的内容。"
   },
+  "u-flowable-table": {
+    "attributes": [
+      "value",
+      "children"
+    ],
+    "description": "表格组件，支持内部添加元素"
+  },
   "u-flowable-text": {
     "attributes": [
       "value"

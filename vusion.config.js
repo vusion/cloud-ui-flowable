@@ -45,6 +45,7 @@ module.exports = {
             { group: 'Form', name: 'u-flowable-form', alias: '表单' },
             { group: 'Form', name: 'u-flowable-user', alias: '成员' },
             { group: 'Form', name: 'u-flowable-department', alias: '部门' },
+            { group: 'Form', name: 'u-flowable-table', alias: '表格' },
         ],
         blocks: [],
         directives: [],
