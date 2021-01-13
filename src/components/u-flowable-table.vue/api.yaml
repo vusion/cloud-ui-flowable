@@ -22,5 +22,8 @@
       type: number
       default: Infinity
       description: 设置表格组件的最大行数
-  slots: false
+  slots: 
+    - name: default
+      title: 默认
+      description: 插入其他组件。
   events: false
