@@ -132,9 +132,11 @@
   "u-flowable-table": {
     "attributes": [
       "value",
-      "children"
+      "dynamic",
+      "minCount",
+      "maxCount"
     ],
-    "description": "表格组件，支持内部添加元素"
+    "description": "创建自定义列字段，支持其他字段的嵌入，填写者可通过添加行添加多条数据。"
   },
   "u-flowable-text": {
     "attributes": [

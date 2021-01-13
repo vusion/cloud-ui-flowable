@@ -220,12 +220,20 @@
     "description": "选择必填后，填写者不填写将无法提交表单"
   },
   "u-flowable-table/value": {
-    "type": "array",
-    "description": "请输入描述文。点击视图-全屏，可全屏编辑展示"
+    "type": "string",
+    "description": "默认值"
   },
-  "u-flowable-table/children": {
-    "type": "array",
-    "description": "配置表格组件的每栏元素"
+  "u-flowable-table/dynamic": {
+    "type": "boolean",
+    "description": "是否支持动态添加"
+  },
+  "u-flowable-table/minCount": {
+    "type": "string",
+    "description": "设置表格组件的最小行数"
+  },
+  "u-flowable-table/maxCount": {
+    "type": "number",
+    "description": "设置表格组件的最大行数"
   },
   "u-flowable-text/value": {
     "type": "string",

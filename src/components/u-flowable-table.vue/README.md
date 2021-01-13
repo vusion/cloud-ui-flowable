@@ -112,7 +112,8 @@ export default {
 
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
+| value | string |  | `[]` | 默认值 |
+| dynamic | boolean |  | `true` | 是否支持动态添加 |
 | minCount | string |  | `0` | 设置表格组件的最小行数 |
 | maxCount | number |  | `'Infinity'` | 设置表格组件的最大行数 |
-| value | string |  | `[]` | 默认值 |
 
