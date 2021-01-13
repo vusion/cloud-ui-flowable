@@ -5,6 +5,15 @@
   labels: [Advanced]
   description: 创建自定义列字段，支持其他字段的嵌入，填写者可通过添加行添加多条数据。
   attrs:
+    - name: value
+      type: string
+      compType: input
+      default: []
+      description: 默认值
+    - name: dynamic
+      type: boolean
+      default: true
+      description: 是否支持动态添加
     - name: minCount
       type: string
       description: 设置表格组件的最小行数
@@ -13,10 +22,5 @@
       type: number
       default: Infinity
       description: 设置表格组件的最大行数
-    - name: value
-      type: string
-      compType: input
-      default: []
-      description: 默认值
   slots: false
   events: false

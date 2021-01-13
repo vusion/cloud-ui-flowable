@@ -1428,7 +1428,7 @@
             "Advanced"
         ],
         "screenShot": "[]",
-        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table \\n\\t\\tmode=\\\"edit\\\"\\n\\t\\ttitle=\\\"表格\\\"\\n\\t\\t:children=\\\"[{ tag: 'u-flowable-string', attrsMap: { name: 'username', title: '用户名' }}]\\\"\\n>\\n\\n</u-flowable-table>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table\\n\\t mode=\\\"readonly\\\" \\n\\t :children=\\\"[{ tag: 'u-flowable-string', attrsMap: { name: 'username', title: '用户名' }}]\\\"\\n\\t :value=\\\"[{ username: 1 }]\\\">\\n</u-flowable-table>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table title=\\\"表格\\\">\\n</u-flowable-table>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"<!--\\n\",\"code\":\"<template>\\n<u-flowable-table\\n     mode=\\\"readonly\\\" >\\n    <u-form-table-view-column  title=\\\"用户名\\\">\\n        <u-flowable-string mode=\\\"readonly\\\" name=\\\"username\\\">\\n\\n        </u-flowable-string>\\n    </u-form-table-view-column>    \\n</u-flowable-table>\\n``` --></template>\\n\"}]",
         "jsonSchema": {
             "name": "u-flowable-table",
             "title": "表格",
@@ -1439,30 +1439,33 @@
                 {
                     "title": "编辑模式",
                     "description": "",
-                    "code": "<template>\n<u-flowable-table \n\t\tmode=\"edit\"\n\t\ttitle=\"表格\"\n\t\t:children=\"[{ tag: 'u-flowable-string', attrsMap: { name: 'username', title: '用户名' }}]\"\n>\n\n</u-flowable-table>\n</template>\n"
+                    "code": "<template>\n<u-flowable-table title=\"表格\">\n</u-flowable-table>\n</template>\n"
                 },
                 {
                     "title": "变量支持-只读模式",
-                    "description": "",
-                    "code": "<template>\n<u-flowable-table\n\t mode=\"readonly\" \n\t :children=\"[{ tag: 'u-flowable-string', attrsMap: { name: 'username', title: '用户名' }}]\"\n\t :value=\"[{ username: 1 }]\">\n</u-flowable-table>\n</template>\n"
+                    "description": "<!--\n",
+                    "code": "<template>\n<u-flowable-table\n     mode=\"readonly\" >\n    <u-form-table-view-column  title=\"用户名\">\n        <u-flowable-string mode=\"readonly\" name=\"username\">\n\n        </u-flowable-string>\n    </u-form-table-view-column>    \n</u-flowable-table>\n``` --></template>\n"
                 }
             ],
             "attrs": [
                 {
-                    "name": "value",
-                    "type": "array",
-                    "compType": "columnList",
-                    "title": "内容",
-                    "description": "整表默认内容和子字段默认内容同时存在时，优先显示整表的默认内容"
+                    "name": "minCount",
+                    "type": "string",
+                    "description": "设置表格组件的最小行数",
+                    "default": 0
                 },
                 {
-                    "name": "children",
-                    "type": "array",
-                    "compType": "columnList",
-                    "title": "选项内容",
+                    "name": "maxCount",
+                    "type": "number",
+                    "default": "Infinity",
+                    "description": "设置表格组件的最大行数"
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "compType": "input",
                     "default": [],
-                    "example": [],
-                    "description": "配置表格组件的每栏元素"
+                    "description": "默认值"
                 }
             ],
             "slots": false,

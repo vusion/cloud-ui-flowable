@@ -9,18 +9,12 @@ export default {
     },
     props: {
         value: Array,
-        dataSource: Array,
         dynamic: {
             type: Boolean,
             default: true,
         },
         minCount: { type: Number, default: 0 },
         maxCount: { type: Number },
-        /*
-         * 配置值，用来设置表单嵌入元素的类型属性和值填充的 key
-        */
-        children: Array,
-        currentChildren: Array,
     },
     data() {
         return {
