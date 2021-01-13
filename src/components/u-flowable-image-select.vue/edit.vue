@@ -55,6 +55,9 @@ export default {
             return item?.image;
         },
         splitValue() {
+            if (this.currentValue?.join(',') === (this.value || []).join(',')) {
+                return this.currentValue;
+            }
             // TODO value 如果是字符串需要转换一次
             return JSON.parse(JSON.stringify(this.value || []));
         },

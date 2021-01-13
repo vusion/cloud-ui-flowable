@@ -42,6 +42,9 @@ export default {
             if (this.currentValue?.join(',') === value) {
                 return this.currentValue;
             }
+            if (this.currentValue?.join(',') === (value || []).join(',')) {
+                return this.currentValue;
+            }
 
             if (Object.prototype.toString.call(value) === '[object Array]') {
                 return JSON.parse(JSON.stringify(value));
