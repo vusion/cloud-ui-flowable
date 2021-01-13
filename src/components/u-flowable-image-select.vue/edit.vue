@@ -56,7 +56,7 @@ export default {
         },
         splitValue() {
             // TODO value 如果是字符串需要转换一次
-            return this.value || [];
+            return JSON.parse(JSON.stringify(this.value || []));
         },
     },
 };

@@ -12,7 +12,7 @@
     - name: maxCount
       type: number
       default: Infinity
-      description: 设置表格组件的最小行数
+      description: 设置表格组件的最大行数
     - name: value
       type: string
       compType: input
