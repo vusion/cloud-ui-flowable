@@ -1430,7 +1430,7 @@
             "Advanced"
         ],
         "screenShot": "[]",
-        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table title=\\\"表格\\\" :dynamic=\\\"true\\\" :value=\\\"[]\\\">\\n</u-flowable-table>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"<!--\\n\",\"code\":\"<template>\\n<u-flowable-table\\n     mode=\\\"readonly\\\" >\\n    <u-form-table-view-column  title=\\\"用户名\\\">\\n        <u-flowable-string mode=\\\"readonly\\\" name=\\\"username\\\">\\n\\n        </u-flowable-string>\\n    </u-form-table-view-column>    \\n</u-flowable-table>\\n``` --></template>\\n\"}]",
+        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table title=\\\"表格\\\" :dynamic=\\\"true\\\">\\n     <u-flowable-string mode=\\\"edit\\\" title=\\\"未命名1\\\" name=\\\"value\\\">\\n     </u-flowable-string>\\n     <u-flowable-string mode=\\\"edit\\\" title=\\\"未命名2\\\" name=\\\"value\\\">\\n     </u-flowable-string>\\n     <u-flowable-string mode=\\\"edit\\\" title=\\\"未命名3\\\" name=\\\"value\\\">\\n     </u-flowable-string>\\n</u-flowable-table>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"<!--\\n\",\"code\":\"<template>\\n<u-flowable-table\\n     mode=\\\"readonly\\\" >\\n    <u-form-table-view-column  title=\\\"用户名\\\">\\n        <u-flowable-string mode=\\\"readonly\\\" name=\\\"username\\\">\\n\\n        </u-flowable-string>\\n    </u-form-table-view-column>    \\n</u-flowable-table>\\n``` --></template>\\n\"}]",
         "jsonSchema": {
             "name": "u-flowable-table",
             "title": "表格",
@@ -1441,7 +1441,7 @@
                 {
                     "title": "编辑模式",
                     "description": "",
-                    "code": "<template>\n<u-flowable-table title=\"表格\" :dynamic=\"true\" :value=\"[]\">\n</u-flowable-table>\n</template>\n"
+                    "code": "<template>\n<u-flowable-table title=\"表格\" :dynamic=\"true\">\n     <u-flowable-string mode=\"edit\" title=\"未命名1\" name=\"value\">\n     </u-flowable-string>\n     <u-flowable-string mode=\"edit\" title=\"未命名2\" name=\"value\">\n     </u-flowable-string>\n     <u-flowable-string mode=\"edit\" title=\"未命名3\" name=\"value\">\n     </u-flowable-string>\n</u-flowable-table>\n</template>\n"
                 },
                 {
                     "title": "变量支持-只读模式",
@@ -1452,15 +1452,9 @@
             "attrs": [
                 {
                     "name": "value",
-<<<<<<< HEAD
                     "type": "array",
                     "compType": "editMode",
                     "editMode": true,
-=======
-                    "type": "string",
-                    "compType": "input",
-                    "title": "默认内容",
->>>>>>> fix: table style
                     "default": [],
                     "description": "默认值"
                 },
@@ -1495,7 +1489,6 @@
                 {
                     "name": "maxCount",
                     "type": "number",
-<<<<<<< HEAD
                     "compType": "number",
                     "default": 99,
                     "description": "设置表格组件的最大行数",
@@ -1521,12 +1514,6 @@
                     "title": "这是个必填项",
                     "default": false,
                     "description": "选择必填后，填写者不填写将无法提交表单"
-=======
-                    "title": "最大行数",
-                    "compType": "input",
-                    "default": "Infinity",
-                    "description": "设置表格组件的最大行数"
->>>>>>> fix: table style
                 }
             ],
             "slots": [
