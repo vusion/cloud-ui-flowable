@@ -3,7 +3,7 @@
         <template v-for="(item, index) in value">
            <div :key="index">
               <u-copy :value="item.name">{{ item.name }}</u-copy>
-              <u-link :class="$style.action" :href="item.name" target="_blank" rel="noopener noreferrer" download>下载</u-link>
+              <u-link :class="$style.action" :href="item.url" target="_blank" rel="noopener noreferrer" download>下载</u-link>
             </div>
         </template>
     </div>
