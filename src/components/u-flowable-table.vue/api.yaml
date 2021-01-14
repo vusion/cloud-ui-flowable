@@ -8,21 +8,25 @@
     - name: value
       type: string
       compType: input
+      title: 默认内容
       default: []
       description: 默认值
     - name: dynamic
       type: boolean
       compType: checkbox
       default: true
+      title: 是否支持动态添加
       description: 是否支持动态添加
     - name: minCount
       type: number
-      compType: number
+      title: 最小行数
+      compType: input
       description: 设置表格组件的最小行数
       default: 0
     - name: maxCount
       type: number
-      compType: number
+      title: 最大行数
+      compType: input
       default: Infinity
       description: 设置表格组件的最大行数
   slots: 

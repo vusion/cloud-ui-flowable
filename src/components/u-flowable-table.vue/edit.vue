@@ -13,8 +13,8 @@ export default {
             type: Boolean,
             default: true,
         },
-        minCount: { type: Number, default: 0 },
-        maxCount: { type: Number },
+        minCount: { type: Number, default: 1 },
+        maxCount: { type: Number, default: 10 },
     },
     data() {
         return {
@@ -38,9 +38,7 @@ export default {
                 return this.currentValue;
             }
 
-            // 如何设置了初始化的值，那么需要用初始化的值填充
-            const resultValue = value || [];
-            return resultValue;
+            return value || [];
         },
     },
     render(h) {
@@ -81,9 +79,11 @@ export default {
                             const formItem = {
                                 ...item,
                             };
+
                             formItem.componentOptions = {
                                 ...formItem.componentOptions,
                             };
+                            console.info('formItem abc', formItem);
                             formItem.componentOptions.propsData = {
                                 ...formItem.componentOptions.propsData,
                             };
@@ -118,15 +118,27 @@ export default {
                             if (self.$attrs.mode === 'readonly') {
                                 propsData.mode = 'readonly';
                             }
+
                             let baseName = propsData.name;
                             // 说明已经被重新设置了
                             if (baseName.includes('.')) {
                                 baseName = baseName.split('.').pop();
                             }
+
+                            // 纯展示组件
+                            if (formItem.componentOptions.tag === 'u-flowable-text') {
+                                const collect = formItem.componentOptions.propsData.collect;
+                                const text = collect[baseName];
+
+                                propsData.value = text;
+                            }
+                            console.info('propsData zxy value', propsData.value);
+
                             propsData.name = `${name}.${rowIndex}.${baseName}`;
                             if ('value' in propsData && cellItem[baseName] === null) {
                                 return formItem;
                             }
+
                             propsData.value = cellItem[baseName];
                             return formItem;
                         },
@@ -141,6 +153,17 @@ export default {
 <style module>
 .root {
    position: relative;
+   width: 580px;
+   margin-bottom: 40px;
+}
+
+/* 表格的初始化内容 */
+.root [class^=u-form-table-view] {
+    overflow: scroll;
+}
+
+.root [class^=u-form-table] {
+    width: initial;
 }
 
 .root [class^=u-form-table-view_last-column] {
@@ -152,6 +175,34 @@ export default {
     height: 20px;
     line-height: 20px;
     font-size: 24px;
+}
+
+.root [class^=u-form-table_add-button] {
+    margin-bottom: 40px;
+    position: absolute;
+}
+
+.item {
+    min-width: 200px;
+}
+
+/* 调整表格内部元素的样式 */
+.root [class^=u-form-table-view_row] [class^=u-flowable-string][vusion-style-root=true],
+.root [class^=u-form-table-view_row] [class^=u-flowable-select][vusion-style-root=true],
+.root [class^=u-form-table-view_row] [class^=u-flowable-user][vusion-style-root=true],
+.root [class^=u-form-table-view_row] [class^=u-flowable-department][vusion-style-root=true],
+.root [class^=u-form-table-view_row] [class^=u-flowable-rich-text][vusion-style-root=true],
+.root [class^=u-form-table-view_row] [class^=u-flowable-rich-text][vusion-style-root=true] {
+    min-width: 200px;
+}
+
+.root [class^=u-form-table-view_row] [class^=u-flowable-uploader][vusion-style-root=true] {
+    min-width: 100px;
+}
+
+.root [class^=u-form-table-view_row] [class^=u-flowable-date-time-range][vusion-style-root=true],
+.root [class^=u-form-table-view_row] [class^=u-flowable-address][vusion-style-root=true] {
+    min-width: 400px
 }
 
 </style>
