@@ -228,7 +228,7 @@
     "description": "是否支持动态添加"
   },
   "u-flowable-table/minCount": {
-    "type": "string",
+    "type": "number",
     "description": "设置表格组件的最小行数"
   },
   "u-flowable-table/maxCount": {
