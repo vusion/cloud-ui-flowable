@@ -2,6 +2,12 @@
 
 ``` html
 <u-flowable-table title="表格" :dynamic="true">
+     <u-flowable-string mode="edit" title="未命名1" name="value">
+     </u-flowable-string>
+     <u-flowable-string mode="edit" title="未命名2" name="value">
+     </u-flowable-string>
+     <u-flowable-string mode="edit" title="未命名3" name="value">
+     </u-flowable-string>
 </u-flowable-table>
 ```
 

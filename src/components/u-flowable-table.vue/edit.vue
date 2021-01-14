@@ -145,7 +145,8 @@ export default {
 .root {
    position: relative;
    width: 580px;
-   margin-bottom: 40px;
+   padding: 10px 0 50px 10px;
+   border: 1px solid var(--border-color-base);
 }
 
 /* 表格的初始化内容 */
@@ -189,8 +190,8 @@ export default {
 }
 
 /* 调整表格内部单选组件的样式 */
-.root [class^=u-form-table-view_row] [class^=u-flowable-radios][vusion-style-root=true]
-.u-radios {
+.root [class^=u-form-table-view_row] [class^=u-flowable-checkbox][vusion-style-root=true]
+[class^=u-checkboxes] {
     display: flex;
     flex-direction: column;
     min-width: 200px;
@@ -198,7 +199,7 @@ export default {
 
 /* 调整表格内部多选组件的样式 */
 .root [class^=u-form-table-view_row] [class^=u-flowable-radios][vusion-style-root=true]
-.u-radios {
+> [class^=u-radios] { /* 避免修改到 u-radios_radio 的样式 */
     display: flex;
     flex-direction: column;
     min-width: 200px;
@@ -206,18 +207,19 @@ export default {
 
 /* 调整表格内部图片组件的样式 */
 .root [class^=u-form-table-view_row] [class^=u-flowable-image-select][vusion-style-root=true]
-.u-checkboxes {
+[class^=u-checkboxes] {
     display: flex;
     flex-direction: column;
 }
 
 .root [class^=u-form-table-view_row] [class^=u-flowable-image-select][vusion-style-root=true]
-.u-flowable-image-select_edit_checkbox {
+[class^=u-flowable-image-select_edit_checkbox] {
     display: flex;
+    width: 100%;
 }
 
 .root [class^=u-form-table-view_row] [class^=u-flowable-image-select][vusion-style-root=true]
-.u-image {
+[class^=u-image] {
     width: 20px;
     height: 20px;
     margin-right: 5px;
