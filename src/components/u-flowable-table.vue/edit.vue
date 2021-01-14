@@ -125,15 +125,6 @@ export default {
                                 baseName = baseName.split('.').pop();
                             }
 
-                            // 纯展示组件
-                            if (formItem.componentOptions.tag === 'u-flowable-text') {
-                                const collect = formItem.componentOptions.propsData.collect;
-                                const text = collect[baseName];
-
-                                propsData.value = text;
-                            }
-                            console.info('propsData zxy value', propsData.value);
-
                             propsData.name = `${name}.${rowIndex}.${baseName}`;
                             if ('value' in propsData && cellItem[baseName] === null) {
                                 return formItem;
@@ -192,10 +183,47 @@ export default {
 .root [class^=u-form-table-view_row] [class^=u-flowable-user][vusion-style-root=true],
 .root [class^=u-form-table-view_row] [class^=u-flowable-department][vusion-style-root=true],
 .root [class^=u-form-table-view_row] [class^=u-flowable-rich-text][vusion-style-root=true],
+.root [class^=u-form-table-view_row] [class^=u-flowable-image-select][vusion-style-root=true],
 .root [class^=u-form-table-view_row] [class^=u-flowable-rich-text][vusion-style-root=true] {
     min-width: 200px;
 }
 
+/* 调整表格内部单选组件的样式 */
+.root [class^=u-form-table-view_row] [class^=u-flowable-radios][vusion-style-root=true]
+.u-radios {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+}
+
+/* 调整表格内部多选组件的样式 */
+.root [class^=u-form-table-view_row] [class^=u-flowable-radios][vusion-style-root=true]
+.u-radios {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+}
+
+/* 调整表格内部图片组件的样式 */
+.root [class^=u-form-table-view_row] [class^=u-flowable-image-select][vusion-style-root=true]
+.u-checkboxes {
+    display: flex;
+    flex-direction: column;
+}
+
+.root [class^=u-form-table-view_row] [class^=u-flowable-image-select][vusion-style-root=true]
+.u-flowable-image-select_edit_checkbox {
+    display: flex;
+}
+
+.root [class^=u-form-table-view_row] [class^=u-flowable-image-select][vusion-style-root=true]
+.u-image {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.root [class^=u-form-table-view_row] [class^=u-flowable-text][vusion-style-root=true],
 .root [class^=u-form-table-view_row] [class^=u-flowable-uploader][vusion-style-root=true] {
     min-width: 100px;
 }
