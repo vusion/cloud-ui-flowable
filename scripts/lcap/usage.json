@@ -927,7 +927,7 @@
             "Basic"
         ],
         "screenShot": "[]",
-        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader title=\\\"附件上传\\\" url=\\\"/api/v1/bucket/upload\\\" urlField=\\\"result\\\"></u-flowable-uploader>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader mode=\\\"readonly\\\" :value=\\\"[{ name: '文件1' }]\\\" ></u-flowable-uploader>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader mode=\\\"readonly\\\" :value=\\\"[{ name: '文件1' }]\\\"></u-flowable-uploader>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader mode=\\\"edit\\\" :value=\\\"[{ name: '文件1' }]\\\" ></u-flowable-uploader>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader title=\\\"附件上传\\\" url=\\\"/api/v1/bucket/upload\\\" :multiple=\\\"true\\\" urlField=\\\"result\\\"></u-flowable-uploader>\\n</template>\\n\"},{\"title\":\"只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader mode=\\\"readonly\\\" :value=\\\"[{ name: '文件1' }]\\\" ></u-flowable-uploader>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader mode=\\\"readonly\\\" :value=\\\"[{ name: '文件1' }]\\\"></u-flowable-uploader>\\n</template>\\n\"},{\"title\":\"变量支持-编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-uploader mode=\\\"edit\\\" :value=\\\"[{ name: '文件1' }]\\\" ></u-flowable-uploader>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "u-flowable-uploader",
             "title": "附件上传",
@@ -938,7 +938,7 @@
                 {
                     "title": "编辑模式",
                     "description": "",
-                    "code": "<template>\n<u-flowable-uploader title=\"附件上传\" url=\"/api/v1/bucket/upload\" urlField=\"result\"></u-flowable-uploader>\n</template>\n"
+                    "code": "<template>\n<u-flowable-uploader title=\"附件上传\" url=\"/api/v1/bucket/upload\" :multiple=\"true\" urlField=\"result\"></u-flowable-uploader>\n</template>\n"
                 },
                 {
                     "title": "只读模式",
@@ -1421,14 +1421,14 @@
     {
         "symbol": "u-flowable-table",
         "name": "表格",
-        "icon": "table",
+        "icon": "table-view",
         "depDescription": {},
         "description": "创建自定义列字段，支持其他字段的嵌入，填写者可通过添加行添加多条数据。",
         "labels": [
             "Advanced"
         ],
         "screenShot": "[]",
-        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table title=\\\"表格\\\">\\n</u-flowable-table>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"<!--\\n\",\"code\":\"<template>\\n<u-flowable-table\\n     mode=\\\"readonly\\\" >\\n    <u-form-table-view-column  title=\\\"用户名\\\">\\n        <u-flowable-string mode=\\\"readonly\\\" name=\\\"username\\\">\\n\\n        </u-flowable-string>\\n    </u-form-table-view-column>    \\n</u-flowable-table>\\n``` --></template>\\n\"}]",
+        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table title=\\\"表格\\\" :dynamic=\\\"true\\\">\\n</u-flowable-table>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"<!--\\n\",\"code\":\"<template>\\n<u-flowable-table\\n     mode=\\\"readonly\\\" >\\n    <u-form-table-view-column  title=\\\"用户名\\\">\\n        <u-flowable-string mode=\\\"readonly\\\" name=\\\"username\\\">\\n\\n        </u-flowable-string>\\n    </u-form-table-view-column>    \\n</u-flowable-table>\\n``` --></template>\\n\"}]",
         "jsonSchema": {
             "name": "u-flowable-table",
             "title": "表格",
@@ -1439,7 +1439,7 @@
                 {
                     "title": "编辑模式",
                     "description": "",
-                    "code": "<template>\n<u-flowable-table title=\"表格\">\n</u-flowable-table>\n</template>\n"
+                    "code": "<template>\n<u-flowable-table title=\"表格\" :dynamic=\"true\">\n</u-flowable-table>\n</template>\n"
                 },
                 {
                     "title": "变量支持-只读模式",
@@ -1458,18 +1458,21 @@
                 {
                     "name": "dynamic",
                     "type": "boolean",
+                    "compType": "checkbox",
                     "default": true,
                     "description": "是否支持动态添加"
                 },
                 {
                     "name": "minCount",
-                    "type": "string",
+                    "type": "number",
+                    "compType": "number",
                     "description": "设置表格组件的最小行数",
                     "default": 0
                 },
                 {
                     "name": "maxCount",
                     "type": "number",
+                    "compType": "number",
                     "default": "Infinity",
                     "description": "设置表格组件的最大行数"
                 }

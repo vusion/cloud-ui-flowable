@@ -1,7 +1,7 @@
 ### 编辑模式
 
 ``` html
-<u-flowable-table title="表格">
+<u-flowable-table title="表格" :dynamic="true">
 </u-flowable-table>
 ```
 
