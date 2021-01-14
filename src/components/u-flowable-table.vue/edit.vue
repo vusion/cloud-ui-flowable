@@ -47,9 +47,12 @@ export default {
         const children = this.$slots.default || [];
         const name = this.$attrs.name;
         const nameList = children.map((item) => {
+            if (!item.tag) {
+                return undefined;
+            }
             const name = item.componentOptions.propsData.name;
             return name.includes('.') ? name.split('.').pop() : name;
-        });
+        }).filter((i) => i);
         const self = this;
         return h('div', {
             class: this.$style.root,
@@ -69,7 +72,7 @@ export default {
                     },
                 },
             }, children.map((item) =>
-                h('u-form-table-view-column', {
+                item.tag && h('u-form-table-view-column', {
                     props: {
                         title: item.data.attrs.title,
                     },
@@ -129,7 +132,7 @@ export default {
                         },
                     },
                 }),
-            )),
+            ).filter((i) => i)),
         ]);
     },
 };
