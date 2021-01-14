@@ -1452,9 +1452,15 @@
             "attrs": [
                 {
                     "name": "value",
+<<<<<<< HEAD
                     "type": "array",
                     "compType": "editMode",
                     "editMode": true,
+=======
+                    "type": "string",
+                    "compType": "input",
+                    "title": "默认内容",
+>>>>>>> fix: table style
                     "default": [],
                     "description": "默认值"
                 },
@@ -1463,12 +1469,14 @@
                     "type": "boolean",
                     "compType": "checkbox",
                     "default": true,
+                    "title": "是否支持动态添加",
                     "description": "是否支持动态添加"
                 },
                 {
                     "name": "minCount",
                     "type": "number",
-                    "compType": "number",
+                    "title": "最小行数",
+                    "compType": "input",
                     "description": "设置表格组件的最小行数",
                     "default": 1,
                     "compConfig": {
@@ -1487,6 +1495,7 @@
                 {
                     "name": "maxCount",
                     "type": "number",
+<<<<<<< HEAD
                     "compType": "number",
                     "default": 99,
                     "description": "设置表格组件的最大行数",
@@ -1512,6 +1521,12 @@
                     "title": "这是个必填项",
                     "default": false,
                     "description": "选择必填后，填写者不填写将无法提交表单"
+=======
+                    "title": "最大行数",
+                    "compType": "input",
+                    "default": "Infinity",
+                    "description": "设置表格组件的最大行数"
+>>>>>>> fix: table style
                 }
             ],
             "slots": [
