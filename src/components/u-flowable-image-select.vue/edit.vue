@@ -29,7 +29,7 @@ export default {
         value: Array,
         list: Array,
         min: { type: Number, default: 0 },
-        max: { type: Number, default: Infinity },
+        max: { type: Number, default: 99 },
     },
     data() {
         return {

@@ -13,8 +13,8 @@ export default {
             type: Boolean,
             default: true,
         },
-        minCount: { type: Number, default: 0 },
-        maxCount: { type: Number },
+        minCount: { type: Number, default: 1 },
+        maxCount: { type: Number, default: 99 },
     },
     data() {
         return {

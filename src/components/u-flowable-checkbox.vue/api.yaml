@@ -20,6 +20,7 @@
     - name: max
       title: 选中最大项数
       compType: number
+      default: 99
       compConfig:
         attrs: 
           - name: precision

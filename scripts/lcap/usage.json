@@ -44,7 +44,7 @@
                     "type": "string",
                     "compType": "richtext",
                     "title": "内容",
-                    "description": "请输入描述文。点击视图-全屏，可全屏编辑展示"
+                    "description": "请输入描述文字。点击视图-全屏，可全屏编辑展示"
                 }
             ],
             "slots": false,
@@ -847,6 +847,7 @@
                     "name": "max",
                     "title": "选中最大项数",
                     "compType": "number",
+                    "default": 99,
                     "compConfig": {
                         "attrs": [
                             {
@@ -1155,6 +1156,7 @@
                     "name": "max",
                     "title": "选中最大项数",
                     "compType": "number",
+                    "default": 99,
                     "compConfig": {
                         "attrs": [
                             {
