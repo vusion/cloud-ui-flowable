@@ -526,11 +526,11 @@
                     "compConfig": {
                         "attrs": [
                             {
-                                "name": ":precision",
+                                "name": "precision",
                                 "value": 1
                             },
                             {
-                                "name": ":min",
+                                "name": "min",
                                 "value": 0
                             }
                         ]
@@ -831,11 +831,11 @@
                     "compConfig": {
                         "attrs": [
                             {
-                                "name": ":precision",
+                                "name": "precision",
                                 "value": 1
                             },
                             {
-                                "name": ":min",
+                                "name": "min",
                                 "value": 0
                             }
                         ]
@@ -850,12 +850,12 @@
                     "compConfig": {
                         "attrs": [
                             {
-                                "name": ":precision",
+                                "name": "precision",
                                 "value": 1
                             },
                             {
-                                "name": ":min",
-                                "value": 0
+                                "name": "min",
+                                "value": 1
                             }
                         ]
                     },
@@ -1139,11 +1139,11 @@
                     "compConfig": {
                         "attrs": [
                             {
-                                "name": ":precision",
+                                "name": "precision",
                                 "value": 1
                             },
                             {
-                                "name": ":min",
+                                "name": "min",
                                 "value": 0
                             }
                         ]
@@ -1158,12 +1158,12 @@
                     "compConfig": {
                         "attrs": [
                             {
-                                "name": ":precision",
+                                "name": "precision",
                                 "value": 1
                             },
                             {
-                                "name": ":min",
-                                "value": 0
+                                "name": "min",
+                                "value": 1
                             }
                         ]
                     },
@@ -1428,7 +1428,7 @@
             "Advanced"
         ],
         "screenShot": "[]",
-        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table title=\\\"表格\\\" :dynamic=\\\"true\\\">\\n</u-flowable-table>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"<!--\\n\",\"code\":\"<template>\\n<u-flowable-table\\n     mode=\\\"readonly\\\" >\\n    <u-form-table-view-column  title=\\\"用户名\\\">\\n        <u-flowable-string mode=\\\"readonly\\\" name=\\\"username\\\">\\n\\n        </u-flowable-string>\\n    </u-form-table-view-column>    \\n</u-flowable-table>\\n``` --></template>\\n\"}]",
+        "blocks": "[{\"title\":\"编辑模式\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-table title=\\\"表格\\\" :dynamic=\\\"true\\\" :value=\\\"[]\\\">\\n</u-flowable-table>\\n</template>\\n\"},{\"title\":\"变量支持-只读模式\",\"description\":\"<!--\\n\",\"code\":\"<template>\\n<u-flowable-table\\n     mode=\\\"readonly\\\" >\\n    <u-form-table-view-column  title=\\\"用户名\\\">\\n        <u-flowable-string mode=\\\"readonly\\\" name=\\\"username\\\">\\n\\n        </u-flowable-string>\\n    </u-form-table-view-column>    \\n</u-flowable-table>\\n``` --></template>\\n\"}]",
         "jsonSchema": {
             "name": "u-flowable-table",
             "title": "表格",
@@ -1439,7 +1439,7 @@
                 {
                     "title": "编辑模式",
                     "description": "",
-                    "code": "<template>\n<u-flowable-table title=\"表格\" :dynamic=\"true\">\n</u-flowable-table>\n</template>\n"
+                    "code": "<template>\n<u-flowable-table title=\"表格\" :dynamic=\"true\" :value=\"[]\">\n</u-flowable-table>\n</template>\n"
                 },
                 {
                     "title": "变量支持-只读模式",
@@ -1450,8 +1450,9 @@
             "attrs": [
                 {
                     "name": "value",
-                    "type": "string",
-                    "compType": "input",
+                    "type": "array",
+                    "compType": "editMode",
+                    "editMode": true,
                     "default": [],
                     "description": "默认值"
                 },
@@ -1467,14 +1468,48 @@
                     "type": "number",
                     "compType": "number",
                     "description": "设置表格组件的最小行数",
-                    "default": 0
+                    "default": 1,
+                    "compConfig": {
+                        "attrs": [
+                            {
+                                "name": "precision",
+                                "value": 1
+                            },
+                            {
+                                "name": "min",
+                                "value": 1
+                            }
+                        ]
+                    }
                 },
                 {
                     "name": "maxCount",
                     "type": "number",
                     "compType": "number",
-                    "default": "Infinity",
-                    "description": "设置表格组件的最大行数"
+                    "default": 99,
+                    "description": "设置表格组件的最大行数",
+                    "compConfig": {
+                        "attrs": [
+                            {
+                                "name": "precision",
+                                "value": 1
+                            },
+                            {
+                                "name": "min",
+                                "value": 1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "required",
+                    "type": "boolean",
+                    "compType": "checkbox",
+                    "group": "validate",
+                    "message": "请输入内容",
+                    "title": "这是个必填项",
+                    "default": false,
+                    "description": "选择必填后，填写者不填写将无法提交表单"
                 }
             ],
             "slots": [
