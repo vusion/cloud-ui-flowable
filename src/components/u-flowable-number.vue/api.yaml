@@ -15,9 +15,9 @@
       compType: pointBox
       compConfig:
         attrs: 
-          - name: :precision
+          - name: precision
             value: 1
-          - name: :min
+          - name: min
             value: 0
       title: 保留小数位
       attrSwitch: false

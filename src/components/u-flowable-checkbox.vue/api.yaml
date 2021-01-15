@@ -11,21 +11,22 @@
       compType: number
       compConfig:
         attrs: 
-          - name: :precision
+          - name: precision
             value: 1
-          - name: :min
+          - name: min
             value: 0
       default: 0
       description: 可以勾选多选框的最小数量
     - name: max
       title: 选中最大项数
       compType: number
+      default: 99
       compConfig:
         attrs: 
-          - name: :precision
+          - name: precision
             value: 1
-          - name: :min
-            value: 0
+          - name: min
+            value: 1
       type: number
       description: 可以勾选多选框的最大数量
     - name: list

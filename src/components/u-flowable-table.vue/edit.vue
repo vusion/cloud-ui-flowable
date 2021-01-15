@@ -13,8 +13,8 @@ export default {
             type: Boolean,
             default: true,
         },
-        minCount: { type: Number, default: 0 },
-        maxCount: { type: Number },
+        minCount: { type: Number, default: 1 },
+        maxCount: { type: Number, default: 99 },
     },
     data() {
         return {
@@ -124,6 +124,10 @@ export default {
                                 baseName = baseName.split('.').pop();
                             }
                             propsData.name = `${name}.${rowIndex}.${baseName}`;
+                            // 纯展示组件，不需要被重新赋值
+                            if (formItem.componentOptions.tag === 'u-flowable-text') {
+                                return formItem;
+                            }
                             if ('value' in propsData && cellItem[baseName] === null) {
                                 return formItem;
                             }

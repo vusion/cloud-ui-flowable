@@ -6,8 +6,9 @@
   description: 创建自定义列字段，支持其他字段的嵌入，填写者可通过添加行添加多条数据。
   attrs:
     - name: value
-      type: string
-      compType: input
+      type: array
+      compType: editMode
+      editMode: true
       default: []
       description: 默认值
     - name: dynamic
@@ -19,12 +20,32 @@
       type: number
       compType: number
       description: 设置表格组件的最小行数
-      default: 0
+      default: 1
+      compConfig:
+        attrs: 
+          - name: precision
+            value: 1
+          - name: min
+            value: 1
     - name: maxCount
       type: number
       compType: number
-      default: Infinity
+      default: 99
       description: 设置表格组件的最大行数
+      compConfig:
+        attrs: 
+          - name: precision
+            value: 1
+          - name: min
+            value: 1
+    - name: required
+      type: boolean
+      compType: checkbox
+      group: validate
+      message: 请输入内容
+      title: 这是个必填项
+      default: false
+      description: 选择必填后，填写者不填写将无法提交表单
   slots: 
     - name: default
       title: 默认
