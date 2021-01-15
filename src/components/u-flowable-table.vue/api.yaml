@@ -25,20 +25,21 @@
       default: 1
       compConfig:
         attrs: 
-          - name: precision
+          - name: :precision
             value: 1
-          - name: min
+          - name: :min
             value: 1
     - name: maxCount
       type: number
       compType: number
       default: 99
+      title: 最大行数
       description: 设置表格组件的最大行数
       compConfig:
         attrs: 
-          - name: precision
+          - name: :precision
             value: 1
-          - name: min
+          - name: :min
             value: 1
     - name: required
       type: boolean

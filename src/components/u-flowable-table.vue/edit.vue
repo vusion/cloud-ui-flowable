@@ -177,6 +177,7 @@ export default {
 .root [class^=u-form-table] thead tr th {
     padding: 0 10px;
     font-weight: 500;
+    min-width: 200px;
 }
 
 .root [class^=u-form-table] tbody tr:not(:last-child) {
@@ -227,6 +228,11 @@ export default {
 .root [class^=u-form-table-view_row] [class^=u-flowable-image-select][vusion-style-root=true],
 .root [class^=u-form-table-view_row] [class^=u-flowable-rich-text][vusion-style-root=true] {
     min-width: 200px;
+}
+
+/* 调整文案过长的情况 */
+.root [class^=u-form-table-view_row] [class^=u-flowable-rich-text][vusion-style-root=true] {
+    word-break: break-word;
 }
 
 /* 调整表格内部单选组件的样式 */
