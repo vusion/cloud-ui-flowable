@@ -19,7 +19,10 @@ export default {
 <style module>
 .root {
    position: relative;
+   /* 处理文本溢出的问题 */
+   word-break: break-word;
 }
+
 .root img {
     max-width: 100%!important;
     height: auto!important;
