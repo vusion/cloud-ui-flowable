@@ -173,6 +173,10 @@ export default {
    padding: 10px;
 }
 
+.root tbody tr {
+   border-bottom: 1px solid var(--border-color-base);
+}
+
 .root [class^=u-form-table-view_row] td[class^=u-form-table-view_row_last-column] {
    display: none;
 }
