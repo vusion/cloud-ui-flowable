@@ -73,7 +73,6 @@ export default {
                 item.tag && h('u-form-table-view-column', {
                     props: {
                         title: item.data.attrs.title,
-                        valign: 'top',
                     },
                     scopedSlots: {
                         cell({ rowIndex, item: cellItem }) {
