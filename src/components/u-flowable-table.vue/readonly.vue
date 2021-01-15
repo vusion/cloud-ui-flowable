@@ -173,7 +173,7 @@ export default {
    padding: 10px;
 }
 
-.root tbody tr {
+.root tbody tr:not(:last-child) {
    border-bottom: 1px solid var(--border-color-base);
 }
 
