@@ -160,7 +160,8 @@ export default {
 
 /* 表格的初始化内容 */
 .root [class^=u-form-table-view] {
-    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 .root [class^=u-form-table] {
@@ -169,6 +170,7 @@ export default {
 
 .root [class^=u-form-table-view_row] td {
    min-width: 200px;
+   padding: 10px;
 }
 
 .root [class^=u-form-table-view_row] td[class^=u-form-table-view_row_last-column] {
