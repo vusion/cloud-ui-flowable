@@ -90,12 +90,31 @@ export default function (component) {
     component.methods = component.methods || {};
     const beforeDestroy = component.beforeDestroy;
     component.beforeDestroy = function (...args) {
-        this.setCorrectValue(undefined);
+        this.clearValue();
         if (beforeDestroy) {
             beforeDestroy.bind(this).call(...args);
         }
     };
     Object.assign(component.methods, {
+        clearValue() {
+            if (this.collect && this.name) {
+                const nameList = this.name.split('.');
+                let root = this.collect;
+                // 临时解决方案
+                nameList.every((name, index) => {
+                    if (index === nameList.length - 1) {
+                        this.$delete(root, name);
+                    } else {
+                        if (root[name]) {
+                            root = root[name];
+                        } else {
+                            return false;
+                        }
+                    }
+                    return true;
+                });
+            }
+        },
         setCorrectValue(value) {
             if (this.collect && this.name) {
                 const nameList = this.name.split('.');
