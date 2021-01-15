@@ -14,7 +14,7 @@ export default {
             default: true,
         },
         minCount: { type: Number, default: 1 },
-        maxCount: { type: Number, default: 99 },
+        maxCount: { type: Number, default: 10 },
     },
     data() {
         return {
@@ -73,7 +73,6 @@ export default {
                 item.tag && h('u-form-table-view-column', {
                     props: {
                         title: item.data.attrs.title,
-                        valign: 'top',
                     },
                     scopedSlots: {
                         cell({ rowIndex, item: cellItem }) {
@@ -84,12 +83,14 @@ export default {
                             formItem.componentOptions = {
                                 ...formItem.componentOptions,
                             };
+                            console.info('formItem abc', formItem);
                             formItem.componentOptions.propsData = {
                                 ...formItem.componentOptions.propsData,
                             };
                             const listeners = formItem.componentOptions.listeners = {
                                 ...formItem.componentOptions.listeners,
                             };
+                            console.info(listeners);
                             const _error = listeners.error;
                             listeners.error = (error) => {
                                 self.error = error;
@@ -130,10 +131,6 @@ export default {
                             }
 
                             propsData.name = `${name}.${rowIndex}.${baseName}`;
-                            // 纯展示组件，不需要被重新赋值
-                            if (formItem.componentOptions.tag === 'u-flowable-text') {
-                                return formItem;
-                            }
                             if ('value' in propsData && cellItem[baseName] === null) {
                                 return formItem;
                             }
@@ -153,20 +150,7 @@ export default {
 .root {
    position: relative;
    width: 580px;
-   padding-bottom: 20px;
-}
-
-/* 只选择表格的最外层的元素样式 */
-.root > [class^=u-form-table-view] {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    border: var(--button-border-width) solid var(--button-border-color);
-    border-radius: var(--button-border-radius);
-}
-
-.root [class^=u-form-table] {
-    width: initial;
-    position: initial;
+   border: 1px solid var(--border-color-base);
 }
 
 /* 表头背景色 */
@@ -174,105 +158,32 @@ export default {
     background: #f4f6f9;
 }
 
-.root [class^=u-form-table] thead tr th {
-    padding: 0 10px;
-    font-weight: 500;
+/* 表格的初始化内容 */
+.root [class^=u-form-table-view] {
+    overflow: scroll;
 }
 
-.root [class^=u-form-table] tbody tr:not(:last-child) {
-    border-bottom: var(--button-border-width) solid var(--button-border-color);
+.root [class^=u-form-table] {
+    width: initial;
 }
 
-.root [class^=u-form-table-view_last-column] {
-    width: 5px;
-    padding: 0;
+.root [class^=u-form-table-view_row] td {
+   min-width: 200px;
 }
 
-.root [class^=u-form-table_remove-button] {
-    height: 20px;
-    line-height: 20px;
-    font-size: 24px;
+.root [class^=u-form-table-view_row] td[class^=u-form-table-view_row_last-column] {
+   display: none;
 }
 
-.root [class^=u-form-table_add-button] {
-    margin-bottom: 40px;
-    position: absolute;
-    width: 100%;
+.root [class^=u-form-table-view_row] td [class^=u-flowable-image-select_readonly_checkbox] {
+   display: flex;
+   width: initial;
 }
 
-.item {
-    min-width: 200px;
-}
-
-/* 表格元素顶对齐 */
-.root tbody tr td {
-    vertical-align: top;
-    padding: 10px;
-}
-
-.root tbody tr td:last-child {
-    position: absolute;
-    padding-right: 0;
-    right: 0;
-    margin-right: -40px;
-    height: 100%;
-}
-
-/* 调整表格内部元素的样式 */
-.root [class^=u-form-table-view_row] [class^=u-flowable-string][vusion-style-root=true],
-.root [class^=u-form-table-view_row] [class^=u-flowable-select][vusion-style-root=true],
-.root [class^=u-form-table-view_row] [class^=u-flowable-user][vusion-style-root=true],
-.root [class^=u-form-table-view_row] [class^=u-flowable-department][vusion-style-root=true],
-.root [class^=u-form-table-view_row] [class^=u-flowable-rich-text][vusion-style-root=true],
-.root [class^=u-form-table-view_row] [class^=u-flowable-image-select][vusion-style-root=true],
-.root [class^=u-form-table-view_row] [class^=u-flowable-rich-text][vusion-style-root=true] {
-    min-width: 200px;
-}
-
-/* 调整表格内部单选组件的样式 */
-.root [class^=u-form-table-view_row] [class^=u-flowable-checkbox][vusion-style-root=true]
-[class^=u-checkboxes] {
-    display: flex;
-    flex-direction: column;
-    min-width: 200px;
-}
-
-/* 调整表格内部多选组件的样式 */
-.root [class^=u-form-table-view_row] [class^=u-flowable-radios][vusion-style-root=true]
-> [class^=u-radios] { /* 避免修改到 u-radios_radio 的样式 */
-    display: flex;
-    flex-direction: column;
-    min-width: 200px;
-}
-
-/* 调整表格内部图片组件的样式 */
-.root [class^=u-form-table-view_row] [class^=u-flowable-image-select][vusion-style-root=true]
-[class^=u-checkboxes] {
-    display: flex;
-    flex-direction: column;
-}
-
-.root [class^=u-form-table-view_row] [class^=u-flowable-image-select][vusion-style-root=true]
-[class^=u-flowable-image-select_edit_checkbox] {
-    display: flex;
-    width: 100%;
-}
-
-.root [class^=u-form-table-view_row] [class^=u-flowable-image-select][vusion-style-root=true]
-[class^=u-image] {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-}
-
-.root [class^=u-form-table-view_row] [class^=u-flowable-text][vusion-style-root=true],
-.root [class^=u-form-table-view_row] [class^=u-flowable-uploader][vusion-style-root=true] {
-    min-width: 100px;
-}
-
-.root [class^=u-form-table-view_row] [class^=u-flowable-date-time-range][vusion-style-root=true],
-.root [class^=u-form-table-view_row] [class^=u-flowable-address][vusion-style-root=true] {
-    min-width: 400px
+.root [class^=u-form-table-view_row] td [class^=u-flowable-image-select_readonly_checkbox] [class^=u-image] {
+   width: 20px;
+   height: 20px;
+   margin-right: 10px;
 }
 
 </style>
