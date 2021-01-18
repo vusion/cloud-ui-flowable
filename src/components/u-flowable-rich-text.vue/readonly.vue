@@ -18,7 +18,9 @@ export default {
 </script>
 
 <style module>
-.root {}
+.root {
+    word-break: break-word;
+}
 .root img {
     max-width: 100%!important;
     height: auto!important;

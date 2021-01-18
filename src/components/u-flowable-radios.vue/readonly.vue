@@ -1,5 +1,5 @@
 <template>
-    <u-text :text="value"></u-text>
+    <u-text :text="value" :class="$style.root"></u-text>
 </template>
 
 <script>
@@ -21,6 +21,8 @@ export default {
 </script>
 
 <style module>
-.root {}
+.root {
+    word-break: break-word;
+}
 
 </style>

@@ -143,6 +143,7 @@ export default UFlowableForm;
 }
 .head {
     margin-bottom: 12px;
+    word-break: break-word;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
     background: #fff;
     border-radius: 10px;
@@ -154,6 +155,7 @@ export default UFlowableForm;
 }
 .tip {
     padding: 0 20px;
+    word-break: break-word;
     overflow: hidden;
 }
 .content {

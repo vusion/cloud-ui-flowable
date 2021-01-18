@@ -50,6 +50,7 @@ export default {
 <style module>
 .root {
    position: relative;
+    word-break: break-word;
 }
 .label {
     display: inline-block;
