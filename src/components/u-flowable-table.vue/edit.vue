@@ -158,7 +158,7 @@ export default {
 .root[mode='edit'] {
    position: relative;
    width: 580px;
-   padding-bottom: 20px;
+   padding-bottom: 40px;
 }
 
 /* 只选择表格的最外层的元素样式 */
