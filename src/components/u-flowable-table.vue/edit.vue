@@ -224,8 +224,12 @@ export default {
     position: absolute;
     padding-right: 0;
     right: 0;
-    margin-right: -40px;
+    /* 避免删除按钮的位置遮挡 */
+    margin-right: -30px;
     height: 100%;
+    width: 20px;
+    text-align: right;
+    min-width: initial;
 }
 
 /* 调整表格内部元素的样式 */
