@@ -17,4 +17,7 @@ export default {
 <style module>
 .root {}
 
+.root [class^=u-text] {
+    word-break: break-word;
+}
 </style>
