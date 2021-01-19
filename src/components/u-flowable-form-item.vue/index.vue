@@ -98,19 +98,19 @@ export default UFlowableFormItem;
 </script>
 <style module>
 .root {
-    display: flex;
+    position: relative;
     padding: 12px;
 }
 
 .box {
-   flex: 1;
+   padding-left: 130px;
 }
 
 .title {
-    margin-right: 10px;
-    width: 120px;
     font-weight: 500;
     width: 120px;
+    position: absolute;
+    left: 10px;
 }
 .tip {
     color: #b4b4bc;

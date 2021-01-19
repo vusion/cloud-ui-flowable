@@ -1,7 +1,7 @@
 <template>
 <div :class="$style.root">
     <u-checkboxes v-model="currentValue" :min="min" :max="max">
-        <u-checkbox v-for="(item, index) in list" :key="index" :label="item.value">{{ item.text }}</u-checkbox>
+        <u-checkbox v-for="(item, index) in list" :key="index" :value="isSelected(item)" :label="item.value">{{ item.text }}</u-checkbox>
     </u-checkboxes>
 </div>
 </template>
@@ -29,7 +29,7 @@ export default {
     watch: {
         currentValue: {
             handler(currentValue) {
-                this.$emit('input', currentValue);
+                this.$emit('input', currentValue || []);
             },
             immediate: true,
         },
@@ -38,6 +38,9 @@ export default {
         },
     },
     methods: {
+        isSelected(item) {
+            return (this.currentValue || []).includes(item.value);
+        },
         splitValue(value) {
             if (this.currentValue?.join(',') === value) {
                 return this.currentValue;

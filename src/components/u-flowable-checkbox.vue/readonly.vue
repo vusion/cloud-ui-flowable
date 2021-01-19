@@ -21,6 +21,9 @@ export default {
         value(value) {
             this.selectedList = this.getSelectedList(value);
         },
+        list() {
+            this.selectedList = this.getSelectedList(this.value);
+        },
     },
     methods: {
         getSelectedList(value) {
@@ -36,7 +39,7 @@ export default {
             } else {
                 valueArray = (value || '').split(',');
             }
-            return valueArray.map((valueItem) => this.list.find((item) => item.value === valueItem)).map((item) => item.text);
+            return valueArray.map((valueItem) => (this.list.find((item) => item.value === valueItem)) || []).map((item) => item.text);
         },
     },
 };

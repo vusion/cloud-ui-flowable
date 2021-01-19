@@ -1,11 +1,12 @@
 <script>
-import { UFormTableView, UFormTableViewColumn } from 'cloud-ui.vusion/src/components/u-form-table-view.vue';
+import { UFormTable, UFormTableAddButton, UFormTableRemoveButton } from 'cloud-ui.vusion/src/components/u-form-table.vue';
 
 export default {
     name: 'u-flowable-table',
     components: {
-        UFormTableView,
-        UFormTableViewColumn,
+        UFormTable,
+        UFormTableAddButton,
+        UFormTableRemoveButton,
     },
     props: {
         value: Array,
@@ -19,6 +20,7 @@ export default {
     data() {
         return {
             currentValue: this.formatValue(this.value),
+            errorList: {},
         };
     },
     watch: {
@@ -27,6 +29,16 @@ export default {
                 this.$emit('input', currentValue);
             },
             immediate: true,
+        },
+        errorList: {
+            handler(errorList) {
+                const values = Object.values(errorList).filter((i) => i);
+                if (values.length) {
+                    this.$emit('error', values[0]);
+                }
+            },
+            immediate: true,
+            deep: true,
         },
         value(value) {
             this.currentValue = this.formatValue(value);
@@ -52,98 +64,144 @@ export default {
             return name.includes('.') ? name.split('.').pop() : name;
         }).filter((i) => i);
         const self = this;
+        const dynamic = this.dynamic && (this.$attrs.mode !== 'readonly');
+        const minCount = this.minCount;
+        const defaultItem = {};
+        const getDefaultItem = () => JSON.parse(JSON.stringify(defaultItem));
+        this.getDefaultItem = getDefaultItem;
+        children.forEach((child) => {
+            defaultItem[child.componentOptions.propsData.name] = child.componentOptions.propsData.value || null;
+        });
         return h('div', {
             class: [this.$style.root, children.length <= 2 && this.$style.short],
 
         }, [
-            h('u-form-table-view', {
-                props: {
-                    data: this.currentValue,
-                    dynamic: this.dynamic && (this.$attrs.mode !== 'readonly'),
-                    minCount: this.minCount,
-                    maxCount: this.maxCount,
-                    getDefaultItem: () => {
-                        const map = {};
-                        nameList.forEach((key) => {
-                            map[key] = null;
-                        });
-                        return map;
+            h('div', {
+                class: this.$style.table,
+            }, [
+                h('u-form-table',
+                  [
+                      h('thead', [
+                          h('tr', [
+                              ...children.map((child) => h('th', {
+                                  style: {
+                                      width: `calc(100% / ${children.length})`,
+                                  },
+                              }, [child.data.attrs.title])),
+                              dynamic ? h('th', {
+                                  class: this.$style['last-column'],
+                                  props: {
+                                      dynamic,
+                                  },
+                              }) : undefined,
+                          ]),
+                      ]),
+                      h('tbody', [
+                          ...(this.currentValue || []).map((item, rowIndex) => h('tr', {
+                              class: this.$style.row,
+                          }, [
+                              ...children.map((child, cellIndex) => {
+                                  const item = child;
+                                  const formItem = {
+                                      ...item,
+                                  };
+
+                                  formItem.componentOptions = {
+                                      ...formItem.componentOptions,
+                                  };
+                                  formItem.componentOptions.propsData = {
+                                      ...formItem.componentOptions.propsData,
+                                  };
+                                  const listeners = formItem.componentOptions.listeners = {
+                                      ...formItem.componentOptions.listeners,
+                                  };
+                                  const _error = listeners.error;
+                                  listeners.error = (error) => {
+                                      if (error && error.message) {
+                                          self.$set(self.errorList, `${rowIndex}.${cellIndex}`, {
+                                              message: `${item.data.attrs.title} ：${error?.message}`,
+                                              type: error.type,
+                                          });
+                                      }
+                                      _error && _error.bind(self, error)();
+                                  };
+                                  const _input = listeners.input;
+                                  listeners.input = (input) => {
+                                      self.$emit('input', self.currentValue);
+                                      self.$set(self.errorList, `${rowIndex}.${cellIndex}`, null);
+                                      _input && _input.bind(self, input)();
+                                  };
+                                  const _dirty = listeners.dirty;
+                                  listeners.dirty = (dirty) => {
+                                      console.info('dirty', dirty);
+                                      self.dirty = dirty;
+                                      _dirty && _dirty.bind(self, dirty)();
+                                  };
+                                  const _touched = listeners.touched;
+                                  listeners.touched = (touched) => {
+                                      console.info('touched', touched);
+                                      self.touched = touched;
+                                      _touched && _touched.bind(self, touched)();
+                                  };
+                                  const propsData = formItem.componentOptions.propsData;
+                                  formItem.componentOptions.propsData = formItem.componentOptions.propsData || {};
+                                  if (self.$attrs.mode === 'readonly') {
+                                      propsData.mode = 'readonly';
+                                  }
+
+                                  let baseName = propsData.name;
+                                  // 说明已经被重新设置了
+                                  if (baseName.includes('.')) {
+                                      baseName = baseName.split('.').pop();
+                                  }
+
+                                  propsData.name = `${name}.${rowIndex}.${baseName}`;
+                                  if (propsData.mode !== 'readonly') {
+                                      propsData.value = this.currentValue[rowIndex][baseName];
+                                  }
+
+                                  return h('td', {
+                                      class: this.$style.cell,
+                                  }, [formItem]);
+                              }),
+                              dynamic ? h('td', [
+                                  h('u-form-table-remove-button', {
+                                      on: {
+                                          click: () => {
+                                              const index = rowIndex;
+                                              if ((this.currentValue || []).length <= this.minCount)
+                                                  return;
+                                              this.currentValue.splice(index, 1);
+                                              Object.keys(self.errorList).forEach((key) => {
+                                                  if (key.startsWith(`${index}.`)) {
+                                                      self.$delete(self.errorList, key);
+                                                  }
+                                              });
+                                          },
+                                      },
+                                      props: {
+                                          disabled: this.currentValue.length <= minCount,
+                                      },
+                                  }),
+                              ]) : undefined,
+                          ])),
+                      ]),
+                  ]),
+            ]),
+            h('u-form-table-add-button', {
+                class: this.$style['add-button'],
+                on: {
+                    click: () => {
+                        if (this.currentValue.length >= this.maxCount)
+                            return;
+                        const item = this.getDefaultItem();
+                        this.currentValue.push(item);
                     },
                 },
-            }, children.map((item) =>
-                item.tag && h('u-form-table-view-column', {
-                    props: {
-                        title: item.data.attrs.title,
-                    },
-                    scopedSlots: {
-                        cell({ rowIndex, item: cellItem }) {
-                            const formItem = {
-                                ...item,
-                            };
-
-                            formItem.componentOptions = {
-                                ...formItem.componentOptions,
-                            };
-                            formItem.componentOptions.propsData = {
-                                ...formItem.componentOptions.propsData,
-                            };
-                            const listeners = formItem.componentOptions.listeners = {
-                                ...formItem.componentOptions.listeners,
-                            };
-                            const _error = listeners.error;
-                            listeners.error = (error) => {
-                                self.error = error;
-                                if (error?.message) {
-                                    error.message = `${item.data.attrs.title} ：${error?.message}`;
-                                }
-
-                                self.$emit('error', error);
-                                _error && _error.bind(self, error)();
-                            };
-                            const _input = listeners.input;
-                            listeners.input = (input) => {
-                                self.$emit('input', self.currentValue);
-                                _input && _input.bind(self, input)();
-                            };
-                            const _dirty = listeners.dirty;
-                            listeners.dirty = (dirty) => {
-                                console.info('dirty', dirty);
-                                self.dirty = dirty;
-                                _dirty && _dirty.bind(self, dirty)();
-                            };
-                            const _touched = listeners.touched;
-                            listeners.touched = (touched) => {
-                                console.info('touched', touched);
-                                self.touched = touched;
-                                _touched && _touched.bind(self, touched)();
-                            };
-                            const propsData = formItem.componentOptions.propsData;
-                            formItem.componentOptions.propsData = formItem.componentOptions.propsData || {};
-                            if (self.$attrs.mode === 'readonly') {
-                                propsData.mode = 'readonly';
-                            }
-
-                            let baseName = propsData.name;
-                            // 说明已经被重新设置了
-                            if (baseName.includes('.')) {
-                                baseName = baseName.split('.').pop();
-                            }
-
-                            propsData.name = `${name}.${rowIndex}.${baseName}`;
-                            // 纯展示组件，不需要被重新赋值
-                            if (formItem.componentOptions.tag === 'u-flowable-text') {
-                                return formItem;
-                            }
-                            if ('value' in propsData && cellItem[baseName] === null) {
-                                return formItem;
-                            }
-
-                            propsData.value = cellItem[baseName];
-                            return formItem;
-                        },
-                    },
-                }),
-            ).filter((i) => i)),
+                props: {
+                    disabled: (this.currentValue || []).length >= this.maxCount,
+                },
+            }, ['添加']),
         ]);
     },
 };
@@ -154,17 +212,30 @@ export default {
 .short [class^=u-form-table] {
     min-width: 100%;
 }
+.add-button {
+    margin: 10px 0;
+}
+.last-column {
+    width: 0!important;
+    min-width: 0!important;
+}
+
+.last-column[dynamic] {
+    width: 40px!important;
+    min-width: 40px!important;
+}
 
 .root[mode='edit'] {
    position: relative;
-   width: 580px;
-   padding-bottom: 40px;
+   /* width: 580px; */
+   padding-bottom: 20px;
+   padding-right: 36px;
 }
 
 /* 只选择表格的最外层的元素样式 */
-.root[mode='edit'] > [class^=u-form-table-view] {
+.root[mode='edit'] > .table {
     overflow-x: scroll;
-    overflow-y: hidden;
+    overflow-y: auto;
     border: var(--button-border-width) solid var(--button-border-color);
     border-radius: var(--button-border-radius);
 }
@@ -189,7 +260,7 @@ export default {
     border-bottom: var(--button-border-width) solid var(--button-border-color);
 }
 
-.root[mode='edit'] [class^=u-form-table-view_last-column] {
+.root[mode='edit'] .last-column {
     width: 5px;
     padding: 0;
 }
@@ -198,11 +269,13 @@ export default {
     height: 20px;
     line-height: 20px;
     font-size: 24px;
+    position: absolute;
+    right: 0;
 }
 
 .root[mode='edit'] [class^=u-form-table_add-button] {
-    margin-bottom: 40px;
-    position: absolute;
+    /* margin-bottom: 40px; */
+    /* position: absolute; */
     width: 100%;
 }
 
@@ -220,49 +293,37 @@ export default {
     padding: 10px;
 }
 
-.root[mode='edit'] tbody tr td:last-child {
-    position: absolute;
-    padding-right: 0;
-    right: 0;
-    /* 避免删除按钮的位置遮挡 */
-    margin-right: -30px;
-    height: 100%;
-    width: 20px;
-    text-align: right;
-    min-width: initial;
-}
-
 /* 调整表格内部元素的样式 */
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-string],
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-select],
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-user],
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-department],
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-rich-text],
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-image-select],
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-rich-text] {
+.root[mode='edit'] .row [class^=u-flowable-string],
+.root[mode='edit'] .row [class^=u-flowable-select],
+.root[mode='edit'] .row [class^=u-flowable-user],
+.root[mode='edit'] .row [class^=u-flowable-department],
+.root[mode='edit'] .row [class^=u-flowable-rich-text],
+.root[mode='edit'] .row [class^=u-flowable-image-select],
+.root[mode='edit'] .row [class^=u-flowable-rich-text] {
     min-width: 200px;
 }
 
 /* 调整文案过长的情况 */
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-rich-text]{
+.root[mode='edit'] .row [class^=u-flowable-rich-text]{
     word-break: break-word;
 }
 
 /* 调整表格内部单选组件的样式 */
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-checkbox]
+.root[mode='edit'] .row [class^=u-flowable-checkbox]
 [class^=u-checkboxes] {
     display: flex;
     flex-direction: column;
     min-width: 200px;
 }
 
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-checkbox]
+.root[mode='edit'] .row [class^=u-flowable-checkbox]
 [class^=u-checkboxes]:not(:last-child) {
     margin-right: 0;
 }
 
 /* 调整表格内部多选组件的样式 */
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-radios]
+.root[mode='edit'] .row [class^=u-flowable-radios]
 > [class^=u-radios__] { /* 避免修改到 u-radios_radio 的样式 */
     display: flex;
     flex-direction: column;
@@ -270,39 +331,39 @@ export default {
 }
 
 /* 调整表格内部图片组件的样式 */
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-image-select]
+.root[mode='edit'] .row [class^=u-flowable-image-select]
 [class^=u-checkboxes] {
     display: flex;
     flex-direction: column;
 }
 
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-image-select]
+.root[mode='edit'] .row [class^=u-flowable-image-select]
 [class^=u-flowable-image-select_edit_checkbox] {
     display: flex;
     width: 100%;
 }
 
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-image-select]
+.root[mode='edit'] .row [class^=u-flowable-image-select]
 [class^=u-image] {
     width: 20px;
     height: 20px;
     margin-right: 5px;
 }
 
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-text],
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-uploader] {
+.root[mode='edit'] .row [class^=u-flowable-text],
+.root[mode='edit'] .row [class^=u-flowable-uploader] {
     min-width: 100px;
 }
 
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-date-time-range],
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-address] {
+.root[mode='edit'] .row [class^=u-flowable-date-time-range],
+.root[mode='edit'] .row [class^=u-flowable-address] {
     min-width: 400px
 }
 
 /* table readonly*/
 .root[mode='readonly'] {
    position: relative;
-   width: 580px;
+   /* width: 580px; */
    border: 1px solid var(--border-color-base);
 }
 
@@ -312,7 +373,7 @@ export default {
 }
 
 /* 表格的初始化内容 */
-.root[mode='readonly'] [class^=u-form-table-view] {
+.root[mode='readonly'] .table {
     overflow-x: scroll;
     overflow-y: hidden;
 }
@@ -321,7 +382,7 @@ export default {
     width: initial;
 }
 
-.root[mode='readonly'] [class^=u-form-table-view_row] td {
+.root[mode='readonly'] .row td {
    min-width: 200px;
    padding: 10px;
 }
@@ -330,16 +391,16 @@ export default {
    border-bottom: 1px solid var(--border-color-base);
 }
 
-.root[mode='readonly'] [class^=u-form-table-view_row] td[class^=u-form-table-view_row_last-column] {
+.root[mode='readonly'] .row td.last-column {
    display: none;
 }
 
-.root[mode='readonly'] [class^=u-form-table-view_row] td [class^=u-flowable-image-select_readonly_checkbox] {
+.root[mode='readonly'] .row td [class^=u-flowable-image-select_readonly_checkbox] {
    display: flex;
    width: initial;
 }
 
-.root[mode='readonly'] [class^=u-form-table-view_row] td [class^=u-flowable-image-select_readonly_checkbox] [class^=u-image] {
+.root[mode='readonly'] .row td [class^=u-flowable-image-select_readonly_checkbox] [class^=u-image] {
    width: 20px;
    height: 20px;
    margin-right: 10px;

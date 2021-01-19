@@ -52,7 +52,7 @@ export default function (component) {
                     error: ($event) => {
                         // 获取组件内置校验错误信息
                         console.info('error $event', $event);
-                        if ($event) {
+                        if ($event && !this.disableError) {
                             this.setCorrectValue(undefined);
                         }
                         this.$error = $event;
@@ -123,7 +123,13 @@ export default function (component) {
                     if (index === nameList.length - 1) {
                         this.$set(root, name, value);
                     } else {
-                        this.$set(root, name, root[name] || {});
+                        let defaultValue = {};
+                        if (nameList[index + 1] && (nameList[index + 1] - Number(nameList[index + 1]) === 0)) {
+                            defaultValue = [];
+                        }
+                        if (!Object.prototype.hasOwnProperty.call(root, name)) {
+                            this.$set(root, name, defaultValue);
+                        }
                     }
                     root = root[name];
                 });

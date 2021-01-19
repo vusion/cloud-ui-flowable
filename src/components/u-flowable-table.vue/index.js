@@ -9,6 +9,10 @@ const UFlowableTable = wrap({
     },
     props: {
         value: Array,
+        disableError: {
+            type: Boolean,
+            default: true,
+        },
     },
 });
 

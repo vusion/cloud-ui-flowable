@@ -28,6 +28,9 @@ export default {
         value(value) {
             this.selectedList = this.getSelectedList(value);
         },
+        list() {
+            this.selectedList = this.getSelectedList(this.value);
+        },
     },
     methods: {
         getCurrentImage(item) {
