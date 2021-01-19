@@ -36,7 +36,7 @@ export default {
 | Prop/Attr | Type | Options | Default | Description |
 | --------- | ---- | ------- | ------- | ----------- |
 | min | number |  | `0` | 可以勾选多选框的最小数量 |
-| max | number |  |  | 可以勾选多选框的最大数量 |
+| max | number |  | `99` | 可以勾选多选框的最大数量 |
 | list | array |  | `[\[object Object\], \[object Object\], \[object Object\]]` | 为选择组件提供具体内容（可以添加“其他”选项，用作选项不符时的自定义填写），可以自定义编辑、增删、批量编辑选项。数据格式：[{text: '', value: ''}] |
 | value | array |  |  | 文本内容 |
 | required | boolean |  | `false` | 选择必填后，填写者不填写将无法提交表单 |

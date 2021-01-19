@@ -1456,6 +1456,7 @@
                     "compType": "editMode",
                     "editMode": true,
                     "default": [],
+                    "title": "默认值",
                     "description": "默认值"
                 },
                 {
