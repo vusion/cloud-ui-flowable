@@ -233,64 +233,69 @@ export default {
 }
 
 /* 调整表格内部元素的样式 */
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-string][vusion-style-root=true],
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-select][vusion-style-root=true],
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-user][vusion-style-root=true],
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-department][vusion-style-root=true],
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-rich-text][vusion-style-root=true],
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-image-select][vusion-style-root=true],
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-rich-text][vusion-style-root=true] {
+.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-string],
+.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-select],
+.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-user],
+.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-department],
+.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-rich-text],
+.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-image-select],
+.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-rich-text] {
     min-width: 200px;
 }
 
 /* 调整文案过长的情况 */
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-rich-text][vusion-style-root=true] {
+.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-rich-text]{
     word-break: break-word;
 }
 
 /* 调整表格内部单选组件的样式 */
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-checkbox][vusion-style-root=true]
+.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-checkbox]
 [class^=u-checkboxes] {
     display: flex;
     flex-direction: column;
     min-width: 200px;
 }
 
+.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-checkbox]
+[class^=u-checkboxes]:not(:last-child) {
+    margin-right: 0;
+}
+
 /* 调整表格内部多选组件的样式 */
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-radios][vusion-style-root=true]
-> [class^=u-radios] { /* 避免修改到 u-radios_radio 的样式 */
+.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-radios]
+> [class^=u-radios__] { /* 避免修改到 u-radios_radio 的样式 */
     display: flex;
     flex-direction: column;
     min-width: 200px;
 }
 
 /* 调整表格内部图片组件的样式 */
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-image-select][vusion-style-root=true]
+.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-image-select]
 [class^=u-checkboxes] {
     display: flex;
     flex-direction: column;
 }
 
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-image-select][vusion-style-root=true]
+.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-image-select]
 [class^=u-flowable-image-select_edit_checkbox] {
     display: flex;
     width: 100%;
 }
 
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-image-select][vusion-style-root=true]
+.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-image-select]
 [class^=u-image] {
     width: 20px;
     height: 20px;
     margin-right: 5px;
 }
 
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-text][vusion-style-root=true],
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-uploader][vusion-style-root=true] {
+.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-text],
+.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-uploader] {
     min-width: 100px;
 }
 
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-date-time-range][vusion-style-root=true],
-.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-address][vusion-style-root=true] {
+.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-date-time-range],
+.root[mode='edit'] [class^=u-form-table-view_row] [class^=u-flowable-address] {
     min-width: 400px
 }
 
