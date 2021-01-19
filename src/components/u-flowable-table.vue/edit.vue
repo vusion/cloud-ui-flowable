@@ -72,6 +72,10 @@ export default {
         children.forEach((child) => {
             defaultItem[child.componentOptions.propsData.name] = child.componentOptions.propsData.value || null;
         });
+        while ((this.currentValue || []).length < this.minCount) {
+            this.currentValue = this.currentValue || [];
+            this.currentValue.push(getDefaultItem());
+        }
         return h('div', {
             class: [this.$style.root, children.length <= 2 && this.$style.short],
 
@@ -83,23 +87,47 @@ export default {
                   [
                       h('thead', [
                           h('tr', [
-                              ...children.map((child) => h('th', {
-                                  style: {
-                                      width: `calc(100% / ${children.length})`,
-                                  },
-                              }, [child.data.attrs.title])),
+
                               dynamic ? h('th', {
                                   class: this.$style['last-column'],
                                   props: {
                                       dynamic,
                                   },
                               }) : undefined,
+                              ...children.map((child) => h('th', {
+                                  style: {
+                                      width: `calc(100% / ${children.length})`,
+                                  },
+                              }, [child.data.attrs.title])),
                           ]),
                       ]),
                       h('tbody', [
                           ...(this.currentValue || []).map((item, rowIndex) => h('tr', {
                               class: this.$style.row,
                           }, [
+                              dynamic ? h('td', {
+                                  class: this.$style.cell,
+                              }, [
+                                  h('u-form-table-remove-button', {
+                                      class: this.$style.removeButton,
+                                      on: {
+                                          click: () => {
+                                              const index = rowIndex;
+                                              if ((this.currentValue || []).length <= this.minCount)
+                                                  return;
+                                              this.currentValue.splice(index, 1);
+                                              Object.keys(self.errorList).forEach((key) => {
+                                                  if (key.startsWith(`${index}.`)) {
+                                                      self.$delete(self.errorList, key);
+                                                  }
+                                              });
+                                          },
+                                      },
+                                      props: {
+                                          disabled: this.currentValue.length <= minCount,
+                                      },
+                                  }),
+                              ]) : undefined,
                               ...children.map((child, cellIndex) => {
                                   const item = child;
                                   const formItem = {
@@ -164,31 +192,12 @@ export default {
                                       class: this.$style.cell,
                                   }, [formItem]);
                               }),
-                              dynamic ? h('td', [
-                                  h('u-form-table-remove-button', {
-                                      on: {
-                                          click: () => {
-                                              const index = rowIndex;
-                                              if ((this.currentValue || []).length <= this.minCount)
-                                                  return;
-                                              this.currentValue.splice(index, 1);
-                                              Object.keys(self.errorList).forEach((key) => {
-                                                  if (key.startsWith(`${index}.`)) {
-                                                      self.$delete(self.errorList, key);
-                                                  }
-                                              });
-                                          },
-                                      },
-                                      props: {
-                                          disabled: this.currentValue.length <= minCount,
-                                      },
-                                  }),
-                              ]) : undefined,
+
                           ])),
                       ]),
                   ]),
             ]),
-            h('u-form-table-add-button', {
+            !dynamic ? undefined : h('u-form-table-add-button', {
                 class: this.$style['add-button'],
                 on: {
                     click: () => {
@@ -224,7 +233,10 @@ export default {
     width: 40px!important;
     min-width: 40px!important;
 }
-
+.removeButton {
+    line-height: 1.0;
+    height: 24px;
+}
 .root[mode='edit'] {
    position: relative;
    /* width: 580px; */
@@ -260,17 +272,16 @@ export default {
     border-bottom: var(--button-border-width) solid var(--button-border-color);
 }
 
-.root[mode='edit'] .last-column {
+/* .root[mode='edit'] .last-column {
     width: 5px;
     padding: 0;
-}
+} */
 
 .root[mode='edit'] [class^=u-form-table_remove-button] {
-    height: 20px;
-    line-height: 20px;
+
     font-size: 24px;
-    position: absolute;
-    right: 0;
+    /* position: absolute;
+    right: 0; */
 }
 
 .root[mode='edit'] [class^=u-form-table_add-button] {

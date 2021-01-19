@@ -1,7 +1,7 @@
 ### 编辑模式
 
 ``` html
-<u-flowable-table title="表格" :dynamic="true">
+<u-flowable-table title="表格" :dynamic="true" :min="1" :max="99">
      <u-flowable-string mode="edit" title="未命名1" name="value1">
      </u-flowable-string>
 </u-flowable-table>

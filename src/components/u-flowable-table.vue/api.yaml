@@ -21,7 +21,7 @@
     - name: minCount
       type: number
       title: 最小行数
-      compType: input
+      compType: number
       description: 设置表格组件的最小行数
       default: 1
       compConfig:
