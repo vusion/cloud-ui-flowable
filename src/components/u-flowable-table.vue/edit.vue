@@ -366,9 +366,12 @@ export default {
     min-width: 100px;
 }
 
-.root[mode='edit'] .row [class^=u-flowable-date-time-range],
 .root[mode='edit'] .row [class^=u-flowable-address] {
     min-width: 400px
+}
+
+.root[mode='edit'] .row [class^=u-flowable-date-time-range_edit__] {
+    min-width: 400px; /* 避免选择到组件内部的元素 */
 }
 
 /* table readonly*/
