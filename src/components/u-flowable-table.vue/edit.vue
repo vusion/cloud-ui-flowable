@@ -237,8 +237,6 @@ export default {
 }
 .root[mode='edit'] {
    position: relative;
-   /* width: 580px; */
-   padding-bottom: 20px;
    padding-right: 36px;
 }
 
@@ -276,10 +274,14 @@ export default {
 } */
 
 .root[mode='edit'] [class^=u-form-table_remove-button] {
-
     font-size: 24px;
-    /* position: absolute;
-    right: 0; */
+    position: absolute;
+    right: 0;
+    /* 避免删除按钮太长 */
+    width: 20px;
+    text-align: right;
+    display: inline-block;
+    min-width: initial;
 }
 
 .root[mode='edit'] [class^=u-form-table_add-button] {
@@ -350,13 +352,19 @@ export default {
 [class^=u-flowable-image-select_edit_checkbox] {
     display: flex;
     width: 100%;
+    border: 1px solid var(--border-color-base);
+    padding: 5px;
+    margin: 0 !important;
+    margin-bottom: 5px !important;
+    border-radius: var(--button-border-radius);
 }
 
 .root[mode='edit'] .row [class^=u-flowable-image-select]
 [class^=u-image] {
-    width: 20px;
-    height: 20px;
+    width: 80px;
+    height: 80px;
     margin-right: 5px;
+    min-width: 80px; /* 避免图标被挤压 */
 }
 
 .root[mode='edit'] .row [class^=u-flowable-text],
