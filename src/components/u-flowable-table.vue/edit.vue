@@ -184,9 +184,7 @@ export default {
                                   }
 
                                   propsData.name = `${name}.${rowIndex}.${baseName}`;
-                                  if (propsData.mode !== 'readonly') {
-                                      propsData.value = this.currentValue[rowIndex][baseName];
-                                  }
+                                  propsData.value = this.currentValue[rowIndex][baseName];
 
                                   return h('td', {
                                       class: this.$style.cell,
