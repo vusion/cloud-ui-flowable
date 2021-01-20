@@ -354,14 +354,19 @@ export default {
 [class^=u-flowable-image-select_edit_checkbox] {
     display: flex;
     width: 100%;
+    border: 1px solid var(--border-color-base);
+    padding: 5px;
+    margin: 0 !important;
+    margin-bottom: 5px !important;
+    border-radius: var(--button-border-radius);
 }
 
 .root[mode='edit'] .row [class^=u-flowable-image-select]
 [class^=u-image] {
-    width: 20px;
-    height: 20px;
+    width: 80px;
+    height: 80px;
     margin-right: 5px;
-    min-width: 20px; /* 避免图标被挤压 */
+    min-width: 80px; /* 避免图标被挤压 */
 }
 
 .root[mode='edit'] .row [class^=u-flowable-text],
