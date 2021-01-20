@@ -359,6 +359,7 @@ export default {
     width: 20px;
     height: 20px;
     margin-right: 5px;
+    min-width: 20px; /* 避免图标被挤压 */
 }
 
 .root[mode='edit'] .row [class^=u-flowable-text],
