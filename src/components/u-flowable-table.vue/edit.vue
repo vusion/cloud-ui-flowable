@@ -239,8 +239,6 @@ export default {
 }
 .root[mode='edit'] {
    position: relative;
-   /* width: 580px; */
-   padding-bottom: 20px;
    padding-right: 36px;
 }
 
@@ -278,10 +276,14 @@ export default {
 } */
 
 .root[mode='edit'] [class^=u-form-table_remove-button] {
-
     font-size: 24px;
-    /* position: absolute;
-    right: 0; */
+    position: absolute;
+    right: 0;
+    /* 避免删除按钮太长 */
+    width: 20px;
+    text-align: right;
+    display: inline-block;
+    min-width: initial;
 }
 
 .root[mode='edit'] [class^=u-form-table_add-button] {
