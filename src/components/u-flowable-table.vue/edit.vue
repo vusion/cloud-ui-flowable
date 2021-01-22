@@ -1,7 +1,7 @@
 <script>
 import { UFormTable, UFormTableAddButton, UFormTableRemoveButton } from 'cloud-ui.vusion/src/components/u-form-table.vue';
-import get from 'lodash.get';
-import { set } from 'lodash';
+import get from 'lodash/get';
+import set from 'lodash/set';
 
 export default {
     name: 'u-flowable-table',
