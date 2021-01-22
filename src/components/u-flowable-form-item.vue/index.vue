@@ -73,6 +73,8 @@ const UFlowableFormItem = {
                 h('div', {
                     class: this.$style.error,
                     attrs: {
+                        /* 表格组件内部元素提示错误信息 */
+                        hide: this.hide || slot?.componentOptions?.tag === 'u-flowable-table',
                         dirty: this.dirty || this.touched,
                         empty: !this.error?.message,
                         field: this.name,
@@ -156,6 +158,10 @@ export default UFlowableFormItem;
     display: inline-block;
     align-items: center;
     margin-left: 5px;
+}
+
+.error[hide] {
+    display: none;
 }
 
 </style>
