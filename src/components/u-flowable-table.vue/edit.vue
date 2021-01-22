@@ -203,13 +203,13 @@ export default {
                                       class: this.$style.item,
                                   }, [
                                       formItem,
-                                      h('div', {
+                                      currentError?.message && h('div', {
                                           class: this.$style.error,
                                           attrs: {
                                               type: 'error',
                                           },
                                       }, [
-                                          currentError?.message && h('div', {
+                                        h('div', {
                                               class: this.$style.icon,
                                           }, []),
                                           currentError?.message,
