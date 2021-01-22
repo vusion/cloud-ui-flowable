@@ -1,5 +1,6 @@
 <script>
 import { UFormTable, UFormTableAddButton, UFormTableRemoveButton } from 'cloud-ui.vusion/src/components/u-form-table.vue';
+import get from 'lodash.get';
 
 export default {
     name: 'u-flowable-table',
@@ -98,7 +99,13 @@ export default {
                                   style: {
                                       width: `calc(100% / ${children.length})`,
                                   },
-                              }, [child.data.attrs.title])),
+                              }, [
+                                  h('div', {
+                                      class: this.$style.title,
+                                      attrs: {
+                                          required: child.data.attrs.required,
+                                      },
+                                  }, [child.data.attrs.title])])),
                           ]),
                       ]),
                       h('tbody', [
@@ -147,7 +154,7 @@ export default {
                                   listeners.error = (error) => {
                                       if (error && error.message) {
                                           self.$set(self.errorList, `${rowIndex}.${cellIndex}`, {
-                                              message: `${item.data.attrs.title} ：${error?.message}`,
+                                              message: error?.message,
                                               type: error.type,
                                           });
                                       }
@@ -187,10 +194,27 @@ export default {
                                   if (propsData.mode !== 'readonly') {
                                       propsData.value = this.currentValue[rowIndex][baseName];
                                   }
+                                  // 获取当前位置的错误信息
+                                  const currentError = get(this.errorList, `${rowIndex}.${cellIndex}`);
 
                                   return h('td', {
                                       class: this.$style.cell,
-                                  }, [formItem]);
+                                  }, [h('div', {
+                                      class: this.$style.item,
+                                  }, [
+                                      formItem,
+                                      h('div', {
+                                          class: this.$style.error,
+                                          attrs: {
+                                              type: 'error',
+                                          },
+                                      }, [
+                                          currentError?.message && h('div', {
+                                              class: this.$style.icon,
+                                          }, []),
+                                          currentError?.message,
+                                      ]),
+                                  ])]);
                               }),
 
                           ])),
@@ -217,6 +241,14 @@ export default {
 </script>
 
 <style module>
+
+.title[required]:after {
+    content: '*';
+    color: #F24957;
+    display: inline-block;
+    align-items: center;
+    margin-left: 5px;
+}
 
 .short [class^=u-form-table] {
     min-width: 100%;
@@ -426,6 +458,27 @@ export default {
    width: 20px;
    height: 20px;
    margin-right: 10px;
+}
+
+.icon {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.icon:before {
+   display: inline-block;
+   icon-font: url('cloud-ui.vusion/src/components/i-icon.vue/assets/close-solid.svg');
+}
+
+.error {
+    color: #F24957;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+.error[dirty] {
+    display: block;
 }
 
 </style>
