@@ -1,5 +1,5 @@
 <template>
-   <div>
+   <div :class="$style.root">
         <template v-for="(item, index) in value">
            <div :key="index">
               <u-copy :value="item.name">{{ item.name }}</u-copy>
@@ -24,7 +24,9 @@ export default {
 </script>
 
 <style module>
-.root {}
+.root {
+    word-break: break-all;
+}
 .action {
     margin-left: 6px;
 }

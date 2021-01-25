@@ -187,9 +187,7 @@ export default {
                                   }
 
                                   propsData.name = `${name}.${rowIndex}.${baseName}`;
-                                  if (propsData.mode !== 'readonly') {
-                                      propsData.value = this.currentValue[rowIndex][baseName];
-                                  }
+                                  propsData.value = this.currentValue[rowIndex][baseName];
                                   // 获取当前位置的错误信息
                                   const currentError = get(this.errorList, `${rowIndex}.${cellIndex}`);
 
@@ -445,15 +443,34 @@ export default {
    display: none;
 }
 
-.root[mode='readonly'] .row td [class^=u-flowable-image-select_readonly_checkbox] {
-   display: flex;
-   width: initial;
+.root[mode='readonly'] .row [class^=u-flowable-image-select] {
+
+    min-width: 200px;
+}
+/* 调整表格内部图片组件的样式 */
+.root[mode='readonly'] .row [class^=u-flowable-image-select]
+[class^=u-checkboxes] {
+    display: flex;
+    flex-direction: column;
 }
 
-.root[mode='readonly'] .row td [class^=u-flowable-image-select_readonly_checkbox] [class^=u-image] {
-   width: 20px;
-   height: 20px;
-   margin-right: 10px;
+.root[mode='readonly'] .row [class^=u-flowable-image-select]
+[class^=u-flowable-image-select_readonly_checkbox] {
+    display: flex;
+    width: 100%;
+    border: 1px solid var(--border-color-base);
+    padding: 5px;
+    margin: 0 !important;
+    margin-bottom: 5px !important;
+    border-radius: var(--button-border-radius);
+}
+
+.root[mode='readonly'] .row [class^=u-flowable-image-select]
+[class^=u-image] {
+    width: 80px;
+    height: 80px;
+    margin-right: 5px;
+    min-width: 80px; /* 避免图标被挤压 */
 }
 
 .icon {

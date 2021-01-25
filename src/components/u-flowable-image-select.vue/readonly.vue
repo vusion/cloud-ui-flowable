@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div :class="$style.root">
         <div :class="$style.checkbox" :key="index" v-for="(item, index) in selectedList">
             <u-image :src="getCurrentImage(item)" fit="fill" :class="$style.image"></u-image>
             <div :class="$style.desc">
@@ -64,6 +64,9 @@ export default {
 </script>
 
 <style module>
+.root {
+    
+}
 .checkbox {
     display: inline-block;
     vertical-align: top;
