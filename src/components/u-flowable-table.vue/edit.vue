@@ -1,6 +1,7 @@
 <script>
 import { UFormTable, UFormTableAddButton, UFormTableRemoveButton } from 'cloud-ui.vusion/src/components/u-form-table.vue';
-import get from 'lodash.get';
+import get from 'lodash/get';
+import set from 'lodash/set';
 
 export default {
     name: 'u-flowable-table',
@@ -21,7 +22,7 @@ export default {
     data() {
         return {
             currentValue: this.formatValue(this.value),
-            errorList: {},
+            errorList: [],
         };
     },
     watch: {
@@ -123,11 +124,7 @@ export default {
                                               if ((this.currentValue || []).length <= this.minCount)
                                                   return;
                                               this.currentValue.splice(index, 1);
-                                              Object.keys(self.errorList).forEach((key) => {
-                                                  if (key.startsWith(`${index}.`)) {
-                                                      self.$delete(self.errorList, key);
-                                                  }
-                                              });
+                                              this.errorList.splice(index, 1);
                                           },
                                       },
                                       props: {
@@ -153,7 +150,8 @@ export default {
                                   const _error = listeners.error;
                                   listeners.error = (error) => {
                                       if (error && error.message) {
-                                          self.$set(self.errorList, `${rowIndex}.${cellIndex}`, {
+                                          // 数组形式存储错误信息，而不要用固定索引
+                                          set(self.errorList, `${rowIndex}.${cellIndex}`, {
                                               message: error?.message,
                                               type: error.type,
                                           });
@@ -163,7 +161,7 @@ export default {
                                   const _input = listeners.input;
                                   listeners.input = (input) => {
                                       self.$emit('input', self.currentValue);
-                                      self.$set(self.errorList, `${rowIndex}.${cellIndex}`, null);
+                                      set(self.errorList, `${rowIndex}.${cellIndex}`, null);
                                       _input && _input.bind(self, input)();
                                   };
                                   const _dirty = listeners.dirty;
