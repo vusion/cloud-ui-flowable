@@ -58,13 +58,6 @@ export default {
     render(h) {
         const children = this.$slots.default || [];
         const name = this.$attrs.name;
-        const nameList = children.map((item) => {
-            if (!item.tag) {
-                return undefined;
-            }
-            const name = item.componentOptions.propsData.name;
-            return name.includes('.') ? name.split('.').pop() : name;
-        }).filter((i) => i);
         const self = this;
         const dynamic = this.dynamic && (this.$attrs.mode !== 'readonly');
         const minCount = this.minCount;
@@ -72,7 +65,9 @@ export default {
         const getDefaultItem = () => JSON.parse(JSON.stringify(defaultItem));
         this.getDefaultItem = getDefaultItem;
         children.forEach((child) => {
-            defaultItem[child.componentOptions.propsData.name] = child.componentOptions.propsData.value || null;
+            if (child.tag) {
+                defaultItem[child.componentOptions.propsData.name] = child.componentOptions.propsData.value || null;
+            }
         });
         while ((this.currentValue || []).length < this.minCount) {
             this.currentValue = this.currentValue || [];
@@ -96,9 +91,9 @@ export default {
                                       dynamic,
                                   },
                               }) : undefined,
-                              ...children.map((child) => h('th', {
+                              ...children.map((child) => child.tag && h('th', {
                                   style: {
-                                      width: `calc(100% / ${children.length})`,
+                                      width: `${100 / children.length}%`,
                                   },
                               }, [
                                   h('div', {
@@ -106,7 +101,7 @@ export default {
                                       attrs: {
                                           required: child.data.attrs.required,
                                       },
-                                  }, [child.data.attrs.title])])),
+                                  }, [child.data.attrs.title])])).filter((i) => i),
                           ]),
                       ]),
                       h('tbody', [
@@ -133,6 +128,9 @@ export default {
                                   }),
                               ]) : undefined,
                               ...children.map((child, cellIndex) => {
+                                  if (!child.tag) {
+                                      return undefined;
+                                  }
                                   const item = child;
                                   const formItem = {
                                       ...item,
@@ -213,7 +211,7 @@ export default {
                                           currentError?.message,
                                       ]),
                                   ])]);
-                              }),
+                              }).filter((i) => i),
 
                           ])),
                       ]),
