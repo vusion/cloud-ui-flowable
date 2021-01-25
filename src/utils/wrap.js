@@ -61,7 +61,7 @@ export default function (component) {
                 },
             }, this.$slots.default);
         } else if (this.mode === 'readonly') {
-            if (!this.$props.value
+            if ((!this.$props.value && this.$props.value !== 0)
                 || (Object.prototype.toString.call(this.$props.value) === '[object Array]') && this.$props.value.length === 0) {
                 return h('div', ['暂无数据']);
             }
