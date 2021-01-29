@@ -43,13 +43,12 @@ export default {
 <style module>
 .root {}
 
-.root[display='row'] [class^='u-radios_radio'] {
+.root[display='row'] [class^='u-radios_radio__'] {
     display: inline-block;
 }
 
-.root[display='column'] [class^='u-radios__'] {
-    display: flex;
-    flex-direction: column;
+.root[display='column'] [class^='u-radios_radio__'] {
+    display: block;
 }
 
 </style>

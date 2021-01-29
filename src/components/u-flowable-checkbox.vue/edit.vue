@@ -64,13 +64,12 @@ export default {
 
 <style module>
 .root {}
-.root[display='row'] [class^='u-checkbox'] {
+.root[display='row'] [class^='u-checkbox__'] {
     display: inline-block;
 }
 
-.root[display='column'] [class^='u-checkboxes__'] {
-    display: flex;
-    flex-direction: column;
+.root[display='column'] [class^='u-checkbox__'] {
+    display: block;
 }
 
 </style>
