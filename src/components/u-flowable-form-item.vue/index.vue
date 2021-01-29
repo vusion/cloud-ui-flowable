@@ -102,6 +102,24 @@ export default UFlowableFormItem;
 .root {
     position: relative;
     padding: 12px;
+    display: inline-block;
+    float: left;
+}
+
+.root[width='25%'] {
+    width: 25%;
+}
+
+.root[width='50%'] {
+    width: 50%;
+}
+
+.root[width='75%'] {
+    width: 75%;
+}
+
+.root[width='100%'] {
+    width: 100%;
 }
 
 .box {
