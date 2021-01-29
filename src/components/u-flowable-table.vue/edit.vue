@@ -187,7 +187,10 @@ export default {
                                   }
 
                                   propsData.name = `${name}.${rowIndex}.${baseName}`;
-                                  propsData.value = this.currentValue[rowIndex][baseName];
+                                  if (formItem.componentOptions.tag !== 'u-flowable-text') {
+                                      propsData.value = this.currentValue[rowIndex][baseName];
+                                  }
+
                                   // 获取当前位置的错误信息
                                   const currentError = get(this.errorList, `${rowIndex}.${cellIndex}`);
 
