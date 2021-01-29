@@ -1,5 +1,5 @@
 <template>
-<div :class="$style.root">
+<div :class="$style.root" :display="display">
     <u-radios v-model="currentValue">
         <u-radio v-for="(item, index) in list" :key="index" :label="item.value">{{ item.text }}</u-radio>
     </u-radios>
@@ -16,6 +16,9 @@ export default {
     },
     props: {
         value: String,
+        display: {
+            type: String, default: 'row',
+        },
         list: Array,
     },
     data() {

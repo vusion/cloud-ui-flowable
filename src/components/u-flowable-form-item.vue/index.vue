@@ -131,7 +131,9 @@ export default UFlowableFormItem;
     width: 120px;
     position: absolute;
     left: 10px;
+    line-height: 34px;
 }
+
 .tip {
     color: #b4b4bc;
     margin-bottom: 10px;
