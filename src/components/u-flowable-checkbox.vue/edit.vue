@@ -61,5 +61,8 @@ export default {
 
 <style module>
 .root {}
+.root [class^='u-checkbox'] {
+    display: inline-block;
+}
 
 </style>
