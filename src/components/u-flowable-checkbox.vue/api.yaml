@@ -56,9 +56,9 @@
       title: 排列
       type: string
       default: 'row'
-      compType: u-capsules
+      compType: customize
       customizeConfig: 
-         name: u-capsules
+         name: u-select
          attrsMap: 
             list: [{ value: 'row', text: '横向排布'}, { value: 'column', text: '竖向排布'}]
   slots: false
