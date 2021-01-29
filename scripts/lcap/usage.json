@@ -637,7 +637,7 @@
             "Basic"
         ],
         "screenShot": "[]",
-        "blocks": "[{\"title\":\"基础示例-编辑\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-radios title=\\\"单项选择\\\" :list=\\\"[{text: '未命名1', value: '未命名1'}, {text: '未命名2', value: '未命名2'}]\\\"></u-flowable-radios>\\n</template>\\n\"},{\"title\":\"普通文本\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-radios mode=\\\"readonly\\\" :list=\\\"[{text: '未命名1', value: '未命名1'}, { text: '未命名1', value: '未命名2'}]\\\" value=\\\"未命名2\\\"></u-flowable-radios>\\n</template>\\n\"},{\"title\":\"普通文本-编辑\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-radios  :list=\\\"[{text: '未命名1', value: '未命名1'}, { text: '未命名2', value: '未命名2'}]\\\" value=\\\"未命名2\\\"></u-flowable-radios>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础示例-编辑\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-radios title=\\\"单项选择\\\" :list=\\\"[{text: '未命名1', value: '未命名1'}, {text: '未命名2', value: '未命名2'}]\\\"></u-flowable-radios>\\n</template>\\n\"},{\"title\":\"普通文本\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-radios mode=\\\"readonly\\\" :list=\\\"[{text: '未命名1', value: '未命名1'}, { text: '未命名1', value: '未命名2'}]\\\" value=\\\"未命名2\\\"></u-flowable-radios>\\n</template>\\n\"},{\"title\":\"多个可选项\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-radios mode=\\\"edit\\\" :list=\\\"[\\n{ text: '未命名1', value: '未命名1'}, \\n{ text: '未命名2', value: '未命名2'},\\n{ text: '未命名3', value: '未命名3'},\\n{ text: '未命名4', value: '未命名4'},\\n{ text: '未命名5', value: '未命名5'},\\n{ text: '未命名6', value: '未命名6'},\\n{ text: '未命名7', value: '未命名7'},\\n]\\\" value=\\\"未命名2\\\"></u-flowable-radios>\\n</template>\\n\"},{\"title\":\"普通文本-编辑\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-radios  :list=\\\"[{text: '未命名1', value: '未命名1'}, { text: '未命名2', value: '未命名2'}]\\\" value=\\\"未命名2\\\"></u-flowable-radios>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "u-flowable-radios",
             "title": "单项选择",
@@ -654,6 +654,11 @@
                     "title": "普通文本",
                     "description": "",
                     "code": "<template>\n<u-flowable-radios mode=\"readonly\" :list=\"[{text: '未命名1', value: '未命名1'}, { text: '未命名1', value: '未命名2'}]\" value=\"未命名2\"></u-flowable-radios>\n</template>\n"
+                },
+                {
+                    "title": "多个可选项",
+                    "description": "",
+                    "code": "<template>\n<u-flowable-radios mode=\"edit\" :list=\"[\n{ text: '未命名1', value: '未命名1'}, \n{ text: '未命名2', value: '未命名2'},\n{ text: '未命名3', value: '未命名3'},\n{ text: '未命名4', value: '未命名4'},\n{ text: '未命名5', value: '未命名5'},\n{ text: '未命名6', value: '未命名6'},\n{ text: '未命名7', value: '未命名7'},\n]\" value=\"未命名2\"></u-flowable-radios>\n</template>\n"
                 },
                 {
                     "title": "普通文本-编辑",
@@ -792,7 +797,7 @@
             "Basic"
         ],
         "screenShot": "[]",
-        "blocks": "[{\"title\":\"基础示例-编辑\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-checkbox title=\\\"多项选择\\\" :list=\\\"[{value: '未命名1', text: '未命名1'}, {value: '未命名2', text: '未命名2'}]\\\"></u-flowable-checkbox>\\n</template>\\n\"},{\"title\":\"基础示例-多选\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-checkbox :value=\\\"['未命名1']\\\" mode=\\\"edit\\\" :min=\\\"1\\\" :max=\\\"2\\\" :list=\\\"[{value: '未命名1', text: '未命名1'}, { value: '未命名2', text: '未命名2'}]\\\"></u-flowable-checkbox>\\n</template>\\n\"},{\"title\":\"普通文本\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-checkbox mode=\\\"readonly\\\" :list=\\\"[{value: '未命名1', text: '未命名1'}, {  value: '未命名2', text: '未命名2'}]\\\" :value=\\\"['未命名1', '未命名2']\\\"></u-flowable-checkbox>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础示例-编辑\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-checkbox title=\\\"多项选择\\\" :list=\\\"[{value: '未命名1', text: '未命名1'}, {value: '未命名2', text: '未命名2'}]\\\"></u-flowable-checkbox>\\n</template>\\n\"},{\"title\":\"基础示例-多选\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-checkbox :value=\\\"['未命名1']\\\" mode=\\\"edit\\\" :min=\\\"1\\\" :max=\\\"2\\\" :list=\\\"[\\n{value: '未命名1', text: '未命名1'}, \\n{ value: '未命名2', text: '未命名2'},\\n{ value: '未命名3', text: '未命名3'},\\n{ value: '未命名4', text: '未命名4'},\\n{ value: '未命名5', text: '未命名5'},\\n{ value: '未命名6', text: '未命名6'},\\n{ value: '未命名7', text: '未命名7'},\\n{ value: '未命名8', text: '未命名8'},\\n]\\\"></u-flowable-checkbox>\\n</template>\\n\"},{\"title\":\"普通文本\",\"description\":\"\",\"code\":\"<template>\\n<u-flowable-checkbox mode=\\\"readonly\\\" :list=\\\"[{value: '未命名1', text: '未命名1'}, {  value: '未命名2', text: '未命名2'}]\\\" :value=\\\"['未命名1', '未命名2']\\\"></u-flowable-checkbox>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "u-flowable-checkbox",
             "title": "多项选择",
@@ -808,7 +813,7 @@
                 {
                     "title": "基础示例-多选",
                     "description": "",
-                    "code": "<template>\n<u-flowable-checkbox :value=\"['未命名1']\" mode=\"edit\" :min=\"1\" :max=\"2\" :list=\"[{value: '未命名1', text: '未命名1'}, { value: '未命名2', text: '未命名2'}]\"></u-flowable-checkbox>\n</template>\n"
+                    "code": "<template>\n<u-flowable-checkbox :value=\"['未命名1']\" mode=\"edit\" :min=\"1\" :max=\"2\" :list=\"[\n{value: '未命名1', text: '未命名1'}, \n{ value: '未命名2', text: '未命名2'},\n{ value: '未命名3', text: '未命名3'},\n{ value: '未命名4', text: '未命名4'},\n{ value: '未命名5', text: '未命名5'},\n{ value: '未命名6', text: '未命名6'},\n{ value: '未命名7', text: '未命名7'},\n{ value: '未命名8', text: '未命名8'},\n]\"></u-flowable-checkbox>\n</template>\n"
                 },
                 {
                     "title": "普通文本",
@@ -905,6 +910,28 @@
                     "title": "这是个必填项",
                     "default": false,
                     "description": "选择必填后，填写者不填写将无法提交表单"
+                },
+                {
+                    "name": "display",
+                    "title": "排列",
+                    "type": "string",
+                    "default": "row",
+                    "compType": "u-capsules",
+                    "customizeConfig": {
+                        "name": "u-capsules",
+                        "attrsMap": {
+                            "list": [
+                                {
+                                    "value": "row",
+                                    "text": "横向排布"
+                                },
+                                {
+                                    "value": "column",
+                                    "text": "竖向排布"
+                                }
+                            ]
+                        }
+                    }
                 }
             ],
             "slots": false,

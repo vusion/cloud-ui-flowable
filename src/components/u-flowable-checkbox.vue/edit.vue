@@ -1,5 +1,5 @@
 <template>
-<div :class="$style.root">
+<div :class="$style.root" :display="display">
     <u-checkboxes v-model="currentValue" :min="min" :max="max">
         <u-checkbox v-for="(item, index) in list" :key="index" :value="isSelected(item)" :label="item.value">{{ item.text }}</u-checkbox>
     </u-checkboxes>
@@ -17,6 +17,9 @@ export default {
     props: {
         value: Array,
         list: Array,
+        display: {
+            type: String, default: 'row',
+        },
         required: Boolean,
         min: { type: Number, default: 0 },
         max: { type: Number, default: 99 },
@@ -61,8 +64,13 @@ export default {
 
 <style module>
 .root {}
-.root [class^='u-checkbox'] {
+.root[display='row'] [class^='u-checkbox'] {
     display: inline-block;
+}
+
+.root[display='column'] [class^='u-checkboxes__'] {
+    display: flex;
+    flex-direction: column;
 }
 
 </style>
