@@ -351,27 +351,6 @@ export default {
     word-break: break-word;
 }
 
-/* 调整表格内部单选组件的样式 */
-.root[mode='edit'] .row [class^=u-flowable-checkbox]
-[class^=u-checkboxes] {
-    display: flex;
-    flex-direction: column;
-    min-width: 200px;
-}
-
-.root[mode='edit'] .row [class^=u-flowable-checkbox]
-[class^=u-checkboxes]:not(:last-child) {
-    margin-right: 0;
-}
-
-/* 调整表格内部多选组件的样式 */
-.root[mode='edit'] .row [class^=u-flowable-radios]
-> [class^=u-radios__] { /* 避免修改到 u-radios_radio 的样式 */
-    display: flex;
-    flex-direction: column;
-    min-width: 200px;
-}
-
 /* 调整表格内部图片组件的样式 */
 .root[mode='edit'] .row [class^=u-flowable-image-select]
 [class^=u-checkboxes] {
