@@ -52,5 +52,14 @@
       title: 这是个必填项
       default: false
       description: 选择必填后，填写者不填写将无法提交表单
+    - name: display
+      title: 排列
+      type: string
+      default: 'row'
+      compType: customize
+      customizeConfig: 
+         name: u-select
+         attrsMap: 
+            list: [{ value: 'row', text: '横向排布'}, { value: 'column', text: '竖向排布'}]
   slots: false
   events: false

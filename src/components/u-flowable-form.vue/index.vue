@@ -23,6 +23,7 @@
             <form ref="form">
                 <slot></slot>
             </form>
+            <div :class="$style.clear"></div>
         </div>
 
         <div :class="$style.foot" v-if="mode === 'edit' || $slots.foot || $scopedSlots.foot">
@@ -141,6 +142,11 @@ export default UFlowableForm;
 .root {
     position: relative;
 }
+
+.clear {
+    clear: both;
+}
+
 .head {
     margin-bottom: 12px;
     word-break: break-word;

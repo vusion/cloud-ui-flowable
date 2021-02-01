@@ -102,6 +102,24 @@ export default UFlowableFormItem;
 .root {
     position: relative;
     padding: 12px;
+    float: left;
+    width: 100%;
+}
+
+.root[width='25%'] {
+    width: 25%;
+}
+
+.root[width='50%'] {
+    width: 50%;
+}
+
+.root[width='75%'] {
+    width: 75%;
+}
+
+.root[width='100%'] {
+    width: 100%;
 }
 
 .box {
@@ -111,9 +129,12 @@ export default UFlowableFormItem;
 .title {
     font-weight: 500;
     width: 120px;
-    position: absolute;
+    position: relative;
+    float: left;
     left: 10px;
+    line-height: 34px;
 }
+
 .tip {
     color: #b4b4bc;
     margin-bottom: 10px;

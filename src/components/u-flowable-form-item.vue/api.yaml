@@ -15,5 +15,19 @@
       compType: input
       title: 提示
       description: 提示属性用于指定对该模块进行一些附加说明，一般用来指导填写者输入。
+    - name: width
+      type: string
+      title: 宽度
+      default: '100%'
+      compType: customize
+      customizeConfig: 
+         name: u-select
+         attrsMap: 
+            list: [
+              { value: '25%', text: '25%'}, 
+              { value: '50%', text: '50%'}, 
+              { value: '75%', text: '75%'}, 
+              { value: '100%', text: '100%'}
+            ]
   slots: false
   events: false
