@@ -27,6 +27,9 @@
     "type": "boolean",
     "description": "选择必填后，填写者不填写将无法提交表单"
   },
+  "u-flowable-checkbox/display": {
+    "type": "string"
+  },
   "u-flowable-date-time-range/value": {
     "type": "string",
     "description": "设置默认内容后，默认值会显示在该模块的输入框中，填写者若不做修改，默认值将会作为填写者的数据提交。数据格式如：2020-09-09 10:00:00~2020-09-10 10:00:00"
@@ -102,6 +105,9 @@
   "u-flowable-form-item/tip": {
     "type": "string",
     "description": "提示属性用于指定对该模块进行一些附加说明，一般用来指导填写者输入。"
+  },
+  "u-flowable-form-item/width": {
+    "type": "string"
   },
   "u-flowable-form/title": {
     "type": "string",
@@ -182,6 +188,9 @@
   "u-flowable-radios/required": {
     "type": "boolean",
     "description": "选择必填后，填写者不填写将无法提交表单"
+  },
+  "u-flowable-radios/display": {
+    "type": "string"
   },
   "u-flowable-rich-text/value": {
     "type": "string",

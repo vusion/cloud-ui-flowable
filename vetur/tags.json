@@ -12,7 +12,8 @@
       "max",
       "list",
       "value",
-      "required"
+      "required",
+      "display"
     ],
     "description": "选择组件，可以自定义编辑和增删选项，还可以设置填写者选择的数量规则（最多选几个、最少选几个）"
   },
@@ -51,7 +52,8 @@
   "u-flowable-form-item": {
     "attributes": [
       "title",
-      "tip"
+      "tip",
+      "width"
     ],
     "description": "描述文字可以为表单添加段落说明信息，字体样式可以自定义设置。"
   },
@@ -101,7 +103,8 @@
     "attributes": [
       "list",
       "value",
-      "required"
+      "required",
+      "display"
     ],
     "description": "选择组件，可以自定义编辑和增删选项，填写者需要进行单项选择"
   },
