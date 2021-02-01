@@ -104,6 +104,7 @@ export default UFlowableFormItem;
     padding: 12px;
     display: inline-block;
     float: left;
+    width: 100%;
 }
 
 .root[width='25%'] {
