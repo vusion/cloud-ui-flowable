@@ -102,7 +102,6 @@ export default UFlowableFormItem;
 .root {
     position: relative;
     padding: 12px;
-    display: inline-block;
     float: left;
     width: 100%;
 }
@@ -130,7 +129,8 @@ export default UFlowableFormItem;
 .title {
     font-weight: 500;
     width: 120px;
-    position: absolute;
+    position: relative;
+    float: left;
     left: 10px;
     line-height: 34px;
 }
