@@ -28,7 +28,7 @@
 
         <div :class="$style.foot" v-if="mode === 'edit' || $slots.foot || $scopedSlots.foot">
             <slot name="foot" :submit="onSubmit.bind(this)"></slot>
-            <u-button @click="onSubmit()" color="primary" v-if="mode === 'edit'">{{ buttonText }}</u-button>
+            <u-button @click="onSubmit()" color="primary" v-if="mode === 'edit' && !hideButton">{{ buttonText }}</u-button>
         </div>
     </div>
 </template>
@@ -59,6 +59,10 @@ const UFlowableForm = {
         mode: {
             type: String,
             default: 'edit',
+        },
+        hideButton: {
+            type: Boolean,
+            default: false,
         },
     },
     mounted() {
