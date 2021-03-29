@@ -31,7 +31,7 @@ export default function (component) {
                                     message: '此项必填',
                                 };
                                 this.$emit('error', error);
-                                this.setCorrectValue(undefined);
+                                this.setCorrectValue($event);
                             } else {
                                 // 验证通过
                                 this.$currentValue = $event;
@@ -127,7 +127,8 @@ export default function (component) {
                         if (nameList[index + 1] && (nameList[index + 1] - Number(nameList[index + 1]) === 0)) {
                             defaultValue = [];
                         }
-                        if (!Object.prototype.hasOwnProperty.call(root, name)) {
+                        // 避免根节点设值为 undefined 的时候报错
+                        if (root && !Object.prototype.hasOwnProperty.call(root, name)) {
                             this.$set(root, name, defaultValue);
                         }
                     }

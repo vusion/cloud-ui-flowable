@@ -104,6 +104,7 @@ export default UFlowableFormItem;
     padding: 12px;
     float: left;
     width: 100%;
+    line-height: 34px;
 }
 
 .root[width='25%'] {
@@ -132,7 +133,6 @@ export default UFlowableFormItem;
     position: relative;
     float: left;
     left: 10px;
-    line-height: 34px;
 }
 
 .tip {

@@ -16,6 +16,10 @@ export default {
             type: Boolean,
             default: true,
         },
+        required: {
+            type: Boolean,
+            default: false,
+        },
         minCount: { type: Number, default: 1 },
         maxCount: { type: Number, default: 99 },
     },
@@ -73,9 +77,9 @@ export default {
             this.currentValue = this.currentValue || [];
             this.currentValue.push(getDefaultItem());
         }
+
         return h('div', {
             class: [this.$style.root, children.length <= 2 && this.$style.short],
-
         }, [
             h('div', {
                 class: this.$style.table,
@@ -145,6 +149,7 @@ export default {
                                   const listeners = formItem.componentOptions.listeners = {
                                       ...formItem.componentOptions.listeners,
                                   };
+
                                   const _error = listeners.error;
                                   listeners.error = (error) => {
                                       if (error && error.message) {
