@@ -16,6 +16,10 @@ export default {
             type: Boolean,
             default: true,
         },
+        required: {
+            type: Boolean,
+            default: true,
+        },
         minCount: { type: Number, default: 1 },
         maxCount: { type: Number, default: 99 },
     },
@@ -145,6 +149,7 @@ export default {
                                   const listeners = formItem.componentOptions.listeners = {
                                       ...formItem.componentOptions.listeners,
                                   };
+
                                   const _error = listeners.error;
                                   listeners.error = (error) => {
                                       if (error && error.message) {
