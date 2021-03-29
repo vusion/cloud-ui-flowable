@@ -18,7 +18,7 @@ export default {
         },
         required: {
             type: Boolean,
-            default: true,
+            default: false,
         },
         minCount: { type: Number, default: 1 },
         maxCount: { type: Number, default: 99 },
