@@ -73,9 +73,9 @@ export default {
             this.currentValue = this.currentValue || [];
             this.currentValue.push(getDefaultItem());
         }
+
         return h('div', {
             class: [this.$style.root, children.length <= 2 && this.$style.short],
-
         }, [
             h('div', {
                 class: this.$style.table,

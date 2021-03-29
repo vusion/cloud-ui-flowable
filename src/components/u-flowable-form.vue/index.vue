@@ -25,7 +25,6 @@
             </form>
             <div :class="$style.clear"></div>
         </div>
-
         <div :class="$style.foot" v-if="mode === 'edit' || $slots.foot || $scopedSlots.foot">
             <slot name="foot" :submit="onSubmit.bind(this)"></slot>
             <u-button @click="onSubmit()" color="primary" v-if="mode === 'edit'">{{ buttonText }}</u-button>
@@ -115,7 +114,11 @@ const UFlowableForm = {
                             item.scrollIntoView(false);
                             return false;
                         }
-                        setPath(result, name, formItem.$currentValue);
+                        // 只提交编辑模式的 key，只读模式的空值过滤掉
+                        if (formItem.mode === 'edit') {
+                            const currentValue = formItem.$currentValue;
+                            setPath(result, name, currentValue);
+                        }
                     }
                 }
                 return true;
